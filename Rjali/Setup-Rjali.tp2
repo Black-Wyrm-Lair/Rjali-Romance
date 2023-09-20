@@ -1,0 +1,210 @@
+
+BACKUP ~Rjali/Backup~
+
+AUTHOR ~nullset@sympatico.ca~ 
+
+// Here's where we allow NPC CHAIN dialogues for non-existent/!InParty NPC
+
+ALLOW_MISSING ~SHEEN25J.dlg~
+              ~SHEEN25P.dlg~
+              ~BSHEEN25.dlg~
+              ~MRKHALID.dlg~
+              ~M#AMB25J.dlg~
+              ~M#AMB25P.dlg~
+              ~BM#AMB25.dlg~
+              ~M#BALDUR.bcs~
+              ~M#AERIE.bcs~
+              ~M#JAHEIR.bcs~
+              ~M#VICONI.bcs~
+
+ALWAYS
+
+// Here's where we set BG2EE/EET Chapters
+
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  OUTER_SET bg2_chapter_1 = 13
+  OUTER_SET bg2_chapter_2 = 14
+  OUTER_SET bg2_chapter_3 = 15
+  OUTER_SET bg2_chapter_4 = 16
+  OUTER_SET bg2_chapter_5 = 17
+  OUTER_SET bg2_chapter_6 = 18
+  OUTER_SET bg2_chapter_7 = 19
+  OUTER_SET bg2_chapter_8 = 20
+  OUTER_SET bg2_chapter_9 = 21
+  OUTER_SET bg2_chapter_10 = 22
+END ELSE BEGIN //any other platform
+  OUTER_SET bg2_chapter_1 = 1
+  OUTER_SET bg2_chapter_2 = 2
+  OUTER_SET bg2_chapter_3 = 3
+  OUTER_SET bg2_chapter_4 = 4
+  OUTER_SET bg2_chapter_5 = 5
+  OUTER_SET bg2_chapter_6 = 6
+  OUTER_SET bg2_chapter_7 = 7
+  OUTER_SET bg2_chapter_8 = 8
+  OUTER_SET bg2_chapter_9 = 9
+  OUTER_SET bg2_chapter_10 = 10
+END
+
+ACTION_IF MOD_IS_INSTALLED ~RJPOSTFIX/SETUP-RJPOSTFIX.tp2~ "0" THEN BEGIN
+  OUTER_SET RJLTSTUB = 1
+END ELSE BEGIN
+  OUTER_SET RJLTSTUB = 0
+END
+
+END
+
+VERSION ~v12.5~
+
+// Here's where we offer to display the readme.
+
+README ~Rjali/Readme-Rjali.txt~
+
+// Here's where we set language
+
+AUTO_EVAL_STRINGS
+AUTO_TRA ~Rjali/Languages/%s~
+LANGUAGE ~English~ ~English~ ~Rjali/Languages/English/setup.tra~
+LANGUAGE ~Russian (by Arcanecoast Team)~ ~Russian~ ~Rjali/Languages/Russian/setup.tra~
+
+// Here's where we set experienced players' talk time adjustments
+
+BEGIN @54
+SUBCOMPONENT @57
+
+  COPY ~Rjali\2DA\placeholder.2da~ ~override\rjspeed1.2da~
+
+BEGIN @55
+SUBCOMPONENT @57
+
+  COPY ~Rjali\2DA\placeholder.2da~ ~override\rjspeed2.2da~
+
+BEGIN @56
+SUBCOMPONENT @57
+
+  COPY ~Rjali\2DA\placeholder.2da~ ~override\rjspeed3.2da~
+
+// This is the main event
+
+BEGIN @500
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @51
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @52
+
+// Set mod defaults
+
+INCLUDE ~Rjali/tpa/default.tpa~
+
+// Here's where we fix bugs and patch mods
+
+INCLUDE ~Rjali/tpa/bugs_patches.tpa~
+
+// Here's where we gate the StorePartyLocations resource and hide Fay in inappropriate Cutscenes
+
+INCLUDE ~Rjali/tpa/port.tpa~
+
+// Rjali's sound sets
+
+LAF HANDLE_AUDIO END
+
+// Rjali's portraits
+
+INCLUDE ~Rjali/tpa/portraits.tpa~
+
+// Areas
+
+INCLUDE ~Rjali/tpa/areas.tpa~
+
+// Area music
+
+INCLUDE ~Rjali/tpa/music.tpa~
+
+// Here's where we put creatures
+
+INCLUDE ~Rjali/tpa/creatures.tpa~
+
+// PST Animations
+
+INCLUDE ~Rjali/tpa/animations.tpa~
+
+// Here's where we put items
+
+INCLUDE ~Rjali/tpa/items.tpa~
+
+// Here's where we put spells
+
+INCLUDE ~Rjali/tpa/spells.tpa~
+
+// These are the main dialogues and scripts for SoA and ToB
+
+INCLUDE ~Rjali/tpa/main.tpa~
+
+// Here's where we park NPCs back in the deArnise Keep
+
+INCLUDE ~Rjali/tpa/park.tpa~
+
+// Here's where we put PST scripts and dialogues
+
+INCLUDE ~Rjali/tpa/pst.tpa~
+
+// Here's where we put the stuff for the Djinn of the lamp
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJGENIE.d~
+        ~Rjali/Scripts/SOA/RJGENIE.baf~
+        ~Rjali/Scripts/SOA/CUTSCENES~    // Tourist cutscenes
+
+// Dialogues of the Orphanage Project.
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/TOB/RJOrphans.d~
+
+// Here's where we put Rjali's multiple romance facilities
+
+INCLUDE ~Rjali/tpa/multi.tpa~
+
+// Here's where we put joinable NPC pdialog.2da and interdia.2da
+
+INCLUDE ~Rjali/tpa/npc2da.tpa~
+
+// Flirts - must be last thing in dialogue files
+
+INCLUDE ~Rjali/tpa/flirts.tpa~
+
+// Here's where we adjust talk times for faster play
+
+ACTION_IF MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "0" OR
+          MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "1" OR
+          MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "2" THEN BEGIN
+
+INCLUDE ~Rjali/tpa/expedite.tpa~
+
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "1" OR
+          MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "2" THEN BEGIN
+
+INCLUDE ~Rjali/tpa/speed.tpa~
+
+END
+
+// This is to maintain a roster of dummy cre's to reduce CHAIN dialogue logic.
+
+INCLUDE ~Rjali/tpa/roster.tpa~
+
+// Expansion - post game this and that
+
+INCLUDE ~Rjali/tpa/expansion.tpa~
+
+// Since we want our NPCs to have epilogues, we'll add them to the last area in the game:
+
+INCLUDE ~Rjali/tpa/epilogues.tpa~
+
+// Persist Player1 Dialogue File
+
+EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/p1dialog.baf~
+EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/p1dialog.baf~
+
+// Here's where Rjali equips party members (SoA only)
+
+BEGIN @50
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @51
+REQUIRE_COMPONENT "Rjali/setup-Rjali.tp2" "3" @65
+
+INCLUDE ~Rjali/tpa/equip.tpa~

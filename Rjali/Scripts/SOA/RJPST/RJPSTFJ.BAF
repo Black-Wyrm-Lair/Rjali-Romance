@@ -1,0 +1,46 @@
+
+// Fhjull Dialogues
+
+IF
+  OR(3)
+    G("RJiniiJIDAD",12)
+    G("RJFhjullMet",5)
+    G("RJSobethJID",3)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+// Fhjull Sobeth quest
+
+IF
+  G("RJSobethJID",2)
+  InParty("RJKesai")
+  Range(Player1,6)
+  See(Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJSobethJID","GLOBAL",3)
+END
+
+// Fhjull Adahn quest
+
+IF
+  G("RJiniiJIDAD",11)
+  Range(Player1,6)
+  See(Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDAD","GLOBAL",12)
+END
+
+// Fhjull Morte quest
+
+IF
+  G("RJFhjullMet",4)
+  Range(Player1,6)
+  See(Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJFhjullMet","GLOBAL",5)
+END

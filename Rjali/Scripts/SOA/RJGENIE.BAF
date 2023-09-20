@@ -1,0 +1,184 @@
+
+// Roster SoA
+
+IF
+  G("RJGenie",2)
+  G("RJRoster",3)
+  GlobalsEqual("RJSetCnt","RJRosCnt")
+  GlobalsEqual("RJLocSet","RJLocCnt")
+  GLT("Chapter",%bg2_chapter_8%)
+THEN
+  RESPONSE #100
+    SetTokenGlobal("RjaliTalk","GLOBAL","RJLTRJ")
+    SetTokenGlobal("RJFayTalk","GLOBAL","RJLTFY")
+    SetTokenGlobal("RJAnnahTalk","GLOBAL","RJLTAN")
+    SetTokenGlobal("RJGraceTalk","GLOBAL","RJLTGR")
+    SetTokenGlobal("RJRavelTalk","GLOBAL","RJLTRV")
+    SetTokenGlobal("RJKesaiTalk","GLOBAL","RJLTKE")
+    SetTokenGlobal("RJJALoc1","GLOBAL","RJLTJA")
+    SetTokenGlobal("RJVILoc1","GLOBAL","RJLTVI")
+    SetTokenGlobal("RJAELoc1","GLOBAL","RJLTAE")
+    SetTokenGlobal("NeeraLovetalks","GLOBAL","RJLTNE")
+    SetTokenGlobal("MRLoveTalk","GLOBAL","RJLTIM")
+    SetTokenGlobal("C0SireneLovetalk","GLOBAL","RJLTSI")
+    SetTokenGlobal("SkieRomanceTalk","GLOBAL","RJLTSK")
+    SetTokenGlobal("L3PetsyRomanceTalk","GLOBAL","RJLTPE")
+    SetTokenGlobal("O#BranLovetalk","GLOBAL","RJLTBR")
+    SetTokenGlobal("YvetteRomanceTalk","GLOBAL","RJLTYV")
+    SetTokenGlobal("RJTALoc1","GLOBAL","RJLTTA")
+    SetTokenGlobal("PGNaliaLoveTalk","GLOBAL","RJLTNA")
+    SetTokenGlobal("RJTYLoc1","GLOBAL","RJLTTY")
+    SetTokenGlobal("LK#NindeLoveTalks","GLOBAL","RJLTNI")
+    SetTokenGlobal("T#DaceRomanceTalks","GLOBAL","RJLTDA")
+    SetTokenGlobal("rh#IsraTalks","GLOBAL","RJLTIS")
+    SetTokenGlobal("RJSALoc1","GLOBAL","RJLTSA")
+    SetTokenGlobal("RJAMLoc1","GLOBAL","RJLTAM")
+    SetTokenGlobal("RJSHLoc1","GLOBAL","RJLTSH")
+    SetTokenGlobal("E3LOVETALK","GLOBAL","RJLTFA")
+    StartDialogueNoSet(Player1)
+END
+
+// Roster ToB
+
+IF
+  G("RJGenie",2)
+  G("RJRoster",3)
+  G("RJXPN",0)
+  GlobalsEqual("RJSetCnt","RJRosCnt")
+  GlobalsEqual("RJLocSet","RJLocCnt")
+  GGT("Chapter",%bg2_chapter_7%)
+THEN
+  RESPONSE #100
+    SetTokenGlobal("RjaliTalkToB","GLOBAL","RJLTRJ")
+    SetTokenGlobal("RJFayTalk","GLOBAL","RJLTFY")
+    SetTokenGlobal("RJAnnahTalkToB","GLOBAL","RJLTAN")
+    SetTokenGlobal("RJGraceTalkToB","GLOBAL","RJLTGR")
+    SetTokenGlobal("RJRavelTalkTob","GLOBAL","RJLTRV")
+    SetTokenGlobal("RJKesaiTalkTob","GLOBAL","RJLTKE")
+    SetTokenGlobal("RJJALoc1","GLOBAL","RJLTJA")
+    SetTokenGlobal("RJVILoc1","GLOBAL","RJLTVI")
+    SetTokenGlobal("RJAELoc1","GLOBAL","RJLTAE")
+    SetTokenGlobal("NeeraToBLovetalks","GLOBAL","RJLTNE")
+    SetToken("RJLTIM",@48)
+    SetTokenGlobal("C0SireneToBLovetalk","GLOBAL","RJLTSI")
+    SetTokenGlobal("SkieRomanceTalkTB","GLOBAL","RJLTSK")
+    SetTokenGlobal("L3ToBRomanceTalk","GLOBAL","RJLTPE")
+    SetTokenGlobal("O#BranTalkToB","GLOBAL","RJLTBR")
+    SetTokenGlobal("YvetteToBTalk","GLOBAL","RJLTYV")
+    SetTokenGlobal("RJTALoc1","GLOBAL","RJLTTA")
+    SetToken("RJLTNA",@48)
+    SetTokenGlobal("RJTYLoc1","GLOBAL","RJLTTY")
+    SetTokenGlobal("LK#NindeLoveTalksTOB","GLOBAL","RJLTNI")
+    SetToken("RJLTDA",@48)
+    SetTokenGlobal("rh#IsraTalksTob","GLOBAL","RJLTIS")
+    SetTokenGlobal("RJSALoc1","GLOBAL","RJLTSA")
+    SetTokenGlobal("RJAMLoc1","GLOBAL","RJLTAM")
+    SetTokenGlobal("RJSHLoc1","GLOBAL","RJLTSH")
+    SetTokenGlobal("E3EXPLOVETALK","GLOBAL","RJLTFA")
+    StartDialogueNoSet(Player1)
+END
+
+// Rub the Lamp
+
+IF
+  OR(3)
+    G("RJGenie",0)
+    G("RJGenie",3)
+    G("RJXPGen",1)
+  OR(2)
+    HasItem("RJLAMP",Player1)
+    HasItem("RJLAMP2",Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJGenie","GLOBAL",1)
+    FaceObject(Player1)
+    SetTokenGlobal("RJCntLoved","GLOBAL","RJLOVED")
+    SetTokenGlobal("RJCntBedded","GLOBAL","RJBEDDED")
+    SetTokenGlobal("RJCntWedded","GLOBAL","RJWEDDED")
+    SetTokenGlobal("RJCntParked","GLOBAL","RJPARKED")
+    SetTokenGlobal("RJCntDumped","GLOBAL","RJDUMPED")
+    SetTokenGlobal("IRTLoveMeter","GLOBAL","RJIMMTR")
+    SmallWait(20)
+    StartDialogueNoSet(Player1)
+END
+
+IF
+  OR(2)
+    G("RJGenie",0)
+    G("RJGenie",3)
+  OR(2)
+    HasItem("RJLAMP",Player2)
+    HasItem("RJLAMP2",Player2)
+  !StateCheck(Player2,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJGenie","GLOBAL",1)
+    FaceObject(Player2)
+    SmallWait(20)
+    StartDialogueNoSet(Player2)
+END
+
+IF
+  OR(2)
+    G("RJGenie",0)
+    G("RJGenie",3)
+  OR(2)
+    HasItem("RJLAMP",Player3)
+    HasItem("RJLAMP2",Player3)
+  !StateCheck(Player3,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJGenie","GLOBAL",1)
+    FaceObject(Player3)
+    SmallWait(20)
+    StartDialogueNoSet(Player3)
+END
+
+IF
+  OR(2)
+    G("RJGenie",0)
+    G("RJGenie",3)
+  OR(2)
+    HasItem("RJLAMP",Player4)
+    HasItem("RJLAMP2",Player4)
+  !StateCheck(Player4,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJGenie","GLOBAL",1)
+    FaceObject(Player4)
+    SmallWait(20)
+    StartDialogueNoSet(Player4)
+END
+
+IF
+  OR(2)
+    G("RJGenie",0)
+    G("RJGenie",3)
+  OR(2)
+    HasItem("RJLAMP",Player5)
+    HasItem("RJLAMP2",Player5)
+  !StateCheck(Player5,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJGenie","GLOBAL",1)
+    FaceObject(Player5)
+    SmallWait(20)
+    StartDialogueNoSet(Player5)
+END
+
+IF
+  OR(2)
+    G("RJGenie",0)
+    G("RJGenie",3)
+  OR(2)
+    HasItem("RJLAMP",Player6)
+    HasItem("RJLAMP2",Player6)
+  !StateCheck(Player6,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJGenie","GLOBAL",1)
+    FaceObject(Player6)
+    SmallWait(20)
+    StartDialogueNoSet(Player6)
+END

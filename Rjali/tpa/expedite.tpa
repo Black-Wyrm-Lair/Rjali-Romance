@@ -1,0 +1,79 @@
+
+// This is to set option to expedite making NPCs parkable.
+
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/expedite.baf~ EVALUATE_BUFFER
+
+// Imoen
+
+ACTION_IF MOD_IS_INSTALLED ~imoenRomance/Setup-ImoenRomance.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJIMOE/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Nalia
+
+ACTION_IF MOD_IS_INSTALLED ~deArnise/Setup-deArnise.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJNALI/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Branwen
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJBRAN/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Skie
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/setup-Skie.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSKIE/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Petsy
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPETS/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Amber
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJAMBE/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Sheena
+
+ACTION_IF MOD_IS_INSTALLED ~setup-Sheena.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSHEE/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Dace
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJDACE/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Fade
+
+ACTION_IF (MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0") THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJFADE/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Isra
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJISRA/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Tashia
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTASH/expedite.baf~ EVALUATE_BUFFER
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSIRE/expedite.baf~ EVALUATE_BUFFER
+END

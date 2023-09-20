@@ -1,0 +1,246 @@
+
+// Bump XP on initial join
+
+IF
+InParty("RJGrace")
+Global("RJGraceSetXP","GLOBAL",0)
+XPLT(Player1,280001)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceSetXP","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("RJGrace")
+Global("RJGraceSetXP","GLOBAL",0)
+XPGT(Player1,280000)
+XPLT(Player1,600001)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceSetXP","GLOBAL",1)
+AddXPObject("RJGrace",339000)
+Continue()
+END
+
+IF
+InParty("RJGrace")
+Global("RJGraceSetXP","GLOBAL",0)
+XPGT(Player1,600000)
+XPLT(Player1,1000001)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceSetXP","GLOBAL",1)
+AddXPObject("RJGrace",639000)
+Continue()
+END
+
+IF
+InParty("RJGrace")
+Global("RJGraceSetXP","GLOBAL",0)
+XPGT(Player1,1000000)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceSetXP","GLOBAL",1)
+AddXPObject("RJGrace",1039000)
+Continue()
+END
+
+// This is where Grace's romance talks start.
+
+IF
+GGT("Chapter",%bg2_chapter_1%)
+InParty(Myself)
+G("RJGraceTalk",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJGraceRomance","GLOBAL",1200)
+SetGlobal("RJGraceTalk","GLOBAL",1)
+END
+
+// This block sets up romance talks
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RJGraceRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+OR(12)
+G("RJGraceTalk",1)
+G("RJGraceTalk",3)
+G("RJGraceTalk",5)
+G("RJGraceTalk",7)
+G("RJGraceTalk",9)
+G("RJGraceTalk",11)
+G("RJGraceTalk",15)
+G("RJGraceTalk",17)
+G("RJGraceTalk",21)
+G("RJGraceTalk",23)
+G("RJGraceTalk",25)
+G("RJGraceTalk",27)
+THEN
+RESPONSE #100
+IncrementGlobal("RJGraceTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 7
+
+IF
+InParty(Myself)
+PartyRested()
+RealGlobalTimerExpired("RJGraceRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+G("RJGraceTalk",13)
+THEN
+RESPONSE #100
+IncrementGlobal("RJGraceTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 10
+
+IF
+InParty(Myself)
+G("RjaliMarried",1)
+RealGlobalTimerExpired("RJGraceRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+G("RJGraceTalk",19)
+THEN
+RESPONSE #100
+IncrementGlobal("RJGraceTalk","GLOBAL",1)
+END
+
+// This block initiates a dialog with Player1
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(15)
+  G("RJGraceTalk",2)
+  G("RJGraceTalk",4)
+  G("RJGraceTalk",6)
+  G("RJGraceTalk",8)
+  G("RJGraceTalk",10)
+  G("RJGraceTalk",12)
+  G("RJGraceTalk",14)
+  G("RJGraceTalk",16)
+  G("RJGraceTalk",18)
+  G("RJGraceTalk",20)
+  G("RJGraceTalk",22)
+  G("RJGraceTalk",24)
+  G("RJGraceTalk",26)
+  G("RJGraceTalk",28)
+  G("RJGraceSleptPhaere",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Phaere Innuendo
+
+IF
+  InParty(Myself)
+  !Range("Phaere",6)
+  G("RJGraceSleptPhaere",0)
+  AreaCheck("AR2204")
+  See(Player1)
+  OR(2)
+    G("PhaereInnuendo",2)
+    G("PhaereInnuendo",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJGraceSleptPhaere","GLOBAL",1)
+END
+
+// Grace's post Underdark inn sleep
+
+IF
+  InParty(Myself)
+  G("RJGRUDSleep1",2)
+  PartyRested()
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJGRUDSleep1","GLOBAL",3)
+END
+
+IF
+  InParty(Myself)
+  G("RJGRUDSleep1",3)
+  AreaCheck("AR2100")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+// Grace initiated flirts
+
+// Flirts initiate
+
+IF
+InParty(Myself)
+G("RJGraceFlirtsStart",0)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceFlirtsStart","GLOBAL",1)
+RealSetGlobalTimer("RJGraceFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+// Ready for flirting
+
+IF
+InParty(Myself)
+G("RJHush",0)
+G("RJGraceFlirtsStart",1)
+RealGlobalTimerExpired("RJGraceFlirtTimer","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+CombatCounter(0)
+!See([ENEMY])
+G("RJGraceFlirt",0)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceFlirt","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+// Flirting begins
+
+IF
+InParty(Myself)
+G("RJGraceFlirt",1)
+RealGlobalTimerExpired("RJGraceFlirtTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RJGraceFlirt","GLOBAL",0)
+RealSetGlobalTimer("RJGraceFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+G("RJGraceFlirtsStart",1)
+G("RJHush",0)
+RealGlobalTimerExpired("RJGraceFlirtTimer","GLOBAL")
+!CombatCounter(0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJGraceFlirtTimer","GLOBAL",150)
+END

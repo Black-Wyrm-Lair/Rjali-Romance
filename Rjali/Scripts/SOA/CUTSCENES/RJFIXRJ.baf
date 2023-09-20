@@ -1,0 +1,409 @@
+
+//  Fix Rjali Name and Soundset
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("Rjali")
+    SetName(@1)
+    SetPlayerSound(Myself,@502,SELECT_ACTION1)
+    SetPlayerSound(Myself,@503,SELECT_COMMON4)
+    SetPlayerSound(Myself,@504,TARGET_IMMUNE)
+    SetPlayerSound(Myself,@505,INVENTORY_FULL)
+    SetPlayerSound(Myself,@506,PICKED_POCKET)
+    SetPlayerSound(Myself,@507,EXISTANCE1)
+    SetPlayerSound(Myself,@508,EXISTANCE2)
+    SetPlayerSound(Myself,@509,BATTLE_CRY1)
+    SetPlayerSound(Myself,@510,LEADER)
+    SetPlayerSound(Myself,@511,TIRED)
+    SetPlayerSound(Myself,@512,BORED)
+    SetPlayerSound(Myself,@513,HURT)
+    SetPlayerSound(Myself,@514,SELECT_COMMON1)
+    SetPlayerSound(Myself,@515,SELECT_COMMON2)
+    SetPlayerSound(Myself,@517,SELECT_COMMON3)
+    SetPlayerSound(Myself,@517,INITIAL_MEETING)
+    SetPlayerSound(Myself,@518,BATTLE_CRY2)
+    SetPlayerSound(Myself,@519,BATTLE_CRY3)
+    SetPlayerSound(Myself,@520,BATTLE_CRY4)
+    SetPlayerSound(Myself,@521,DAMAGE)
+    SetPlayerSound(Myself,@522,DYING)
+    SetPlayerSound(Myself,@523,AREA_FOREST)
+    SetPlayerSound(Myself,@524,AREA_CITY)
+    SetPlayerSound(Myself,@525,AREA_DUNGEON)
+    SetPlayerSound(Myself,@526,AREA_DAY)
+    SetPlayerSound(Myself,@527,AREA_NIGHT)
+    SetPlayerSound(Myself,@528,SELECT_ACTION2)
+    SetPlayerSound(Myself,@529,SELECT_ACTION3)
+    SetPlayerSound(Myself,@530,SELECT_ACTION4)
+    SetPlayerSound(Myself,@531,SELECT_ACTION5)
+    SetPlayerSound(Myself,@532,SELECT_RARE1)
+    SetPlayerSound(Myself,@533,SELECT_RARE2)
+    SetPlayerSound(Myself,@534,CRITICAL_HIT)
+    EndCutSceneMode()
+END
+
+//  Fix Fay Name and Soundset
+
+IF
+  True()
+THEN
+  RESPONSE #1
+    CutSceneId("RJFay")
+    SetName(@41)
+    SetPlayerSound(Myself,@731,SELECT_ACTION1)
+    SetPlayerSound(Myself,@730,SELECT_COMMON1)
+END
+
+//  Fix Annah Name and Soundset
+
+IF
+  True()
+THEN
+  RESPONSE #1
+    CutSceneId("RJAnnah")
+    SetName(@600)
+    SetPlayerSound(Myself,@650,HAPPY)
+    SetPlayerSound(Myself,@651,MORALE)
+    SetPlayerSound(Myself,@652,TIRED)
+    SetPlayerSound(Myself,@653,BORED)
+    SetPlayerSound(Myself,@654,DAMAGE)
+    SetPlayerSound(Myself,@655,HURT)
+    SetPlayerSound(Myself,@656,SELECT_COMMON1)
+    SetPlayerSound(Myself,@657,SELECT_COMMON2)
+    SetPlayerSound(Myself,@658,SELECT_COMMON3)
+    SetPlayerSound(Myself,@659,SELECT_COMMON4)
+    SetPlayerSound(Myself,@660,SELECT_COMMON5)
+    SetPlayerSound(Myself,@661,SELECT_COMMON6)
+    SetPlayerSound(Myself,@662,SELECT_ACTION1)
+    SetPlayerSound(Myself,@663,SELECT_ACTION2)
+    SetPlayerSound(Myself,@664,SELECT_ACTION3)
+    SetPlayerSound(Myself,@665,SELECT_ACTION4)
+    SetPlayerSound(Myself,@666,SELECT_ACTION5)
+    SetPlayerSound(Myself,@667,SELECT_RARE1)
+    SetPlayerSound(Myself,@668,SELECT_RARE2)
+END
+
+//  Fix Grace Name and Soundset
+
+IF
+  True()
+THEN
+  RESPONSE #1
+    CutSceneId("RJGrace")
+    SetName(@601)
+    SetPlayerSound(Myself,@700,HAPPY)
+    SetPlayerSound(Myself,@701,TIRED)
+    SetPlayerSound(Myself,@702,BORED)
+    SetPlayerSound(Myself,@703,HURT)
+    SetPlayerSound(Myself,@704,SELECT_COMMON1)
+    SetPlayerSound(Myself,@705,SELECT_COMMON2)
+    SetPlayerSound(Myself,@706,SELECT_COMMON3)
+    SetPlayerSound(Myself,@707,SELECT_COMMON4)
+    SetPlayerSound(Myself,@708,SELECT_COMMON5)
+    SetPlayerSound(Myself,@709,SELECT_COMMON6)
+    SetPlayerSound(Myself,@710,SELECT_ACTION1)
+    SetPlayerSound(Myself,@711,SELECT_ACTION2)
+    SetPlayerSound(Myself,@712,SELECT_ACTION3)
+    SetPlayerSound(Myself,@713,SELECT_ACTION4)
+    SetPlayerSound(Myself,@714,SELECT_RARE1)
+END
+
+//  Fix Ravel Name
+
+IF
+  True()
+THEN
+  RESPONSE #1
+    CutSceneId("RJRavel")
+    SetName(@618)
+END
+
+//  Fix Jini Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJini")
+    SetName(@116)
+END
+
+
+//  Fix Dakkon Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJDakkon")
+    SetName(@603)
+END
+
+//  Fix Nordom Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJNordom")
+    SetName(@605)
+END
+
+//  Fix Adahn Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJAdahn")
+    SetName(@602)
+END
+
+//  Fix Syrinx Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJSyrnx")
+    SetName(@623)
+END
+
+//  Fix Doofus Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJDoofus")
+    SetName(@40)
+END
+
+//  Fix Yves Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTYV")
+    SetName(@611)
+END
+
+//  Fix Nenny Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTNE")
+    SetName(@609)
+END
+
+//  Fix Vivian Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTVI")
+    SetName(@610)
+END
+
+//  Fix Juliette Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTJU")
+    SetName(@614)
+END
+
+//  Fix Ecco Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTEC")
+    SetName(@608)
+END
+
+//  Fix Kesai-Serris Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTKS")
+    SetName(@606)
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJKesai")
+    SetName(@606)
+END
+
+//  Fix Doloras Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJPSTDO")
+    SetName(@607)
+END
+
+//  Fix Fhjull Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJFhjll")
+    SetName(@620)
+END
+
+//  Fix Trias Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJTrias")
+    SetName(@619)
+END
+
+//  Fix Morte Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJMorte")
+    SetName(@604)
+END
+
+//  Fix Chen Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJCHEN")
+    SetName(@412)
+END
+
+//  Fix Megan Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJMEGAN")
+    SetName(@401)
+END
+
+//  Fix Sean Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJSEAN")
+    SetName(@402)
+END
+
+//  Fix Suzy Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJSUZY")
+    SetName(@403)
+END
+
+//  Fix Bobby Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJBOBBY")
+    SetName(@404)
+END
+
+//  Fix Annie Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJANNIE")
+    SetName(@405)
+END
+
+//  Fix Billy Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJBILLY")
+    SetName(@406)
+END
+
+//  Fix Ari Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJARI")
+    SetName(@407)
+END
+
+//  Fix Hamad Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJHAMAD")
+    SetName(@408)
+END
+
+//  Fix Rjali (Moish's) Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJRJALI")
+    SetName(@409)
+END
+
+//  Fix Moish Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJMOISH")
+    SetName(@410)
+END
+
+//  Fix Sgt Bjorn Name
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJGUARD")
+    SetName(@411)
+END

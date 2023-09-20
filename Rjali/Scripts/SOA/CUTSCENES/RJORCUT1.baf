@@ -1,0 +1,21 @@
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    LeaveAreaLUAPanic("AR1306","",[1317.1082],0)
+    LeaveAreaLUA("AR1306","",[1317.1082],0)
+    ActionOverride(Player2,LeaveAreaLUA("AR1306","",[1349.1043],0))
+    ActionOverride(Player3,LeaveAreaLUA("AR1306","",[1381.1130],0))
+    ActionOverride(Player4,LeaveAreaLUA("AR1306","",[1429.1089],0))
+    ActionOverride(Player5,LeaveAreaLUA("AR1306","",[1423.1169],0))
+    ActionOverride(Player6,LeaveAreaLUA("AR1306","",[1489.1121],0))
+    Wait(3)
+    FadeFromColor([30.0],0)
+    CreateCreature("RJMOISH",[1063.906],6)
+    CreateCreature("RJRJALI",[1089.935],6)
+    EndCutSceneMode()
+END

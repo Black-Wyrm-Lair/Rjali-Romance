@@ -1,0 +1,63 @@
+
+// Other mod romances cause Rjali to poke.
+
+IF
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("SaerilethRomanceActive",2)
+G("RjaliSaerilethSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliSaerilethSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliSaerilethScoutTimer","GLOBAL",RJ_FAST)
+END
+
+// Rjali scouts out the mod NPC.
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliSaerilethScoutTimer","GLOBAL")
+G("RjaliSaerilethScout",0)
+G("RjaliSaerilethSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("Saerileth")
+See("Saerileth")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliSaerilethScout","GLOBAL",1)
+SetToken("RJSCOUT",@7)
+END
+
+IF
+G("RjaliSaerilethScout",2)
+G("FoundKesevar",5)
+!AreaCheck("AR1700")
+InParty(Myself)
+InParty("Saerileth")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliSaerilethScout","GLOBAL",3)
+END
+
+IF
+G("RjaliSaerilethScout",3)
+!AreaCheck("AR1700")
+InParty(Myself)
+InParty("Saerileth")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+StartDialogueNoSet(Myself)
+END

@@ -1,0 +1,29 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    StorePartyLocations()
+    SetGlobal("RJKESleep","GLOBAL",1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+    ActionOverride("RJKesai",MakeUnselectable(0))
+    LeaveAreaLUA("RJ0605","",[2254.538],0)
+    ActionOverride("RJKesai",LeaveAreaLUA("RJ0605","",[2254.578],0))
+    Wait(3)
+    OpenDoor("ar605d05")
+    ApplySpellRES("RJHIDE","RJFAY")
+    ActionOverride("RJKesai",FaceObject(Player1))
+    FaceObject("RJKesai")
+    FadeFromColor([30.0],0)
+    Wait(1)
+    EndCutSceneMode()
+    StartDialogue("Player1",Player1)
+END

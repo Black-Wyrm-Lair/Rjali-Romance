@@ -1,0 +1,14 @@
+
+@0    = ~Hello. Is there something I can do for you?~
+@1    = ~Not at the moment. Nice to meet you.~
+@2    = ~Hi. My name is <CHARNAME>. I'm a friend of Jini's.~
+@3    = ~My name is Vivian. Do you think I smell nice?~
+@4    = ~I certainly do! Be seeing you around.~
+@5    = ~How go the wedding plans, Vivian?~
+@6    = ~They are almost finalized. I assume I can forward your invitations via Jini?~
+@7    = ~That should work. If we can make it, we would love to attend.~
+
+@10    = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@11    = ~Morte and I will miss you.~
+@12    = ~Be sure to stop in when you get back.~
+@13    = ~Thank you, Vivian. We'll make every effort.~

@@ -1,0 +1,12 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    ActionOverride("RJNordom",MoveToObjectOffset("RJPSTDO",[5.45]))
+    Wait(5)
+    SetGlobal("RJiniiJIDND","GLOBAL",15)
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+    EndCutSceneMode()
+END

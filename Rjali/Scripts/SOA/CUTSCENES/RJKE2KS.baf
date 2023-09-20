@@ -1,0 +1,16 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    ActionOverride("RJKesai",DestroySelf())
+    Wait(3)
+    CreateCreatureOffScreen("RJPSTKS",0)
+    Wait(3)
+    ActionOverride("RJPSTKS",ChangeAIScript("RJRANWLK",DEFAULT))
+    ActionOverride("RJPSTKS",MoveBetweenAreas("RJ0605",[2254.549],2))
+    SetGlobal("RJParkKE","GLOBAL",0)
+    SetGlobal("RJKesaiRomanceActive","GLOBAL",0)
+    EndCutSceneMode()
+END

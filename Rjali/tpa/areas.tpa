@@ -1,0 +1,76 @@
+
+COPY ~Rjali/Areas~ ~override~
+
+COPY ~Rjali/tis~ ~override~
+
+// We are going to spawn Rjali in Chateau Irenicus. It means that we have to add a little bit of script to the Chateau Irenicus Area(AR0602).
+
+EXTEND_TOP ~AR0602.bcs~ ~Rjali/Scripts/SOA/AR0602.baf~ EVALUATE_BUFFER
+
+// Start dialog on entering Kalah's domain
+
+EXTEND_TOP ~AR0604.bcs~ ~Rjali/Scripts/SOA/AR0604.baf~
+
+// Add container items in Jini's boudoir
+
+EXTEND_TOP ~AR0605.bcs~ ~Rjali/Scripts/SOA/AR0605.baf~
+
+// Destroy Circus Ground Piles
+
+EXTEND_TOP ~AR0607.bcs~ ~Rjali/Scripts/SOA/AR0607.baf~
+
+// Spawn Daleson in deArnise Keep
+
+EXTEND_TOP ~AR1304.bcs~ ~Rjali/Scripts/SOA/AR1304.baf~ EVALUATE_BUFFER
+
+// Spawn Ari and Hammad in deArnise Keep
+
+EXTEND_TOP ~AR1306.bcs~ ~Rjali/Scripts/SOA/AR1306.baf~ EVALUATE_BUFFER
+
+// Make Talira global
+
+EXTEND_TOP ~AR1307.bcs~ ~Rjali/Scripts/SOA/AR1307.baf~ EVALUATE_BUFFER
+
+// Flag NPCs as having been party from CH4
+
+EXTEND_TOP ~AR1600.bcs~ ~Rjali/Scripts/SOA/AR1600.baf~
+
+// Terminate Phaere innuendo dialogues
+
+EXTEND_TOP ~AR2500.bcs~ ~Rjali/Scripts/SOA/AR2500.baf~ EVALUATE_BUFFER
+
+// Setup for Morte's quest
+
+EXTEND_TOP ~AR0809.bcs~ ~Rjali/Scripts/SOA/RJPSMR/AR0809.baf~
+EXTEND_BOTTOM ~CLEANSE.bcs~ ~Rjali/Scripts/SOA/RJPSMR/CLEANSE.baf~
+
+// Setup Player1T script in ToB
+
+EXTEND_BOTTOM ~AR4000.bcs~ ~Rjali/Scripts/TOB/AR4000.baf~
+
+// Spawn Moishe and Rjali(2) in Yaga-Shura's camp after his death
+
+EXTEND_TOP ~AR5202.bcs~ ~Rjali/Scripts/TOB/AR5202.baf~
+
+// Shut off flirting after Balthazar's death (at least for my NPCs)
+
+EXTEND_TOP ~AR5505.bcs~ ~Rjali/Scripts/TOB/AR5505.baf~
+
+// Setup Orgy
+
+EXTEND_TOP ~AR6400.bcs~ ~Rjali/Scripts/TOB/AR6400.baf~ EVALUATE_BUFFER
+
+// Set RJ0606 Info Triggers Text
+
+COPY_EXISTING ~RJ0606.are~ ~override~
+  READ_LONG 0x5c "trig_off"
+  SAY ("%trig_off%" + 0x64 + 0xc4) @1001
+  SAY ("%trig_off%" + 0x64 + (2 * 0xc4)) @1002
+  SAY ("%trig_off%" + 0x64 + (3 * 0xc4)) @1003
+  SAY ("%trig_off%" + 0x64 + (4 * 0xc4)) @1004
+  SAY ("%trig_off%" + 0x64 + (5 * 0xc4)) @1005
+  SAY ("%trig_off%" + 0x64 + (6 * 0xc4)) @1006
+  SAY ("%trig_off%" + 0x64 + (7 * 0xc4)) @1007
+  SAY ("%trig_off%" + 0x64 + (8 * 0xc4)) @1008
+  SAY ("%trig_off%" + 0x64 + (9 * 0xc4)) @1009
+  SAY ("%trig_off%" + 0x64 + (10 * 0xc4)) @1010

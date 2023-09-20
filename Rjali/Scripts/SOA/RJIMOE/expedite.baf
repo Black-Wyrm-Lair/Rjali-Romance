@@ -1,0 +1,29 @@
+
+// Expedite Imoen
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Imoen2")
+GLT("ImoenRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPIMTM","GLOBAL")
+!RealGlobalTimerExpired("MRImoenLovetalkTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPIMTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("MRImoenLovetalkTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Imoen2")
+G("ImoenRomanceActive",2)
+G("RjaliImoenSpice",2)
+G("RjaliImoenScout",0)
+!RealGlobalTimerNotExpired("RJXPIMTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliImoenScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliImoenScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPIMTM","GLOBAL",ONE_DAY)
+END

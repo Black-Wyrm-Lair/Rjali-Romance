@@ -1,0 +1,33 @@
+
+// Dace epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+Global("T#DaceBio","GLOBAL",0)
+Global("PlayerChoseEssence","GLOBAL",1)
+OR(2)
+  InParty("T#Dace")
+  G("RJParkDA",1)
+THEN
+RESPONSE #100
+SetGlobal("T#DaceBio","GLOBAL",1)
+TextScreen("T#DACE3")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+Global("T#DaceBio","GLOBAL",0)
+!Global("PlayerChoseEssence","GLOBAL",1)
+G("T#DaceRomanceActive",2)
+OR(2)
+  InParty("T#Dace")
+  G("RJParkDA",1)
+THEN
+RESPONSE #100
+SetGlobal("T#DaceBio","GLOBAL",1)
+TextScreen("RJEpiDA")
+SmallWait(1)
+Continue()
+END

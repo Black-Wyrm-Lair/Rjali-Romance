@@ -1,0 +1,12 @@
+
+// Gen RJBOOKMR
+
+IF
+  OnCreation()
+  G("RJBOOKMR",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJBOOKMR","GLOBAL",1)
+    ActionOverride("Chest 1",CreateItem("RJBOOKMR",100,0,0))
+    Continue()
+END

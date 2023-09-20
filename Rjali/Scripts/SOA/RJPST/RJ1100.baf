@@ -1,0 +1,51 @@
+
+// Init RJ1100
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    Continue()
+END
+
+IF
+  G("RJ1100Gen",0)
+THEN
+  RESPONSE #100
+    CreateCreature("RJPSTTC",[833.1889],12)
+    CreateCreature("RJPSTTC",[882.1981],12)
+    CreateCreature("RJPSTTC",[1001.1985],12)
+    CreateCreature("RJPSTTC",[1077.1377],12)
+    CreateCreature("RJPSTTC",[1119.2001],12)
+    CreateCreature("RJPSTTC",[1187.1914],12)
+    CreateCreature("RJPSTTC",[2170.2105],12)
+    CreateCreature("RJPSTTC",[2256.1235],12)
+    CreateCreature("RJPSTTC",[2351.1235],12)
+    CreateCreature("RJPSTTC",[2268.1143],12)
+    CreateCreature("RJPSTTC",[2588.1798],12)
+    CreateCreature("RJPSTTC",[2993.1297],12)
+    CreateCreature("RJPSTTC",[3104.1304],12)
+    CreateCreature("RJPSTTC",[2313.1289],12)
+    CreateCreature("RJPSTTC",[3040.1208],12)
+    CreateCreature("RJPSTTC",[3140.1208],12)
+    CreateCreature("RJPSTTC",[3140.1121],12)
+    CreateCreature("RJPSTTC",[2692.1799],12)
+    CreateCreature("RJPSTTC",[1516.2386],12)
+    CreateCreature("RJPSTTC",[1600.2371],12)
+    CreateCreature("RJPSTTC",[1555.2294],12)
+    CreateCreature("RJPSTTC",[1648.1172],12)
+    CreateCreature("RJPSTTC",[1111.1288],12)
+    CreateCreature("RJPSTTC",[1588.937],12)
+    SetGlobal("RJ1100Gen","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJ1100Ent",0)
+  InParty("RJKesai")
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END

@@ -1,0 +1,541 @@
+
+// Here's where we fix Celvan
+
+COPY_EXISTING ~CELVAN.dlg~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~RandomNum(2,1)~ ~~
+  END
+
+// Here's where we fix final fight repetitions
+
+COPY_EXISTING ~ITFPOOL1.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY
+        ~SetGlobalTimer("Pool1Timer","AR6200",TWO_MINUTES)~
+        ~SetGlobalTimer("Pool1Timer","AR6200",TWO_MINUTES) SetGlobal("RJPool1Done","AR6200",1)~
+  END
+
+EXTEND_TOP ~ITFPOOL1.bcs~ ~Rjali/scripts/XPN/rjxpp1.baf~
+
+COPY_EXISTING ~ITFPOOL2.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY
+        ~SetGlobalTimer("Pool2Timer","AR6200",TWO_MINUTES)~
+        ~SetGlobalTimer("Pool2Timer","AR6200",TWO_MINUTES) SetGlobal("RJPool2Done","AR6200",1)~
+  END
+
+EXTEND_TOP ~ITFPOOL2.bcs~ ~Rjali/scripts/XPN/rjxpp2.baf~
+
+COPY_EXISTING ~ITFPOOL3.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY
+        ~SetGlobalTimer("Pool3Timer","AR6200",TWO_MINUTES)~
+        ~SetGlobalTimer("Pool3Timer","AR6200",TWO_MINUTES) SetGlobal("RJPool3Done","AR6200",1)~
+  END
+
+EXTEND_TOP ~ITFPOOL3.bcs~ ~Rjali/scripts/XPN/rjxpp3.baf~
+
+// Here's where we fix Neera's repeating dialogue
+
+COPY_EXISTING ~neeraj.dlg~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY
+  ~SetGlobal("OHN_POLY_TRAP","LOCALS",2)
+ClearAllActions()~
+  ~SetGlobal("OHN_POLY_TRAP","LOCALS",3)~
+  END
+
+// Here's where we fix the tweakpack multiple stronghold bug
+
+ACTION_IF FILE_EXISTS ~Override/cdt01160.g3~ THEN BEGIN
+
+COPY_EXISTING ~ar0900.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY
+ ~OR(6)
+    Class(Player1,CLERIC)
+    Class(Player1,FIGHTER_CLERIC)
+    Class(Player1,CLERIC_MAGE)
+    Class(Player1,CLERIC_THIEF)
+    Class(Player1,FIGHTER_MAGE_CLERIC)
+    Class(Player1,CLERIC_RANGER)~
+  ~True()~
+  END
+
+END
+
+// Here's where we ensure we can own the deArnise keep regardless of the PC's class
+
+// If multiple strongholds has not been installed
+
+ACTION_IF !FILE_EXISTS ~Override/cdt01160.g3~ THEN BEGIN
+
+  COPY_EXISTING ~Nalia.dlg~ ~override~
+                ~NaliaJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY
+        ~Global("PlayerHasStronghold","GLOBAL",0)
+OR(2)
+Class(Player1,FIGHTER_ALL)
+Kit(Player1,Blackguard)~
+        ~~
+      REPLACE_TEXTUALLY
+        ~!Kit(Player1,Blackguard)
+OR(2)
+!Class(Player1,FIGHTER_ALL)
+Global("PlayerHasStronghold","GLOBAL",1)~
+        ~False()~
+      REPLACE_TEXTUALLY
+        ~OR(8)
+Class(Player1,FIGHTER)
+Class(Player1,FIGHTER_MAGE)
+Class(Player1,FIGHTER_CLERIC)
+Class(Player1,FIGHTER_THIEF)
+Class(Player1,FIGHTER_MAGE_THIEF)
+Class(Player1,FIGHTER_DRUID)
+Class(Player1,FIGHTER_MAGE_CLERIC)
+Kit(Player1,Blackguard)~
+        ~True()~
+      REPLACE_TEXTUALLY
+        ~!Kit(Player1,Blackguard)
+!Class(Player1,FIGHTER)
+!Class(Player1,FIGHTER_MAGE)
+!Class(Player1,FIGHTER_CLERIC)
+!Class(Player1,FIGHTER_THIEF)
+!Class(Player1,FIGHTER_MAGE_THIEF)
+!Class(Player1,FIGHTER_DRUID)
+!Class(Player1,FIGHTER_MAGE_CLERIC)~
+        ~False()~
+    END
+
+END
+
+// Here's where we Fix Skie bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~SkiEp.2da~ ~override~
+                ~SkiEp2.2da~ ~override~
+                ~SkiEp3.2da~ ~override~
+    REPLACE_TEXTUALLY ~1SkieG~ ~1xSkieG~
+
+COPY_EXISTING ~1XSKII1.dlg~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY
+ ~EscapeArea()
+SetGlobal("SkieItemTalk1","GLOBAL",1)~
+  ~SetGlobal("SkieItemTalk1","GLOBAL",1) EscapeArea()~
+  END
+
+END
+
+// If Nalia Romance has been installed
+
+ACTION_IF MOD_IS_INSTALLED ~deArnise/setup-deArnise.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~NaliaJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY
+        ~OR(7)
+Class(Player1,FIGHTER)
+Class(Player1,FIGHTER_MAGE)
+Class(Player1,FIGHTER_CLERIC)
+Class(Player1,FIGHTER_THIEF)
+Class(Player1,FIGHTER_MAGE_THIEF)
+Class(Player1,FIGHTER_DRUID)
+Class(Player1,FIGHTER_MAGE_CLERIC)~
+        ~True()~
+    END
+
+END
+
+// Here's where we speed up Aerie's marriage and birthing
+
+EXTEND_BOTTOM ~aeri25.bcs~ ~Rjali/Scripts/TOB/aeri25.baf~
+
+// Here's where we fix dialog conflict for Jaheira
+
+EXTEND_BOTTOM ~JAHEIRA.bcs~ ~Rjali/Scripts/SOA/RJJAHE/JAHEIRA.baf~
+
+// Here's where we Fix Tashia bugs
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~tashia.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~TimeOfDay(MORNING)~ ~TimeOfDay(DAY)~
+      REPLACE_TEXTUALLY ~"Imoen"~ ~"Imoen2"~
+      REPLACE_TEXTUALLY ~Global("Chapter","GLOBAL",6)~
+                        ~OR(2) Global("Chapter","GLOBAL",%bg2_chapter_6%) Global("Chapter","GLOBAL",%bg2_chapter_3%)~
+      REPLACE_TEXTUALLY ~Global("Chapter","GLOBAL",18)~
+                        ~OR(2) Global("Chapter","GLOBAL",%bg2_chapter_6%) Global("Chapter","GLOBAL",%bg2_chapter_3%)~
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+  COPY_EXISTING ~tajarmis.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+  COPY_EXISTING ~cuttas01.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+
+  COPY_EXISTING ~takomt.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~EscapeArea~
+                        ~DestroySelf~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJTASH/RJBUG.d~
+
+  STRING_SET ~Aimilíona Goldmantle~
+             ~Aimiliona Goldmantle~
+
+  STRING_SET ~Looks like your... friend is going to be a while. The name is Aimilíona Goldmantle, I'm partners with yon shopkeeper. He attends to the clothing, while the armor is my purview.~
+             ~Looks like your... friend is going to be a while. The name is Aimiliona Goldmantle, I'm partners with yon shopkeeper. He attends to the clothing, while the armor is my purview.~
+
+  STRING_SET ~(Aimilíona points toward a rack where there is a white garment hanging on a rack. As you come closer to examine it, you see that it is in fact a snow-white fur, the pelt unblemished by any other color, the front legs of it forming a neck clasp, an untarnished cloak.)~
+             ~(Aimiliona points toward a rack where there is a white garment hanging on a rack. As you come closer to examine it, you see that it is in fact a snow-white fur, the pelt unblemished by any other color, the front legs of it forming a neck clasp, an untarnished cloak.)~
+
+  STRING_SET ~Well, that is a lot of money, but Tashia is worth every gold piece. Aimilíona, you have a deal.~
+             ~Well, that is a lot of money, but Tashia is worth every gold piece. Aimiliona, you have a deal.~
+
+  STRING_SET ~(Tashia kisses you softly on the lips, then nods as she says) What you are saying is just live for the day? A bit cliché, but then again, such do contain an element of truth.~
+             ~(Tashia kisses you softly on the lips, then nods as she says) What you are saying is just live for the day? A bit cliche, but then again, such do contain an element of truth.~
+
+  STRING_SET ~What you are saying is just live for the day? A bit cliché, but then again, such do contain an element of truth. However, if it comes down to it, I know what my preference would be.~
+             ~What you are saying is just live for the day? A bit cliche, but then again, such do contain an element of truth. However, if it comes down to it, I know what my preference would be.~
+
+  COPY_EXISTING ~le#aimil.cre~ ~override~
+    SAY NAME1 @414
+    SAY NAME2 @414
+
+  COMPILE ~Rjali/Scripts/SOA/AR0713.baf~
+
+END
+
+// Here's where we Fix Dace bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Dace/dace.tp2~ "0" OR
+          MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~T#DACE.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~AreaCheck("AR0700")~
+                        ~OR(2) AreaCheck("AR0700") AreaCheck("AR0702")~
+    END
+
+  COPY_EXISTING ~GORODR1.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("T#DWATCHERS","GLOBAL",0)~
+                        ~Global("T#DWATCHERS","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DWATCHERSToB","GLOBAL",0)~
+                        ~Global("T#DWATCHERSToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      REPLACE_TEXTUALLY ~Global("T#DODREN","GLOBAL",0)~
+                        ~Global("T#DODREN","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DODRENToB","GLOBAL",0)~
+                        ~Global("T#DODRENToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  COPY_EXISTING ~GORPRI1.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("T#DSLIPPERS","GLOBAL",0)~
+                        ~Global("T#DSLIPPERS","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DSLIPPERSToB","GLOBAL",0)~
+                        ~Global("T#DSLIPPERSToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  COPY_EXISTING ~GORMAD1.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("T#DYAKMAN","GLOBAL",0)~
+                        ~Global("T#DYAKMAN","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DYAKMANToB","GLOBAL",0)~
+                        ~Global("T#DYAKMANToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  COPY_EXISTING ~GORCAMB.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("T#DDECK","GLOBAL",0)~
+                        ~Global("T#DDECK","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DDECKToB","GLOBAL",0)~
+                        ~Global("T#DDECKToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  COPY_EXISTING ~GORCAR.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("T#DMACHINE","GLOBAL",0)~
+                        ~Global("T#DMACHINE","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DMACHINEToB","GLOBAL",0)~
+                        ~Global("T#DMACHINEToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  COPY_EXISTING ~FSDRAGON.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("T#DWKDRAGONS","GLOBAL",0)~
+                        ~Global("T#DWKDRAGONS","GLOBAL",0) GLT("Chapter",%bg2_chapter_8%)~
+      REPLACE_TEXTUALLY ~Global("T#DWKDRAGONSToB","GLOBAL",0)~ 
+                        ~Global("T#DWKDRAGONSToB","GLOBAL",0) GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  STRING_SET ~Awww, for cryin' out loud, Ducky... what in the blue blazes d'ya want from me?  I told you I like you pretty damn well, and that I don't see that changin'.  Don't try any of that "undying love" nonsense on me, bucko... I'm too damn old and burnt-out to believe in it anymore, and I don't care if that's a cliché.~
+             ~Awww, for cryin' out loud, Ducky... what in the blue blazes d'ya want from me?  I told you I like you pretty damn well, and that I don't see that changin'.  Don't try any of that "undying love" nonsense on me, bucko... I'm too damn old and burnt-out to believe in it anymore, and I don't care if that's a cliche.~
+
+END
+
+// Here's where we Fix Amber bugs
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~m#amber.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~PartyRested()~ ~~
+    END
+
+  STRING_SET ~Her niece seems nice enough, even if she's a bit naïve, but this lady certainly gets on my nerves.~
+             ~Her niece seems nice enough, even if she's a bit naive, but this lady certainly gets on my nerves.~
+
+  STRING_SET ~<GABBER>, the best diplomat in the world. Just could not break me the news that a tiefling girl might not have been something you were expecting to make an entrée into your life?~
+             ~<GABBER>, the best diplomat in the world. Just could not break me the news that a tiefling girl might not have been something you were expecting to make an entree into your life?~
+
+END
+
+// Here's where we Fix Tyris bugs
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+
+  STRING_SET ~Come now, don't tell me you are that naïve.  This world is no different to your own.  The Drow are hated by surfacers because we are feared by them.~
+             ~Come now, don't tell me you are that naive.  This world is no different to your own.  The Drow are hated by surfacers because we are feared by them.~
+
+END
+
+// Here's where we Fix Ninde bugs
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+
+  STRING_SET ~He had fled from Mulmaster, where all spellcasters of a certain power are recquired to join the Cloaks, a militaristic organisation.  He had been tortured, a sure aphrodisiac to the naïve young girl.  His hands shook when he grasped the stem of a goblet.  I was drunk on wine, he on the joy of surviving to hold another woman in his arms, before a window outside which snow fell.  He laughed at everything I said, had a teasing foreign lilt on his lips and a fierceness to his movements.  I fell asleep and he packed me into a coach back to the Amblecrown manor.  I had only the name to remember him by; Sykre D'Alysoss.~
+             ~He had fled from Mulmaster, where all spellcasters of a certain power are recquired to join the Cloaks, a militaristic organisation.  He had been tortured, a sure aphrodisiac to the naive young girl.  His hands shook when he grasped the stem of a goblet.  I was drunk on wine, he on the joy of surviving to hold another woman in his arms, before a window outside which snow fell.  He laughed at everything I said, had a teasing foreign lilt on his lips and a fierceness to his movements.  I fell asleep and he packed me into a coach back to the Amblecrown manor.  I had only the name to remember him by; Sykre D'Alysoss.~
+
+  COPY_EXISTING ~LK#NINDJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~"Imoen"~ ~"Imoen2"~
+    END
+
+  COPY_EXISTING ~LK#NIND.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY
+ ~Global("LK#NindeRomanceActive","GLOBAL",2)
+  Global("LK#NindeLoveTalks","GLOBAL",28)~
+ ~Global("LK#NindeLoveTalks","GLOBAL",28)~
+    END
+
+  COPY_EXISTING ~lk#nins.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~AreaCheck("AR0800")~
+                        ~AreaCheck("AR0900")~
+    END
+
+END
+
+// Here's where we Fix Fade bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~E3FAD25P.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY %~Global("E3FadeJoinToB","GLOBAL",1)~%
+                        %~Global("E3FadeJoinToB","GLOBAL",1) !Global("E3FADEROMANCEACTIVE","GLOBAL",2)~%
+      EVALUATE_BUFFER
+    END
+
+  COPY_EXISTING ~E3Fade.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("E3MESSENGERSPAWN","LOCALS",0)~
+                        ~Global("E3MESSENGERSPAWN","LOCALS",0) !AreaCheck("AR0800")~
+    END
+
+  COPY_EXISTING ~GORODR1.dlg~ ~override~
+                ~GORCHR.dlg~ ~override~
+                ~GORMAD1.dlg~ ~override~
+                ~GORSUC01.dlg~ ~override~
+                ~GORAPR.dlg~ ~override~
+                ~GORDEMO.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~IsValidForPartyDialogue("E3FADE")~
+                        ~IsValidForPartyDialogue("E3FADE") GGT("Chapter",%bg2_chapter_7%)~
+      EVALUATE_BUFFER
+    END
+
+  COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJFADE.d~
+
+  ACTION_IF MOD_IS_INSTALLED ~imoenRomance/Setup-ImoenRomance.tp2~ "0" THEN BEGIN
+
+    COMPILE ~imoenRomance/scripts/SOA/Quests/ar1203.baf~
+    EXTEND_TOP ~ar1203.bcs~ ~Fade/Scripts/E3AR1203.baf~
+
+  END
+
+  COPY_EXISTING ~HGNYA01.cre~ ~override~
+    ADD_CRE_ITEM ~E3GEM~ #0 #0 #0 ~IDENTIFIED~ ~INV~
+
+  STRING_SET ~And besides, someone yelled @231 after me once, and I seem to remember that being the stupid soubriquet you started to go by before you left. I knew then that you weren't dead. Pity.~
+             ~And besides, someone yelled Fade after me once, and I seem to remember that being the stupid soubriquet you started to go by before you left. I knew then that you weren't dead. Pity.~
+
+END
+
+// Here's where we Fix Petsy bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~FFBART.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~RibaldTanel~ ~PetsySamuel~
+    END
+
+  COPY_EXISTING ~L3PetsyJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("L3PetsyQuest2","GLOBAL",0)~
+                        ~
+Global("L3PetsyQuest2","GLOBAL",0)
+OR(8)
+AreaCheck("AR0020")
+AreaCheck("AR0300")
+AreaCheck("AR0400")
+AreaCheck("AR0500")
+AreaCheck("AR0700")
+AreaCheck("AR0800")
+AreaCheck("AR0900")
+AreaCheck("AR1000")~
+  END
+
+  COPY_EXISTING ~CLEANSE.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Contains("l3corp",Myself)
+  Contains("MISCBP",Myself)~
+                        ~Contains("l3corp",Myself)~
+      REPLACE_TEXTUALLY ~DestroyItem("L3Corp")
+    DestroyItem("MISCBP")~
+                        ~DestroyItem("L3Corp")~
+  END
+
+  STRING_SET ~That's why we are a marvelous couple, my fiancé!~
+             ~That's why we are a marvelous couple, my fiance!~
+  STRING_SET ~As you wish, my fiancé!~
+             ~As you wish, my fiance!~
+  STRING_SET ~No worries, my fiancée. Everything's going to be alright.~
+             ~No worries, my fiancee. Everything's going to be alright.~
+
+END
+
+// Here's where we Fix Imoen bugs
+
+ACTION_IF MOD_IS_INSTALLED ~imoenRomance/Setup-ImoenRomance.tp2~ "0" THEN BEGIN
+
+  EXTEND_BOTTOM ~ar6200.bcs~ ~Rjali/Scripts/TOB/imoenbug1.baf~ EVALUATE_BUFFER
+
+END
+
+// Here's where we Fix Sheena bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Setup-Sheena.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~K#Sheena.cre~ ~override~
+    WRITE_LONG 0x010 (LONG_AT 0x010 BAND 0xfffff7ff)  // Turn off Export Allowed
+
+  COPY_EXISTING ~pdialog.2da~ ~override~
+      REPLACE_TEXTUALLY ~SHEENA25D~ ~SHEEN25D~
+      REPLACE_TEXTUALLY ~SHEENA25J~ ~SHEEN25J~
+      REPLACE_TEXTUALLY ~SHEENA25P~ ~SHEEN25P~
+
+  COPY_EXISTING ~interdia.2da~ ~override~
+      REPLACE_TEXTUALLY ~BSHEENA25~ ~BSHEEN25~
+
+  COPY_EXISTING ~BSHEENA.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~GlobalTimerExpired("SheenaTalkTime","GLOBAL")~ ~~
+      REPLACE_TEXTUALLY ~GlobalTimerExpired("SheenaLoveTalkTime","GLOBAL")~ ~~
+  END
+
+END
+
+// Here's where we Fix Sirene bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~C0SIRE2J.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY %IF ~  RandomNum(15,1)%
+      %IF ~~ THEN DO ~RealSetGlobalTimer("C0SireneFlirtTimer","GLOBAL",2500)
+SetGlobal("C0SireneFlirt","GLOBAL",0)~ EXIT
+  IF ~  RandomNum(15,1)%
+    END
+
+  COPY_EXISTING ~C0SIR25J.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY %IF ~  RandomNum(15,1)%
+      %IF ~~ THEN DO ~RealSetGlobalTimer("C0SireneFlirtTimerToB","GLOBAL",2500)
+SetGlobal("C0SireneFlirtToB","GLOBAL",0)~ EXIT
+  IF ~  RandomNum(15,1)%
+    END
+
+END
+
+// Here's where we Fix Saerileth bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~SAERILET.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~SetGlobal("SaerilethJoined","GLOBAL",1)~
+                        ~SetGlobal("SaerilethJoined","LOCALS",1)~
+    END
+
+  COPY_EXISTING ~NSHEALKS.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~1955.2457~
+                        ~-1.-1~
+    END
+
+  COPY_EXISTING ~AR0801.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("NSGoGetBodhi","GLOBAL",1)
+  Global("FindLassal","AR0801",0)
+  GlobalLT("Chapter","GLOBAL",.*)~
+                        ~Global("NSGoGetBodhi","GLOBAL",1)
+  Global("FindLassal","AR0801",0)
+  GlobalLT("Chapter","GLOBAL",4)~
+    END
+
+  COPY_EXISTING ~AR1100.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("FlowerChickExists","AR1100",0)
+  GlobalGT("Chapter","GLOBAL",.*)~
+                        ~Global("FlowerChickExists","AR1100",0)
+  GlobalGT("Chapter","GLOBAL",5)~
+      REPLACE_TEXTUALLY ~SetGlobal("FlowerChickExists","AR1100",1)~
+                        ~SetGlobal("FlowerChickExists","AR1100",1) SetGlobal("RJSAFlower","GLOBAL",1)~
+    END
+
+END
+
+// Here's where we Fix Isra bugs
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+
+COPY_EXISTING ~BNEERA25.dlg~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~See("Neera")~
+                      ~InParty("rh#Isra2") See("Neera")~
+  END
+
+END

@@ -1,0 +1,1197 @@
+
+@0    = ~Imoen~                   
+@1    = ~Rjali~                                    
+@2    = ~Aerie~
+@3    = ~Neera~
+@4    = ~Nalia~
+@5    = ~Jaheira~
+@6    = ~Viconia~
+@7    = ~Saerileth~
+@8    = ~Branwen~
+@9    = ~Ninde~
+@10   = ~Tashia~
+@11   = ~Yoshimo~
+@12   = ~Minsc~
+@13   = ~Jan~
+@14   = ~Korgan~
+@15   = ~Mazzy~
+@16   = ~Hexxat~
+@17   = ~Dorn~
+@18   = ~Keldorn~
+@19   = ~Anomen~
+@20   = ~Edwin~
+@21   = ~Cernd~
+@22   = ~Valygar~
+@23   = ~Haerdalis~
+@24   = ~Rasaad~
+@25   = ~Tyris~
+@26   = ~Yvette~
+@27   = ~Fade~
+@28   = ~Dace~
+@29   = ~Isra~
+@30   = ~Amber~
+@31   = ~Annah~
+@32   = ~Grace~
+@33   = ~Ravel~
+@34   = ~Skie~
+@35   = ~Dakkon~
+@36   = ~Nordom~
+@37   = ~<CHARNAME>~
+@38   = ~Petsy~
+@39   = ~VOICE~
+@40   = ~Doofus~
+@41   = ~Fay~
+@42   = ~Ecco~
+@43   = ~Jini~
+@44   = ~Sirene~
+@45   = ~Muffin~
+@46   = ~Sheena~
+@47   = ~Talira~
+@48   = ~Kesai-Serris~
+@49   = ~Sobeth~
+
+@50   = ~Rjali's Equipment~
+@51   = ~This will only install on BG2EE and EET.~
+@52   = ~TOB must be installed.~
+@54   = ~No Other Mod Timing Adjustments~
+@55   = ~Mod Timing A Little Faster~
+@56   = ~Mod Timing A Lot Faster~
+@57   = ~Parking Expedite~
+@58   = ~Make no timing adjustments~
+@59   = ~Speed Run~
+@60   = ~Preliminary Setup~
+@61   = ~Expedite NPC parkable status~
+@64   = ~Turn Multiple Romance On~
+@65   = ~Pointless without Rjali installed.~
+
+@70   = ~Rjali's Dagger~
+@71   = ~This is a copy of Rjali's first dagger. It is suitable as a toy sword for very young boys and girls. It is, however, a real weapon. Care in the training of the child is recommended.~
+
+@72   = ~Rjali's Doll~
+@73   = ~This is a copy of the doll Rjali carried around with her when she was a little girl. The much loved original finally disintegrated from much handling and absorbed tears.~
+
+@74   = ~Rjali's Boots~
+@75   = ~Rjali created these boots because she got tired of villains getting away from her. And she is not at all averse to making copies for her friends.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+
+Weight: 4~
+
+
+@76   = ~Rjali's Cloak~
+@77   = ~Rjali created this cloak for times when she didn't feel like wearing armor. And she is not at all averse to making copies for her friends.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+– Improved Invisibility once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+Weight: 3~
+
+
+@78   = ~Rjali's Long Sword~
+@79   = ~At one time, Rjali got her hands on Varscona's blade and beefed it up. She wanted to take not the least little chance in melee. And she is not at all averse to making copies for her friends.
+
+STATISTICS
+
+Equipped abilities:
+
+- Hit Die = 1D10
+– Improved Haste
+- Armor Class +10
+- Magic Resistance = 100
+- Attacks per Round = Max
+- THAC0 = +50
+- Damage Bonus = 1000 Slashing/Piercing/Acid
+- Damage Bonus = 1500 Fire/Magic/Cold
+- Immunity: Fear/Charm/Sleep/Slow/Stun/Fatigue/Paralyze/Confusion/Web/Hold/Level Drain/
+            Feeblemind/Chaos/Imprisonment/Rigid Thinking/Negative Plane/Maze/Energy Drain/
+            Dire Charm/Domination
+
+Weight: 3~
+
+
+@80   = ~Rjali's Book~
+@81   = ~Rjali created this book as a self-improvement project. And she is not at all averse to making copies for her friends.
+
+STATISTICS:
+
+Strength: Set to 25 permanently
+Dexterity: Set to 25 permanently
+Constitution: Set to 25 permanently
+Intelligence: Set to 25 permanently
+Wisdom: Set to 25 permanently
+Charisma: Set to 25 permanently
+Current/Max HP: 100
+Base THAC0: Set to 10
+Magic resistance: Set to 125
+Proficiency Longsword: 5
+Proficiency Axe: 5
+Proficiency Sword and Shield: 2
+High Level Ability: Can use any item
+
+Special: The book is consumed upon use
+Usage: Place into quick item slot
+
+Weight: 25~
+
+@82   = ~Rjali's Axe~
+@83   = ~While Rjali will not say how she got this axe, she is said to have picked a warrior's pocket. And she is not at all averse to making copies for her friends.
+
+
+STATISTICS:
+
+Combat abilities: 
+– Returns to the wielder's hand when thrown
+– Hit target must save vs. Death or be knocked down and take 2d6 extra damage
+
+THAC0: +4
+Damage: 1d6+4
+Damage type (melee): slashing
+Damage type (thrown): missile
+Speed Factor: 0
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 1~
+
+@84   = ~Rjali's Chain Mail~
+@85   = ~While Rjali will not say how she got this mail, it is suspected that she swiped it the morning after a liason with an unsuspecting adventurer. And she is not at all averse to making copies for her friends.
+
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to normal weapons
+– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -25%
+- Hide in Shadows: -15%
+– Move Silently: -20%
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+Requires:
+ 5 Strength
+
+Weight: 15~
+
+@86   = ~Rjali's Bracers~
+@87   = ~While Rjali will not say how she got these bracers, it is suspected that she swiped it the morning after a liason with an unsuspecting adventurer. And she is not at all averse to making copies for her friends.
+
+
+STATISTICS:
+
+Combat abilities:
+– Extra 1/2 attack per round
+
+THAC0: +1
+Damage: +2
+
+Weight: 1~
+
+@88   = ~Rjali's Amulet~
+@89   = ~While Rjali will not say how she got this amulet, it is suspected that she swiped it the morning after a liason with an unsuspecting wizard. And she is not at all averse to making copies for her friends.
+
+
+STATISTICS
+
+Equipped abilities:
+– Vocalize
+– Magic Resistance: +5%
+– Immunity to level drain
+– Decrease spellcasting time by 1
+
+Weight: 3~
+
+@90   = ~Rjali's Diamond~
+@91   = ~This is the diamond that <CHARNAME> gave to Rjali to placate her when she started getting restive about his harem.~
+
+@92   = ~Rjali's Wedding Ring~
+@93   = ~This is the ring which <CHARNAME> gave to Rjali to celebrate their wedding. It is a seriously enchanted heirloom that he has been saving for his future wife.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@94   = ~Rjali's Helm~
+@95   = ~While Rjali will not say how she got this helm, it is suspected that she picked Dorn's pocket (as it were) and, after making a copy, somehow returned it without making him suspicious. This seems ludicrous until you actually hold the helm in your hands. It undeniably exists and has the same powers as Dorn's. Rjali also seems to have changed its appearance from the hideous Visage and to have enchanted it to allow the *good* to use it. And she is not at all averse to making copies for her friends. If this tale is granted, one is forced to the conclusion that one does not - repeat: NOT! - want to mess with Rjali.
+
+STATISTICS:
+
+Equipped abilities: 
+– THAC0: +1
+– Saving Throws: +1
+– Immunity to petrification, feeblemind, confusion, fear, and charm
+– Protects against critical hits
+- Grants infravision when worn
+
+Charge abilities:
+– Domination once per day (Save vs. Spell at -2 negates)
+  Duration: 8 rounds
+
+– Breathe Acid once per day
+  Damage: 6d6 acid (Save vs. Breath for half)
+  Target must save vs. Death at -4 or fall unconscious for 2 rounds
+
+Weight: 1~
+
+@96   = ~Rjali's Shield~
+@97   = ~While Rjali will not say how she got this shield, it is suspected she got her hands on Audn's shield and copied it. And she is not at all averse to making copies for her friends. If this tale is granted, one is forced to the conclusion that one does not - repeat: NOT! - want to mess with Rjali.
+
+STATISTICS: 
+
+Abilities: Immunity to charm, psionics, confusion, domination, and hold person
+Armor Class Bonus: 4
+Weight: 2
+Miscast Arcane Magic: +5%
+Requires: 4 Strength~
+
+@98   = ~Rjali's Ring~
+@99   = ~While Rjali will not say how she got this ring, it is suspected she got her hands on Gaxx's ring and copied it. Rjali also seems to have enchanted it to allow the *good* to use it. And she is not at all averse to making copies for her friends. If this tale is granted, one is forced to the conclusion that one does not - repeat: NOT! - want to mess with Rjali.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities:
+– Invisibility once per day
+  Duration: 12 hours
+  Area of Effect: The wearer
+
+– Improved Haste three times per day
+  Duration: 10 seconds
+  Area of Effect: The wearer
+
+Weight: 0~          
+
+@100  = ~After the events of the Throne of Bhaal were over, Rjali remained by her friends' side. Their new adventures together rivaled those of Drizzt himself, and indeed, if rumors were true, the famous drow ranger joined them once outside Silverymoon.
+
+Several years later, however, Rjali started yearning for home, and eventually decided to visit her old home village. A rogue and cleric, she was greeted warmly by most of the townsfolk, and remained there for a while.
+
+But adventure beckoned, and soon Rjali joined her friends again, fighting for good and noble ends. Many men and women across the Realms would remember the fair-haired woman with a smile, often recalling her favourite saying: "You wanna?"~
+
+@101  = ~Rjali and <CHARNAME> went to stay at the De'Arnise Keep with Imoen and Nalia and the others. There they fulfilled their promise of establishing an orphanage and starting a brood of their own. The keep staff grudgingly accepted this until the children started arriving and making joyful noise all over the castle. Everybody soon adopted the role of surrigate parent, loving and caring for the children.
+
+Not that there was an end to adventure. There were still bandits to suppress and dragons to slay. And the odd villain with delusions of grandeur. But these forays were frequently interrupted by the production of their own children, involving an immense amount of diligent practice. As Rjali was wont to say: "You can never have enough practice."
+
+Rjali is still looking for the perfect taco. Putting heads together with the cook, they keep getting a little closer every time they try. <CHARNAME> would be getting quite obese... if it weren't for all the practice, that is...
+
+Of course, the official biography glosses over certain aspects of the arrangements in the castle, with special reference to the sleeping accomodations. How this was possible once <CHARNAME>'s babies starting arriving is, in it's own right, an epic tale of omission, obfuscation, and out-and-out lying.
+
+The castle staff and, indeed, the tenants of the land came to accept that their lord was ... different. And, aside from the occasional admiringly cynical double entendre, nothing was said. There was a certain amount of emulation in the wake of the not-scandal. Babies became a cottage industry, as it were. There was surprisingly little grumbling and absolutely no physical reprisals. Orphans were cared for by families and, as a last resort, by the castle. It became a remarkably happy and contented land, if not *exactly* peaceful (so to speak).~
+
+@102  = ~Rjali and <CHARNAME> went to stay at the deArnise Keep. There they fulfilled their promise of establishing an orphanage and starting a brood of their own. The keep staff grudgingly accepted this until the children started arriving and making joyful noise all over the castle. Everybody soon adopted the role of surrigate parent, loving and caring for the children.
+
+Not that there was an end to adventure. There were still bandits to suppress and dragons to slay. And the odd villain with delusions of grandeur. But these forays were frequently interrupted by the production of their own children, involving an immense amount of diligent practice. As Rjali was wont to say: "You can never have enough practice."
+
+Rjali is still looking for the perfect taco. Putting heads together with the cook, they keep getting a little closer every time they try. <CHARNAME> would be getting quite obese... if it weren't for all the practice, that is...~
+
+@103   = ~Jini continued to run the brothal which became even more popular as she upgraded the opulence of the furnishings and the excellence of the catering. Grace commented favorably on many occasions.
+
+She maintained her suite at the Festhall, and consoled herself for the loss of <CHARNAME> with a succession of very handsome and charming men. Horace commented unfavorably on many occasions.~
+
+@104   = ~Jini continued to run the brothal which became even more popular as she upgraded the opulence of the furnishings and the excellence of the catering. Grace commented favorably on many occasions.
+
+<CHARNAME> was a frequent visitor to her suite at the Festhall. However, one must discount the rumors that Jini and <CHARNAME> had a child. These were obviously the scurrilous product of mean-minded, envious berks. The fact that the boy raised by Horace and Cania was the spitting image of <CHARNAME> was pure coincidence. The boy grew into a perfectly functional Djinni whose lecherous ways can surely be ascribed to Horace's side of the family.~
+
+@105   = ~Annah returned to Sigil, where she became employed at the brothal to replace the absent Kimasxi Addertongue. Kimasxi, it seems, had taken up with Able Ponderthought who, in his own bemused way, seemed to enjoy her abuse.
+
+In any case, Annah can be located in the brothal by listening for her signature: "Pike off!"~
+
+@106   = ~Annah had some initial problems adjusting to life at the deArnise Keep. Eventually, she got caught up in pranks so beloved by members of <CHARNAME>'s seraglio. Then there were babies who finally softened her cynicism, mostly when no one was looking. She became a great favorite of the children, who were fascinated by her tail...and its various uses.
+
+The occasional foray to fight evil and right wrongs kept her from becoming too bored. Then, as I said, there was the making and tending of children, supplimented by the aforementioned pranks. <CHARNAME> found himself living in interesting times for which he had no one to blame but himself. He was never heard to complain.~
+
+@107   = ~Grace stayed in Toril, wandering here and there. She had loved two mortals, one of whom rejected her and the other left her to become a god. She suffered bouts of the blues, but never lost her essential optimism. No stories are told of her which is odd. You would think a beautiful, winged Tanaar'ri would attract comment and gossip. Not so, and she falls out of our story entirely.~
+
+@108   = ~Grace found life at the keep a delight. There were so many differences from her previous life, that a Sensate could only respond with joy. 
+
+She also managed to produce several little Tieflings, which worried the populace until they discovered that loving nurture made them only an exotic variation on other children in the land. Besides, the shenanigans attributed to the occupants of the keep (fueled by rumors leaking from said keep) were quite exotic enough to overshadow the products of said shenanigans. It did not hurt that, as well as being kind and helpful, she was beautiful.~
+
+@109   = ~Ravel returned to her maze, bereft and finally without hope.~
+
+@110   = ~Ravel took over as the keep's healer, and was seen to shed a tear when her efforts were rewarded with admiration and affection. (Yes: affection. <CHARNAME>'s people, who were normally kind to begin with, acquired some of their Lord's characteristics.)
+
+She was delivered of a beautiful baby girl who looked just like her mother. It seems her transformation had progressed from visceral to fundamental, and she *was* once again as young as she looked. Efforts to determine what caused this produced no results as of date of reporting. There is some suspicion that this was the work of Trias, but he would say nothing on the subject. Fay and Ravel were often seen comparing notes on their experiences with Trias.~
+
+@111   = ~Horace and Cania continued to reside in their lamp. After Rjali freed Horace from the geas of the lamp, the two found that it was still the most comfortable place to live. Horace had made opulent changes during his early occupancy and Cania, of course, redecorated to suit herself.
+
+Cania made frequent trips to her tree, it not being feasible to transplant it to their lamp. Horace spent these hours and days corrupting their children with the oft repeated admonishment: "Don't tell your Mother!" Cania was known to smile indulgently without ever revealing that she knew exactly what was going on. As all women do, you know.~
+
+@112   = ~Rjali's Lamp~
+@113   = ~This lamp summons a genie who can provide a variety of services and can help you travel to areas no longer on your map in TOB. He is an especial friend of Rjali's.~
+@114   = ~Horace~
+@115   = ~Cania~
+@116   = ~Jini~
+
+@117  = ~Jini's Portal Stone~
+@118  = ~This a gem given to you by Jini. It will port you (with or without party) to her and return you from whence you came.~
+@119  = ~Syrinx~
+
+@120   = ~<RJPLAY0>~
+@121   = ~<RJPLAY1>~
+@122   = ~<RJPLAY2>~
+@123   = ~<RJPLAY3>~
+@124   = ~<RJPLAY4>~
+
+@125  = ~Grace's Engagement Ring~
+@126  = ~This is the ring which <CHARNAME> gave to Fall from Grace when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@127  = ~Annah's Engagement Ring~
+@128  = ~This is the ring which <CHARNAME> gave to Annah when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@129  = ~Ravel's Engagement Ring~
+@130  = ~This is the ring which <CHARNAME> gave to Ravel when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@131  = ~Jini's Engagement Ring~
+@132  = ~This is the ring which <CHARNAME> gave to Jini when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about. She refused to marry <CHARNAME> but kept the ring as a symbol of their unbroken relationship.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@133  = ~Morte~
+@134  = ~This is the skull of Vecna.~
+@135  = ~Aspects of the Gods~
+@136  = ~Aspects of the Gods
+
+This book appears to be a scolarly investigation of the qualities and capabilities of various gods. Far from omnipotent (according to this volume), each god has defined areas of influence, although they share certain powers (detailed in Appendix A).
+
+The chapter on Amauntor includes a section on his powers of resurrection. Evidently, a piece of the person to be resurrected and another item associated with them need to be placed on Amauntor's alter. If the person has been found worthy, Amauntor resurrects them.
+
+"The most curious aspect of this process is the effect of the degree of intimacy on the process of ressurection. If another of their body parts is used, the person will be restored to his or her original being, meaning to the mind and body they enjoyed in their early life, thoughts and personality intact. If the object is directly associated with their death, they will be restored to their condition just prior to the moment of death, again with all their thoughts and personality intact. However, if the second item is merely a close personal belonging, the degree of restoration will depend heavily on the nature of the primary piece of the person. There are mysteries here yet. My investigations will continue."~
+
+@137   = ~This lamp is now Horace's apartment. While he no longer responds to rubs, you may call him and, if he is there, he will respond. Being now a free Djinn, he will not always be there.~
+
+@138   = ~You have reached the residence of Cania and Horace. Please, leave a message at the giggle.~
+@139   = ~Horace? Are you there?~
+@140  = ~(It appears that Horace is not at home.)~
+@141  = ~Damn! I'll just have to try again, later.~
+@142  = ~(You wait patiently for Horace to respond.)~
+@143  = ~*giggle*~ [FEMALE2A]
+@144  = ~Just calling to see how your vacation is going. Have fun, Kids!~
+
+@145   = ~After the Throne of Bhaal, Kesai-Serris made a career move into extreme cynicism. She moved back to the brothal to resume her career and to continue dodging her father.~
+
+@146   = ~After the Throne of Bhaal, Kesai-Serris accompanied <CHARNAME> back to his keep where, to her disgust, she produced babies on a regular schedule. She was not totally successful in hiding her delight in her children, and her efforts to do so were the source of much secret amusement among <CHARNAME>'s people.~
+
+@147   = ~A Lady's Hanky~
+
+@148   = ~Fay returned to the Keep for a while, but memories of <CHARNAME> became too painful. She lost her joy in the children, and went back to Sigil where she worked in the Brothal for Jini. The two were eventually able to console each other. They settled into a moderately happy life, with the odd liason to relieve the humdrum of daily life.~
+
+@149   = ~Fay became quite adept at tending the children of the orphanage. While she did not keep them out of mischief, she was able to lead them back from wherever they got themselves. It was her great sorrow the she and <CHARNAME> had no children of their own, but she exercised her mothering instinct on her charges. Nobody was heard to complain, least of all <CHARNAME>. The children loved her, and the men were prone to casting lecherous glances at her. What the women thought went unvoiced, being wise enough to realize that any objections would only lend the situation even more allure.
+
+While Fay and <CHARNAME> were unable to have children, this did not stop them from trying. She never regretted the loss of her Will-O-The-Wisp form, except when she had to use a torch. On these occasions, unbecoming language was sometimes heard from her approximate location.
+
+There was, however, an unusual increase in the local Will-O-The-Wisp population. The newcomers were of somewhat larger size and inclined to help travellers who were lost. No one got a close enough look, but there were rumors about their origin. They were occasionally seen swarming around Fay and/or <CHARNAME>, which may have been the genesis of the rumors.~
+
+@150   = ~Hey!~
+@151   = ~Good to see you again!~
+@152   = ~Come on over and see me sometime, Big Boy!~
+@153   = ~A little slow on the uptake, are we?~
+@154   = ~I know you know I'm right here!~
+@155   = ~What's the holdup, Buster?~
+@156   = ~(Who is that chick? Sounds like she knows you.)~
+@157   = ~(Dunno.) Don't get your knickers in a knot! We'll be over shortly.~
+
+@158   = ~A lock of Ravel's hair~
+@159   = ~This is a lock of Ravel's hair that she gave you to open the portal to the secret cellar in her maze.~
+
+@160  = ~Imoen's Engagement Ring~
+@161  = ~This is the ring which <CHARNAME> gave to Imoen when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@162   = ~Deva's Tears~
+@163   = ~DEVA'S TEARS
+Weight: 1
+
+This is a small glass phial labeled as 'Deva's Tears'. They were collected from a deva who was captured during a Blood War skirmish. The fiends tormented the imprisoned angel for eons before he at last escaped - this small bottle holds the twelve tears he shed in that time. Deva's tears are said to soothe the most savage anger... even that of a fiend's tongue.~
+
+@164   = ~MINHP1 version~
+@165   = ~Allow Polymorph~
+
+@168  = ~Fay's Engagement Ring~
+@169  = ~This is the ring which <CHARNAME> gave to Fay when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@170   = ~WOTW Babies~
+@171   = ~Call in the Will-O-The-Wisps.~
+
+@172  = ~Kesai's Engagement Ring~
+@173  = ~This is the ring which <CHARNAME> gave to Kesai when he asked her to marry him. It is seriously enchanted and intended to protect someone he cared about.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities: none
+
+Weight: 0~
+
+@174  = ~Heal Party~
+@175  = ~Heal Party
+(Necromancy)
+
+Level: 7
+Sphere: Healing 
+Range: Any
+Duration: Permanent
+Casting Time: 0
+Area of Effect: Party
+Saving Throw: None
+
+The very potent Heal spell enables the mage to wipe away disease and injury in every party member. It completely cures all disease and blindness and heals all points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.~
+
+@176   = ~After the Throne of Bhaal, Kesai-Serris returned to <CHARNAME>'s keep where she and her mother were a source of endless scandal. Their shenanigans eclipsed the best efforts of even the most practiced pranksters in <CHARNAME>'s coterie. The mother and daughter duo were even known to bring a furious blush to the master of the house. However, he was never heard to complain. Not that it would have done him a bit of good to do so.~
+
+@177   = ~Kesai-Serris continued at the brothal. Eventually. her father made a nearly successful attempt to rape her, but Dakkon stepped in and persuaded the Cambion to leave under threat of permanent assignment to the Blood War via death. Despite her rejection by <CHARNAME>, they remained friends. It is rumored that they went even further than friendship, but confirmation was never supplied by anyone who was in a position to know.~
+
+@178   = ~To this day, Sobeth remains locked in Ravel's maze, wandering around searching for the exit. Immortality has it's downside, it would appear.~
+
+@179   = ~Jini's Lamp~
+@180   = ~This lamp was Jini's residence until she left to escape Irenicus' attentions.~
+
+@201  = ~Neera was too restless to settle down, and became a sporadic resident of the keep. Always welcome (especially by <CHARNAME>), it was thought she was a major instigator of pranks when she was in residence. The children all loved her and Bobby, whom she tutored in the techniques of wild magic, followed her around like a puppy.
+
+Her longest stays were caused by the production of babies. She professed dislike for the consequences of her favorite pastime, but this neither dissuaded her from said pastime nor was it taken seriously as she too loved the children. She just wasn't "Mother" material. It has been deduced from this that she was a Sagittarius.~
+
+@202  = ~Nalia had some trouble adjusting to the structure of relationships in her keep.  Over time, she relaxed and became quite proficient at mediating problems in the menage. This was greatly (if silently) appreciated by all. As she also produced babies not infrequently, people stopped twitting her about her stuffiness which, after all, masked a generous heart.
+
+<CHARNAME> came to rely on her for ordering the household, at which she was very, very good. What else she was good at we will leave to the fog of time. It was no one's business but hers...and <CHARNAME>'s...and Rjali's ...and...~
+
+@203  = ~Nalia stayed aloof from the more lurid behaviour of <CHARNAME> and his menage. Not that she displayed disapproval. She simply went about her business with a demeanor of calm detachment. Speculation was rife about the *source* of her child, but no attempts were made to garner confirmation.
+
+After the passage of years, let the truth be known. She saw what was going on around her, that all those other women were happy and not treated as property, and she decided to join the fun. Discretely, you understand. The only real evidence of this, and all that is needed, was the increased sway of her hips and the frequent *accidental* contact with <CHARNAME>.~
+
+@204  = ~Aerie added a consistently cheerful note to every day in the keep. Having reacquired her wings, she took up life at the keep with enthusiasm. It must be admitted that part of the enthusiasm was attributable to the glow she displayed most mornings, especially those when she was pregnant...not an uncommon state of affairs. She could usually be heard singing and, as time went by, it was noted that the lyrics became increasingly bawdy. This was attributed to wicked companions who led her astray. The fact that said wicked companions were, in general, favorites among the people was admitted by no one and accepted by all.
+
+While it cannot be said that <CHARNAME> played favorites with either his women or his children, a fond smile would be on his face whenever he saw Aerie about her business. None begrudged this. By her kindness and cheerfulness, Aerie had captured the hearts of everyone who met her. Except the psychotics, who did not last long on <CHARNAME>'s lands.~
+
+@205  = ~One must read official histories with a great deal of skepticism. Jaheira did, indeed, attempt to guide <CHARNAME> into a political career. In this she was not particularly successful. His solution to most political problems was the edge of his sword, which was surprisingly effective at reducing the incidence of political activity. As his own people were prosperous and happy, no one missed the absence of lawyers and politicians. Meetings, polls, and referenda were sufficient to the task of participating in government.
+
+There were, of course, other *activities* to occupy her when not trying to meddle in others' lives. She was known to comment that the keep wasn't so much an orphanage as it was a maternity ward. This was taken kindly by all as she, herself, contributed to the product thereof, and was a fierce protector of all the children, orphans and homemade.~
+
+@206  = ~Viconia spent a great deal of her time on her little plot of land, avoiding the bustle of the keep. Gradually, however, realizing that the folk of the Dukedom were in no way prejudiced against Drow, she re-entered the society of the keep and the land. It is not to be wondered at as the people were overheard to comment on the oddness of the inhabitants of the keep in general, in which they were not wrong. Being a Drow amongst that little lot was not a distinction of note.
+
+With <CHARNAME>, she produced a son who became quite popular with the local farmers' daughters, being handsome and exotic. Mutterings from the farmers had nothing to do with his being Drow so much as with him being male and unreliable thereby.~
+
+@207  = ~Back in the deArnise Keep, Branwen took over command of the Keep's guard. Noses were seriously out of joint for a time, until the soldiers realized that, Tempus name and blue language to the contrary notwithstanding, she was an excellent and fair commander. The guard captain was heard to grumble even after this. But as Branwen acted only to reinforce his authority, he had no viable complaint, especially as her lying-in's were frequent, leaving him in sole command.
+
+In <CHARNAME>'s domain lying-in was a major activity in more ways than one. Branwen turned out to be a wonderful mother, if a mite heavy handed. As the children (regardless of mother or status) received as many hugs as swats, hell-raising was reduced to manageable proportions, and the children evolved many innovative and devious ways of accomplishing approximately the same degree of disorder.~
+
+@208  = ~Aerie added a consistently cheerful note to every day in the keep, especially when her wings had grown back and she could soar over the land rushing to someone in need of aid, scouting for the militia, amusing the children, or merely for the joy of being amongst the clouds.
+
+She took up life at the keep with enthusiasm. It must be admitted that part of the enthusiasm was attributable to the glow she displayed most mornings, especially those when she was pregnant...not an uncommon state of affairs. She could usually be heard singing and, as time went by, it was noted that the lyrics became increasingly bawdy. This was attributed to wicked companions who led her astray. The fact that said wicked companions were, in general, favorites among the people was admitted by no one and accepted by all.
+
+While it cannot be said that <CHARNAME> played favorites with either his women or his children, a fond smile would be on his face whenever he saw Aerie about her business. None begrudged this. By her kindness and cheerfulness, Aerie had captured the hearts of everyone who met her. Except the psychotics, who did not last long on <CHARNAME>'s lands.~
+
+@209  = ~Skie gained in popularity in the Keep when she finally relaxed and stopped letting the little things bother her. Mostly. A broken fingernail was still apt to see her reverting to her parade ground days, to the great delight of the children.
+
+She and <CHARNAME> had two more children, which further softened her towards other people. Since she was basically a very nice person, her remaining foibles were accepted by others as part of her unique charm...except when she occasionally went on about the importance of fashion. Luckily, this happened less and less frequently, to the relief of all around her.~
+
+@210  = ~Doofus found that, living in Sigil so close to the Blood War, he had a pipeline to use for visiting his cousin Cespenar. So, in addition to his joy in ruling his own domain, he could visit his cousin whenever he wanted, with Jini's permission, of course.
+
+While he was never known to complain (to Doofus, at least), Cespenar found these visits somewhat of a trial. It demonstrated, once again, that imps are ace stoics, Doofus being one of the world's innocent souls, insofar as that is an appropriate metaphor for an imp.
+
+(If you didn't chat with Doofus, shame on you! You really shouldn't ignore old friends like that.)~
+
+@211  = ~Adahn eventually got into the life of a Sensate at the Festhall. Getting back into life, he gradually regained his interest in his surroundings. Being without female companionship, he started flirting with the ladies of the Society. Syrinx could be seen beaming on any given day, and it was assumed that he was doing more than flirting with her.
+
+He had no more interest in the adventurous lifestyle, however. Although wandering on occasion about Sigil, he tended to stay within the environs of the clerks sector.
+
+(And it's YOUR fault for hogging all the great women!)~
+
+@212  = ~Adahn now had female companionship to spur his ambition. This tended to move him more quickly into the social scene around him. He became quite the bon vivant at Festhall functions, and visits to the Brothal enlivened his days.
+
+He had no more interest in the adventurous lifestyle, however. Although wandering on occasion about Sigil, he tended to stay within the environs of the clerks sector. Said female companionship modified this behaviour somewhat, the female being the more adventurous of the sexes.~
+
+@215  = ~Morte and Vivian settled into comfortable habits, punctuated by the occasional quarrel, which consisted mostly of Vivian upbrading Morte for his wandering eye. Still, they had their child who caused much surprise when it was seen that Morte doted on her. Who knew?
+
+(If this comes as news to you, you need to get around more. Talk with people. Ask indiscrete questions.)~
+
+@216  = ~Nordom and Dolora remained great friends and gaming buddies. Nordom even became a feature at the Brothal, especially amongst those who enjoy conceptual crossed wires in their discourse, there being a surprising number of these in the bureaucratic fraternity.
+
+Initially, there were a few Modrons who attempted to talk Nordom into returning to face his appointed demise back in Mechanica. These attempts fell off rapidly when the units who tried it on returned in a totally confused and dangerously incoherent condition. The word came down to avoid Nordom as being the equivalent of a virus to the mental state of Modrons in general.~
+
+@217  = ~Dakkon took his guard duties at the Brothal seriously enough, but his growing sense of humor and skill at sarcasm eventually led patrons to believe that he was there specifically to interact with the clientele. While he never completely lost his Githzerai penchant for the literal, he was also no longer the model of a Gith.
+
+The Githyanki had, by now, pretty well taken over the world of the Gith, with few of Dakkon's brethern remaining in the world. He helped these few as he could and when they would let him, fanatics being their own worst enemies. He also kept Githyanki out of the Brothal. While this was not part of Jini's policy, she turned a blind eye as Dakkon's methods became more subtle.~
+
+@218  = ~Ecco did raise her daughter in Sigil. At the insistance of <CHARNAME>'s menage, there was much visiting back and forth between Sigil and Toril. The little girl grew up to be nearly the image of her mother, with a few characteristics that many ascribed to the influence of ne'er-do-wells in <CHARNAME>'s coterie. Truth be known, the culprit was actually her "Uncle" Jan who filled her head with outrageous tales.
+
+(Didn't know? You should have brought your party to see her after doing the dirty!)~
+
+@219  = ~Yves continues to chase tales to this day. By now, she has quite a compendium from both Sigil *and* Toril. Of course, this increases her value to the establishment, and Jini keeps raising her pay.
+
+(If you didn't get around to trading tales with Yves, you really should have.)~
+
+@220  = ~Ecco did raise her daughter in Sigil. At the insistance of <CHARNAME>'s menage, there was much visiting back and forth between Sigil and Toril. The little girl grew up to be nearly the image of her mother, with a few characteristics that many ascribed to the influence of ne'er-do-wells in <CHARNAME>'s coterie. Truth be known, the culprit was actually her "Uncle" Jan who filled her head with outrageous tales.
+
+(It was embarrassing to have your party know about your indiscretion, wasn't it? A little humiliation is good for you.)~
+
+@221  = ~Imoen and <CHARNAME> returned to Candlekeep for a brief visit after defeating Melissan. They then settled at the de'Arnise Keep where <CHARNAME> ruled to the delight of the local populace. Imoen bore <CHARNAME> a boy and a girl, whom she proceeded to teach in the ways of mischief at which she was so adept. The children were their father's pride and joy. Far from jealousy (as it turned out), Nalia became a doting aunt, and (to <CHARNAME>'s chagrin) teamed up with Imoen in exploits that scandalized the more sedate local citizens but delighted the majority of the people. As it turned out, everybody liked a smartass. Except the pompous, of course. They being the butt of her most elaborate pranks.
+
+Constant practice had finally eliminated Imoen's fear of being a *wanton*. In fact she came to quite like it. Which is where a lot of the scandal came in. People got to see quite a lot of her. Literally. Her response was her iconic: "Heya! It's just me, Imoen."
+
+<CHARNAME> and Imoen frequently travelled around aiding the helpless, rescuing the deserving, and knocking off the odd dragon. Having amassed a fortune on their travels, they could do pretty much as they chose and did. They remained, to the end of their days, best friends and lovers.
+        
+Or, at least, that is the official biography. <CHARNAME> and his seraglio descended on the de'Arnise Keep. That much is true. The local populace were indeed delighted. The more sedate citizens were indeed scandalized. Nalia did indeed become a doting aunt. The thing is, the sleeping arrangements (to use the usual euphemism) were more baroque than is implied by the official history. And there were a LOT more children for Nalia and the staff to dote on. Fortunately, <CHARNAME> had tons of gold, and more was forthcoming as various combinations of his party (a word that takes on a certain significance in this context) continued to quest the realms. Except for the occasional threats of gruesome death, they all did live more-or-less happily ever after.~
+
+@222  = ~Petsy and <CHARNAME> visited Gullykin after the wedding. There, they buried Hannah and Zane with a monument that would provide the dead couple a second, cold yet eternal life together.
+
+On returning to the keep, Petsy took up teaching, and her students quickly learned not to mess with their small teacher. Petsy also produced several progeny who were somewhat taller than the usual halfling, but retained the attribute of big, hairy feet. Her cheery attitude endeared her to the locals. She was happy and fulfilled.~
+
+@223  = ~Something may have been said once, in passing, between Dace and her "Ducky" about the possibility of things changing between them, of coming and going and being parted at times, of there being openness and casualness and a very hazy understanding of "forever" when it came to their love. If any of this was said, however, <CHARNAME> and Dace simply found it convenient to forget it entirely.
+
+After the events that shaped the very world itself and the time they had spent together leading up to the fateful moment where they stood side by side at the Throne of Bhaal, <CHARNAME> and Dacian Jean Linton began the joyful, life-long task of building a future together. They first finished what business they had to, visiting friends and seeing comrades home, and answering the more desperate (or more lucrative, for Dace's part) of the pleas for help and attention that resulted from their burgeoning fame. After a time, Dace enthusiastically threw herself into establishing her horse farm on the plot that <CHARNAME> gave her near the keep. She was a vastly different person than she had been, with a newfound buoyancy and warmth that surprised many who had known her before her time traveling with <CHARNAME>.
+
+One of the first things she chose to do was to return to her sister's home and deliver a sincere, if admittedly casual, apology for "that Luke thing." Her sister was more than pleased and very willing to forgive, although she did always take care to keep Dace at a safe distance from her husband, and her mother, Aurelia, even deigned to speak to her again. Dace also served as a willing-yet-slightly-cranky aunt to her two nieces, one of whom expressed passionate interest in horses and in continuing the family business. With hard work and Dace's canny eye, she able to develop champion bloodlines. Dace was very proud of the success her farm became, knowing she had, in the end and despite everything, brought honour to her father's name. She was enduringly thankful for her Ducky's support when it came to the farm.
+
+They enjoyed entertaining visitors, and the guest rooms in the keep were frequently full of old friends, new friends, curious tale-seekers, and people passing through. Dace was forever encouraging their dearest friends and family to "come an' visit -- or stay, we've got room!" She was notoriously generous with horseflesh and delighted in providing her loved ones with fine mounts, as well as providing a constant stream of pragmatic, whimsical, and downright Dace-ian advice and commentary.
+
+Life is never without struggle, of course, but the struggles of <CHARNAME> and Dace were of the everyday, manageable sort, and they were able to face them down together--after an occasional cooling-off period when Dace's sharp tongue got the best of her, of course. It helped that her co-wives were always ready to help slander <CHARNAME> when Dace was in a pet. They were respected, however, and loved by many, the farm and their love a success and their time together calm and joyful, and their good-fortune remarkable. Perhaps, because they had paid so dear a price during the first small part of their time together, one or more of the "meddlin' forces of destiny" that Dace had railed against so much had decided to bless them. Not, of course, that Miss Linton would have been happy with such an idea.
+
+Those who knew her were delighted to see that Dacian Jean Linton had finally reached a point in her rough-and-tumble life where she was physically and emotionally willing and able to live simply, fully, and without regret. <CHARNAME> had to demonstrate infinite patience, at times, in order to live with her, but life only got easier and happier for Dace and Ducky as time went on. Dace was sixty-four, very much in love, and a very fulfilled woman when she died of a short, fierce illness, saying at the very end, "Lookit that, Ducky! You an' your damned charmin' Duckyness managed to keep me wallowin' in happy Damn Foolery until the very end of my days. All my love, darlin'."~
+
+@224  = ~Amber was very glad to have you back after all your travails. She never did go adventuring again, but the hot homecomings more than made up for her absence on the road. What she got up to in your absence was nobody's business. However, it was noted that there was a sharp decline in domestic abuse since she took up residence in the keep.
+
+As tieflings were now a fixture in <CHARNAME>'s household, she eventually relaxed in the accepting environment, confining her devilment to those antics so beloved of <CHARNAME>'s seraglio.~
+
+@225  = ~After the wedding, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show him around her adopted home city of Crimmor. Isra's father took an instant liking to her new husband, only bemoaning the fact that they were not wed earlier. More poignant for Isra was her eldest sister Rana's unexpected acceptance of Isra's tentative advances, and they took the first steps towards mending their very damaged relationship.
+
+When they returned to their keep, Isra set up a chapel to Sune which, unsurprisingly, found favor with many who approved of <CHARNAME>'s lifestyle and relaxed attitudes. The Festivals of Sune were very popular (for the usual, filthy reasons), and <CHARNAME> and his wives were always prominent at the gatherings. Isra was known to smirk at the various local clerics.~
+
+@226  = ~After the wedding, Fade and <CHARNAME> chose to raise their children in the relative peace of their keep. After the birth of their twins, Fade's hunch being totally correct, <CHARNAME> and his fey'ri love settled more-or-less quietly into the doings of their land. Fade at last found the peace within herself to totally accept her own heritage, and whilst outsiders remain suspicious of the hot-tempered tiefling, this does not bother her. "Why should it," she reasons with a smile as she watches her children play, "when I have the love of such a special and extraordinary man?"
+
+It certainly helped that there was a surplus of mothers to do the mothering in shifts, allowing each woman enough rest to easily cope with the travails of domestic life.~
+
+@227  = ~After the wedding, Tashia and <CHARNAME> proved a match made in heaven. They merrily adventured together with various combinations of the other wives when not occupied raising a lively newborn child, being seen in such notable places as Calimport, Baldur's Gate, Waterdeep, Westgate, Shadowdale, and even Icewind Dale, Tashia's homeland. At times homelife was far from peaceful however, as their boy had so much youthful vitality and insatiable desire for exploration that he put even his parents to shame. Soon the three set out again, beckoned by the neverending road ahead. It is not known where Tashia, <CHARNAME>, their child, and companions got to in their occasional wanderings, as the legends are vague and many. Some say that they entered the Underdark in an attempt to find a legendary settlement of dark elves who renounced Lloth as their goddess. Others place them in the lands far to the east, across the Sea of Fallen Stars and the Endless Waste, trying to find an elven artifact of great importance on a mission given to them by Queen Ellesime herself. Only the people of <CHARNAME>'s lands knew for sure and, being the source of the rumors in the first place, are unreliable in the extreme - but very entertaining.~
+
+@228  = ~After their victory at the Throne of Bhaal, Ninde and <CHARNAME> were finally able to discuss their relationship... and its future.  Like so much of what had passed between them, this talk was passionate, troubling, and ultimately inconclusive. While Ninde agreed to wed him (and did), she soon left him with the vague promise that one day, once she again felt at ease with her own identity, she would return.  Whether that day ever came is unknown, though rumour claims that they met again several years later in Calimport, where Ninde had become deeply embroiled in the local underworld.  Her own life again under control and her fortune no longer tied to that of a more powerful man, Ninde was finally willing to risk once more the relationship that she had hitherto so abruptly concluded.  Legend says that the couple returned to the keep thereafter, their relationship as tempestuous as it was close, and if the poets are overly optimistic about their prospects, it is no wonder.  As troubled as the long history of <CHARNAME> and Ninde had been, what lay between them was rich and enduring, and stronger than either had ever anticipated.~
+
+@229  = ~After the wedding, Tyris and <CHARNAME> travelled the Sword Coast for several months, finally arriving at <CHARNAME>'s childhood home of Candlekeep.  It was there that Tyris gave birth to their daughter whom they brought back to be raised at their keep.  Five years later, they made the decision to find a way to visit Yuria.  Tyris Flare finally returned home along with her husband and child.  Their stay was brief as they soon became anxious to return to their home and the family that awaited them there.~
+
+@230  = ~After their grand victory, Yvette managed to stay with <CHARNAME> a little longer. Sune seemed to have heard the Heartwarder's prayers and let her stay with her beloved. For some time they lived together, before a further, unexpected boon entered their lives. Yvette gave <CHARNAME> a son. Together they witnessed the newborn's laughter and tears. Then, after two years spent together, Yvette's suffering returned. This time it proved impossible to resist. However, she beseeched <CHARNAME> to remember Sune's mercy - she had granted their wish indeed; together, they had made the world a brighter place. One day all that remained of Yvette was a painting, similar to what she used to be, but with one very important difference. The quotation was altered - "For my <CHARNAME>, and our son".~
+
+@231  = ~Saerileth and <CHARNAME> dwelt long and happily in Faerun, and Saerileth bore to her beloved lord seven children, all as fair of face as their mother, as strong of will as their father. Of their sons, a lad named Kesevar, was one of the Chosen of Tyr. The pair frequently wandered Faerun, battling evil wherever they found it. Twice more Lord <CHARNAME> and Lady Saerileth were called upon to defend Suldanesselar from the drow. Still, in all their years upon Toril, never once did <CHARNAME> and Saerileth go Planewalking (discounting many excursions to Sigil), and never had <CHARNAME> seen Saerileth's home. At last, Saerileth and <CHARNAME> were granted dispensation to visit Mount Celestia, that they might together see the land of Saerileth's birth. On their return Saerileth was overheard commenting to her co-wives: "This is the heaven from which all my blessings flow. Anybody got a taco?"~
+
+@232  = ~The fall of the Throne of Bhaal closed a long chapter in the lives of Sirene and her beloved <CHARNAME>, but was also the beginning of a new life for the couple. Sirene convinced her lover to have their wedding soon after returning to their keep, and though the ceremony was far from quiet and included several more brides than is traditional, it was exactly as she had wished it. The union of <CHARNAME> and Sirene would only be the first of many events which would shape their future, however, as not long afterwards Sirene gave birth to <CHARNAME>'s child - a daughter, with the same fell blood that runs through her own veins. Despite her fears of burdening her offspring with the prejudice that her infernal blood would bring, Sirene resolved to provide this child with the familial love that she never had a chance to experience. Accounts differ as to what became of Sirene and <CHARNAME> after their marriage - some claim they continued to venture across Faerun after their daughter's birth, while others suggest they retired from the adventuring life altogether to begin a life of peace. Whatever the truth may be, there is no doubt their future would be long and fruitful.
+
+We now know better, of course, but official histories must be read with a barrel of salt. They DID get the fruitful bit right...~
+
+@233  = ~When they had grown a bit older, Jan took Billy and Annie under his wing and into his home. Billy readily took to the mobile vegetable peddling business, while Annie never quite got the hang of the subtleties required. However, she did learn how to make an excellent turnip soup at the tutelage of Jan's mother, making her as much a treasure to Jan as Billy. Neither tired of his highly embroidered tales, and both were very fond of those involving Uncle Scratchy. Visiting back and forth between Jan and the occupants of <CHARNAME>'s keep was not infrequent, and always accompanied by much merriment.~
+
+@234  = ~Sheena settled in quite quickly at the keep. <CHARNAME>'s people were at first apprehensive but, when they found that she did not start in doing dragonish things to them, they decided that they quite liked having a dragon around. It certainly kept the vermin down and other dragons out.
+
+As to life in the keep, there was such a mixture of races that no one could keep track and were tolerant by default. Sheena had a basically sweet temperment, and the love between her and <CHARNAME> was both obvious and profound. Granted that their children occasioned some challenges but, as they inherited their mother's happy character, the children were accepted and loved by all. Which was a good thing, as part dragon folk do have a sudden way about them.~
+
+@235  = ~Talira took to <CHARNAME>'s lifestyle as to the manor born. While she could no longer be a maid, she took over management of the creche, performing her functions from a lying-in bed as often as not. And, yes, she was inducted into the gentle art of getting her way with the Lord of the keep by his other (more froward) ladies. She provided an earthy balance to the more warlike tendencies of the others. She was the last, least pinch of seasoning that brings a dish to perfection. The others appreciated her qualities, once they came to realize what Talira brought to the family. It was not a quiet life, but it was full of love and boisterous joy.~
+
+@236  = ~Talira was terrified after the loss of <CHARNAME>, because her position seemed untenable and she had a child to raise. With Nalia's consent, Daleson shifted her to management of the orphanage creche, giving her new security and the chance to be with her baby. Eventually, Talira accepted Sargeant Bjorn's proposal of marriage.~
+
+@237  = ~Ecco raised her daughter in Sigil. The little girl grew up to be nearly the image of her mother, with a few characteristics that many ascribed to the influence of ne'er-do-wells visiting from Toril. Truth be known, the culprit was actually her "Uncle" Jan who filled her head with outrageous tales.~
+
+@401  = ~Megan~
+@402  = ~Sean~
+@403  = ~Suzy~
+@404  = ~Bobby~
+@405  = ~Annie~
+@406  = ~Billy~
+@407  = ~Ari~
+@408  = ~Hamad~
+@409  = ~Rjali~
+@410  = ~Moishe~
+@411  = ~Sargeant Bjorn~
+@412  = ~Chen~
+@413  = ~Daleson~
+@414  = ~Aimiliona Goldmantle~
+
+@500  = ~Rjali Romance Mod (BG2EE:SoA & TOB NPC) created by nullset~
+
+@502  = ~I'll find a way. Don't panic!~ [Rjali_]
+@503  = ~What's the message?~ [Rjali0]
+@504  = ~Nada...nothin'~ [Rjali2]
+@505  = ~I have more than enough. I'll leave it there for now.~ [Rjali3]
+@506  = ~Keep it as a souvenir.~ [Rjali4]
+@507  = ~I can't see my hands anymore. Or my feet. I'm invisible. Perfect!~ [Rjali5]
+@508  = ~What a terrible, terrible waste!~ [Rjali6]
+@509  = ~It's as good as dead.~ [Rjalia]
+@510  = ~Of course! I'm the best choice.~ [Rjalib]
+@511  = ~I really am getting tired. We should find somewhere comfortable to sit down. Rest my legs for a few minutes.~ [Rjalic]
+@512  = ~I don't really have time to hang around.~ [Rjalid]
+@513  = ~I'm afraid...~ [Rjalie]
+@514  = ~What is it?~ [Rjalif]
+@515  = ~So what's up? What's the occasion?~ [Rjalig]
+@517  = ~Hi There!~ [Rjalih]
+@518  = ~Sure! Let's go with that one.~ [Rjalii]
+@519  = ~I guess it's worth a try.~ [Rjalij]
+@520  = ~This should do the trick.~ [Rjalik]
+@521  = ~Ahhh!~ [Rjalil]
+@522  = ~Oh! Oooh~ [Rjalim]
+@523  = ~Rustic. Remind me home.~ [Rjalin]
+@524  = ~Popular place. Not my crowd, though.~ [Rjalio]
+@525  = ~It's all dark and deserted.~ [Rjalip]
+@526  = ~It's a beautiful day outside.~ [Rjaliq]
+@527  = ~I feel like someone's staring at me...~ [Rjalir]
+@528  = ~Oh...OK.~ [Rjalis]
+@529  = ~I'll think about it.~ [Rjalit]
+@530  = ~I'll be a good girl.~ [Rjaliu]
+@531  = ~What am I looking for?~ [Rjaliv]
+@532  = ~What? I got something on my face? My hair OK? What you looking at?~ [Rjalix]
+@533  = ~I'm all scrubbed and ready to work, Sir. I'ld still like to get paid though.~ [Rjaliy]
+@534  = ~Bet you didn't think I'ld be able to do that!~ [Rjaliz]
+
+@547  = ~Fay is a Will-O-The-Wisp who was exiled by her people for being nice to lost travellers. Jini rescued her and kept her safe in the lamp from humans who want to capture her for their own nefarious purposes. She is willing to tag along with <CHARNAME> for his protection and to get out of the lamp.~
+
+@548  = ~As a child, Rjali's parents were killed when her village was raided by the Sahuagin, and she was left a starving waif with no one to take care of her. She has been wandering over Faerun ever since looking for something, someone. Aided by a talent for magic and thievery, she has survived by her wits and the aid of infrequent mentors. Her travels have led her to some surprising places in search of...well, let the story unfold.~
+
+@549  = ~Jini was the resident of a lamp presented to our hero by none other than Rjali, then a star struck girl. Having accompanied him throughout the Sword Coast, Jini had become enamoured of him and was eventually released by him from the geas of the lamp, becoming a free Djinni. She was separated from him in the mess after Sarevok was slain. She wandered off to Sigil, where she...but let the story unfold.~
+
+@550  = ~Och, what now?~ [RJA229B]
+@551  = ~Back in Sigil after Adahn's descent to the Blood War, Annah resumed her primary occupation as a thief. She also formed an uneasy friendship with Fall From Grace as both were searching for some clue as to where Adahn was in the hope of rescuing him.~
+
+@552  = ~Back in Sigil, Grace sold the brothal to Jini, a free Djinni. She lived off the proceeds and continued her search for Adahn with the help of Annah. A surprising alliance, but what can change the nature of a man can also change the nature of a woman.~
+
+@553  = ~Ravel survived by creating a very realistic simulacrum and hiding in the hidden node of her maze. The creature was indeed fooled, and Ravel eventually came out to mourn Adahn and hope for his return.~
+
+@554  = ~Kesai-Serris stayed at the brothal, cynically dealing with her customers, and trying to avoid her father the Cambion who was a real pain-in-the-ass as could be expected from a demon.~
+
+@600  = ~Annah~
+@601  = ~Grace~
+@602  = ~Adahn~
+@603  = ~Dakkon~
+@604  = ~Morte~
+@605  = ~Nordom~
+@606  = ~Kesai-Serris~
+@607  = ~Dolora~
+@608  = ~Ecco~
+@609  = ~Nenny~
+@610  = ~Vivian~
+@611  = ~Yves~
+@612  = ~Marissa~
+@613  = ~Kimasxi~
+@614  = ~Juliette~
+@615  = ~Fell~
+@616  = ~Dhaal~
+@617  = ~Lady of Pain~
+@618  = ~Ravel~
+@619  = ~Trias~
+@620  = ~Fhjull~
+@621  = ~Mebbeth~
+@622  = ~Ebb~
+@623  = ~Syrinx~
+@624  = ~Tricha~
+@625  = ~Kimasxi~
+@626  = ~Lim-Lim~
+@627  = ~Lady of Pain~
+
+@650  = ~All right then! Let's do next!~ [RJA022]
+@651  = ~I'm fer leavin' while I'm still in one piece.~ [RJA017]
+@652  = ~Right. We need to say our kip now.~ [RJA074B]
+@653  = ~If ya need me, I'll be over here...bored.~ [RJA098A]
+@654  = ~Dammit! mittens good!~ [RJA128C]
+@655  = ~Och! This wha I get fer gettin' inta a scrape.~ [RJA127C]
+@656  = ~Aye?~ [RJA224C]
+@657  = ~Hmm?~ [RJA225B]
+@658  = ~Ready.~ [RJA228D]
+@659  = ~I'm here.~ [RJA234A]
+@660  = ~Aye. What?~ [RJA235D]
+@661  = ~Well? What is it?~ [RJA238F]
+@662  = ~Why not.~ [RJA242B]
+@663  = ~Right!~ [RJA247E]
+@664  = ~Might as well.~ [RJA251C]
+@665  = ~Get yer eyes of ma arse.~ [RJA305B]
+@666  = ~Ya like ma wee tail? I'll wag it at ya.~ [RJA305F]
+@667  = ~Cut it out! I'm not deaf.~ [RJA304A]
+@668  = ~Well, I'm not that sort of girl.~ [RJA292A]
+
+@700  = ~I am most pleased by our progress.~ [RJG018]
+@701  = ~I feel fatigued. I should rest soon.~ [RJG030]
+@702  = ~Is everyone ready to go?~ [RJG039]
+@703  = ~I fear I've been wounded.~ [RJG047]
+@704  = ~Yes?~ [RJG079]
+@705  = ~How may I help?~ [RJG081]
+@706  = ~I'm listening.~ [RJG083]
+@707  = ~I'm here.~ [RJG084]
+@708  = ~Hmm?~ [RJG085]
+@709  = ~Yes? What did you wish?~ [RJG086]
+@710  = ~Very well.~ [RJG089]
+@711  = ~It shall be done.~ [RJG093]
+@712  = ~A pleasure.~ [RJG094]
+@713  = ~I'm trying to concentrate here.~ [RJG118]
+@714  = ~Simple minds, simple pleasures.~ [RJG120]
+
+@730  = ~Yes?~ [FEMALE4F]
+@731  = ~Certainly.~ [FEMALE4J]
+
+@800  = ~(You have been here before and know the drill.)~
+@801  = ~(The space beneath this overhanging branch is glowing softly; it seems to reveal a small brambled room beyond. You notice that the hair Ravel plucked from her head is slowly twisting, like a corkscrew.)~
+@802  = ~(Wrap Ravel's hair around your left index finger and step through the arch.)~
+@803  = ~(Wait, see what the hair does.)~
+@804  = ~(Leave the overhanging branch alone.)~
+@805  = ~(The hair slowly curls up your left arm, circles around your wrist, then wraps itself tightly around your left index finger. In response, the light beneath the arch glows brighter, beckoning you to step through.)~
+@806  = ~(Step through the arch.)~
+@807  = ~(The space beneath this overhanging branch looks interesting, but nothing seems to be happening. Evidently, it is not the right time. Why do oracles have to be so obscure?)~
+
+@810  = ~(Leave the brambled arch alone.)~
+@811  = ~(Scratch the trunk of the tree with your fingernails and step through the arch.)~
+@812  = ~(This is a gnarled tree limb that has grown from the floor of the maze, then fallen in an arch. As you step up to it, the space beneath the arch glows softly... it seems to lead to some strange black-barbed garden.)~
+@813  = ~(Scratch the trunk of the tree with your fingernails, see what happens.)~
+@814  = ~(You sink your fingernails into the bark, and to your surprise, the wood gives way beneath your nails, like porridge. You dig your nails through the side of the brambled tree, and in response, the light beneath the arch glows brightly, beckoning you to step through it.)~
+
+@900  = ~Bye, Love. Come home soon.~
+@901  = ~I'm bored. I'm gonna go home and cause a commotion.~
+@902  = ~(Jaheira is sulking, but she waves farewell.)~
+@903  = ~Dinner in bed when you get back. And I'm the entree.~
+@904  = ~Give me a kiss and go. I will be awaiting your return.~
+@905  = ~Hamster brains for you if you don't get back soon, Buster.~
+@906  = ~I...I miss you already. Can't I go with you?~
+@907  = ~I love yeh, <CHARNAME>. Don't be long.~
+@908  = ~I will be counting the days, my Darling.~
+@909  = ~This child is making me randy. I need you back here soon.~
+@910  = ~I have a whole new wardrobe that you haven't seen me out of. (*winks*)~
+@911  = ~(*kiss*) Time for dinner. Home soon, Darling.~
+@912  = ~I guess I'll just go back to annoying Daleson. (*sigh*)~
+@913  = ~You carry my heart. Be careful, Love.~
+@914  = ~Ducky, bring me a horse when you come back.~
+@915  = ~I love you, <CHARNAME>. Please, be careful.~
+@916  = ~I'm going to keep my hormones in balance one way or another. Better visit me often.~
+@917  = ~Not loving it, but I will be waiting for you.~
+@918  = ~(*sigh*) Been here before. Well, see you back at the keep, Love.~
+@919  = ~Hurry up and wait, eh? I'll be looking for a way back, so you better not be long.~
+
+@920  = ~We're off, Aerie.~
+@921  = ~We're off, Imoen.~
+@922  = ~We're off, Jaheira.~
+@923  = ~We're off, Nalia.~
+@924  = ~We're off, Viconia.~
+@925  = ~We're off, Neera.~
+@926  = ~We're off, Branwen.~
+@927  = ~We're off, Annah.~
+@928  = ~We're off, Grace.~
+@929  = ~We're off, Ravel.~
+@930  = ~We're off, Skie.~
+@931  = ~We're off, Amber.~
+@932  = ~We're off, Petsy.~
+@933  = ~We're off, Sheena.~
+@934  = ~We're off, Dace.~
+@935  = ~We're off, Fade.~
+@936  = ~We're off, Isra.~
+@937  = ~We're off, Tashia.~
+@938  = ~We're off, Sirene.~
+@939  = ~We're off, Tyris.~
+@940  = ~We're off, Kesai-Serris.~
+@941  = ~Get back here soon and take care of business, or shenanigans will be had!~
+@942  = ~This is going nowhere, and I'm tired of waiting. I'm going back to Sigil.~
+
+@1000 = ~Leave.~
+@1001 = ~This clear stone - held in a mesh of engraved silver bands - pulses with a brilliant inner light. Inscribed into its base is the word 'YVES'.~
+@1002 = ~This amber-colored stone - held in a mesh of engraved silver bands - pulses with soft yellow light. Inscribed into its base are the words 'KIMASXI ADDERTONGUE'.~
+@1003 = ~This reddish-orange stone - held in a mesh of engraved silver bands - pulses with warm orange light. Inscribed into its base is the word 'DOLORA'.~
+@1004 = ~This transparent, bluish-white stone - held in a mesh of engraved silver bands - pulses with soft blue light. Inscribed into its base is the word 'KESAI-SERRIS'.~
+@1005 = ~This violet stone - held in a mesh of engraved silver bands - pulses with deep purple light. Inscribed into its base is the word 'MARISSA'.~
+@1006 = ~This bluish-purple stone - held in a mesh of engraved silver bands - pulses with soft, lavender light. Inscribed into its base is the word 'VIVIAN'.~
+@1007 = ~This translucent green stone - held in a mesh of engraved silver bands - pulses with bright green light. Inscribed into its base is the word 'ECCO'.~
+@1008 = ~This brilliant red stone - held in a mesh of engraved silver bands - pulses with fiery crimson light. Inscribed into its base is the word 'NENNY'.~
+@1009 = ~This translucent indigo stone - held in a mesh of engraved silver bands - pulses with deep blue light. Inscribed into its base is the word 'JULIETTE'.~
+@1010 = ~This grayish-white stone - held in a mesh of engraved silver bands - pulses with light. Something was once inscribed into its base, but the writing has been scoured away.~
+
+@2000 = ~(I know what your doing! I know what your doing!)~
+@2001 = ~(Shush, Fay. No need to let the whole world know.)~
+@2002 = ~*blush*~
+@2003 = ~*snicker*~
+
+@2010 = ~If I may interrupt for a moment, Trias asked me to pass on his regards.~
+@2011 = ~(*irked*) Thank him for me.~
+@2012 = ~Now, if you have finished, may I continue?~
+@2013 = ~Sorry about that. Go ahead. (Rjali snickers in the background.)~
+
+@9000 = ~Met Rjali
+
+A girl showed up out of the blue claiming to know me. Her name is Rjali. She is very affectionate and has agreed to join me. I'm pretty sure she means that literally! She has the most amazing way of pulling really useful stuff out of thin air which she will not explain. "A girl's got to have some secrets."
+
+Rjali shared some clairvoyant sights with me.
+
+Evidently, I am going to reunite with an old flame of mine. I wonder who? There haven't been many, and none whom I would call flames. Unless she meant... Nah, Jini must be long gone by now back to where Djinni go when they aren't in bottles. Calimshan, maybe.
+
+Then we're gonna run into a circus which I am advised not to ignore.
+
+Finally, I'm gonna be invited to be lord of a manor, or some such. Doesn't sound likely at all. Me? A milord? HAH! That'll be the day!~
+
+@9001 = ~Married Rjali
+
+Rjali and I have just married. I am so happy! She has convinced me to help her start an orphanage. We will set it up in the deArnise Keep, at least initially. We must warn Daleson about this ASAP.~
+
+@9002 = ~Annie and Suzy
+
+We have just sent Annie and Suzy, twin orphan girls, off to Daleson with a note. Rjali continues to amaze with her knowledge of the mage spell to do this. Who knew?~
+
+@9003 = ~Megan and Sean
+
+We have just sent Megan and Sean, and orphaned sister and brother, off to Daleson with a note.~
+
+@9004 = ~Bobby
+
+We have just sent the orphan Bobby off to Daleson with a note. Poor tyke is a wild mage and just escaped the Red Wizards.~
+
+@9005 = ~Billy
+
+We have just sent the orphan Billy off to Daleson with a note. This one is going to be a handful!~
+
+@9006 = ~Hamad and Ari
+
+Daleson has just introduced us to Hamad and Ari, a brother and sister who showed up on the doorstep seeking aid. It seems that they were separated from their parents, Moishe and Rjali(!) and have been wandering. Rjali (mine, that is) has identified their locale as Saradush, where the name "Rjali" is quite common it seems. If and when we get to that area, we'll see if we can find them.~
+
+@9007 = ~Moishe and Rjali
+
+We found Hamad and Ari's parents! We have pointed them in the direction of their children and seen them on their way.~
+
+@9008 = ~Rjali Scouts Aerie
+
+At my request, Rjali has asked Aerie if she will stay with me, knowing that I have other wives. Aerie suspected something and was apprehensive, but she has agreed, which makes me very happy. Rjali is amused.~
+
+@9009 = ~Found Djinni Lamp
+
+I just found a lamp in this hell hole which has a genie inside. Horace could turn out to be very useful~
+
+@9010 = ~Rjali Scouts Neera
+
+At my request, Rjali has asked Neera if she will stay with me, knowing that I have other wives. Neera was not surprised and has agreed, which makes me very happy. Rjali is amused.~
+
+@9011 = ~Rjali Scouts Imoen
+
+At my request, Rjali has asked Imoen if she will stay with me, knowing that I have other wives. Imoen has agree and, on Rjali's suggestion, Imoen and I are now married.~
+
+@9012 = ~Rjali Scouts Jaheira
+
+At my request, Rjali has asked Jaheira if she will stay with me, knowing that I have other wives. Jaheira has agreed having found balance in the arrangement. I couldn't be more pleased.~
+
+@9013 = ~Rjali Scouts Viconia
+
+At my request, Rjali has asked Viconia if she will stay with me, knowing that I have other wives. Viconia was amused, being already aware of the situation. Rjali was pissed because I sorta suspected that this might be the case.~
+
+@9014 = ~Rjali Scouts Fade
+
+At my request, Rjali has asked Fade if she will stay with me, knowing that I have other wives. Fade already knew what was going on and insisted on confronting me with Rjali. Can't say it was a lot of fun, but the resolution was approved by all of us.~
+
+@9015 = ~Rjali Scouts Saerileth
+
+At my request, Rjali has asked Saerileth if she will stay with me, knowing that I have other wives. Saerileth is thinking about it and will consult Tyr before deciding.~
+
+@9016 = ~Saerileth Decides
+
+Evidently, the word from Tyr was favourable, and Saerileth has decided to stay with me. This is great news! I must do something special for Rjali who engineered the whole thing.~
+
+@9017 = ~<CHARNAME>'s Harem
+
+I suspect that all my women have gotten together for a meeting. I am truly glad to see them getting along so well together. However, I suspect I will be the subject to some inventive pranks. Individually, they are each intelligent and creative. What they will accomplish in a joint effort could be quite...interesting. Oh well. I dance to the tune; I have to pay the piper. Or, as Rjali puts it: my circus; my monkeys.~
+
+@9018 = ~Paying the Piper
+
+I barely have the strength to lift this pen, much less write with it. Last night, my wives ganged up on me in bed and made such demands that I have never been so exhausted. What took place I will certainly never forget and need not inscribe here. (Rjali! Stop reading my journal!)~
+
+@9019 = ~A Family Reunited
+
+We briefly returned to the Keep before setting off to the final stage of our quest. Daleson and the staff have done an amazing job. Moishe and Rjali (the other one) have been reunited with Hamad and Ari. It is comforting to have at least one corner of the world settled before the onslaught begins. I can go forward without worrying about my rear. (I just *knew* you would say that, Rjali!)~
+
+@9020 = ~Rjali Scouts Tashia
+
+At my request, Rjali has asked Tashia if she will stay with me, knowing that I have other wives. Tashia has agreed as long as she is well taken care off...so to speak.~
+
+@9021 = ~Rjali Scouts Branwen
+
+At my request, Rjali has asked Branwen if she will stay with me, knowing that I have other wives. Branwen, practical as ever, only wanted to know how it would all work out.~
+
+@9022 = ~Rjali Scouts Nalia
+
+At my request, Rjali has asked Nalia if she will stay with me, knowing that I have other wives. Nalia was shocked but came around. She was quite intrigued by the orphange project, especially setting it up at the deArnise Keep.~
+
+@9023 = ~Rjali Scouts Ninde
+
+At my request, Rjali has asked Ninde if she will stay with me, knowing that I have other wives. Ninde promised consequences but, otherwise, took the whole thing in her stride.~
+
+@9024 = ~Rjali Scouts Tyris
+
+At my request, Rjali has asked Tyris if she will stay with me, knowing that I have other wives. Tyris didn't even let Rjali get the words out of her mouth, pre-empting the conversation. Evidently, her hearing is rather acute.~
+
+@9025 = ~Rjali Scouts Yvette
+
+At my request, Rjali has asked Yvette if she will stay with me, knowing that I have other wives. Yvette thinks the whole thing is a wonderful idea.~
+
+@9026 = ~Rjali Scouts Dace
+
+At my request, Rjali has asked Dace if she will stay with me, knowing that I have other wives. Dace thinks the whole thing is a joke but will stick around to see how things work out.~
+
+@9027 = ~Rjali Scouts Isra
+
+At my request, Rjali has asked Isra if she will stay with me, knowing that I have other wives. Isra is amused by the whole idea but, as a priestess of Sune, has no objections.~
+
+@9028 = ~Rjali Scouts Amber
+
+At my request, Rjali has asked Amber if she will stay with me, knowing that I have other wives. Amber is evidently not happy about the turn of events, but will hold still for it. Provided certain monetary transactions take place, of course.~
+
+@9029 = ~Rjali Scouts Annah
+
+At my request, Rjali has asked Annah if she will stay with me, knowing that I have other wives. Annah was surprised and profane, but agreed to give it a try. At least there was no immediate "Pike off!"~
+
+@9030 = ~Rjali Scouts Grace
+
+At my request, Rjali has asked Grace if she will stay with me. Grace evidently replied with her usual: "Of course. It would be my pleasure." Love that woman!~
+
+@9031 = ~Rjali Scouts Ravel
+
+At my request, Rjali has asked Ravel if she will stay with me. Ravel seemed intrigued by the setup and agreed that this would be a fine project. Project? Should I be worried?~
+
+@9032 = ~Rjali Scouts Skie
+
+At my request, Rjali has asked Skie if she will stay with me. Skie retreated to her fallback position saying that, since she looked and smelled better than all of us, there should be no problem...as long as everybody bathed frequently. Interesting times!~
+
+@9033 = ~Found the Nameless One
+
+After chasing around the planes, we discovered that the Nameless One is nameless no longer, but going under the name of Adahn. The man that Grace and Annah have been searching for has been staying in a room in the Civic Festhall, right under their noses. Along the way, Ravel decided to come back and, boy has she changed. She's a babe now!~
+
+@9034 = ~Annah Joins my Party
+
+Having been rejected by Adahn, Annah has agreed to join my party.~
+
+@9035 = ~Grace Joins my Party
+
+Having been rejected by Adahn, Grace has agreed to join my party.~
+
+@9036 = ~Ravel Joins my Party
+
+Having been rejected by Adahn, Ravel has agreed to join my party.~
+
+@9037 = ~Rescued Morte
+
+We have managed to return Morte to human form, and he is one randy little guy, though I say it as shouldn't.~
+
+@9038 = ~Retrieved Nordom
+
+We got Nordom back from the Modron Maze. He and Dolora are now playing games quite happily with each other. It is good to make people happy.~
+
+@9039 = ~Saved Dakkon
+
+We found Dakkon stuck in Ravel's Garden, because he had lost his sword. We brought him his sword, and he is now temporarily acting as guard in Jini's brothal. Adahn was particularly glad to have his old friend back.~
+
+@9040 = ~Reunited with Jini
+
+I have found Jini again. It turns out that she is Horace's niece. She was as glad to see me as I her. We have lost nothing of what we had wandering around the Sword Coast.~
+
+@9041 = ~Adahn Starts His Own Harem
+
+Adahn has taken Annah, Grace, and Ravel as his wives. The man has taste. My kinda guy!~
+
+@9042 = ~Jini Rejects My Proposal
+
+I proposed to Jini, but she turned me down prefering our current arrangement.~
+
+@9043 = ~Jini Finds Children for Our Orphanage
+
+Jini has found two Sigil children in need of a home. Wonder what Daleson will say to a Tiefling child...~
+
+@9044 = ~Freeing Horace
+
+Rjali has agreed to free Horace for the geas of the lamp, much as I did for Jini. Horace then proposed to Cania, and yet another wedding is in the offing. Everybody's doing it!~
+
+@9045 = ~Rjali Scouts Petsy
+
+At my request, Rjali has asked Petsy if she will stay with me. Petsy agreed with the proviso that I not look down on her. As far as I can tell, that implies spending a good deal of time in bed, flat on my back.~
+
+@9046 = ~Ravel's Hints
+
+Ravel has given me a lock of her hair with cryptic instructions on when and where to use it. She also mentioned *my* Great Enterprise and that I should give Jini a call. Sorta like prophecies, I guess. Just have to wait until the meaning shows up in front of my nose.~
+
+@9047 = ~Searching for the Nameless One
+
+Jini has a lead on the man Grace and Annah have been seeking for a long time. She has requested our assistance in checking it out. We'll have to visit her ASAP.~
+
+@9048 = ~Searching for Morte
+
+Jini has a lead on the Morte's location and has requested our assistance again. We'll have to visit her ASAP.~
+
+@9049 = ~Resurrecting Morte
+
+We found a severely injured Morte at the late Piller of Skulls in Baator. Looks like we have a shot at resurrecting him. Vecna's Cloak and a trip to Amauntor's Temple might do it. We'll see...~
+
+@9050 = ~Dolora Freaking Out
+
+Dolora is upset, and Jini is asking us to help her. We'll have to visit her ASAP.~
+
+@9051 = ~Searching for Dakkon
+
+Jini has heard a rumor about Dakkon's location, and would like us to look into it. We'll have to visit her ASAP.~
+
+@9052 = ~Rescuing Dakkon from Ravel's Maze
+
+Dakkon is stuck in Ravel's Maze. Looks like we can unstick him if we can return his blade to him. Rjali says Deidre has it.~
+
+@9053 = ~Ecco's Problem
+
+Ecco has run out of her supply of Deva's Tears. I promised her I would find some more. My first thought was of Deidre, of course. We'll see...~
+
+@9054 = ~Ecco's Problem
+
+We got the Deva's Tears for Ecco, and she was *very* grateful. Makes me wonder...~
+
+@9055 = ~The Orphanage is Up and Running
+
+We got the orphanage off to a start with six orphans. Rjali is pleased, and Daleson looks apprehensive. Gonna be an interesting time!~
+
+@9056 = ~Visiting the Circus
+
+It wasn't exactly a circus. An evil mage had set up shop in what looks like Jini's old lamp. Let's see what we can do about this.~
+
+@9057 = ~Visiting the Circus
+
+Rjali has spotted a circus which just might be the one she saw in her sight. Better check it out, I guess.~
+
+@9058 = ~Visiting the Circus
+
+Rjali has reamed me out for ignoring that circus. She has cut me off until I take her there. I had better get on it. I don't like the "or else".~
+
+@9059 = ~Rjali Scouts Sirene
+
+At my request, Rjali has asked Sirene if she will stay with me. Sirene was not unaware of the setup, especially after my affairs along the Sword Coast. Jini and Fay probably told her more than was good for me. In any case, she is willing to go along with us.~
+
+@9060 = ~Rjali Scouts Sheena
+
+At my request, Rjali has asked Sheena if she will stay with me. Sheena nearly died from the shock but, after cuddling and cajoling, she came around to an acceptance to the situation. I never want to go through that again. I hate causing pain to those I love.~
+
+@9061 = ~Rjali Scouts Kesai-Serris
+
+At my request, Rjali has asked Kesai-Serris if she will stay with me. Kesai-Serris seemed good to go, but then she is almost randy as I am.~
+
+@9062 = ~Kesai-Serris Offers To Come with Me
+
+Kesai-Serris surprised me. She has offerd to follow me back to Toril and join my company when I can free up a slot. Now, if only I knew where on Toril she is choosing to wait...~
+
+@9063 = ~Kesai-Serris Offers To Come with Me
+
+Daleson the Stableboy says there is a strange Lady at the Keep waiting for me. This has just gotta be Kesai-Serris. I had better check it out.~
+
+@9064 = ~Finding Jini's Lamp for Fay
+
+Fay would really like to find Jini's lamp. She has some definite ideas about how to use it and, I have to admit, they intrigue me, too. I've no idea where it could be, but you never know your luck. We might run into it somewhere.~
+
+@9065 = ~Finding Jini's Lamp for Fay
+
+Fay would really like to find Jini's lamp. It seems I goofed big time not picking it up at the Circus. We should get back there to search for it. It would please Fay, and I suspect I would benefit as well.~
+
+@9066 = ~Finding Jini's Lamp for Fay
+
+Fay finally has Jini's lamp. Man, she positively snatched it up. It seemed pretty dead to me, as it didn't respond to a rub or anything. Oh, well. As long as it makes Fay happy...~
+
+@9067 = ~Getting Sobeth Off Kesai-Serris' Back
+
+We should go check with Yves at the brothal to start the search for Sobeth. We have to get that...well...SOB to leave her alone.~
+
+@9068 = ~Getting Sobeth Off Kesai-Serris' Back
+
+Man! That Lady-of-Pain is one badass broad! I don't think Kesai will have to worry about her lecherous father anymore.~

@@ -1,0 +1,31 @@
+
+// Petsy epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+InParty("L3Petsy")
+Global("PetsyBio","GLOBAL",0)
+Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PetsyBio","GLOBAL",1)
+TextScreen("L3PetEp2")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+Global("PetsyBio","GLOBAL",0)
+!Global("PlayerChoseEssence","GLOBAL",1)
+OR(2)
+  InParty("L3Petsy")
+  G("RJParkPE",1)
+G("L3PetsyRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("PetsyBio","GLOBAL",1)
+TextScreen("RJEpiPE")
+SmallWait(1)
+Continue()
+END

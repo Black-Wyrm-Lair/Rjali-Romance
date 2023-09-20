@@ -1,0 +1,57 @@
+
+//  Contribution to SOA1 group chat
+
+EXTEND_BOTTOM RJPLAY0 0
+IF ~InParty("L3Petsy") G("RJSOA1PE",0)~ THEN DO ~SetGlobal("RJSOA1PE","GLOBAL",1)~ EXTERN L3PETSYJ RjaliGroupSOA1.PE
+IF ~G("RJParkPE",2)~ THEN DO ~SetGlobal("RJParkPE","GLOBAL",1)~ EXTERN L3PETSYJ RjaliGroupSOA1.PE
+END
+
+CHAIN L3PETSYJ RjaliGroupSOA1.PE
+@1230 = @1231 DO ~IncrementGlobal("RJGather","GLOBAL",-1)~
+== RJPLAY0 @1232
+== L3PETSYJ @1233 = @1234
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+I_C_T RJPLAY0 1 RJSoAGPE
+== L3PETSYJ IF ~InParty("L3Petsy")~ THEN @592
+END
+
+//  Scout
+
+CHAIN
+IF WEIGHT #-16 ~G("RjaliPetsyScout",1)~ THEN PLAYER1 RjaliPetsyScout
+@49
+== RJALIJ @0
+== L3PETSYJ @1200
+== RJALIJ @1201
+== L3PETSYJ @1202
+== RJALIJ @1203
+== L3PETSYJ @1204
+== RJALIJ @1205
+== L3PETSYJ @1206
+== RJALIJ @1207
+== L3PETSYJ @1208
+== RJALIJ @1209 = @1210
+== L3PETSYJ @1211
+== RJALIJ @1212
+== L3PETSYJ @1213
+== RJALIJ @1214 = @1215 = @1216 = @1217
+== PLAYER1 @1218 = @1219
+== RJALIJ @1220 DO ~AddJournalEntry(@9045,INFO) SetGlobal("RjaliPetsyScout","GLOBAL",2) SetGlobal("RjaliScouts","GLOBAL",1)~
+EXIT
+
+//  Tell Petsy that you aren't a short person.
+
+CHAIN
+IF WEIGHT #-16 ~G("RJPetsyTalk",1)~ THEN PLAYER1 RJPetsyShort
+@1240 DO ~SetGlobal("RJPetsyTalk","GLOBAL",2)~
+== L3PETSYJ @1241
+== PLAYER1 @1242
+== L3PETSYJ @1243
+== PLAYER1 @1244
+== L3PETSYJ @1245
+== PLAYER1 @1246
+== L3PETSYJ @1247 = @1248 = @1249
+== PLAYER1 @1250
+EXIT

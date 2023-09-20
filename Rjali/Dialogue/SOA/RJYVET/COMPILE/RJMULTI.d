@@ -1,0 +1,56 @@
+
+//  Contribution to SOA1 group chat
+
+EXTEND_BOTTOM RJPLAY0 0
+IF ~InParty("YxYve") G("RJSOA1YV",0)~ THEN DO ~SetGlobal("RJSOA1YV","GLOBAL",1)~ EXTERN YXYVEJ RjaliGroupSOA1.YV
+END
+
+CHAIN YXYVEJ RjaliGroupSOA1.YV
+@720 = @721
+END
+IF ~G("YvetteRomanceActive",2)~ THEN EXTERN YXYVEJ RjaliGroupSOA1.YV1
+IF ~!G("YvetteRomanceActive",2)~ THEN EXTERN YXYVEJ RjaliGroupSOA1.YV2
+
+CHAIN YXYVEJ RjaliGroupSOA1.YV1
+@722
+== RJPLAY0 IF ~!G("RJPLAY0",203)~ THEN @723 = @724
+== RJPLAY1 IF ~G("RJPLAY0",203)~ THEN @723 = @724
+== YXYVEJ @725
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+CHAIN YXYVEJ RjaliGroupSOA1.YV2
+@730 = @731 DO ~IncrementGlobal("RJGather","GLOBAL",-1)~
+== RJPLAY0 IF ~!G("RJPLAY0",203)~ THEN @732 = @733 = @734 = @735
+== RJPLAY1 IF ~G("RJPLAY0",203)~ THEN @732 = @733 = @734 = @735
+== YXYVEJ @736
+== RJPLAY0 IF ~!G("RJPLAY0",203)~ THEN @737 = @738 = @739
+== RJPLAY1 IF ~G("RJPLAY0",203)~ THEN @737 = @738 = @739
+== YXYVEJ @740
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+I_C_T RJPLAY0 1 RJSoAGYV
+== YXYVEJ IF ~InParty("YxYve")~ THEN @595
+END
+
+//  Scout
+
+CHAIN
+IF WEIGHT #-14 ~G("RjaliYvetteScout",1)~ THEN PLAYER1 RjaliYvetteScout
+@49
+== RJALIJ @0
+== YXYVEJ @800
+== RJALIJ @801 = @802
+== YXYVEJ @803
+== RJALIJ @804 = @805
+== YXYVEJ @806
+== RJALIJ @807 = @808
+== YXYVEJ @809 = @810 = @811 = @812 = @813
+== RJALIJ @814
+== YXYVEJ @815
+== RJALIJ @816 = @817 = @818
+== PLAYER1 @819
+== RJALIJ @820
+== PLAYER1 @821 DO ~AddJournalEntry(@9025,INFO) SetGlobal("RjaliYvetteScout","GLOBAL",2) SetGlobal("RjaliScouts","GLOBAL",1)~
+EXIT

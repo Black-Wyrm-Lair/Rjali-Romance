@@ -1,0 +1,18 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    ActionOverride("NSED1",DestroySelf())
+    RestorePartyLocations() 
+    Wait(3) 
+    CreateCreature("NSEDOREM",[-1.-1],0) 
+    SetGlobal("RJPort","GLOBAL",0)
+    FadeFromColor([20.0],0)
+    Wait(1)
+    EndCutSceneMode()
+END

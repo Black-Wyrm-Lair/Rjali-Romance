@@ -1,0 +1,99 @@
+
+@0    = ~Tell me about Annah.~
+@1    = ~Annah, a beautiful tiefling rogue with flaming red hair, came into your party. After a struggle, she also came into your heart. It is unknown how you keep from being burned up by the heat of her passion.~
+@2    = ~Yeh'll no find that out here! Yeh'd just tell the world, an' I value m'privacy, so I do.~
+
+@4    = ~Annah I don't want to leave you.~
+@5    = ~Yeh heard that blue floozy. Yeh dinna have to. Stay with me.~
+@6    = ~Can I ignore all the good things I could do as a god?~
+@7    = ~What of all yer fancy talk of our children and such?~
+@8    = ~Can yeh throw all that over for your advantage?~
+@9    = ~I believed in yeh and trusted yeh.~
+@10   = ~Yeh're no better than that scarred hulk that threw me over!~
+@11   = ~Yeh're staying? Really?~
+@12   = ~And I will never put you through that again.~
+@13   = ~After getting used to you being so hot? I couldn't give that up.~
+@14   = ~(Annah hugs you close and obviously has no intention of letting you change your mind.)~
+@15   = ~Then, we had best get started on the babies.~
+@16   = ~Yeh're gonna be so tied down, yeh'll no have time to think of leaving.~
+@17   = ~I knew it was to good to be true. Yeh're gonna leave me, aren't yeh?~
+
+@20   = ~Here we go again! Wonder wha this lyin bastard wants the now.~
+@21   = ~Ma tail is twitchin. Dinna trust this berk, <CHARNAME>.~
+
+@100  = ~Now that Irenicus is gone, what are we doin' still on the road?~ [RJANROM]
+@101  = ~Annah, the prophecies all predict a time of chaos, which we can see all around us. It seems to be up to us to do something about it.~
+@102  = ~But why us?~
+@103  = ~Well, I seem to be at the center of the prophecies. If I do nothing, I'll probably get slaughtered anyway.~
+@104  = ~Oh. Then, yeh'er screwed no matter what yeh do?~
+@105  = ~That's about it. So, we continue wandering around, fixing this and that, in hopes of coming to the crux of it all.~
+@106  = ~Or it comes to us, which is more likely.~
+@107  = ~I mean, the way everybody keeps trying to bump yeh off. It's annoying, it is.~
+@108  = ~Annoying. Good word. Now, give me a kiss and smile.~
+@109  = ~(She kisses you.)~
+@110  = ~(mumbling) So I smiled and, sure enough, things got worse...~
+@111  = ~(She takes your arm possessively and walks beside you.)~
+
+@120  = ~We're gonna have baby eventually, <CHARNAME>.~ [RJANROM]
+@121  = ~I wonder if it will have a tail. What do yeh think?~
+@122  = ~Good question. Will she be as sexy as her mother? What was the experience on Sigil?~
+@123  = ~(She slaps your shoulder.) Thas a honey tongue in yer mouth, sure it is.~
+@124  = ~I dunno on the other. All the tieflings I knew in Sigil mated wi' other tieflings. So, this is new to me.~
+@125  = ~Being our child, she is going to be wonderful. Tail or no. Although, I'm rather hoping for the tail.~
+@126  = ~Tis a one track mind yeh have. An' what if it's a boy?~
+@127  = ~He'll be a hellion and a joy to his parents. That being us, you understand.~
+@128  = ~Tease! But so he will be, eventually. Assuming yeh don't give up after one.~
+@129  = ~Annah! Never happen! It's all I can do to keep my hands off of you, and that just isn't going to stop.~
+@130  = ~So, yeh plan to chase me around the bed with a hobble and a cane, do yeh?~
+@131  = ~Yep. And I plan on catching you, too. You have been warned.~
+@132  = ~(grinning) So I have. So I have.~
+
+@140  = ~I still feel like picking pockets once in a while.~
+@141  = ~I would be practicin' on yers, but Rjali has threatened me wi' mayhem if I do.~
+@142  = ~Thinks she has exclusive rights to that territory, she does.~
+@143  = ~Give her this, Annah: she has been picking my pocket since we met. Maybe if you asked her for pointers, she would relent.~
+@144  = ~Wha? Yeh think I need pointers? Are yeh so daft?~
+@145  = ~Not even a little bit, Love. But if you suck up to her a bit, she would probably join you in the project. You could be buddies in crime.~
+@146  = ~Now, there's a thought! Til then, though, here's yer wallet back. Minus my finders fee, o'course.~
+@147  = ~(sigh) The things I do for love...~
+
+@160  = ~(Annah approaches you looking worried.)~ [RJANROM]
+@161  = ~How many more o' these Bhallspawn d'yeh think are left to plague yeh?~
+@162  = ~They seem to be endless.~
+@163  = ~Judging by the slaughter we have seen, I think it's getting down to the last few. We must be getting very close to the end.~
+@164  = ~Dunno why, but that worries me.~
+@165  = ~The ones left are stronger each time, and what comes then?~
+@166  = ~I expect there will be some kind of final showdown which could get messy.~
+@167  = ~Pike it! I just want to have it over so we can get on wi' our lives.~
+@168  = ~We are going to have a life, aren't we?~
+@169  = ~Yeh aren't gonna do anything like goin' off and becoming a god, are yeh?~
+@170  = ~Tell me yeh'er not. Please.~
+@171  = ~(frowning) I don't know what options I will be given, Annah. I don't want to go. That's for sure.~
+@172  = ~(A tear trails down her cheek.) I canna stand losin' yeh. I canna!~
+@173  = ~If I have any choice in the matter, I'll be right here with you after this is all over, Love.~
+
+@180  = ~Yeh know, the biggest difference I see between Sigil and here is that, here, there seems to be an emphasis on gods. In Sigil, twas more about devils.~ [RJANROM]
+@181  = ~From what I ha' seen, there is no a whole lot of difference.~
+@182  = ~They all mess wi' yer life for their own ends, wi'out a thought for what yeh want.~
+@183  = ~For the most part, you're right. We *do* have some good gods, but even they have agendas of their own, as you say.~
+@184  = ~Yeah. Well, yeh're part god an' I'm part devil. Maybe between the two of us, we can confuse them into leaving us alone.~
+@185  = ~I would like that, so I would.~
+@186  = ~Heh! Not a bad idea at all. Let's see what we can do about it.~
+@187  = ~After all this, o'course.~
+@188  = ~First we get out from under this prophecy thing. Then, look out!~
+@189  = ~Any ideas on how to do it?~
+@190  = ~No the now. I'll think of something, nevermind.~
+@191  = ~I believe you will, my Annah. I love you.~
+
+@200  = ~I just had a shiver. Stay wi' me tonight. Please?~ [RJANROM]
+@201  = ~Of course, Annah. Every night and all.~
+@202  = ~Meanwhile, put yer arm around me. it's still chill I feel.~
+@203  = ~What is happening to me?~
+@204  = ~Dunno. Have you ever shown any signs of magic?~
+@205  = ~Nay. Nary a one. Pharod told me stories he said were about my family, but I never believed him. Such a liar he was.~
+@206  = ~He was always on about my grannie. He said she was always seein' disasters down the road that turned out to be true.~
+@207  = ~Maybe he told the truth. It would explain why he kept me around, other than the thievin', that is.~
+@208  = ~Waitin' for me to break out an' tell him the future.~
+@209  = ~If he was right, I want none of it.~
+@210  = ~I just want you and the now.~
+@211  = ~You have both of those, Annah. We have the now and each other. And tonight.~

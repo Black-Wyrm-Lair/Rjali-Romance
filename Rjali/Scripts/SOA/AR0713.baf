@@ -1,0 +1,16 @@
+
+// Fix Tashia Gift Sequence
+
+IF
+  Global("LE#ShopkeepersSpawn","AR0713",0)
+  GlobalGT("LE#TashiaGiftLoveTalk","GLOBAL",0)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,CreateCreature("LE#SHOP",[521.379],SEE))
+    ActionOverride(Player1,CreateCreature("LE#AIMIL",[505.308],SEE))
+    Wait(1)
+    EndCutSceneMode()
+    SetGlobal("LE#ShopkeepersSpawn","AR0713",1)
+END

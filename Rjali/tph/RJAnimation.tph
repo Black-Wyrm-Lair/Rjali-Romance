@@ -1,0 +1,76 @@
+
+// This component calls a function to do the animation scut work.
+
+INCLUDE ~%MOD_FOLDER%/tph/RJFunctions.tph~
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTAN~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_ANNAH                        ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTGR~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_GRACE                        ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTDK~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_DAKKON                       ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTND~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_NORDOM                       ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTTR~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_TRIAS                        ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTTC~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_TRICHA                       ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTLL~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_LIMLIM                       ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTKA~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_KIMASXI                      ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJPSTLP~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_LOP                          ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END

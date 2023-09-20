@@ -1,0 +1,72 @@
+
+@0    = ~Hello. Is there something I can do for you?~
+@1    = ~Not at the moment. Nice to see you again.~
+@2    = ~Hi. My name is <CHARNAME>. I'm a friend of Jini's.~
+@3    = ~My name is Kesai-Serris. May I help you with something?~
+@4    = ~Not at the moment, thank you. Maybe another time.~
+
+@10   = ~Hello again. I understand you are Ravel's daughter.~
+@11   = ~Yes, I am. My father (the S.O.B.) kept that from me for a long time.~
+@12   = ~I eventually bullied it out of him.~
+@13   = ~So, what is it you want?~
+@14   = ~We need to talk to Ravel. Do you know how we could do that?~
+@15   = ~I see you have Jini's portal stone.~
+@16   = ~You must be someone *very* special to her.~
+@17   = ~I can imprint it with directions to Mum's maze.~
+@18   = ~It's not a very nice place, but she calls it home.~
+@19   = ~She seems to be waiting for someone to return to her.~
+@20   = ~Here, let me set that stone. (whispers a spell)~
+@21   = ~There. It should transport you there when you are ready.~
+@22   = ~I'll do that. Thank you very much, K-S. Bye for now.~
+@23   = ~Come by and see me when you're done. There's a question I want to ask you.~
+
+@30   = ~Just wanted to let you know that your Mum is with Adahn, now.~
+@31   = ~So I have heard. And she looks young enough to enjoy it.~
+@32   = ~I don't know how that happened and she won't tell me.~
+@33   = ~She claims not to know what happened. HAH!~
+@34   = ~She really doesn't know, K-S. There is no reason to be jealous.~
+
+@40   = ~Your Mum is travelling with my party, now.~
+@41   = ~Really? I will be interested in hearing how that works out.~
+@42   = ~She makes a habit of getting her own way.~
+@43   = ~Look out!~
+@44   = ~(chuckles) I'll let you know.~
+
+@50   = ~You should know that your Mum and I are in love.~
+@51   = ~In lust, more like, knowing that old hag.~
+@52   = ~Have you found out what made her young again? Enquiring minds want to know!~
+@53   = ~Nope. And I don't care. We are going to present you with siblings. Bank on it.~
+
+@70   = ~Welcome back! I hear you freed Mom from durance vile.~
+@71   = ~Well sort of. Anyway, she is back and is hooking up with Adahn, finally.~
+@72   = ~Well, sort of. She is back now and has consented to join my company.~
+@73   = ~Good on, Mom! The thing is that I would like to go off with you.~
+@74   = ~WOW! The thing is, I wanted to ask you if I could go off with you, too.~
+@75   = ~You're comfortable here. Why would you want to do that?~
+@76   = ~You know my old man is a Cambion? Well, the son-of-a-bitch keeps trying to rape me.~
+@77   = ~I have been able to fight him off so far, but it is getting more difficult.~
+@78   = ~I need to get away from here before he succeeds.~
+@79   = ~I'm sorry, K-S. I just can't see my way to taking you with me.~
+@80   = ~That should be OK, if you are sure.~
+@81   = ~I should have known. Go away.~
+@82   = ~(You retire sheepishly.)~
+@83   = ~This is great! Come with me for a moment so I can tell you something privately.~
+@84   = ~I'll just slip off to Goncalves for a new outfit, then I will meet you back in Toril.~
+@85   = ~Wait! Where will you be? (But she has already gone.)~
+@86   = ~Lead on, My Lady.~
+@87   = ~OK. Here it is.~
+@88   = ~It's not just about escaping my father's attentions.~
+@89   = ~You make me randy, and I want you to jump my bones. Right now.~
+@90   = ~More later, of course. But immediately if not sooner.~
+@91   = ~What do you say? Does that turn you off?~
+@92   = ~Well, it's a tad sudden, and a little romance would have been nice, but I find you exciting. I vote we move this meeting to the bed.~
+@93   = ~(The meeting was so moved, and a very satisfactory agenda was accomplished.)~
+@94   = ~WHEW! Seems I made a good decision for once in my life.~
+@95   = ~As soon as I get my breath and mind back, I'll think about that one.~
+
+@100  = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@101  = ~Good luck with that.~
+@102  = ~Don't you want to say goodbye to your mother?~
+@103  = ~I suppose. Bye, Mum. Kiss, kiss.~
+@104  = ~We're off.~
+@105  = ~Thanks. See you when we get back.~

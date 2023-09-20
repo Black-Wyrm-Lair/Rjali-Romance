@@ -1,0 +1,18 @@
+
+// Yvette Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("YveBioEnd",0)
+G("YvetteRomanceActive",2)
+OR(2)
+  InParty("Yxyve")
+  G("RJParkYV",1)
+THEN
+RESPONSE #100
+SetGlobal("YveBioEnd","GLOBAL",1)
+TextScreen("RJEpiYV")
+SmallWait(1)
+Continue()
+END

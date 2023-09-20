@@ -1,0 +1,18 @@
+
+// Amber Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("M#AmberBio",0)
+G("M#AmberRomanceActive",2)
+OR(2)
+  InParty("M#AMBER")
+  G("RJParkAM",1)
+THEN
+RESPONSE #100
+SetGlobal("M#AmberBio","GLOBAL",1)
+TextScreen("RJEpiAM")
+SmallWait(1)
+Continue()
+END

@@ -1,0 +1,421 @@
+
+// There are three epilogues: one for an ascended PC; one for  multiple romances; and one for the Rjali only romance.
+
+IF
+Global("StartEndBios","AR6200",1)
+InParty("Rjali")
+G("PlayerChoseEssence",1)
+G("RjaliBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliBio","GLOBAL",1)
+TextScreen("Rjali01")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJParkRJ",1)
+!G("PlayerChoseEssence",1)
+G("RjaliMR",1)
+G("RjaliBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliBio","GLOBAL",1)
+TextScreen("Rjali02")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJParkRJ",1)
+!G("PlayerChoseEssence",1)
+G("RjaliMR",0)
+G("RjaliBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliBio","GLOBAL",1)
+TextScreen("Rjali03")
+SmallWait(1)
+Continue()
+END
+
+// Jini Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+G("PlayerChoseEssence",1)
+G("RJiniBio",0)
+G("RJiniRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("RJiniBio","GLOBAL",1)
+TextScreen("RJini01")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("RJiniBio",0)
+G("RJiniRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("RJiniBio","GLOBAL",1)
+TextScreen("RJini02")
+SmallWait(1)
+Continue()
+END
+
+// Fay Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("RJFayBio",0)
+!G("RJFayBig",0)
+THEN
+RESPONSE #100
+SetGlobal("RJFayBio","GLOBAL",1)
+TextScreen("RJFay")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("PlayerChoseEssence",1)
+G("RJFayBio",0)
+!G("RJFayBig",0)
+THEN
+RESPONSE #100
+SetGlobal("RJFayBio","GLOBAL",1)
+TextScreen("RJFay2")
+SmallWait(1)
+Continue()
+END
+
+// Talira Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("RJTaliraBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJTaliraBio","GLOBAL",1)
+TextScreen("RJTali01")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("PlayerChoseEssence",1)
+G("RJTaliraBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJTaliraBio","GLOBAL",1)
+TextScreen("RJTali02")
+SmallWait(1)
+Continue()
+END
+
+// Horace Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJHoraceBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJHoraceBio","GLOBAL",1)
+TextScreen("RJHorace")
+SmallWait(1)
+Continue()
+END
+
+// Jaheira Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("JaheiraBio",0)
+G("JaheiraRomanceActive",2)
+OR(2)
+  InParty("Jaheira")
+  G("RJParkJA",1)
+THEN
+RESPONSE #100
+SetGlobal("JaheiraBio","GLOBAL",1)
+TextScreen("RJJahe01")
+SmallWait(1)
+Continue()
+END
+
+// Viconia Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("ViconiaBio",0)
+G("ViconiaRomanceActive",2)
+OR(2)
+  InParty("Viconia")
+  G("RJParkVI",1)
+THEN
+RESPONSE #100
+SetGlobal("ViconiaBio","GLOBAL",1)
+TextScreen("RJVico01")
+SmallWait(1)
+Continue()
+END
+
+// Neera Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("NeeraBio",0)
+G("NeeraRomanceActive",2)
+OR(2)
+  InParty("Neera")
+  G("RJParkNE",1)
+THEN
+RESPONSE #100
+SetGlobal("NeeraBio","GLOBAL",1)
+TextScreen("RJNeera1")
+SmallWait(1)
+Continue()
+END
+
+// Nalia Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("NaliaBio",0)
+OR(2)
+  InParty("Nalia")
+  G("RJParkNA",1)
+G("PGNaliaRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("NaliaBio","GLOBAL",1)
+TextScreen("RJNalia1")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("NaliaBio",0)
+!Dead("Nalia")
+!G("PGNaliaRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("NaliaBio","GLOBAL",1)
+TextScreen("RJNalia2")
+SmallWait(1)
+Continue()
+END
+
+// Aerie Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("AerieBio",0)
+G("AerieRomanceActive",2)
+OR(2)
+  InParty("Aerie")
+  G("RJParkAE",1)
+G("RJAEFV",0)
+THEN
+RESPONSE #100
+SetGlobal("AerieBio","GLOBAL",1)
+TextScreen("RJAerie1")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("AerieBio",0)
+G("AerieRomanceActive",2)
+OR(2)
+  InParty("Aerie")
+  G("RJParkAE",1)
+!G("RJAEFV",0)
+THEN
+RESPONSE #100
+SetGlobal("AerieBio","GLOBAL",1)
+TextScreen("RJAerie2")
+SmallWait(1)
+Continue()
+END
+
+// Imoen Epilogues
+
+IF
+  Global("StartEndBios","AR6200",1)
+  !G("PlayerChoseEssence",1)
+  G("ImoenBio",0)
+  G("RJParkIM",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("RJImoen2")
+    SmallWait(1)
+    Continue()
+END
+
+// Jan Epilogue
+
+IF
+  Global("StartEndBios","AR6200",1)
+  !G("PlayerChoseEssence",1)
+  G("JanBio",0)
+  !Dead("Jan")
+THEN
+  RESPONSE #100
+    SetGlobal("JanBio","GLOBAL",1)
+    TextScreen("RJEpiJan")
+    SmallWait(1)
+    Continue()
+END
+
+// Doofus Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJDoofusBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJDoofusBio","GLOBAL",1)
+TextScreen("RJDoofus")
+SmallWait(1)
+Continue()
+END
+
+// Adahn Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJAdahnBio",0)
+G("RJAddCnt",3)
+THEN
+RESPONSE #100
+SetGlobal("RJAdahnBio","GLOBAL",1)
+TextScreen("RJAdahn")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJAdahnBio",0)
+!G("RJAddCnt",3)
+THEN
+RESPONSE #100
+SetGlobal("RJAdahnBio","GLOBAL",1)
+TextScreen("RJAdahn2")
+SmallWait(1)
+Continue()
+END
+
+// Morte Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJMorteBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJMorteBio","GLOBAL",1)
+TextScreen("RJMorte")
+SmallWait(1)
+Continue()
+END
+
+// Nordom Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJNordomBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJNordomBio","GLOBAL",1)
+TextScreen("RJNordom")
+SmallWait(1)
+Continue()
+END
+
+// Dakkon Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJDakkonBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJDakkonBio","GLOBAL",1)
+TextScreen("RJDakkon")
+SmallWait(1)
+Continue()
+END
+
+// Ecco Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("RJEccoBio",0)
+G("RJECFling",1)
+THEN
+RESPONSE #100
+SetGlobal("RJEccoBio","GLOBAL",1)
+TextScreen("RJEcco01")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("RJEccoBio",0)
+G("RJECFling",2)
+THEN
+RESPONSE #100
+SetGlobal("RJEccoBio","GLOBAL",1)
+TextScreen("RJEcco02")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("PlayerChoseEssence",1)
+G("RJEccoBio",0)
+GGT("RJECFling",0)
+THEN
+RESPONSE #100
+SetGlobal("RJEccoBio","GLOBAL",1)
+TextScreen("RJEcco03")
+SmallWait(1)
+Continue()
+END
+
+// Yves Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJYvesBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJYvesBio","GLOBAL",1)
+TextScreen("RJYves")
+SmallWait(1)
+END

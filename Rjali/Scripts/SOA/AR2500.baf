@@ -1,0 +1,11 @@
+
+// Terminate Phaere Innuendo Dialogues
+
+IF
+  GGT("Chapter",%bg2_chapter_5%)
+  GLT("PhaereInnuendo",4)
+THEN
+  RESPONSE #100
+    SetGlobal("PhaereInnuendo","GLOBAL",4)
+    Continue()
+END

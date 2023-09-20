@@ -1,0 +1,36 @@
+
+// Other mod romances cause Rjali to poke.
+
+IF 
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("RJAnnahRomanceActive",2)
+G("RjaliAnnahSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliAnnahSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliAnnahScoutTimer","GLOBAL",RJ_FAST)
+END
+
+// Rjali scouts out mod NPCs
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliAnnahScoutTimer","GLOBAL")
+G("RjaliAnnahScout",0)
+G("RjaliAnnahSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("RJAnnah")
+See("RJAnnah")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliAnnahScout","GLOBAL",1)
+SetToken("RJSCOUT",@31)
+END

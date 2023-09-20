@@ -1,0 +1,11 @@
+
+IF
+	Global("WraithPunish","GLOBAL",3)
+	Global("LK#WraithTalk","GLOBAL",0)
+	InParty(Myself)
+	Global("LK#NindeRomanceActive","GLOBAL",2)
+	Global("LK#NindeLoveTalksTOB","GLOBAL",4)
+THEN
+	RESPONSE #100
+	  SetGlobal("LK#NindeLoveTalksTOB","GLOBAL",5)
+END

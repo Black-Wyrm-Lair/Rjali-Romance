@@ -1,0 +1,12 @@
+
+// On entry to Jini's boudoir
+
+IF
+  G("RJ0605IT",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJ0605IT","GLOBAL",1)
+    ActionOverride("Container 4",CreateItem("MISC42",1,0,0))
+    ActionOverride("Container 5",CreateItem("MISC45",1,0,0))
+    Continue()
+END

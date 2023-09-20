@@ -1,0 +1,49 @@
+
+//  Contribution to SOA1 group chat
+
+EXTEND_BOTTOM RJPLAY0 0
+IF ~InParty("Neera") G("RJSOA1AN",0)~ THEN DO ~SetGlobal("RJSOA1AN","GLOBAL",1)~ EXTERN NEERAJ RjaliGroupSOA1.NE
+IF ~G("RJParkNE",2)~ THEN DO ~SetGlobal("RJParkNE","GLOBAL",1)~ EXTERN NEERAJ RjaliGroupSOA1.NE
+END
+
+CHAIN NEERAJ RjaliGroupSOA1.NE
+@550 = @551 DO ~IncrementGlobal("RJGather","GLOBAL",-1)~
+== RJPLAY0 IF ~!G("RJPlay0",107)~ THEN @552 = @553 = @554
+== RJPLAY1 IF ~G("RJPlay0",107)~ THEN @552 = @553 = @554
+== NEERAJ @555
+== RJPLAY0 IF ~!G("RJPlay0",107)~ THEN @556 = @557 = @558
+== RJPLAY1 IF ~G("RJPlay0",107)~ THEN @556 = @557 = @558
+== NEERAJ @559
+== RJPLAY0 IF ~!G("RJPlay0",107)~ THEN @560
+== RJPLAY1 IF ~G("RJPlay0",107)~ THEN @560
+== RJPLAY0 IF ~!G("RJPlay0",107) G("RJRosCnt",5) !G("RJPlay4",7)~ THEN @561
+== RJPLAY1 IF ~G("RJPlay0",107) G("RJRosCnt",5) !G("RJPlay4",7)~ THEN @561
+== RJPLAY4 IF ~G("RJRosCnt",5) !G("RJPlay4",107)~ THEN @562
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+//  Scout
+
+CHAIN
+IF WEIGHT #-6 ~G("RjaliNeeraScout",1)~ THEN PLAYER1 RjaliNeeraScout
+@49
+== RJALIJ @0
+== NEERAJ @320
+== RJALIJ @321
+== NEERAJ @322
+== RJALIJ @323
+== NEERAJ @324
+== RJALIJ @325
+== NEERAJ @326 = @327
+== RJALIJ @328 = @329
+== NEERAJ @330
+== RJALIJ @331 = @332
+== NEERAJ @333
+== RJALIJ @334 = @335 = @336 = @337
+== NEERAJ @338
+== RJALIJ @339
+== NEERAJ @340 = @341 = @342
+== RJALIJ @343 = @344 = @345
+== PLAYER1 @346
+== RJALIJ @347 = @348 DO ~AddJournalEntry(@9010,INFO) SetGlobal("RjaliNeeraScout","GLOBAL",2) SetGlobal("RjaliScouts","GLOBAL",1)~
+EXIT

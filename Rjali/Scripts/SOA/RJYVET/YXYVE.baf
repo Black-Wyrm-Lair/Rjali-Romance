@@ -1,0 +1,12 @@
+
+IF
+	IfValidForPartyDialog(Myself)
+	CombatCounter(0)
+	Global("YvetteMoment","GLOBAL",1)
+	Global("YvetteRomanceActive","Global",2)
+THEN
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("YxRom")
+		StartDialogue("YxYveJ",Player1)
+END

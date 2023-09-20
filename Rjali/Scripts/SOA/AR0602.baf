@@ -1,0 +1,36 @@
+
+// Gen Rjali
+
+IF
+  G("RjaliGen",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RjaliMR","GLOBAL",1)
+    ActionOverride(Player1,ChangeAIScript("AGEN",CLASS)
+    ActionOverride(Player1,ChangeAIScript("Player1",OVERRIDE))
+    ActionOverride(Player1,SetDialogue("Player1"))
+    SetGlobal("RJRoster","GLOBAL",4)
+    CreateCreature("Rjali",[3126.2785],14)
+    SetGlobal("RjaliGen","GLOBAL",1)
+    ActionOverride("Jailkeep Table",CreateItem("RJLAMP",100,0,0))
+    SetGlobal("C-ChanelleFlirt","GLOBAL",99)
+    SetGlobal("RJFollowFYP","GLOBAL",-2)
+    SetGlobal("RJLT","GLOBAL",%RJLTSTUB%)
+    SetGlobal("RJPARKTOB","GLOBAL",8)
+    Continue()
+END
+
+IF
+  G("RJPlay",0)
+  G("RjaliGen",2)
+  OR(2)
+    InParty("Imoen")
+    InParty("Imoen2")
+THEN
+  RESPONSE #100
+    Wait(1)
+    SetGlobal("RJPlay","GLOBAL",1)
+    ActionOverride(Player1,CreateCreature("RJPLAY0",[-1.-1],0))
+    SmallWait(3)
+    ActionOverride("RJPLAY0",StartDialogue("RJPLAY0",Player1))
+END

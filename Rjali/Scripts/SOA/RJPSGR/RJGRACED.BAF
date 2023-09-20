@@ -1,0 +1,15 @@
+
+// Grace: Underdark Inn
+
+IF
+  InParty(Myself)
+  AreaCheck("AR2100")
+  See("udsvir04")
+  G("RJGRUDSleep1",0)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+  SetGlobal("RJGRUDSleep1","GLOBAL",1)
+  ActionOverride(Player1,StartDialogue("Player1",Player1))
+END

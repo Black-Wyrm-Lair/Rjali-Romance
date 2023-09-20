@@ -1,0 +1,34 @@
+
+// Expedite Petsy
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("L3Petsy")
+GLT("L3PetsyRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPPETM","GLOBAL")
+OR(3)
+  !RealGlobalTimerExpired("L3PetsyNormalTime","GLOBAL")
+  !RealGlobalTimerExpired("L3PetsyRomanceTime","GLOBAL")
+  !RealGlobalTimerExpired("L3PetsyQ2T","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPPETM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("L3PetsyNormalTime","GLOBAL",0)
+RealSetGlobalTimer("L3PetsyRomanceTime","GLOBAL",0)
+RealSetGlobalTimer("L3PetsyQ2T","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("L3Petsy")
+G("L3PetsyRomanceActive",2)
+G("RjaliPetsySpice",2)
+G("RjaliPetsyScout",0)
+!RealGlobalTimerNotExpired("RJXPPETM","GLOBAL")
+!RealGlobalTimerExpired("RjaliPetsyScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliPetsyScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPPETM","GLOBAL",ONE_DAY)
+END

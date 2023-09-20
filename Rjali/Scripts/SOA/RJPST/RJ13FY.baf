@@ -1,0 +1,47 @@
+
+// Init RJ13FY
+
+IF
+  OnCreation()
+  !G("RJiniiJIDND",99)
+THEN
+  RESPONSE #100
+    Explore()
+    BanterBlockFlag(TRUE)
+    SetGlobal("RJMaze","GLOBAL",0)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJiniiJIDND",99)
+THEN
+  RESPONSE #100
+    Explore()
+    BanterBlockFlag(TRUE)
+    SetGlobal("RJMaze","GLOBAL",0)
+    TriggerActivation("Exit1",TRUE)
+    Continue()
+END
+
+IF
+  G("RJiniiJIDND",5)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+  G("RJiniiJIDND",4)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDND","GLOBAL",5)
+END
+
+IF
+  G("RJiniiJIDND",9)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDND","GLOBAL",10)
+    TriggerActivation("Exit1",TRUE)
+END

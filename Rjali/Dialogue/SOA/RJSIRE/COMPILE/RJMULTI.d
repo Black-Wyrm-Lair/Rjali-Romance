@@ -1,0 +1,43 @@
+
+//  Contribution to SOA1 group chat
+
+EXTEND_BOTTOM RJPLAY0 0
+IF ~InParty("C0Sirene") G("RJSOA1SI",0)~ THEN DO ~SetGlobal("RJSOA1SI","GLOBAL",1)~ EXTERN C0SIRE2J RjaliGroupSOA1.SI
+IF ~G("RJParkSI",2)~ THEN DO ~SetGlobal("RJParkSI","GLOBAL",1)~ EXTERN C0SIRE2J RjaliGroupSOA1.SI
+END
+
+CHAIN C0SIRE2J RjaliGroupSOA1.SI
+@1301 DO ~IncrementGlobal("RJGather","GLOBAL",-1)~
+== C0SIRE2J IF ~OR(2) InParty("E3Fade") G("RJAnnahRomanceActive",2)~ THEN @1302
+== E3FADEJ IF ~InParty("E3Fade")~ THEN @1303
+== RJANNAHJ IF ~G("RJAnnahRomanceActive",2)~ THEN @1304
+== C0SIRE2J @1306 = @1307 = @1308
+== RJALIJ @1309
+== C0SIRE2J @1310
+== C0SIRE2J IF ~G("RJFayBig",1)~ THEN @1311
+== RJFAY IF ~G("RJFayBig",1)~ THEN @1312
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+I_C_T RJPLAY0 1 RJSoAGSI
+== C0SIRE2J IF ~InParty("C0Sirene")~ THEN @1300
+END
+
+//  Scout
+
+CHAIN
+IF WEIGHT #-15 ~G("RjaliSireneScout",1)~ THEN PLAYER1 RjaliSireneScout
+@49
+== RJALIJ @0
+== C0SIRE2J @1320
+== RJALIJ @1321
+== C0SIRE2J @1322 = @1323 = @1324 = @1325 = @1326
+== RJALIJ @1327 = @1328 = @1329
+== C0SIRE2J @1330
+== RJALIJ @1331
+== PLAYER1 @1332
+== RJALIJ @1333 = @1334 = @1335
+== PLAYER1 @1336 = @1337 = @1338
+== RJALIJ @1339 = @1340
+== PLAYER1 @1341 DO ~AddJournalEntry(@9059,INFO) SetGlobal("RjaliSireneScout","GLOBAL",2) SetGlobal("RjaliScouts","GLOBAL",1)~
+EXIT

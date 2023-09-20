@@ -1,0 +1,60 @@
+
+// Annah
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSAN/BRJANNAH.d~
+        ~Rjali/Dialogue/SOA/RJPSAN/RJANNAHP.d~
+        ~Rjali/Dialogue/SOA/RJPSAN/RJANNAHJ.d~
+        ~Rjali/Scripts/SOA/RJPSAN/RJANNAH.baf~
+	~Rjali/Scripts/SOA/RJPSAN/RJANNAHD.baf~
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSAN/BRJAN25.d~
+        ~Rjali/Dialogue/SOA/RJPSAN/RJAN25P.d~
+        ~Rjali/Dialogue/SOA/RJPSAN/RJAN25J.d~
+	~Rjali/Scripts/SOA/RJPSAN/RJAN25.baf~
+	~Rjali/Scripts/SOA/RJPSAN/RJAN25D.baf~
+
+// Grace
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSGR/BRJGRACE.d~
+        ~Rjali/Dialogue/SOA/RJPSGR/RJGRACEP.d~
+        ~Rjali/Dialogue/SOA/RJPSGR/RJGRACEJ.d~
+        ~Rjali/Scripts/SOA/RJPSGR/RJGRACE.baf~
+	~Rjali/Scripts/SOA/RJPSGR/RJGRACED.baf~
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSGR/BRJGR25.d~
+        ~Rjali/Dialogue/SOA/RJPSGR/RJGR25P.d~
+        ~Rjali/Dialogue/SOA/RJPSGR/RJGR25J.d~
+	~Rjali/Scripts/SOA/RJPSGR/RJGR25.baf~
+	~Rjali/Scripts/SOA/RJPSGR/RJGR25D.baf~
+
+// Ravel
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSRV/BRJRAVEL.d~
+        ~Rjali/Dialogue/SOA/RJPSRV/RJRAVELP.d~
+        ~Rjali/Dialogue/SOA/RJPSRV/RJRAVELJ.d~
+        ~Rjali/Scripts/SOA/RJPSRV/RJRAVEL.baf~
+	~Rjali/Scripts/SOA/RJPSRV/RJRAVELD.baf~
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSRV/BRJRV25.d~
+        ~Rjali/Dialogue/SOA/RJPSRV/RJRV25P.d~
+        ~Rjali/Dialogue/SOA/RJPSRV/RJRV25J.d~
+	~Rjali/Scripts/SOA/RJPSRV/RJRV25.baf~
+	~Rjali/Scripts/SOA/RJPSRV/RJRV25D.baf~
+
+// Kesai
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSKE/BRJKESAI.d~
+        ~Rjali/Dialogue/SOA/RJPSKE/RJKESAIP.d~
+        ~Rjali/Dialogue/SOA/RJPSKE/RJKESAIJ.d~
+        ~Rjali/Scripts/SOA/RJPSKE/RJKESAI.baf~
+	~Rjali/Scripts/SOA/RJPSKE/RJKESAID.baf~
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJPSKE/BRJKE25.d~
+        ~Rjali/Dialogue/SOA/RJPSKE/RJKE25P.d~
+        ~Rjali/Dialogue/SOA/RJPSKE/RJKE25J.d~
+	~Rjali/Scripts/SOA/RJPSKE/RJKE25.baf~
+	~Rjali/Scripts/SOA/RJPSKE/RJKE25D.baf~
+
+// Sobeth
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJSOB.d~

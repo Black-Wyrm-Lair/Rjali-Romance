@@ -1,0 +1,55 @@
+
+// Expedite Isra
+
+IF
+G("RJSpeedCtl",2)
+InParty("rh#Isra2")
+G("rh#IsraRomanceActive",2)
+G("RjaliIsraScout",0)
+G("RJISRep",0)
+ReputationLT(Player1,14)
+THEN
+RESPONSE #100
+SetGlobal("RJISRep","GLOBAL",1)
+ReputationSet(14)
+END
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("rh#Isra2")
+RealGlobalTimerExpired("RJXPISTM","GLOBAL")
+RealGlobalTimerNotExpired("rh#IsraQuestTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPISTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("rh#IsraQuestTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("rh#Isra2")
+GLT("rh#IsraQuestTwo",1)
+!RealGlobalTimerNotExpired("RJXPISTM","GLOBAL")
+!RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPISTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("rh#Isra2")
+G("rh#IsraRomanceActive",2)
+G("RjaliIsraSpice",2)
+G("RjaliIsraScout",0)
+GGT("rh#IsraQuestTwo",12)
+!RealGlobalTimerNotExpired("RJXPISTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliIsraScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliIsraScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPISTM","GLOBAL",ONE_DAY)
+END

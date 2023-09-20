@@ -1,0 +1,11 @@
+
+// Setup Tashia rescue in SoA
+
+IF
+G("TashiaDream",2)
+G("RJTAMap",0)
+THEN
+  RESPONSE #100    
+    SetGlobal("RJTAMap","GLOBAL",1)
+    RevealAreaOnMap("AR2600")
+END                                               

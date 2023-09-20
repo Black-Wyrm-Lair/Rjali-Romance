@@ -1,0 +1,369 @@
+
+// Start equip dialogs
+
+IF
+InParty(Myself)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(3)
+  G("RjaliEquips",1)
+  G("RjaliMet",2)
+  G("RjaliImoenBags",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Myself)
+END
+
+// Equiping Rjali and PC
+
+IF
+GLT("Chapter",%bg2_chapter_2%)
+InParty(Myself)
+G("RjaliPCStuff",0)
+G("RjaliMet",1)
+InParty(Player1)
+THEN
+RESPONSE #100
+SetGlobal("RjaliPCStuff","GLOBAL",1)
+SetGlobal("RjaliMet","GLOBAL",2)
+SetGlobal("RjaliCountStuff","GLOBAL",2)
+END
+
+// Giving Imoen the 6th set of bags
+
+IF
+GGT("Chapter",%bg2_chapter_3%)
+G("RjaliImoenBags",0)
+InParty(Myself)
+InParty("Imoen2")
+!StateCheck("Imoen2",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Imoen2")
+FaceObject("Imoen2")
+SetGlobal("RjaliImoenBags","GLOBAL",1)
+SetGlobal("RjaliPCStuff","GLOBAL",0)
+IncrementGlobal("RjaliCountStuff","GLOBAL",1)
+END
+
+// Equiping the vanilla troops
+
+IF
+GLT("Chapter",%bg2_chapter_2%)
+InParty(Myself)
+G("RjaliImoenStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(10)
+  InPartySlot("Imoen",1)
+  InPartySlot("Imoen",2)
+  InPartySlot("Imoen",3)
+  InPartySlot("Imoen",4)
+  InPartySlot("Imoen",5)
+  InPartySlot("Imoen2",1)
+  InPartySlot("Imoen2",2)
+  InPartySlot("Imoen2",3)
+  InPartySlot("Imoen2",4)
+  InPartySlot("Imoen2",5)
+!StateCheck(Player2,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt(Player2)
+FaceObject(Player2)
+SetGlobal("RjaliImoenStuff","GLOBAL",1)
+SetToken("RJEQUIP",@0)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF 
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliJaheiraStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Jaheira",1)
+  InPartySlot("Jaheira",2)
+  InPartySlot("Jaheira",3)
+  InPartySlot("Jaheira",4)
+  InPartySlot("Jaheira",5)
+!StateCheck("Jaheira",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Jaheira")
+FaceObject("Jaheira")
+SetGlobal("RjaliJaheiraStuff","GLOBAL",1)
+SetToken("RJEQUIP",@5)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliViconiaStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Viconia",1)
+  InPartySlot("Viconia",2)
+  InPartySlot("Viconia",3)
+  InPartySlot("Viconia",4)
+  InPartySlot("Viconia",5)
+!StateCheck("Viconia",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Viconia")
+FaceObject("Viconia")
+SetGlobal("RjaliViconiaStuff","GLOBAL",1)
+SetToken("RJEQUIP",@6)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliAerieStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Aerie",1)
+  InPartySlot("Aerie",2)
+  InPartySlot("Aerie",3)
+  InPartySlot("Aerie",4)
+  InPartySlot("Aerie",5)
+!StateCheck("Aerie",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Aerie")
+FaceObject("Aerie")
+SetGlobal("RjaliAerieStuff","GLOBAL",1)
+SetToken("RJEQUIP",@2)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF 
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliJanStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Jan",1)
+  InPartySlot("Jan",2)
+  InPartySlot("Jan",3)
+  InPartySlot("Jan",4)
+  InPartySlot("Jan",5)
+!StateCheck("Jan",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Jan")
+FaceObject("Jan")
+SetGlobal("RjaliJanStuff","GLOBAL",1)
+SetToken("RJEQUIP",@13)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF 
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliMazzyStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Mazzy",1)
+  InPartySlot("Mazzy",2)
+  InPartySlot("Mazzy",3)
+  InPartySlot("Mazzy",4)
+  InPartySlot("Mazzy",5)
+!StateCheck("Mazzy",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Mazzy")
+FaceObject("Mazzy")
+SetGlobal("RjaliMazzyStuff","GLOBAL",1)
+SetToken("RJEQUIP",@15)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliMinscStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Minsc",1)
+  InPartySlot("Minsc",2)
+  InPartySlot("Minsc",3)
+  InPartySlot("Minsc",4)
+  InPartySlot("Minsc",5)
+!StateCheck("Minsc",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Minsc")
+FaceObject("Minsc")
+SetGlobal("RjaliMinscStuff","GLOBAL",1)
+SetToken("RJEQUIP",@12)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliValygarStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Valygar",1)
+  InPartySlot("Valygar",2)
+  InPartySlot("Valygar",3)
+  InPartySlot("Valygar",4)
+  InPartySlot("Valygar",5)
+!StateCheck("Valygar",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Valygar")
+FaceObject("Valygar")
+SetGlobal("RjaliValygarStuff","GLOBAL",1)
+SetToken("RJEQUIP",@22)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliAnomenStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Anomen",1)
+  InPartySlot("Anomen",2)
+  InPartySlot("Anomen",3)
+  InPartySlot("Anomen",4)
+  InPartySlot("Anomen",5)
+!StateCheck("Anomen",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Anomen")
+FaceObject("Anomen")
+SetGlobal("RjaliAnomenStuff","GLOBAL",1)
+SetToken("RJEQUIP",@19)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliHaerdalisStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Haerdalis",1)
+  InPartySlot("Haerdalis",2)
+  InPartySlot("Haerdalis",3)
+  InPartySlot("Haerdalis",4)
+  InPartySlot("Haerdalis",5)
+!StateCheck("Haerdalis",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Haerdalis")
+FaceObject("Haerdalis")
+SetGlobal("RjaliHaerdalisStuff","GLOBAL",1)
+SetToken("RJEQUIP",@23)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliKeldornStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Keldorn",1)
+  InPartySlot("Keldorn",2)
+  InPartySlot("Keldorn",3)
+  InPartySlot("Keldorn",4)
+  InPartySlot("Keldorn",5)
+!StateCheck("Keldorn",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Keldorn")
+FaceObject("Keldorn")
+SetGlobal("RjaliKeldornStuff","GLOBAL",1)
+SetToken("RJEQUIP",@18)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliNaliaStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Nalia",1)
+  InPartySlot("Nalia",2)
+  InPartySlot("Nalia",3)
+  InPartySlot("Nalia",4)
+  InPartySlot("Nalia",5)
+!StateCheck("Nalia",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Nalia")
+FaceObject("Nalia")
+SetGlobal("RjaliNaliaStuff","GLOBAL",1)
+SetToken("RJEQUIP",@4)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliCerndStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Cernd",1)
+  InPartySlot("Cernd",2)
+  InPartySlot("Cernd",3)
+  InPartySlot("Cernd",4)
+  InPartySlot("Cernd",5)
+!StateCheck("Cernd",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Cernd")
+FaceObject("Cernd")
+SetGlobal("RjaliCerndStuff","GLOBAL",1)
+SetToken("RJEQUIP",@21)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliEdwinStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Edwin",1)
+  InPartySlot("Edwin",2)
+  InPartySlot("Edwin",3)
+  InPartySlot("Edwin",4)
+  InPartySlot("Edwin",5)
+!StateCheck("Edwin",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Edwin")
+FaceObject("Edwin")
+SetGlobal("RjaliEdwinStuff","GLOBAL",1)
+SetToken("RJEQUIP",@20)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliMet",3)
+G("RjaliKorganStuff",0)
+G("RjaliEquips",0)
+OR(5)
+  InPartySlot("Korgan",1)
+  InPartySlot("Korgan",2)
+  InPartySlot("Korgan",3)
+  InPartySlot("Korgan",4)
+  InPartySlot("Korgan",5)
+!StateCheck("Korgan",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Korgan")
+FaceObject("Korgan")
+SetGlobal("RjaliKorganStuff","GLOBAL",1)
+SetToken("RJEQUIP",@14)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END

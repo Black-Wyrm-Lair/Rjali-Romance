@@ -1,0 +1,144 @@
+
+// This is to provide parking services in the deArnise Keep.
+
+// Vanilla
+
+COMPILE ~Rjali/Dialogue/SOA/RJPARK.d~
+
+// EE
+
+ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+
+  COMPILE ~Rjali/Dialogue/SOA/RJNEER/RJPARK.d~
+
+END
+
+// MODS
+
+// Imoen
+
+ACTION_IF MOD_IS_INSTALLED ~imoenRomance/Setup-ImoenRomance.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJIMOE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJIMOE/PARK.baf~
+END
+
+// Nalia
+
+ACTION_IF MOD_IS_INSTALLED ~deArnise/Setup-deArnise.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJNALI/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJNALI/PARK.baf~
+END
+
+// Branwen
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJBRAN/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJBRAN/PARK.baf~
+END
+
+// Skie
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSKIE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSKIE/PARK.baf~
+END
+
+// Petsy
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJPETS/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPETS/PARK.baf~
+END
+
+// Dace
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJDACE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJDACE/PARK.baf~
+END
+
+// Fade
+
+ACTION_IF (MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0") THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJFADE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJFADE/PARK.baf~
+END
+
+// Tyris
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJTYRI/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTYRI/PARK.baf~
+END
+
+// Sheena
+
+ACTION_IF MOD_IS_INSTALLED ~setup-Sheena.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSHEE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSHEE/PARK.baf~
+  EXTEND_BOTTOM ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSHEE/PARKTALK.baf~
+  EXTEND_BOTTOM ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJSHEE/PARKTALK.baf~
+END
+
+// Amber
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJAMBE/TOB/RJPARK.d~
+          ~Rjali/Dialogue/SOA/RJAMBE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJAMBE/PARK.baf~
+  COPY_EXISTING ~M#BALDUR.bcs~ ~override~
+                ~BALDUR.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~\b\(Global("M#AmberRomanceOut","GLOBAL",0)\)~
+                        ~False()~
+      REPLACE_TEXTUALLY ~HideAreaOnMap("AR3000")~ ~~
+    END
+END
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJAMBE/EET/RJPARK.d~
+          ~Rjali/Dialogue/SOA/RJAMBE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJAMBE/PARK.baf~
+  COPY_EXISTING ~M#BALDUR.bcs~ ~override~
+                ~BALDUR.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~\b\(Global("M#AmberRomanceOut","GLOBAL",0)\)~
+                        ~False()~
+      REPLACE_TEXTUALLY ~HideAreaOnMap("AR3000")~ ~~
+    END
+END
+
+// Ninde
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJNIND/RJPARK.d~
+END
+
+// Isra
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJISRA/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJISRA/PARK.baf~
+END
+
+// Tashia
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJTASH/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTASH/PARK.baf~
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSIRE/RJPARK.d~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSIRE/PARK.baf~
+END
+
+// Saerileth
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSAER/RJPARK.d~
+END

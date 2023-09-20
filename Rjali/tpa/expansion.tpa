@@ -1,0 +1,140 @@
+
+// Install expansion scripts and dialogues
+
+COMPILE ~Rjali/Dialogue/XPN/COMPILE~
+        ~Rjali/Scripts/XPN/CUTSCENES~
+
+// Force expansion scripts and dialogues
+
+EXTEND_TOP ~PLAYER1T.bcs~ ~Rjali/scripts/XPN/rjxppc.baf~
+EXTEND_TOP ~PLAYER1D.bcs~ ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJGENIE.bcs~ ~Rjali/scripts/XPN/rjxpho.baf~
+
+EXTEND_TOP ~rjal25.bcs~   ~Rjali/scripts/XPN/rjxprj.baf~
+EXTEND_TOP ~RJFAY.bcs~    ~Rjali/scripts/XPN/rjxpfy.baf~
+EXTEND_TOP ~RJINI.bcs~    ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJINII.bcs~   ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~aeri25.bcs~   ~Rjali/scripts/XPN/rjxpae.baf~
+EXTEND_TOP ~imoe25.bcs~   ~Rjali/scripts/XPN/rjxpim.baf~
+EXTEND_TOP ~jahe25.bcs~   ~Rjali/scripts/XPN/rjxpja.baf~
+EXTEND_TOP ~nali25.bcs~   ~Rjali/scripts/XPN/rjxpna.baf~
+EXTEND_TOP ~vico25.bcs~   ~Rjali/scripts/XPN/rjxpvi.baf~
+EXTEND_TOP ~neer25.bcs~   ~Rjali/scripts/XPN/rjxpne.baf~
+EXTEND_TOP ~rjan25.bcs~   ~Rjali/scripts/XPN/rjxpan.baf~
+EXTEND_TOP ~rjgr25.bcs~   ~Rjali/scripts/XPN/rjxpgr.baf~
+EXTEND_TOP ~rjrv25.bcs~   ~Rjali/scripts/XPN/rjxprv.baf~
+EXTEND_TOP ~rjke25.bcs~   ~Rjali/scripts/XPN/rjxpke.baf~
+
+EXTEND_TOP ~RJPSTAD.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJPSTDK.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJPSTFJ.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJPSTMR.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJPSTND.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJPSTSY.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+EXTEND_TOP ~RJPSTTR.bcs~  ~Rjali/scripts/XPN/rjxpn.baf~
+
+EXTEND_TOP ~AR1304.bcs~   ~Rjali/scripts/XPN/AR1304.baf~
+EXTEND_TOP ~AR1306.bcs~   ~Rjali/scripts/XPN/AR1306.baf~
+
+// NPC mods
+
+// Dace
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPDA.d~
+  EXTEND_TOP ~T#DAC25.bcs~   ~Rjali/scripts/XPN/rjxpda.baf~
+END
+
+// Isra
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPIS.d~
+  EXTEND_TOP ~rj#is25.bcs~   ~Rjali/scripts/XPN/rjxpis.baf~
+END
+
+// Branwen
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPBR.d~
+  EXTEND_TOP ~O#Bra25S.bcs~   ~Rjali/scripts/XPN/rjxpbr.baf~
+END
+
+// Fade
+
+ACTION_IF MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPFA.d~
+  EXTEND_TOP ~E3Fade25.bcs~   ~Rjali/scripts/XPN/rjxpfa.baf~
+END
+
+// Tashia
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPTA.d~
+  EXTEND_TOP ~tash25.bcs~   ~Rjali/scripts/XPN/rjxpta.baf~
+END
+
+// Ninde
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPNI.d~
+  EXTEND_TOP ~LK#NI25.bcs~   ~Rjali/scripts/XPN/rjxpni.baf~
+END
+
+// Tyris
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPTY.d~
+  EXTEND_TOP ~G#TYRS25.bcs~   ~Rjali/scripts/XPN/rjxpty.baf~
+END
+
+// Yvette
+
+ACTION_IF MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPYV.d~
+  EXTEND_TOP ~YxYv25.bcs~   ~Rjali/scripts/XPN/rjxpyv.baf~
+END
+
+// Amber
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPAM.d~
+  EXTEND_TOP ~m#amb25.bcs~   ~Rjali/scripts/XPN/rjxpam.baf~
+END
+
+// Saerileth
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPSA.d~
+  EXTEND_TOP ~SAERIL25.bcs~   ~Rjali/scripts/XPN/rjxpsa.baf~
+END
+
+// Skie
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPSK.d~
+  EXTEND_TOP ~1xSki25.bcs~   ~Rjali/scripts/XPN/rjxpsk.baf~
+END
+
+// Petsy
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPPE.d~
+  EXTEND_TOP ~L3pet25.bcs~   ~Rjali/scripts/XPN/rjxppe.baf~
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPSI.d~
+  EXTEND_TOP ~C0Sire25.bcs~   ~Rjali/scripts/XPN/rjxpsi.baf~
+END
+
+// Sheena
+
+ACTION_IF MOD_IS_INSTALLED ~setup-Sheena.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/XPN/RJXPSH.d~
+  EXTEND_TOP ~Sheena25.bcs~   ~Rjali/scripts/XPN/rjxpsh.baf~
+END

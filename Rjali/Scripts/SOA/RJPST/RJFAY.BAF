@@ -1,0 +1,329 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkFY",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+// Fay will run away from danger
+
+IF
+  G("RJFollowFY",0)
+  See(NearestEnemyOf(Myself))
+  Range(NearestEnemyOf(Myself),40)
+THEN
+  RESPONSE #100
+    ClearActions("RJFay")
+    RunAwayFromNoInterruptNoLeaveArea(NearestEnemyOf(Myself),20)
+END
+
+IF
+  G("RJFollowFY",0)
+  AttackedBy([ANYONE],DEFAULT)
+THEN
+  RESPONSE #100
+    ClearActions("RJFay")
+    RunAwayFromNoInterruptNoLeaveArea(LastAttackerOf(Myself),20)
+END
+
+// Fay will move to you when there is danger
+
+IF
+  G("RJFollowFY",1)
+  See(NearestEnemyOf(Myself))
+  Range(NearestEnemyOf(Myself),40)
+THEN
+  RESPONSE #100
+    ClearActions("RJFay")
+    MoveToObjectNoInterrupt(Player1)
+END
+
+IF
+  G("RJFollowFY",1)
+  AttackedBy([ANYONE],DEFAULT)
+THEN
+  RESPONSE #100
+    ClearActions("RJFay")
+    MoveToObjectNoInterrupt(Player1)
+END
+
+// Fay will follow you
+
+IF
+  G("RJFollowFY",2)
+  !Range(Player1,8)
+THEN
+  RESPONSE #100
+    MoveToObjectFollow(Player1)
+END
+
+// Fay will take you to the lamp for a bit of the other
+
+IF
+  G("RJFayLamp",8)
+  G("RJFayLampTime",0)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("RJFayLampTime","GLOBAL",ONE_DAY)
+END
+
+IF
+  G("RJFayLamp",8)
+  RealGlobalTimerExpired("RJFayLampTime","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayLamp","GLOBAL",9)
+END
+
+// This block sets up romance talks
+
+IF
+  G("RJParkFY",0)
+  RealGlobalTimerExpired("RJFayRomance","GLOBAL")
+  See(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+  OR(15)
+    G("RJFayTalk",1)
+    G("RJFayTalk",3)
+    G("RJFayTalk",5)
+    G("RJFayTalk",7)
+    G("RJFayTalk",9)
+    G("RJFayTalk",11)
+    G("RJFayTalk",13)
+    G("RJFayTalk",15)
+    G("RJFayTalk",17)
+    G("RJFayTalk",19)
+    G("RJFayTalk",21)
+    G("RJFayTalk",23)
+    G("RJFayTalk",27)
+    G("RJFayTalk",29)
+    G("RJFayTalk",31)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJFayTalk","GLOBAL",1)
+END
+
+// This block initiates romance talks
+
+IF
+  See(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+  OR(23)
+    G("RJFayTalk",2)
+    G("RJFayTalk",4)
+    G("RJFayTalk",6)
+    G("RJFayTalk",8)
+    G("RJFayTalk",10)
+    G("RJFayTalk",12)
+    G("RJFayTalk",14)
+    G("RJFayTalk",16)
+    G("RJFayTalk",18)
+    G("RJFayTalk",20)
+    G("RJFayTalk",22)
+    G("RJFayTalk",24)
+    G("RJFayTalk",26)
+    G("RJFayTalk",28)
+    G("RJFayTalk",30)
+    G("RJFayTalk",32)
+    G("RJFayTalk",34)
+    G("RJFayNook",1)
+    G("RJFay1st",1)
+    G("RJFayPhaere",1)
+    G("RJFayLamp",2)
+    G("RJFayLamp",4)
+    G("RJFayExper",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+// Fay 13: 1st Tob talk: The Hells
+
+IF
+  G("RJParkFY",0)
+  G("RJFayTalk",25)
+  AreaCheck("AR4500")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJFayTalk","GLOBAL",1)
+END
+
+// Fay 17: 1st batch of little WOTWs
+
+IF
+  G("RJParkFY",0)
+  GGT("Chapter",%bg2_chapter_7%)
+  RealGlobalTimerExpired("RJFayRomance","GLOBAL")
+  G("RJFayTalk",33)
+  AreaType(OUTDOOR)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJFayTalk","GLOBAL",1)
+END
+
+// This is where Fay's romance talks start.
+
+IF
+  G("RJFayBig",1)
+  G("RJPort",0)
+  G("RJFay1st",0)
+  RealGlobalTimerExpired("RJFay1stTimer","GLOBAL")
+  !G("RJAddAN",3)
+  !G("RJAddGR",3)
+  !G("RJAddRV",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJFay1st","GLOBAL",1)
+END
+
+// Fay's extra talks
+
+// Fay's search for Jini's lamp
+
+IF
+  G("RJParkFY",0)
+  G("RJFayBig",1)
+  G("RJFayLamp",0)
+  AreaCheck("AR0607")
+  Dead("Kalah")
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayLamp","GLOBAL",4)
+END
+
+IF
+  G("RJParkFY",0)
+  G("RJFayLamp",1)
+  AreaCheck("AR0607")
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayLamp","GLOBAL",2)
+END
+
+// Fay's reaction to Phaere episode
+
+IF
+  G("RJParkFY",0)
+  !Range("Phaere",6)
+  G("RJFayPhaere",0)
+  AreaCheck("AR2204")
+  See(Player1)
+  OR(2)
+    G("PhaereInnuendo",2)
+    G("PhaereInnuendo",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayPhaere","GLOBAL",1)
+END
+
+// The morning after the experiment
+
+IF
+  G("RJFayExper",0)
+  G("RJParkFY",0)
+  GGT("RJFayTalk",24)
+  PartyRested()
+  See(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayExper","GLOBAL",1)
+END
+
+// Fay's Banters
+
+IF
+  G("RJFayBig",1)
+  G("RJFayBanterStart",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayBanterStart","GLOBAL",1)
+    RealSetGlobalTimer("RJFayBanterTimer","GLOBAL",RJ_BANTER)
+END
+
+IF
+  G("RJParkFY",0)
+  CombatCounter(0)
+  !See([ENEMY])
+  RealGlobalTimerExpired("RJFayBanterTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("RJFayBanterTimer","GLOBAL",RJ_BANTER)
+    Interact(Myself)
+END
+
+// Fay initiated flirts
+
+// Flirts initiate
+
+IF
+  G("RJFayBig",1)
+  G("RJFayFlirtsStart",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayFlirtsStart","GLOBAL",1)
+    RealSetGlobalTimer("RJFayFlirtTimer","GLOBAL",RJ_FAST)
+END
+
+// Ready for flirting
+
+IF
+  G("RJFayFlirtsStart",1)
+  G("RJHush",0)
+  RealGlobalTimerExpired("RJFayFlirtTimer","GLOBAL")
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  See(Player1)
+  CombatCounter(0)
+  !See([ENEMY])
+  G("RJFayFlirt",0)
+  G("RJParkFY",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayFlirt","GLOBAL",1)
+    StartDialogueNoSet(Player1)
+END
+
+// Flirting begins
+
+IF
+  G("RJFayFlirt",1)
+  RealGlobalTimerExpired("RJFayFlirtTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("RJFayFlirt","GLOBAL",0)
+    RealSetGlobalTimer("RJFayFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+  G("RJFayFlirtsStart",1)
+  G("RJHush",0)
+  RealGlobalTimerExpired("RJFayFlirtTimer","GLOBAL")
+  G("RJParkFY",0)
+  OR(2)
+    !CombatCounter(0)
+    See([ENEMY])
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("RJFayFlirtTimer","GLOBAL",150)
+END

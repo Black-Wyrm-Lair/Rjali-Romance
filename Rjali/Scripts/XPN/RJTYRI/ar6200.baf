@@ -1,0 +1,18 @@
+
+// Tyris Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("G#TF.TyrisBio",0)
+G("G#TF.TyrisRomanceActive",2)
+OR(2)
+  InParty("G#Tyris")
+  G("RJParkTY",1)
+THEN
+RESPONSE #100
+SetGlobal("G#TF.TyrisBio","GLOBAL",1)
+TextScreen("RJEpiTY")
+SmallWait(1)
+Continue()
+END

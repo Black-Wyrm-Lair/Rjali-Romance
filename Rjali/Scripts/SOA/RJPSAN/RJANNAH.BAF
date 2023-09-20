@@ -1,0 +1,307 @@
+
+// Bump XP on initial join
+
+IF
+InParty("RJAnnah")
+Global("RJAnnahSetXP","GLOBAL",0)
+XPLT(Player1,280001)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahSetXP","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("RJAnnah")
+Global("RJAnnahSetXP","GLOBAL",0)
+XPGT(Player1,280000)
+XPLT(Player1,600001)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahSetXP","GLOBAL",1)
+AddXPObject("RJAnnah",411000)
+Continue()
+END
+
+IF
+InParty("RJAnnah")
+Global("RJAnnahSetXP","GLOBAL",0)
+XPGT(Player1,600000)
+XPLT(Player1,1000001)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahSetXP","GLOBAL",1)
+AddXPObject("RJAnnah",711000)
+Continue()
+END
+
+IF
+InParty("RJAnnah")
+Global("RJAnnahSetXP","GLOBAL",0)
+XPGT(Player1,1000000)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahSetXP","GLOBAL",1)
+AddXPObject("RJAnnah",1111000)
+Continue()
+END
+
+// This is where Annah's romance talks start.
+
+IF
+GGT("Chapter",%bg2_chapter_1%)
+InParty(Myself)
+G("RJAnnahTalk",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJAnnahRomance","GLOBAL",400)
+SetGlobal("RJAnnahTalk","GLOBAL",1)
+END
+
+// This block sets up romance talks
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RJAnnahRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+OR(11)
+G("RJAnnahTalk",1)
+G("RJAnnahTalk",3)
+G("RJAnnahTalk",5)
+G("RJAnnahTalk",7)
+G("RJAnnahTalk",9)
+G("RJAnnahTalk",11)
+G("RJAnnahTalk",13)
+G("RJAnnahTalk",19)
+G("RJAnnahTalk",23)
+G("RJAnnahTalk",25)
+G("RJAnnahTalk",27)
+THEN
+RESPONSE #100
+IncrementGlobal("RJAnnahTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 8
+
+IF
+InParty(Myself)
+PartyRested()
+RealGlobalTimerExpired("RJAnnahRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+G("RJAnnahTalk",15)
+THEN
+RESPONSE #100
+IncrementGlobal("RJAnnahTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 9
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RJAnnahRomance","GLOBAL")
+G("RJAnnahTalk",17)
+G("RJAnnahAccent",2)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("RJAnnahTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 11
+
+IF
+InParty(Myself)
+G("RjaliMarried",1)
+RealGlobalTimerExpired("RJAnnahRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+G("RJAnnahTalk",21)
+THEN
+RESPONSE #100
+IncrementGlobal("RJAnnahTalk","GLOBAL",1)
+END
+
+// This block initiates a dialog with Player1
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(15)
+  G("RJAnnahTalk",2)
+  G("RJAnnahTalk",4)
+  G("RJAnnahTalk",6)
+  G("RJAnnahTalk",8)
+  G("RJAnnahTalk",10)
+  G("RJAnnahTalk",12)
+  G("RJAnnahTalk",14)
+  G("RJAnnahTalk",16)
+  G("RJAnnahTalk",18)
+  G("RJAnnahTalk",20)
+  G("RJAnnahTalk",22)
+  G("RJAnnahTalk",24)
+  G("RJAnnahTalk",26)
+  G("RJAnnahTalk",28)
+  G("RJAnnahSleptPhaere",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Phaere Innuendo
+
+IF
+  InParty(Myself)
+  !Range("Phaere",6)
+  G("RJAnnahSleptPhaere",0)
+  AreaCheck("AR2204")
+  See(Player1)
+  OR(2)
+    G("PhaereInnuendo",2)
+    G("PhaereInnuendo",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAnnahSleptPhaere","GLOBAL",1)
+END
+
+// Annah's language lessons
+
+IF
+  InParty(Myself)
+  InParty("Rjali")
+  G("RJAnnahAccent",0)
+  GlobalTimerExpired("RJAnnahAccentTimer","GLOBAL")
+  See("Rjali")
+  !StateCheck("Rjali",CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJAnnahAccent","GLOBAL",1)
+END
+
+IF
+  InParty(Myself)
+  InParty("Rjali")
+  G("RJAnnahAccent",1)
+  See("Rjali")
+  !StateCheck("Rjali",CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet("Rjali")
+END
+
+// Annah's post Underdark outdoor sleep
+
+IF
+  InParty(Myself)
+  G("RJANUDSleep1",2)
+  PartyRested()
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJANUDSleep1","GLOBAL",3)
+END
+
+IF
+  InParty(Myself)
+  G("RJANUDSleep1",2)
+  !PartyRested()
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJANUDSleep1","GLOBAL",4)
+END
+
+IF
+  InParty(Myself)
+  OR(2)
+    G("RJANUDSleep1",3)
+    G("RJANUDSleep1",4)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+// Annah initiated flirts
+
+// Flirts initiate
+
+IF
+InParty(Myself)
+!G("RJAnnahRomanceActive",0)
+G("RJAnnahFlirtsStart",0)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahFlirtsStart","GLOBAL",1)
+RealSetGlobalTimer("RJAnnahFlirtTimer","GLOBAL",RJ_FAST)
+END
+
+// Ready for flirting
+
+IF
+InParty(Myself)
+G("RJHush",0)
+G("RJAnnahFlirtsStart",1)
+RealGlobalTimerExpired("RJAnnahFlirtTimer","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+CombatCounter(0)
+!See([ENEMY])
+G("RJAnnahFlirt",0)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahFlirt","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+// Flirting begins
+
+IF
+InParty(Myself)
+G("RJAnnahFlirt",1)
+RealGlobalTimerExpired("RJAnnahFlirtTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahFlirt","GLOBAL",0)
+RealSetGlobalTimer("RJAnnahFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+G("RJAnnahFlirtsStart",1)
+G("RJHush",0)
+RealGlobalTimerExpired("RJAnnahFlirtTimer","GLOBAL")
+!CombatCounter(0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJAnnahFlirtTimer","GLOBAL",150)
+END

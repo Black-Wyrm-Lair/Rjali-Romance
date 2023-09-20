@@ -1,0 +1,18 @@
+
+IF
+G("RjaliGroupToB",0)
+GGT("Chapter",%bg2_chapter_7%)
+THEN
+RESPONSE #100
+SetGlobal("RjaliGroupToB","GLOBAL",1)
+Continue()
+END
+
+IF
+G("RJTeleport",0)
+GGT("Chapter",%bg2_chapter_7%)
+THEN
+RESPONSE #100
+SetGlobal("RJTeleport","GLOBAL",1)
+Continue()
+END

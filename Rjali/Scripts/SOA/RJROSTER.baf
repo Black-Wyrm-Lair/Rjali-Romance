@@ -1,0 +1,132 @@
+
+//  Roster reset
+
+IF
+G("RJRoster",4)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",999)
+    SetGlobal("RJPLAY1","GLOBAL",999)
+    SetGlobal("RJPLAY2","GLOBAL",999)
+    SetGlobal("RJPLAY3","GLOBAL",999)
+    SetGlobal("RJPLAY4","GLOBAL",999)
+    SetGlobal("RJPLAY0S","GLOBAL",0)
+    SetGlobal("RJPLAY1S","GLOBAL",0)
+    SetGlobal("RJPLAY2S","GLOBAL",0)
+    SetGlobal("RJPLAY3S","GLOBAL",0)
+    SetGlobal("RJPLAY4S","GLOBAL",0)
+    SetGlobal("RJPARK0","GLOBAL",0)
+    SetGlobal("RJPARK1","GLOBAL",0)
+    SetGlobal("RJPARK2","GLOBAL",0)
+    SetGlobal("RJPARK3","GLOBAL",0)
+    SetGlobal("RJPARK4","GLOBAL",0)
+    SetGlobal("RJRosCnt","GLOBAL",0)
+    SetGlobal("RJLocSet","GLOBAL",0)
+    SetGlobal("RJFILL0","GLOBAL",1)
+    SetGlobal("RJFILL1","GLOBAL",1)
+    SetGlobal("RJFILL2","GLOBAL",1)
+    SetGlobal("RJFILL3","GLOBAL",1)
+    SetGlobal("RJFILL4","GLOBAL",1)
+    SetGlobal("RJFILLAE","GLOBAL",1)
+    SetGlobal("RJFILLAM","GLOBAL",1)
+    SetGlobal("RJFILLJA","GLOBAL",1)
+    SetGlobal("RJFILLSA","GLOBAL",1)
+    SetGlobal("RJFILLSH","GLOBAL",1)
+    SetGlobal("RJFILLTA","GLOBAL",1)
+    SetGlobal("RJFILLVI","GLOBAL",1)
+    SetGlobal("RJFILLTY","GLOBAL",1)
+    SetGlobal("RJRoster","GLOBAL",1)
+END
+
+//  Roster reset vanilla NPCs
+
+IF
+G("RJRoster",1)
+!InParty("Rjali")
+OR(2)
+  G("RJPLAY0",14)
+  G("RJPLAY0S",14)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END
+
+IF
+G("RJRoster",1)
+!InParty("Imoen")
+!InParty("Imoen2")
+OR(2)
+  G("RJPLAY1",1)
+  G("RJPLAY1S",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END
+
+IF
+G("RJRoster",1)
+!InParty("Aerie")
+OR(2)
+  G("RJPLAY2",2)
+  G("RJPLAY2S",2)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END
+
+IF
+G("RJRoster",1)
+!InParty("Nalia")
+OR(10)
+  G("RJPLAY0",206)
+  G("RJPLAY1",206)
+  G("RJPLAY2",206)
+  G("RJPLAY3",206)
+  G("RJPLAY4",206)
+  G("RJPLAY0S",206)
+  G("RJPLAY1S",206)
+  G("RJPLAY2S",206)
+  G("RJPLAY3S",206)
+  G("RJPLAY4S",206)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END
+
+IF
+G("RJRoster",1)
+!InParty("Jaheira")
+OR(10)
+  G("RJPLAY0",208)
+  G("RJPLAY1",208)
+  G("RJPLAY2",208)
+  G("RJPLAY3",208)
+  G("RJPLAY4",208)
+  G("RJPLAY0S",208)
+  G("RJPLAY1S",208)
+  G("RJPLAY2S",208)
+  G("RJPLAY3S",208)
+  G("RJPLAY4S",208)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END
+
+IF
+G("RJRoster",1)
+!InParty("Viconia")
+OR(10)
+  G("RJPLAY0",313)
+  G("RJPLAY1",313)
+  G("RJPLAY2",313)
+  G("RJPLAY3",313)
+  G("RJPLAY4",313)
+  G("RJPLAY0S",313)
+  G("RJPLAY1S",313)
+  G("RJPLAY2S",313)
+  G("RJPLAY3S",313)
+  G("RJPLAY4S",313)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END

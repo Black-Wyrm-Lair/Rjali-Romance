@@ -1,0 +1,20 @@
+
+IF
+  Contains("RJSKULL",Myself)
+  Contains("WA2ROBE",Myself)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobal("RJMorteReborn","GLOBAL",1)
+    DestroyItem("RJSKULL")  // ~Vecna's Head~
+    DestroyItem("WA2ROBE")  // ~Robe of Vecna~
+    CreateVisualEffect("SPMETSW2",[2592.1701])
+    CreateVisualEffect("SPMETSW2",[2645.1742])
+    Wait(1)
+    CreateVisualEffect("SPFLESHS",[2565.1677])
+    Wait(1)
+    CreateCreature("RJPSTMR",[2565.1677],12)  // Morte
+    Wait(3)
+    ActionOverride("RJMorte",MakeGlobal())
+    SetInterrupt(TRUE)
+END

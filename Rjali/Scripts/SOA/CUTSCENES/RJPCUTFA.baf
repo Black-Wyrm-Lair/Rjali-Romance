@@ -1,0 +1,15 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneID(Player1)
+    CreateVisualEffectObject("SPPLANAR","RJFay")
+    Wait(2)
+    ActionOverride("RJFay",Polymorph(SIRINE))
+    Wait(1)
+    ActionOverride("RJFay",ReallyForceSpellRES("RJPLYFY",Myself))
+    ReallyForceSpellRES("RJMINHP","RJFAY")
+    Wait(1)
+    StartDialogue("PLAYER1",Player1)
+    EndCutSceneMode()
+END

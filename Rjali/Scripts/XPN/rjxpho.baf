@@ -1,0 +1,23 @@
+
+// Expansion Lamp
+
+IF
+  G("RJXPN",1)
+  G("RJXPGen",1)
+  HasItem("RJLAMP2",Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    FaceObject(Player1)
+    SmallWait(20)
+    StartDialogueNoSet(Player1)
+END
+
+// Block ToB stuff in XPN.
+
+IF
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    NoAction()
+END

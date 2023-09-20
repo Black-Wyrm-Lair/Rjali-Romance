@@ -1,0 +1,56 @@
+
+IF
+!GlobalGT("ExpLovetalk","LOCALS",4)
+Global("RJBedded","LOCALS",0)
+THEN
+RESPONSE #100
+IncrementGlobal("RJCntBedded","GLOBAL",1)
+SetGlobal("RJBedded","LOCALS",1)
+Continue()
+END
+
+IF
+!G("marriage",0)
+Global("RJWedded","LOCALS",0)
+THEN
+RESPONSE #100
+IncrementGlobal("RJCntWedded","GLOBAL",1)
+SetGlobal("RJWedded","LOCALS",1)
+Continue()
+END
+
+IF
+G("RJAerieMarriage",0)
+G("AerieRomanceActive",2)
+G("marriage",0)
+Dead("CHALRV01")
+AreaCheck("AR4500")
+THEN
+RESPONSE #100
+SetGlobal("RJAerieMarriage","GLOBAL",1)
+RealSetGlobalTimer("AerieRomance","GLOBAL",6)
+END
+
+IF
+G("AerieHadBaby",0)
+G("AerieRomanceActive",2)
+!G("RJAerieMarriage",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("AerieRomance","GLOBAL",0)
+RealSetGlobalTimer("AeriePregnantTimer","GLOBAL",0)
+END
+
+// Announce wing salve if not parked
+
+IF
+G("RJFinalVisit",1)
+G("RJAEFV",0)
+AreaCheck("AR1306")
+InParty(myself)
+G("AerieRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("RJAEFV","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END

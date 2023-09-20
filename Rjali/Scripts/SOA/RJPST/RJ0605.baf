@@ -1,0 +1,95 @@
+
+// Init RJ0605
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJAddCtl",0)
+  NumInParty(6)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAddCtl","GLOBAL",1)
+    SetGlobal("RJAddLim","GLOBAL",0)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJAddCtl",0)
+  NumInParty(5)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAddCtl","GLOBAL",1)
+    SetGlobal("RJAddLim","GLOBAL",1)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJAddCtl",0)
+  NumInParty(4)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAddCtl","GLOBAL",1)
+    SetGlobal("RJAddLim","GLOBAL",2)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJAddCtl",0)
+  NumInParty(3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAddCtl","GLOBAL",1)
+    SetGlobal("RJAddLim","GLOBAL",3)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJAddCtl",0)
+  NumInParty(2)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAddCtl","GLOBAL",1)
+    SetGlobal("RJAddLim","GLOBAL",4)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJAddCtl",0)
+  NumInParty(1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJAddCtl","GLOBAL",1)
+    SetGlobal("RJAddLim","GLOBAL",5)
+    Continue()
+END
+
+IF
+  G("RJBrothalGen",0)
+THEN
+  RESPONSE #100
+    CreateCreature("RJPSTGR",[1301.1602],14)
+    ActionOverride("RJGrace",MakeGlobal())
+    CreateCreature("RJPSTAN",[1448.1292],0)
+    ActionOverride("RJAnnah",MakeGlobal())
+    ActionOverride("RJPSTYV",MakeGlobal())
+    ActionOverride("RJPSTNE",MakeGlobal())
+    ActionOverride("RJPSTVI",MakeGlobal())
+    ActionOverride("RJPSTJU",MakeGlobal())
+    ActionOverride("RJPSTEC",MakeGlobal())
+    ActionOverride("RJPSTKS",MakeGlobal())
+    ActionOverride("RJPSTDO",MakeGlobal())
+    SetGlobal("RJBrothalGen","GLOBAL",1)
+END

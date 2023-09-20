@@ -1,0 +1,33 @@
+
+// On entry to Keep foyer
+
+IF
+  G("RJXPN",1)
+  G("RJXP1306",0)
+  !InMyArea("Nalia")
+  !Dead("Nalia")
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,MoveGlobal("AR1306","Nalia",[1276.798]))
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXP1306",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJXP1306","GLOBAL",1)
+    CreateCreature("RJCAT",[1842.698],13)
+    CreateCreature("RJJAN",[634.1801],12)
+    Continue()
+END
+
+IF
+  OnCreation()
+  G("RJXPN",1)
+  G("RJParkNA",0)
+THEN
+  RESPONSE #100
+    ActionOverride("Nalia",SetDialog("NALIA"))
+END

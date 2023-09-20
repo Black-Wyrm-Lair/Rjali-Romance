@@ -1,0 +1,234 @@
+
+// This script handles multiple romances for SoA and ToB.
+
+// Record a vanilla romance breakup.
+
+IF
+OR(2)
+  G("RjaliDump",1)
+  G("RjaliUnDump",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+OR(2)
+  G("RjaliDump",1)
+  G("RjaliUnDump",1)
+!InParty(Myself)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",0)
+SetGlobal("RjaliUnDump","GLOBAL",0)
+END
+
+IF
+G("RjaliDump",0)
+!G("AerieRomanceActive",2)
+GGT("RjaliAerieSpice",1)
+GLT("RjaliAerieSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",1)
+SetGlobal("RjaliAerieSpice","GLOBAL",9)
+SetGlobal("RjaliAerieScout","GLOBAL",9)
+SetToken("RJDUMP",@2)
+END
+
+IF
+G("RjaliDump",0)
+!G("ImoenRomanceActive",2)
+GGT("RjaliImoenSpice",1)
+GLT("RjaliImoenSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",1)
+SetGlobal("RjaliImoenSpice","GLOBAL",9)
+SetGlobal("RjaliImoenScout","GLOBAL",9)
+SetToken("RJDUMP",@0)
+END
+
+IF
+G("RjaliDump",0)
+!G("JaheiraRomanceActive",2)
+GGT("RjaliJaheiraSpice",1)
+GLT("RjaliJaheiraSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",1)
+SetGlobal("RjaliJaheiraSpice","GLOBAL",9)
+SetGlobal("RjaliJaheiraScout","GLOBAL",9)
+SetToken("RJDUMP",@5)
+END
+
+IF
+G("RjaliDump",0)
+!G("ViconiaRomanceActive",2)
+GGT("RjaliViconiaSpice",1)
+GLT("RjaliViconiaSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",1)
+SetGlobal("RjaliViconiaSpice","GLOBAL",9)
+SetGlobal("RjaliViconiaScout","GLOBAL",9)
+SetToken("RJDUMP",@6)
+END
+
+IF
+G("RjaliDump",0)
+!G("PGNaliaRomanceActive",2)
+GGT("RjaliNaliaSpice",1)
+GLT("RjaliNaliaSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",1)
+SetGlobal("RjaliNaliaSpice","GLOBAL",9)
+SetGlobal("RjaliNaliaScout","GLOBAL",9)
+SetToken("RJDUMP",@4)
+END
+
+// Record a vanilla romance patchup.
+
+IF
+G("RjaliUnDump",0)
+G("AerieRomanceActive",2)
+G("RjaliAerieSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliUnDump","GLOBAL",1)
+SetGlobal("RjaliAerieSpice","GLOBAL",8)
+SetGlobal("RjaliAerieScout","GLOBAL",8)
+SetToken("RJDUMP",@2)
+END
+
+IF
+G("RjaliUnDump",0)
+G("ImoenRomanceActive",2)
+G("RjaliImoenSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliUnDump","GLOBAL",1)
+SetGlobal("RjaliImoenSpice","GLOBAL",8)
+SetGlobal("RjaliImoenScout","GLOBAL",8)
+SetToken("RJDUMP",@0)
+END
+
+IF
+G("RjaliUnDump",0)
+G("JaheiraRomanceActive",2)
+G("RjaliJaheiraSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliUnDump","GLOBAL",1)
+SetGlobal("RjaliJaheiraSpice","GLOBAL",8)
+SetGlobal("RjaliJaheiraScout","GLOBAL",8)
+SetToken("RJDUMP",@5)
+END
+
+IF
+G("RjaliUnDump",0)
+G("ViconiaRomanceActive",2)
+G("RjaliViconiaSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliUnDump","GLOBAL",1)
+SetGlobal("RjaliViconiaSpice","GLOBAL",8)
+SetGlobal("RjaliViconiaScout","GLOBAL",8)
+SetToken("RJDUMP",@6)
+END
+
+IF
+G("RjaliUnDump",0)
+G("PGNaliaRomanceActive",2)
+G("RjaliNaliaSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliUnDump","GLOBAL",1)
+SetGlobal("RjaliNaliaSpice","GLOBAL",8)
+SetGlobal("RjaliNaliaScout","GLOBAL",8)
+SetToken("RJDUMP",@4)
+END
+
+// Sabotage male romances. Rjali doesn't like them.
+
+IF
+G("RjaliDumpMan",0)
+InParty(Myself)
+InParty("HaerDalis")
+OR(2)
+  G("HaerDalisRomanceActive",1)
+  G("HaerDalisRomanceActive",2)
+THEN
+RESPONSE #100
+  SetGlobal("HaerDalisRomanceActive","GLOBAL",3)
+  SetGlobal("RjaliDumpMan","GLOBAL",1)
+  SetToken("RJDUMPM",@23)
+END
+
+IF
+G("RjaliDumpMan",0)
+InParty(Myself)
+InParty("Anomen")
+OR(2)
+  G("AnomenRomanceActive",1)
+  G("AnomenRomanceActive",2)
+THEN
+RESPONSE #100
+  SetGlobal("AnomenRomanceActive","GLOBAL",3)
+  SetGlobal("RjaliDumpMan","GLOBAL",1)
+  SetToken("RJDUMPM",@19)
+END
+
+IF
+G("RjaliDumpMan",0)
+InParty(Myself)
+InParty("Valygar")
+OR(2)
+  G("ValygarRomanceActive",1)
+  G("ValygarRomanceActive",2)
+THEN
+RESPONSE #100
+  SetGlobal("ValygarRomanceActive","GLOBAL",3)
+  SetGlobal("RjaliDumpMan","GLOBAL",1)
+  SetToken("RJDUMPM",@22)
+END
+
+IF
+G("RjaliDumpMan",0)
+InParty(Myself)
+InParty("Dorn")
+OR(2)
+  G("DornRomanceActive",1)
+  G("DornRomanceActive",2)
+THEN
+RESPONSE #100
+  SetGlobal("DornRomanceActive","GLOBAL",3)
+  SetGlobal("RjaliDumpMan","GLOBAL",1)
+  SetToken("RJDUMPM",@17)
+END
+
+IF
+G("RjaliDumpMan",0)
+InParty(Myself)
+InParty("Rasaad")
+OR(2)
+  G("RasaadRomanceActive",1)
+  G("RasaadRomanceActive",2)
+THEN
+RESPONSE #100
+  SetGlobal("RasaadRomanceActive","GLOBAL",3)
+  SetGlobal("RjaliDumpMan","GLOBAL",1)
+  SetToken("RJDUMPM",@24)
+END
+
+IF
+InParty(Myself)
+G("RjaliDumpMan",1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride(Player1,StartDialogue("Player1",Player1))
+END

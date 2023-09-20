@@ -1,0 +1,24 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    SetGlobal("RJSHSleep","GLOBAL",3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    ApplySpellRES("RJUNHIDE","RJFAY")
+    ActionOverride("RJSheena",DestroySelf())
+    RestorePartyLocations()
+    ActionOverride(Player2,MakeUnselectable(0))
+    ActionOverride(Player3,MakeUnselectable(0))
+    ActionOverride(Player4,MakeUnselectable(0))
+    ActionOverride(Player5,MakeUnselectable(0))
+    ActionOverride(Player6,MakeUnselectable(0))
+    Wait(1)
+    FadeFromColor([30.0],0)
+    Wait(1)
+    EndCutSceneMode()
+    SetGlobal("RJPort","GLOBAL",0)
+    StartDialogue("Player1",Player1)
+END

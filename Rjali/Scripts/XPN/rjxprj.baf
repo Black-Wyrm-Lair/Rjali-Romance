@@ -1,0 +1,29 @@
+
+// Fix Rjali's name and soundsets
+
+IF
+HotKey(K)
+THEN
+RESPONSE #100
+ClearActions("Rjali")
+StartCutSceneMode()
+StartCutScene("RJFIXRJ")
+END
+
+// Block ToB stuff in XPN.
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  G("RJXPRJ01",1)
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END
+
+IF
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    NoAction()
+END

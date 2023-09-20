@@ -1,0 +1,302 @@
+
+// Aerie
+@0    = ~Rjali, what do you think will happen after this is all over?~
+@1    = ~Aerie, I think you already have a pretty shrewd idea of what will happen.~
+@2    = ~Oh. That. But haven't you ever wanted to go home again?~
+@3    = ~We are doing that, and it hasn't been a roaring success.~
+@4    = ~I'm sorry. I just dream of visiting my family and seeing Uncle Quayle and the circus again.~
+@5    = ~I'm sure you will do those things, Aerie.~
+@6    = ~I hope so. <CHARNAME> is so nice about that sort of thing.~
+@7    = ~Just THAT sort of thing?~
+@8    = ~I...Well, I meant...(*blush*)~
+@9    = ~Exactly! Now, keep your eye on the ball...so to speak.~
+
+// Anomen
+@10   = ~Lady Rjali, from what I've seen, you care a lot about orphans. I think you are filled with inner virtue.~
+@11   = ~No. My virtue belongs only to <CHARNAME>. That doesn't stop me from doing good deeds.~
+@12   = ~Truly? Are you doing good deeds for the sake of others, or just for your own benefit?~
+@13   = ~I help because I like to. That's it.~
+@14   = ~So, you're doing this for yourself? Not for the good? Good is unshakable and omnipresent, while feelings alone can deceive you.~
+@15   = ~No, really. I'm not in the habit of lying to myself, as your pompous paladin brethren love to do. Anyone who really wants to do good does not shout about it. He just does it. Heck! That's what I told Ser Gregor! Uh ... anyway, you don't have to continue. I've met people like you and I know that your "virtue" serves as a shield.~
+@16   = ~I don't quite understand you, my lady, but thank you for your kind words. Virtue is truly a Paladin's shield.~
+@17   = ~I just wanted to make sure you and I share the same beliefs. And even if we disagree on the details, know that this shield is meant to serve as a shelter for the weak and defenseless.~
+@18   = ~Yes, yes. A shield that covers a great vanity. And a whole list of noble virtues behind which you can hide from real life.~
+@19   = ~You're boring, and I want tacos.~
+
+// Cernd
+@20   = ~Rjali, I haven't told you this before, but your priestly magic is similar to that of the druids. How did you manage to learn it?~
+@21   = ~Talent, teachers, and tacos.~
+@22   = ~Tacos again! You don't act like a cleric. You don't serve any god. Don't you follow the rituals?~
+@23   = ~My "rituals" all involve <CHARNAME> who, if you hadn't noticed, is a demigod, Cernd. And don't knock tacos, or we're gonna have a problem here.~
+
+// Edwin
+@24   = ~(What's so great about him? Why do they all fawn on him like that?)~
+@25   = ~Eddie, why are you constantly mumbling to yourself?~
+@26   = ~What are you talking, woman?! (Damn, she noticed!)~
+@27   = ~There you go again. Who are you talking to? Do you have an imaginary friend?~
+@28   = ~Don't talk nonsense. There is no one here except us. (She may be stupid, but we'd better hide.)~
+@29   = ~Who is this "us"? You and your friend? Tell me, is he smart? What's his name?~
+@30   = ~What absurdity is this? I don't have any friends. No and never have! (Certainly not a mindless monkey like you.)~
+@31   = ~No friends at all, huh? But you could have, Eddie, if you weren't so miserable and grouchy. I'm thinking maybe he's not imaginary after all? He sits in your head and pushes you around and calls everyone monkeys. Is he some kind of evil Thayan jerboa?~
+@32   = ~Jerboa?! I'll show you a jerboa! Watch out, woman, lest he turn out to be a red dragon! And better remember once and for all - no one dares to push Edwin Odesseiron around! (She insulted us. We have to teach her a lesson! We ... no, stop, this is a trick. She wants to piss us off. Yeah. We'll show her that we don't care.)~
+@33   = ~So he does exist after all! Hehe, red dragon jerboa. You know Eddie, you're funny.~
+
+// Haerdalis
+@34   = ~Hell and angels. Gods and curses. Death and destiny. I can't wait to see the end of this story.~
+@35   = ~How do you rate our chances?~
+@36   = ~In a way, none of us stand a chance, my magpie. Sooner or later, entropy will consume us all. But who said that the remaining path cannot bring a couple more great victories? What would we be worth if we didn't dare to walk through it?~
+@37   = ~I agree. The path appears under the feet of the walker. You know, for someone who talks so much about entropy, you have an amazing love of life.~
+@38   = ~It is thanks to entropy that a smile is the constant companion of this bard. Only when you remember that death will touch you, do you really appreciate the gifts that life presents. Let our joys pass away and be forgotten by those who come after us. As one day a beautiful song ends, so our story will end. But we have experienced an extraordinary adventure. How many new ballads will be heard? How many victorious accomplishments will echo through the future! My dear magpie, this is a real source of inspiration!~
+@39   = ~Too bad Xan can't hear you...~
+
+// Imoen
+@40   = ~Did you hear about what he did to (whispers in Rjali's ear)?~
+@41   = ~No! Then what? Come on, don't stop now!~
+@42   = ~(Whispers in Rjali's ear and giggles.)~ [FEMALE2A]
+@43   = ~You've gotta be kidding! She didn't mind?~
+@44   = ~She liked it!~
+@45   = ~What a scoundrel! Hell, this is wildly exciting. He hasn't done that to me yet. Now I want to try too.~
+@46   = ~I thought you had tried everything with him. Are you sure?~
+@47   = ~Of course I'm sure! The question is not only "what", but also "how", you know? There is always something new. The last time we did it, he... (whispers in Imoen's ear)~
+@48   = ~Oh wow! And you let him?~
+@49   = ~I loved it.~
+@50   = ~Man! You spoil him.~
+@51   = ~I love him. I can't help myself.~
+@52   = ~I'm gonna go ask him about it. I love it when he blushes!~
+
+// Imoen
+@53   = ~Hey, Rjali. You ever check out other men?~
+@54   = ~Well, I look, but that's about it. Why?~
+@55   = ~Well, it's just that there are so many hunks around, and I wondered if you ...~
+@56   = ~Not a chance! It's all I can do to keep up with <CHARNAME>.~
+@57   = ~Really? I would have thought that...~
+@58   = ~Hold that thought. There he is over there.~
+@59   = ~Yeah. I fell for him, too, long before you snagged him. Still.~
+@60   = ~I got him first! Now, if Adahn were on the market...~
+@61   = ~After what he did? You can't mean it.~
+@62   = ~I suppose not. But still...~
+@63   = ~Gotcha, Rjali!~
+
+// Jaheira
+@64   = ~It has been a long and difficult journey. When I first met <CHARNAME>, I never thought it would turn out like this.~
+@65   = ~Let me guess. You never imagined that boy would turn out to be who he is now.~
+@66   = ~You're right. Now, I see him as a true leader and a noble man.~
+@67   = ~Strong and handsome. And loving. No wonder we want him. But actually, I felt it from the very beginning. I just never understood how he does it.~
+@68   = ~I can guess how. Among other things, Gorion turned out to be a wonderful father. At times I regret that he died, but a strange thought comes to me that without his death these seeds would not have sprouted. We would not be where we are now, who we are.~
+@69   = ~Yeah. We've all lost someone, but it looks like some losses are moving us forward, making us stronger. I wonder how it fits into your picture of the balance of the world. Do you really believe that this can all be controlled?~
+@70   = ~I ... have doubts. I think sometimes things just happen the way they should. What do you think?~
+@71   = ~I don't think much. But I noticed that this endless attempt to control everything does not always work, but it keeps you in constant tension. All these teachings, gods, and balance ... for me they are only complications. There is me and him, our big family and the time that is meted out. If I am hungry, I eat. If I want to love him and give everything to him, I will love and give everything. It's simple for me.~
+
+// Jan
+@72   = ~Rjali, you look down today.~
+@73   = ~I detect a story.~
+@74   = ~You reminded me of the time Aunt Petunia was unhappy.~
+@75   = ~Does this involve turnips?~
+@76   = ~No. Well, yes but only peripherally.~
+@77   = ~To improve her mood, Aunt Petunia decided to socialize with some fairies that had recently moved into the area.~
+@78   = ~As you are probably aware, fairies tend to be jokesters, and they kept vanishing whenever Aunt Petunia came around.~
+@79   = ~Unfortunate, but what could she do?~
+@80   = ~Well, she brought along a big pot of turnip stew and left it behind when she went home.~
+@81   = ~And the fairies...?~
+@82   = ~They ate the stew, of course. After Aunt Petunia left, that is.~
+@83   = ~What good did that do, Jan?~
+@84   = ~You'ld be surprised. Whenever she returned, she knew they were there from all the farting. They eventually gave up, and kept her company.~
+@85   = ~(*grins*)~
+
+// Keldorn
+@86   = ~Keldorn, do you ever think of getting married again?~
+@87   = ~Perhaps, once I have retired. My previous experience does not leave me sanguine on the subect.~
+@88   = ~You surprise me. I would have thought your daughters would be nagging you about it.~
+@89   = ~I have seen them so little lately, and they would never be so bold.~
+@90   = ~Really? Are they so afraid of you?~
+@91   = ~Nonsense. They are simply well brought up young ladies.~
+@92   = ~HAH! I suspect you were so gruff and aloof with them that they wouldn't dare approach you.~
+@93   = ~Are you suggesting that young ladies of meek demeanor are oppressed by their upbringing?~
+@94   = ~Yes, I am.~
+@95   = ~I will have to think about this. It never occured to me...~
+
+// Korgan
+@96   = ~What are you ...? Where is he? Rjali, bring my axe here!~
+@97   = ~Okay, dwarf. Spread your fingers.~
+@98   = ~What? Why?~
+@99   = ~Why? WHY? I will cut them off for you so that you no longer talk to me like that.~
+@100  = ~Harrr! And this woman has nerve! Wasn't it you who took it?~
+@101  = ~If you drank less, you would remember where you left it. Right here. Hehe.~
+
+// Mazzy
+@102  = ~Mazzy, will you do when this is over?~
+@103  = ~Go on a new adventure, of course! Have I already told you about Neverwinter? A fortune teller told me about the great events that are to come. She said that I would play an important role in them, can you imagine?~
+@104  = ~Yes, you said something. So you wanna go there? What adventures are you looking forward to?~
+@105  = ~The most heroic! I will gather my own team, countless battles and exploits in the name of valor and justice will await us! Would you like to come with me with <CHARNAME>?~
+@106  = ~Sounds like fun, and if he doesn't mind... However, I doubt he or I will be happy with supporting roles. Even in the name of valor and justice. Also, you know ... kids ...~
+@107  = ~Oh, kids. So, the shelter ... or did you guess something too? Or are you already ...!? No, don't tell. I will say this: if you agree to postpone, then we may well divide the leadership of the detachment by days of the week. Think, friend. It would be great to go there together, huh? Continue our travels together!~
+
+// Minsc
+@108  = ~Friend Rjali, why do you pet Boo but you do not talk with Minsc?~
+@109  = ~We're talking right now.~
+@110  = ~You tell Boo you love him! You never say this to me.~
+@111  = ~You are my friend, Minsc. Boo is...well...Boo.~
+@112  = ~I still do not understand.~
+@113  = ~What is it, Boo?~
+@114  = ~Boo says he is cuter than I am. This is true, but...~
+@115  = ~Don't worry about it. You are much better at butt-kicking.~
+@116  = ~This also is true.~
+@117  = ~Be happy with your own strengths, Minsc. Never change.~
+
+// Nalia
+@118  = ~You have changed, Nalia.~
+@119  = ~Of course, I have! Ever since <CHARNAME> came into my life, my whole world has turned upside down.~
+@120  = ~You too, from what I can gather.~
+@121  = ~Yes, I...you mean? (*blush*)~
+@122  = ~That's what I mean. A little awkward, but it gets the job done.~
+@123  = ~You are so bad, Rjali!~
+@124  = ~Not really. Just trying to get some pointers.~
+@125  = ~I'm not comfortable with this. Can we talk about something else?~
+@126  = ~OK, but you still have some surprises in store.~
+
+// Valygar
+@127  = ~I remember what you said, Rjali. About helping children, about the future of these lands, and about new goals for those who live here. The weight of the past no longer weighs on me like it did before, so... I guess I'm ready to move forward too.~
+@128  = ~Well, you don't frown like you used to. What have you decided to do, if it's not a secret?~
+@129  = ~I've been thinking about it. The Cowled Wizards are still poisoning this land with their oppression. I think I can counter them with something.~
+@130  = ~Fighting magic again, huh? Cowled Wizards are still bastards, but it seemed to me that, in your understanding, their order was at least a little necessary, even if it did deter other magicians from having excessive freedom.~
+@131  = ~"Bad" magic has not diminished. They just monopolized it. Their corrupt schemes, venality and black methods have already caused many problems for people. People like me or Imoen - we are just a drop in the sea of their atrocities. It couldn't be any worse without them. Better - very likely.~
+@132  = ~I hope you can do it. In any case, you will not be alone. It is a noble goal.~
+@133  = ~We'll see.~
+
+// Viconia
+@134  = ~So Abbil, did you do as I suggested? Did he like it?~
+@135  = ~You have to ask! A bit of dexterity, a pinch of passion, and he is completely in my power. Now he agrees to everything, if I repeat it often enough.~
+@136  = ~I told you so. You surfacers are so inexperienced.~
+@137  = ~I can't imagine how your people do this without love and trust, but for intimacy with a loved one, it's just incredible. Where did you learn this? No matter how much I flipped through my secret tomes, I never found anything like it.~
+@138  = ~You won't find it. These are the most esoteric practices of the drow, available only to matrons and a select aristocracy. You still do not know about the manipulation of the energies and psyche of a man through special points on the body. He may have divine blood, but they might work. In general, since you are the most skillful and interested among my ... let's say, students, I can, if you want, give you some private lessons.~
+@139  = ~Really? Of course I want! I want to push all of his buttons and make him happy. When do we start?~
+@140  = ~I am pleased with your interest, Abbil. We can start today. I think he won't mind if we practice right there.~
+
+// Dorn
+@200  = ~My master has asked me to make you a proposition.~
+@201  = ~Oh yes? And What would that be?~
+@202  = ~He wants me to train you in our ways.~
+@203  = ~I think not, Dorn.~
+@204  = ~He will not be pleased with your attitude.~
+@205  = ~Know what? You need to eat more chocolate.~
+
+// Dorn
+@206  = ~For a blackguard, you seem to tolerate the good we do pretty well, Dorn.~
+@207  = ~In aid of my quest, I can tolerate much that is distasteful.~
+@208  = ~Is that all of it, or do you have a streak of good deep down?~
+@209  = ~That is not at all likely. Why do you speculate so?~
+@210  = ~Oh, I don't know. Maybe we can persuade you to turn good in time.~
+@211  = ~That will never happen. Dismiss the thought.~
+
+// Dorn
+@212  = ~Do you not enjoy the combat for its own sake?~
+@213  = ~Nope. Oh, I like being good at this, but combat must serve the good in some way.~
+@214  = ~I know you see it so. That does not make it so.~
+@215  = ~We each have our illusions, I guess. Difference is, mine make me happy.~
+@216  = ~You've got me there.~
+
+// Edwin
+@217  = ~Why do you stare at me like that, woman?~
+@218  = ~Oh, just trying to figure out where you keep your smile.~
+@219  = ~Well, stop it!~
+@220  = ~Nope. Gonna figure out a way to make you laugh, even.~
+@221  = ~Grrr...~
+@222  = ~No. That wasn't it. Maybe if I told you a joke?~
+@223  = ~I will not laugh and I do not enjoy your efforts.~
+@224  = ~Your face could certainly do with a laugh line or two.~
+
+// Edwin
+@225  = ~You do not avoid me as the others do. You are perhaps interested in becoming like me?~
+@226  = ~That's not it. I need to understand you, not be like you.~
+@227  = ~Too bad. You could learn so much.~
+@228  = ~So could you. If it's not too late...~
+
+// Edwin
+@229  = ~Would you like to bite me? Hmmm?~
+@230  = ~Nah. I like meat a whole lot fresher.~
+@231  = ~It was not of meat of which I spoke...~
+
+// Neera
+@232  = ~Neera, my tiara keeps flashing pink and gold. What have you done now?~
+@233  = ~Nothing! Why would you think I would do a thing like that, Rjali.~
+@234  = ~Ha! If it's pink it's you!~
+@235  = ~Imoen likes pink, too. Maybe it was her.~
+@236  = ~She doesn't like gold. Well, not in cloths, that is.~
+@237  = ~She *does* seem to have an affinity for gold. Doesn't she?~
+@238  = ~True. Why she... HEY! Stop trying to distract me!~
+@239  = ~Oh, all right. I was trying to make it stronger, and I had this wild surge, you see...~
+@240  = ~I suppose I'm lucky not to have been turned into a hamster.~
+@241  = ~I could try to reverse the spell but...you know.~
+@242  = ~Better not. How long is this going on for?~
+@243  = ~I don't think it's permanent. It was only a *little* spell. Lasting effects require a lot more power.~
+@244  = ~*sigh* Have some chocolate. Then let's figure out a prank to play on <CHARNAME>.~
+
+// Neera
+@245  = ~What's it like with <CHARNAME> and you. I mean...~
+@246  = ~Pretty much the same as with you and him, I would guess. Without the hamster thing, though.~
+@247  = ~Details. Give. Enquiring minds want to know!~
+@248  = ~Well, usually he...(Rjali describes a *very* steamy episode.)~
+@249  = ~On my! We haven't tried *that* yet. but just the other night...(Neera's relates an equally steamy event, if somewhat more improbable.)~
+@250  = ~Really. Gonna have to try that one.~
+@251  = ~Why not now. We could gang up on him. Oh <CHARNAME>! Come and get it!~
+
+// Neera
+@252  = ~That was fun the other day.~
+@253  = ~It was, wasn't it? We'll have to do it again.~
+@254  = ~Meanwhile, how about we make tacos.~
+@255  = ~I don't know how. Teach me?~
+@256  = ~Sure. First you...(Rjali demonstrates the fine art of taco making.)~
+@257  = ~That seems simple enough. Who knew simplicity tasted so good?~
+@258  = ~Me.~
+@259  = ~...and so modest, too.~
+@260  = ~Me again.~
+@261  = ~Let's eat these as we walk. I want to hear more about...you know.~
+
+// Neera
+@262  = ~It feels like a neverending story.~
+@263  = ~What do you mean?~
+@264  = ~We just get one foe down, and up pops another. And then there's this Solar...~
+@265  = ~Even I am getting pissed off at always being put to sleep.~
+@266  = ~Every time she wants to have a little *private* talk with <CHARNAME>.~
+@267  = ~Come to think of it, that does seem a bit suspicious.~
+@268  = ~Do you think she's jumping his bones?~
+@269  = ~Nah. Even if he didn't tell us, he would look so guilty there would be no question.~
+@270  = ~There's that.~
+
+// Rasaad
+@271  = ~How do you like being with <CHARNAME> now, Rasaad?~
+@272  = ~He stretches my moral sense, but he is my friend and deserves my loyalty.~
+@273  = ~He does all of that! But are you enjoying the journey?~
+@274  = ~Yes and no. It has been interesting so far.~
+@275  = ~"May you live in interesting times", eh? That's a curse, you know.~
+@276  = ~I do know. But for instance, your orphanage was and is a fine idea.~
+@277  = ~I glad you like that. It comforts me when I get the blues.~
+
+// Rasaad
+@278  = ~What did you want to be when you were a little boy?~
+@279  = ~Many things, Rjali. Most of them involved fighting.~
+@280  = ~Is that how you ended up as a monk?~
+@281  = ~Partly. The rest of it was sadness and necessity.~
+@282  = ~Boy, can I relate to that!~
+@283  = ~And you, Rjali? How did you wind up as you are?~
+@284  = ~Hunger, mostly. Here. Have a taco while we talk of more pleasant things.~
+
+// Rasaad
+@285  = ~Rjali, you are such a happy person.~
+@286  = ~Of course I am! I've got <CHARNAME>. I've got wonderful co-wives. And I'm not hungry.~
+@287  = ~About that co-wife thing...~
+@288  = ~I thought monks were celibate?~
+@289  = ~It's not a rule, but mostly we are. It's just that your *situation* is outside the norm and most teachings.~
+@290  = ~As I don't belong to any particular church, I have been able to pick and choose those tenets that seem good to me.~
+@291  = ~It has the appearance of being very self-serving. Doesn't that worry you?~
+@292  = ~What anyone other than <CHARNAME> thinks of me is their business. If they don't approve, to hell with'em!~
+
+// Rasaad
+@293  = ~Rasaad, you don't smile much, do you?~
+@294  = ~I never thought about it, Rjali. I suppose not.~
+@295  = ~Trust me. You don't.~
+@296  = ~I meditate most of the time. Can one smile while one meditates?~
+@297  = ~I don't see why not.~
+@298  = ~I guess I just emulated my masters. *They* didn't smile very much.~
+@299  = ~Try it. You might find that you like.~
+@300  = ~I will. *Now* may I have some of your chocolate?~

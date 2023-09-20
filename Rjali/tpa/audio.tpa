@@ -1,0 +1,14 @@
+
+LAF HANDLE_AUDIO
+  STR_VAR
+    audio_path = ~Rjali/Audio/All~
+    oggdec_path = ~Rjali/Audio~
+    sox_path = ~Rjali/Audio~
+END
+
+LAF HANDLE_AUDIO
+  STR_VAR
+    audio_path = EVALUATE_BUFFER ~Rjali/Audio/%LANGUAGE%~
+    oggdec_path = ~Rjali/Audio~
+    sox_path = ~Rjali/Audio~
+END

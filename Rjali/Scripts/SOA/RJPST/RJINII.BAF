@@ -1,0 +1,17 @@
+
+// Jini's voice
+
+IF
+OR(8)
+  G("RJiniiPID",1)
+  G("RJiniiJIDAD",1)
+  G("RJiniiJIDMR",1)
+  G("RJiniiJIDDK",1)
+  G("RJiniiJIDND",1)
+  G("RJiniiJID1",1)
+  G("RJRavelOrphans",1)
+  G("RJRavelOrphans",3)
+THEN
+RESPONSE #100
+  StartDialogueNoSet(Player1)
+END

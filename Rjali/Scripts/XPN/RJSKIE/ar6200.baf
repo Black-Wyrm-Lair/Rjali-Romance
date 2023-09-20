@@ -1,0 +1,18 @@
+
+// Skie Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("SkieBio",0)
+G("SkieRomanceActive",2)
+OR(2)
+  InParty("SkieDV")
+  G("RJParkSK",1)
+THEN
+RESPONSE #100
+SetGlobal("SkieBio","GLOBAL",1)
+TextScreen("RJEpiSK")
+SmallWait(1)
+Continue()
+END

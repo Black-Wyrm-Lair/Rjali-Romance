@@ -1,0 +1,9 @@
+
+// Block ToB stuff in XPN.
+
+IF
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    NoAction()
+END

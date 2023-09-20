@@ -1,0 +1,67 @@
+
+// Kesai Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJKesaiRomanceActive",2)
+G("PlayerChoseEssence",1)
+G("RJKesaiBio",0)
+OR(2)
+  InParty("RJKesai")
+  G("RJParkKE",1)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiBio","GLOBAL",1)
+TextScreen("RJKesai1")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJKesaiRomanceActive",2)
+!G("PlayerChoseEssence",1)
+G("RJKesaiBio",0)
+OR(2)
+  InParty("RJKesai")
+  G("RJParkKE",1)
+!InParty("RJRavel")
+!G("RJParkRV",1)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiBio","GLOBAL",1)
+TextScreen("RJKesai2")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJKesaiRomanceActive",2)
+!G("PlayerChoseEssence",1)
+G("RJKesaiBio",0)
+OR(2)
+  InParty("RJKesai")
+  G("RJParkKE",1)
+OR(2)
+  InParty("RJRavel")
+  G("RJParkRV",1)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiBio","GLOBAL",1)
+TextScreen("RJKesai3")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("RJKesaiRomanceActive",2)
+G("RJKesaiBio",0)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiBio","GLOBAL",1)
+TextScreen("RJKesai4")
+SmallWait(1)
+Continue()
+END

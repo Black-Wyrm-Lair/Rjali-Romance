@@ -1,0 +1,12 @@
+
+// Fix broken Jaheira Bandit Plot
+
+IF
+InParty("Jaheira")
+Global("Lovetalk","LOCALS",27)
+G("JaheiraBanditPlot",0)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("JaheiraRomance","GLOBAL",0) 
+    SetGlobal("JaheiraBanditPlot","GLOBAL",1)
+END

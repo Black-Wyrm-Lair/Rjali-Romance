@@ -1,0 +1,40 @@
+
+BEGIN RJSKULL
+
+// Saving Morte
+
+IF ~IsGabber(Player1)~ THEN BEGIN Skull
+SAY @0
+IF ~G("RJiniiJIDMR",5)~ THEN REPLY @10 DO ~SetGlobal("RJiniiJIDMR","GLOBAL",6)~ GOTO sk0
+IF ~G("RJiniiJIDMR",9) 
+    G("RJMRTlk0",0)~ THEN REPLY @30 DO ~SetGlobal("RJMRTlk0","GLOBAL",1)~ GOTO sk1
+IF ~!G("RJiniiJIDMR",5)
+    OR(2)
+      !G("RJiniiJIDMR",9)
+      G("RJMRTlk0",1)~ THEN REPLY @1 GOTO skx
+END
+
+IF ~~ skx
+SAY @2
+IF ~~ THEN REPLY @3 EXIT
+END
+
+IF ~~ THEN BEGIN sk0
+SAY @11
+IF ~~ THEN REPLY @12 GOTO sk0.1
+END
+
+IF ~~ THEN BEGIN sk0.1
+SAY @13 = @14 = @15 = @16 = @17
+IF ~~ THEN REPLY @18 GOTO sk0.2
+END
+
+IF ~~ THEN BEGIN sk0.2
+SAY @19
+IF ~~ THEN REPLY @20 EXIT
+END
+
+IF ~~ THEN BEGIN sk1
+SAY @31 = @32 = @33
+IF ~~ THEN REPLY @34 EXIT
+END

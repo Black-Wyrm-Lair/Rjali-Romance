@@ -1,0 +1,8 @@
+
+COPY ~Rjali/Spells/RJPR607.spl~ ~override/RJPR607.spl~
+SAY NAME1 @174
+SAY NAME2 @174
+SAY UNIDENTIFIED_DESC @175
+SAY DESC @175
+
+COPY ~Rjali\Spells\Copy~ ~override~

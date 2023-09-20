@@ -1,0 +1,63 @@
+
+// Journal Entries
+
+ADD_JOURNAL @9000 @9001 @9002 @9003 @9004 @9005 @9006 @9007 @9008 @9009
+            @9010 @9011 @9012 @9013 @9014 @9015 @9016 @9017 @9018 @9019
+            @9020 @9021 @9022 @9023 @9024 @9025 @9026 @9027 @9028 @9029
+            @9030 @9031 @9032 @9033 @9034 @9035 @9036 @9037 @9038 @9039
+            @9040 @9041 @9042 @9043 @9044 @9045 @9046 @9047 @9048 @9049
+            @9050 @9051 @9052 @9053 @9054 @9055 @9056 @9057 @9058 @9059
+            @9060 @9061 @9062 @9063 @9064 @9065 @9066 @9067 @9068
+  USING ~Rjali/Languages/%LANGUAGE%/setup.tra~
+
+// SOA content
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/BRJALI.d~    // Rjali's SoA banters with other party members
+	~Rjali/Dialogue/SOA/Rjali.d~     // Rjali's greeting dialogue
+	~Rjali/Dialogue/SOA/RjaliP.d~    // Rjali's leaving party dialogue
+	~Rjali/Dialogue/SOA/RjaliJ.d~    // Rjali's main dialogue file
+	~Rjali/Dialogue/SOA/RJINTRO.d~   // Setup Imoen introductions
+	~Rjali/Dialogue/SOA/RJPLAY0.d~   // The roster player dialogue files
+	~Rjali/Dialogue/SOA/RJPST~       // All PST NPCNPC and Intro dialogue files
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJFAY.d~ //Misc Fay Interjections
+
+COMPILE EVALUATE_BUFFER ~Rjali/Scripts/SOA/RjaliS.baf~   // Rjali's main script file
+	~Rjali/Scripts/SOA/RjaliD.baf~   // Rjali's dream script file for events at rest
+	~Rjali/Scripts/SOA/RJSHOUT.baf~  // Rjali's intro script
+	~Rjali/Scripts/SOA/RJPLAY0.baf~  // Roster player override script files
+	~Rjali/Scripts/SOA/RJPLAY1.baf~
+	~Rjali/Scripts/SOA/RJPLAY2.baf~
+	~Rjali/Scripts/SOA/RJPLAY3.baf~
+	~Rjali/Scripts/SOA/RJPLAY4.baf~
+	~Rjali/Scripts/SOA/RJPST~        // All PST NPCNPC and Intro scripts
+
+// TOB CONTENT
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/TOB/BRJALI25.d~  // Rjali's ToB banters with other party members
+	~Rjali/Dialogue/TOB/Rjali25P.d~  // Rjali's ToB leaving party dialogue
+	~Rjali/Dialogue/TOB/Rjali25J.d~  // The rest of Rjali's ToB dialogues
+	~Rjali/Dialogue/TOB/Player1.d~   // Player1's interjections
+        ~Rjali/Scripts/TOB/rjal25.baf~   // Rjali's script for ToB
+	~Rjali/Scripts/TOB/Rjali25D.baf~ // Rjali's dream script file for ToB
+
+COPY_EXISTING ~25SPELL.dlg~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY %IF ~~ THEN DO ~StartStore("25Spell",LastTalkedToBy)
+~ EXIT%
+                      %IF ~AreaCheck("AR5011")~ THEN DO ~StartStore("25Spell",LastTalkedToBy)~ EXIT
+  IF ~!AreaCheck("AR5011")~ THEN DO ~StartStore("25Spell2",LastTalkedToBy)~ EXIT%
+  END
+
+ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJNEER/Brjali25.d~  // Rjali's EE banters
+
+END
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJOrphans.d~  // Orphan Project dialogues
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJTALIRA.d~   // Talira dialogues
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJDALE.d~     // Daleson dialogues
+                        ~Rjali/Scripts/SOA/RJDALE.baf~    // Daleson Scripts

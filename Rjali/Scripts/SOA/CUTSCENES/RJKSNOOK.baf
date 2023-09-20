@@ -1,0 +1,19 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID("RJPSTKS")
+    CloseDoor("ar605d05")
+    SetGlobal("RJKSNOOK","GLOBAL",1)
+    ActionOverride(Player1,MoveToObjectFollow("RJPSTKS"))
+    MoveViewPoint([2254.578],VERY_FAST)
+    MoveToPointNoInterrupt([2254.578])
+    Wait(1)
+    OpenDoor("ar605d05")
+    FaceObject(Player1)
+    ActionOverride(Player1,FaceObject("RJPSTKS"))
+    Wait(1)
+    EndCutSceneMode()
+    StartDialogueNoSet(Player1)
+END

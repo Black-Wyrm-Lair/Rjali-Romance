@@ -1,0 +1,151 @@
+
+//  Park NPCs in deArnise Keep
+
+// Imoen SoA
+
+EXTEND_BOTTOM IMOEN2P 4
+IF ~G("RjaliImoenScout",2)
+    G("ImoenRomanceActive",2)
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkImoenSOA
+END
+
+APPEND IMOEN2P
+
+IF ~~ THEN BEGIN RJParkImoenSOA
+  SAY @1
+  IF ~~ THEN DO ~SetGlobal("RJParkIM","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",771,823,14)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkIM",1)~ THEN BEGIN RJVisitImoenSOA
+  SAY @12
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkIM","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVIMSOA1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVIMSOA2
+  IF ~RandomNum(3,3) !InParty("Nalia") G("RJParkNA",0)~ THEN REPLY @9 GOTO RJVIMSOA3.1
+  IF ~RandomNum(3,3) OR(2) InParty("Nalia") !G("RJParkNA",0)~ THEN REPLY @9 GOTO RJVIMSOA3.2
+  IF ~~ THEN REPLY @11 GOTO RJVIMSOA4
+  IF ~~ THEN REPLY @21 GOTO RJVIMSOA5
+  IF ~~ THEN REPLY @8 GOTO RJVIMSOA6
+END
+
+IF ~~ THEN BEGIN RJVIMSOA1
+  SAY @23 = @24
+  IF ~~ THEN REPLY @25 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMSOA2
+  SAY @26 = @27
+  IF ~~ THEN REPLY @28 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMSOA3.1
+  SAY @29 = @30 = @31
+  IF ~~ THEN REPLY @32 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMSOA3.2
+  SAY @33 = @34
+  IF ~~ THEN REPLY @35 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMSOA4
+  SAY @36
+  IF ~~ THEN REPLY @37 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMSOA5
+  SAY @38 = @39
+  IF ~~ THEN REPLY @40 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMSOA6
+  SAY @41 = @42
+  IF ~~ THEN REPLY @43 EXIT
+END
+
+END
+
+// Imoen ToB
+
+EXTEND_BOTTOM IMOEN25P 0
+IF ~G("ImoenRomanceActive",2)~ THEN REPLY @0 GOTO RJParkImoenTOB
+END
+
+APPEND IMOEN25P
+
+IF ~~ THEN BEGIN RJParkImoenTOB
+  SAY @1
+  IF ~~ THEN DO ~SetGlobal("RJParkIM","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",771,823,14)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkIM",1)~ THEN BEGIN RJVisitImoenTOB
+  SAY @12
+  IF ~G("RJFinalVisit",1) G("RJIMFV",0)~ THEN REPLY @14 GOTO RJVIMTOB9
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkIM","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVIMTOB1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVIMTOB2
+  IF ~RandomNum(3,3) !InParty("Nalia") G("RJParkNA",0)~ THEN REPLY @9 GOTO RJVIMTOB3.1
+  IF ~RandomNum(3,3) OR(2) InParty("Nalia") !G("RJParkNA",0)~ THEN REPLY @9 GOTO RJVIMTOB3.2
+  IF ~~ THEN REPLY @11 GOTO RJVIMTOB4
+  IF ~~ THEN REPLY @50 GOTO RJVIMTOB5
+  IF ~~ THEN REPLY @8 GOTO RJVIMTOB6
+END
+
+IF ~~ THEN BEGIN RJVIMTOB1
+  SAY @23 = @24
+  IF ~~ THEN REPLY @25 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB2
+  SAY @26 = @27
+  IF ~~ THEN REPLY @28 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB3.1
+  SAY @51
+  IF ~~ THEN REPLY @52 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB3.2
+  SAY @53 = @54
+  IF ~~ THEN REPLY @55 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB4
+  SAY @56 = @57
+  IF ~~ THEN REPLY @58 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB5
+  SAY @59 = @60 = @61
+  IF ~~ THEN REPLY @62 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB6
+  SAY @63 = @64
+  IF ~~ THEN REPLY @65 EXIT
+END
+
+IF ~~ THEN BEGIN RJVIMTOB9
+  SAY @66 = @67 = @68 = @69
+  IF ~~ THEN REPLY @70 GOTO RJVIMTOB9.1
+END
+
+IF ~~ THEN BEGIN RJVIMTOB9.1
+  SAY @71 = @72
+  IF ~~ THEN REPLY @73 DO ~SetGlobal("RJIMFV","GLOBAL",1)~ EXIT
+END
+
+END

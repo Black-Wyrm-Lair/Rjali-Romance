@@ -1,0 +1,10 @@
+
+// Initiate Player1 Chain Dialogue
+
+IF
+  Global("RJ1stDlg","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJ1stDlg","LOCALS",1)
+    ActionOverride(Player1,StartDialogue("Player1",Myself))
+END

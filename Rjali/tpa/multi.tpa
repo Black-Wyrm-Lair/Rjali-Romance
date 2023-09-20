@@ -1,0 +1,669 @@
+
+// Here's where we fix the tweakpack multiple romance bug
+
+EXTEND_BOTTOM ~aeri25.bcs~ ~Rjali/Scripts/TOB/aeri25_rom2.baf~
+EXTEND_BOTTOM ~jahe25.bcs~ ~Rjali/Scripts/TOB/jahe25_rom2.baf~
+EXTEND_BOTTOM ~vico25.bcs~ ~Rjali/Scripts/TOB/vico25_rom2.baf~
+
+// Here's where we prevent the Fate Spirit from calling anyone to you
+
+  COPY_EXISTING ~FATESP.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Dead(".*")~ ~False()~
+    END
+
+// Here's where we make Aerie cross-mod multi-romance capable
+
+  COPY_EXISTING ~Aerie.bcs~ ~override~
+                ~Aeri25.bcs~ ~override~
+                ~AerieJ.dlg~ ~override~
+                ~BAerie.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~AerieRomanceActive~ ~RJSTUB1~
+      REPLACE_TEXTUALLY ~ImoenRomanceActive~ ~RJSTUB2~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB1~ ~AerieRomanceActive~
+      REPLACE_TEXTUALLY ~RJSTUB2~ ~ImoenRomanceActive~
+    END
+
+// Here's where we make Jaheira cross-mod multi-romance capable
+
+  COPY_EXISTING ~Jaheira.bcs~ ~override~
+                ~JAHEIRAJ.dlg~ ~override~
+                ~BJaheir.dlg~ ~override~
+                ~BJahei25.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~JaheiraRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~JaheiraRomanceActive~
+    END
+
+// Here's where we make Viconia cross-mod multi-romance capable
+
+  COPY_EXISTING ~Viconia.bcs~ ~override~
+                ~Vico25.bcs~ ~override~
+                ~ViconiJ.dlg~ ~override~
+                ~BViconi.dlg~ ~override~
+                ~BVicon25.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~ViconiaRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~ViconiaRomanceActive~
+    END
+
+// Setup Multiple Romance for Mods and PST and EE
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJMULTI.d~
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/TOB/RJMULTI.d~
+
+// Annah
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSAN/RJMULTI.d~
+        ~Rjali/Dialogue/SOA/RJPSAN/RJINTRO.d~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJMRSOA.baf~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJMRBOT.baf~
+EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJMRBOT.baf~
+
+// Grace
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSGR/RJMULTI.d~
+        ~Rjali/Dialogue/SOA/RJPSGR/RJINTRO.d~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJMRSOA.baf~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJMRBOT.baf~
+EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJMRBOT.baf~
+
+// Ravel
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSRV/RJMULTI.d~
+        ~Rjali/Dialogue/SOA/RJPSRV/RJINTRO.d~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJMRSOA.baf~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJMRBOT.baf~
+EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJMRBOT.baf~
+
+// Kesai
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSKE/RJMULTI.d~
+        ~Rjali/Dialogue/SOA/RJPSKE/RJINTRO.d~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJMRSOA.baf~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJMRBOT.baf~
+EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJMRBOT.baf~
+
+// Neera
+
+  COMPILE ~Rjali/Dialogue/SOA/RJNEER/RJMULTI.d~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJMRBOT.baf~
+  COPY_EXISTING ~Neera.bcs~ ~override~
+                ~NEERAJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~NeeraRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~NeeraRomanceActive~
+    END
+
+// Imoen
+
+COMPILE ~Rjali/Dialogue/SOA/RJIMOE/COMPILE~
+
+// Nalia
+
+ACTION_IF MOD_IS_INSTALLED ~deArnise/setup-deArnise.tp2~ "0" THEN BEGIN 
+
+  COPY_EXISTING ~Nalia.bcs~ ~override~
+                ~NaliaJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~PGNaliaRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~PGNaliaRomanceActive~
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJNALI/COMPILE~ 
+
+END
+
+// Dace
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+
+  COPY_EXISTING ~t#dace.bcs~ ~override~
+                ~t#daced.bcs~ ~override~
+                ~T#DACEJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~T#DaceRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~T#DaceRomanceActive~
+      REPLACE_TEXTUALLY ~Range(Player1,15)~ ~Range(Player1,5)~
+    END
+  COPY_EXISTING ~ar0700.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~2173.1528~ ~1831.1316~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJDACE/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJMRBOT.baf~
+
+END
+
+// Isra
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~rh#isr.bcs~ ~override~
+                ~RH#ISRJ.dlg~ ~override~
+                ~BRH#ISR.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~rh#IsraRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~rh#IsraRomanceActive~
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJISRA/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJMRBOT.baf~
+
+END
+
+// Branwen
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~o#brans.bcs~ ~override~
+                ~O#BRANJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~O#BranRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~O#BranRomanceActive~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJBRAN/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJMRBOT.baf~
+
+END
+
+// Fade
+
+ACTION_IF MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~E3Fade.bcs~ ~override~
+                ~E3FADEJ.dlg~ ~override~
+                ~BE3FADE.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~E3FADEROMANCEACTIVE~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~E3FADEROMANCEACTIVE~
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+
+  COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/RJFADE/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJMRBOT.baf~
+  EXTEND_BOTTOM ~E3FadeD.bcs~ ~Rjali/Scripts/SOA/RJFADE/BIKINIS.baf~
+  EXTEND_BOTTOM ~E3Fad25D.bcs~ ~Rjali/Scripts/SOA/RJFADE/BIKINIT.baf~
+
+END
+
+// Tashia
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~tashia.bcs~ ~override~
+                ~BTASHIA.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~TashiaRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~TashiaRomanceActive~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,25)~ ~True()~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJTASH/COMPILE~
+
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTASH/Player1.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJMRBOT.baf~
+  EXTEND_BOTTOM ~tash25.bcs~ ~Rjali/Scripts/TOB/tash25_rom2.baf~
+
+  COPY_EXISTING ~worldmap.wmp~ ~override~
+    READ_LONG 0x30 "area_num"
+    READ_LONG 0x34 "area_off"
+    FOR (index = 0 ; index < area_num ; index = index + 1) BEGIN
+      READ_ASCII ("%area_off%" + ("%index%" * 0xf0)) "areafile"
+      PATCH_IF (("ar2600" STRING_COMPARE_CASE "%areafile%" = 0)) BEGIN // forest of tethir
+        READ_LONG  ("%area_off%" + 0x30 + ("%index%" * 0xf0)) "flags"
+        WRITE_LONG ("%area_off%" + 0x30 + ("%index%" * 0xf0)) ("%flags%" BOR 0x00000004)
+      END
+    END
+
+END
+
+// Ninde
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~LK#NINDJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~LK#NindeRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~LK#NindeRomanceActive~
+    END
+
+  COPY_EXISTING ~lk#nins.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~CreateCreatureOffScreen("LK#NIMES",SSW)~
+                        ~CreateCreatureObject("LK#NIMES","Ninde",0,0,0)~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJNIND/COMPILE~
+
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJNIND/expedite.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJMRBOT.baf~
+  EXTEND_BOTTOM ~lk#ni25.bcs~ ~Rjali/Scripts/TOB/nind25_rom2.baf~
+
+END
+
+// Tyris
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~G#Tyris.bcs~ ~override~
+                ~G#TYRISJ.dlg~ ~override~
+                ~BG#TYRIS.dlg~ ~override~
+                ~BG#TRS25.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~G#TF.TyrisRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~G#TF.TyrisRomanceActive~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJTYRI/COMPILE~
+
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTYRI/expedite.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJMRBOT.baf~
+  EXTEND_BOTTOM ~g#tyrs25.bcs~ ~Rjali/Scripts/TOB/tyri25_rom2.baf~
+
+END
+
+// Yvette
+
+ACTION_IF MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~YXYVEJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~YvetteRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~YvetteRomanceActive~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJYVET/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJMRBOT.baf~
+
+  COPY_EXISTING ~YxYve.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~AreaCheck("AR2500")~ 
+                        ~AreaCheck("AR2500")
+                         OR(3)
+                           G("SaerilethRomanceActive",0)
+                           G("SaerilethRomanceActive",3)
+                           G("SaerilethBetrothed",1)~
+    END
+
+  EXTEND_BOTTOM ~YxYve.bcs~ ~Rjali/Scripts/SOA/RJYVET/YXYVE.baf~
+
+END
+
+// Amber
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~M#Amber.bcs~ ~override~
+                ~M#Aerie.bcs~ ~override~
+                ~M#Jaheir.bcs~ ~override~
+                ~M#Viconi.bcs~ ~override~
+                ~M#AMBER.dlg~ ~override~
+                ~M#AMBERJ.dlg~ ~override~
+                ~M#AMBERN.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~M#AmberRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~Global("ChloeRomanceActiveCR","GLOBAL",[12])~ ~False()~
+      REPLACE_TEXTUALLY ~Global("SolaTalk","GLOBAL",1[23])~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~M#AmberRomanceActive~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJAMBE/COMPILE~
+          ~Rjali/Scripts/SOA/RJAMBE/m#amb25.baf~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJMRBOT.baf~
+
+  COPY_EXISTING ~baldur.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+
+  COPY_EXISTING ~m#amberd.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~GlobalGT("M#AmberLike","Locals",110)~
+                        ~GlobalGT("M#AmberLike","Locals",100)~
+    END
+
+END
+
+// Saerileth
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~SAERILET.bcs~ ~override~
+                ~SAERIL25.bcs~ ~override~
+                ~SAERILEJ.dlg~ ~override~
+                ~SAERILET.dlg~ ~override~
+                ~BSAERILE.dlg~ ~override~
+                ~BSAERI25.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~SaerilethRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~SaerilethRomanceActive~
+      REPLACE_TEXTUALLY ~CreateCreatureObjectOffScreen~
+                        ~CreateCreatureObject~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJSAER/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJMRBOT.baf~
+
+  COPY_EXISTING ~NSCLERIC.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("NSToldCleric","GLOBAL",0)~
+                        ~Global("NSToldCleric","GLOBAL",0) 
+                         G("RJDRIZZT",1)~
+    END
+
+END
+
+// Skie
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~1xSkie.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~SkieRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~".*RomanceActive"~ ~"RJMRSTUB"~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~SkieRomanceActive~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJSKIE/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJMRBOT.baf~
+
+END
+
+// Sheena
+
+ACTION_IF MOD_IS_INSTALLED ~Setup-Sheena.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~K#Sheena.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~SheenaRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~SheenaRomanceActive~
+    END
+
+  COPY_EXISTING ~K#RITUAL.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~RESPONSE #10~ ~RESPONSE #0~
+      REPLACE_TEXTUALLY ~RESPONSE #90~ ~RESPONSE #100~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJSHEE/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJMRBOT.baf~
+
+END
+
+// Petsy
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~L3Petsy.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Race(Player1,DWARF)~ ~True()~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJPETS/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJMRBOT.baf~
+
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~c0sire2.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~C0SireneRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~C0SireneRomanceActive~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,75)~ ~True()~
+    END
+
+  COMPILE ~Rjali/Dialogue/SOA/RJSIRE/COMPILE~
+
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJMRSOA.baf~
+  EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJMRBOT.baf~
+  EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJMRBOT.baf~
+
+END
+
+// Tag
+
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJMRSOA.baf~
+EXTEND_TOP ~Rjalis.bcs~ ~Rjali/Scripts/SOA/RJMRBOT.baf~
+EXTEND_TOP ~Rjal25.bcs~ ~Rjali/Scripts/SOA/RJMRBOT.baf~
+
+// Undo romance never fails
+
+  COPY_EXISTING ~ANOMEN.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Global("AnomenRomanceActive","GLOBAL",[12])~ ~False()~
+    END
+
+  COPY_EXISTING ~DORN.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Global("DornRomanceActive","GLOBAL",[12])~ ~False()~
+    END
+
+  COPY_EXISTING ~HEXXAT.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Global("HexxatRomanceActive","GLOBAL",[12])~ ~False()~
+    END
+
+  COPY_EXISTING ~RASAAD.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Global("RasaadRomanceActive","GLOBAL",[12])~ ~False()~
+    END
+
+// Setup Bodhi selection
+
+  COPY_EXISTING ~BODHIAMB.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~ImoenRomanceActive~ ~RJStub~
+      REPLACE_TEXTUALLY ~RomanceActive~ ~RJVampire~
+      REPLACE_TEXTUALLY ~RJStub~ ~ImoenRomanceActive~
+    END
+
+// Setup Wraith selection
+
+  COPY_EXISTING ~HGWRA01.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~L3PetsyRomanceActive~ ~RJStub~
+      REPLACE_TEXTUALLY ~YvetteRomanceActive~ ~RJStub2~
+      REPLACE_TEXTUALLY ~RomanceActive~ ~RJWraith~
+      REPLACE_TEXTUALLY ~Global("M#AmbJill","GLOBAL",0)~ 
+                        ~Global("M#AmbJill","GLOBAL",0) G("M#AmberRJWraith",2)~
+      REPLACE_TEXTUALLY ~RJStub2~ ~YvetteRomanceActive~
+      REPLACE_TEXTUALLY ~RJStub~ ~L3PetsyRomanceActive~
+      REPLACE_TEXTUALLY ~SkieRelationsActive~ ~SkieRomanceActive~
+    END

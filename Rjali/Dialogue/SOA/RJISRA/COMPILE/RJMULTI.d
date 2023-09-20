@@ -1,0 +1,39 @@
+
+//  Contribution to SOA1 group chat
+
+EXTEND_BOTTOM RJPLAY0 0
+IF ~InParty("rh#Isra2") G("RJSOA1IS",0)~ THEN DO ~SetGlobal("RJSOA1IS","GLOBAL",1)~ EXTERN RH#ISRJ RjaliGroupSOA1.IS
+IF ~G("RJParkIS",2)~ THEN DO ~SetGlobal("RJParkIS","GLOBAL",1)~ EXTERN RH#ISRJ RjaliGroupSOA1.IS
+END
+
+CHAIN RH#ISRJ RjaliGroupSOA1.IS
+@1080 = @1081 DO ~IncrementGlobal("RJGather","GLOBAL",-1)~
+== RJPLAY0 @1082
+== RH#ISRJ @1083 = @1084 = @1085 = @1086
+== RJPLAY1 IF ~!G("RJPlay1",116)~ THEN @1087
+== RJPLAY2 IF ~G("RJPlay1",116)~ THEN @1087
+== RJPLAY0 @1088
+== RH#ISRJ @1089
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+I_C_T RJPLAY0 1 RJSoAGIS
+== RH#ISRJ IF ~InParty("rh#Isra2")~ THEN @595
+END
+
+//  Scout
+
+CHAIN
+IF WEIGHT #-17 ~G("RjaliIsraScout",1)~ THEN PLAYER1 RjaliIsraScout
+@49
+== RJALIJ @0
+== RH#ISRJ @1030
+== RJALIJ @1031
+== RH#ISRJ @1032
+== RJALIJ @1033 = @1034 = @1035
+== RH#ISRJ @1036 = @1037
+== RJALIJ @1038 = @1039 = @1040 = @1041 = @1042
+== PLAYER1 @1043
+== RJALIJ @1044
+== PLAYER1 @1045 DO ~AddJournalEntry(@9027,INFO) SetGlobal("RjaliIsraScout","GLOBAL",2) SetGlobal("RjaliScouts","GLOBAL",1)~
+EXIT

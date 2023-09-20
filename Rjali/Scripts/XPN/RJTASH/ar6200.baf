@@ -1,0 +1,18 @@
+
+// Tashia Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("TashiaBio",0)
+G("TashiaRomanceActive",2)
+OR(2)
+  InParty("Tashia")
+  G("RJParkTA",1)
+THEN
+RESPONSE #100
+SetGlobal("TashiaBio","GLOBAL",1)
+TextScreen("RJEpiTA")
+SmallWait(1)
+Continue()
+END

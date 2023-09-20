@@ -1,0 +1,303 @@
+
+// This is to maintain a roster of dummy cre's to reduce CHAIN dialogue logic.
+
+// Vanilla
+
+EXTEND_BOTTOM ~PLAYER1D.bcs~ ~Rjali/Scripts/SOA/PLAYER1D.baf~ EVALUATE_BUFFER
+
+EXTEND_TOP ~Aerie.bcs~ ~Rjali/Scripts/SOA/RJAERI/RJLOCSOA.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Aerie.bcs~ ~Rjali/Scripts/SOA/RJAERI/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Imoen2.bcs~ ~Rjali/Scripts/SOA/RJIMOE/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Imoen.bcs~ ~Rjali/Scripts/SOA/RJIMOE/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Nalia.bcs~ ~Rjali/Scripts/SOA/RJNALI/RJROSSET.baf~
+EXTEND_TOP ~Jaheira.bcs~ ~Rjali/Scripts/SOA/RJJAHE/RJLOCSOA.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Jaheira.bcs~ ~Rjali/Scripts/SOA/RJJAHE/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Viconia.bcs~ ~Rjali/Scripts/SOA/RJVICO/RJLOCSOA.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Viconia.bcs~ ~Rjali/Scripts/SOA/RJVICO/RJROSSET.baf~ EVALUATE_BUFFER
+
+EXTEND_TOP ~Aeri25.bcs~ ~Rjali/Scripts/SOA/RJAERI/RJLOCTOB.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Aeri25.bcs~ ~Rjali/Scripts/SOA/RJAERI/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Imoe25.bcs~ ~Rjali/Scripts/SOA/RJIMOE/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Nali25.bcs~ ~Rjali/Scripts/SOA/RJNALI/RJROSSET.baf~
+EXTEND_TOP ~Jahe25.bcs~ ~Rjali/Scripts/SOA/RJJAHE/RJLOCTOB.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Jahe25.bcs~ ~Rjali/Scripts/SOA/RJJAHE/RJROSSET.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Vico25.bcs~ ~Rjali/Scripts/SOA/RJVICO/RJLOCTOB.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Vico25.bcs~ ~Rjali/Scripts/SOA/RJVICO/RJROSSET.baf~ EVALUATE_BUFFER
+
+// EE
+
+ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+
+EXTEND_TOP ~Neera.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJROSSET.baf~
+EXTEND_TOP ~Neer25.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJROSSET.baf~
+EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJROSTER.baf~
+EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJROSTER.baf~
+EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJPLAY0.baf~
+EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJPLAY1.baf~
+EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJPLAY2.baf~
+EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJPLAY3.baf~
+EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJNEER/RJPLAY4.baf~
+
+END
+
+// PST
+
+// Annah
+
+  EXTEND_TOP ~RJANNAH.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJROSSET.baf~
+  EXTEND_TOP ~RJAN25.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJPSAN/RJPLAY4.baf~
+
+// Grace
+
+  EXTEND_TOP ~RJGRACE.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJROSSET.baf~
+  EXTEND_TOP ~RJGR25.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJPSGR/RJPLAY4.baf~
+
+// Ravel
+
+  EXTEND_TOP ~RJRAVEL.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJROSSET.baf~
+  EXTEND_TOP ~RJRV25.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJPSRV/RJPLAY4.baf~
+
+// Kesai
+
+  EXTEND_TOP ~RJKESAI.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJROSSET.baf~
+  EXTEND_TOP ~RJKE25.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJPSKE/RJPLAY4.baf~
+
+// Mods
+
+// Dace
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+  EXTEND_TOP ~t#dace.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJROSSET.baf~
+  EXTEND_TOP ~t#dac25.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJDACE/RJPLAY4.baf~
+END
+
+// Isra
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~rh#isr.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJROSSET.baf~
+  EXTEND_TOP ~rh#is25.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJISRA/RJPLAY4.baf~
+END
+
+// Branwen
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~o#brans.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJROSSET.baf~
+  EXTEND_TOP ~o#bra25s.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJBRAN/RJPLAY4.baf~
+END
+
+// Fade
+
+ACTION_IF MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~E3Fade.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~E3Fade25.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJFADE/RJPLAY4.baf~
+END
+
+// Tashia
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~Tashia.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJLOCSOA.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Tashia.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Tash25.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJLOCTOB.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Tash25.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJTASH/RJPLAY4.baf~
+END
+
+// Ninde
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~lk#nins.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJROSSET.baf~
+  EXTEND_TOP ~lk#ni25.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJNIND/RJPLAY4.baf~
+END
+
+// Tyris
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~G#Tyris.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJLOCSOA.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~G#Tyris.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJROSSET.baf~
+  EXTEND_TOP ~G#Tyrs25.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJLOCTOB.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~G#Tyrs25.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJTYRI/RJPLAY4.baf~
+END
+
+// Yvette
+
+ACTION_IF MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~YxYve.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJROSSET.baf~
+  EXTEND_TOP ~YxYv25.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJYVET/RJPLAY4.baf~
+END
+
+// Amber
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~M#Amber.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~M#Amb25.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJAMBE/RJPLAY4.baf~
+END
+
+// Saerileth
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~SAERILET.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJLOCSOA.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~SAERILET.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~SAERIL25.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJLOCTOB.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~SAERIL25.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJSAER/RJPLAY4.baf~
+END
+
+// Skie
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~1xSkie.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJROSSET.baf~
+  EXTEND_TOP ~1xSki25.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJSKIE/RJPLAY4.baf~
+END
+
+// Petsy
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~L3Petsy.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJROSSET.baf~
+  EXTEND_TOP ~L3Pet25.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJPETS/RJPLAY4.baf~
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Sirene_BG2.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~C0Sire2.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJROSSET.baf~
+  EXTEND_TOP ~C0Sire25.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJROSSET.baf~
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJSIRE/RJPLAY4.baf~
+END
+
+// Sheena
+
+ACTION_IF MOD_IS_INSTALLED ~setup-Sheena.tp2~ "0" THEN BEGIN
+  EXTEND_TOP ~K#Sheena.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Sheena25.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJROSSET.baf~ EVALUATE_BUFFER
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJROSTER.baf~
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJROSTER.baf~
+  EXTEND_BOTTOM ~RJPLAY0.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJPLAY0.baf~
+  EXTEND_BOTTOM ~RJPLAY1.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJPLAY1.baf~
+  EXTEND_BOTTOM ~RJPLAY2.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJPLAY2.baf~
+  EXTEND_BOTTOM ~RJPLAY3.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJPLAY3.baf~
+  EXTEND_BOTTOM ~RJPLAY4.bcs~ ~Rjali/Scripts/SOA/RJSHEE/RJPLAY4.baf~
+END
+
+// Tag
+
+EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/RJROSTER.baf~
+EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/SOA/RJROSTER.baf~

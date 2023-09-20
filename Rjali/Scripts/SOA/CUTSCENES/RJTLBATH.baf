@@ -1,0 +1,20 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    FadeToColor([30.0],0)
+    SetGlobal("RJTaliraRomance","GLOBAL",3)
+    LeaveAreaLUA("AR1307","",[853.1236],1)
+    ActionOverride(Player2,LeaveAreaLUA("AR1307","",[902.1174],1))
+    ActionOverride(Player3,LeaveAreaLUA("AR1307","",[943.1198],1))
+    ActionOverride(Player4,LeaveAreaLUA("AR1307","",[981.1236],1))
+    ActionOverride(Player5,LeaveAreaLUA("AR1307","",[1027.1257],1))
+    ActionOverride(Player6,LeaveAreaLUA("AR1307","",[1081.1287],1))
+    OpenDoor("DOOR11")
+    Wait(3)
+    FadeFromColor([30.0],0)
+    EndCutSceneMode()
+    ActionOverride("KPMAID02",StartDialogueNoSet(Player1))
+END

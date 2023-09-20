@@ -1,0 +1,27 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    FadeToColor([20.0],0)
+    Wait(1)
+    SetGlobal("RJFinalVisit","GLOBAL",1)
+    LeaveAreaLUAPanic("AR1306","",[1128.978],N)
+    LeaveAreaLUA("AR1306","",[1128.978],N)
+    ActionOverride(Player2,LeaveAreaLUA("AR1306","",[1160.942],N))
+    ActionOverride(Player3,LeaveAreaLUA("AR1306","",[1176.1002],N))
+    ActionOverride(Player4,LeaveAreaLUA("AR1306","",[1208.966],N))
+    ActionOverride(Player5,LeaveAreaLUA("AR1306","",[1224.1026],N))
+    ActionOverride(Player6,LeaveAreaLUA("AR1306","",[1256.978],N))
+    FadeFromColor([20.0],0)
+    Wait(1)
+    EndCutSceneMode()
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("ppguy01")
+    DestroySelf()
+END

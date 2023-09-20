@@ -1,0 +1,127 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkBR",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("O#Bran")
+!G("RJPLAY0",14)
+OR(3)
+  !G("RJPLAY0",109)
+  !GlobalsEqual("RJROM0","O#BranRomanceActive")
+  !GlobalsEqual("RJPARK0","RjaliBranwenScout")
+!G("RJPLAY1",109)
+!G("RJPLAY2",109)
+!G("RJPLAY3",109)
+!G("RJPLAY4",109)
+!GLT("RJPLAY0",109)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",109)
+    AddGlobals("RJRosCnt","RJFILL0")
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","O#BranRomanceActive")
+    SetGlobal("RJPARK0","GLOBAL",0)
+    AddGlobals("RJPARK0","RjaliBranwenScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("O#Bran")
+!G("RJPLAY1",1)
+!G("RJPLAY0",109)
+OR(3)
+  !G("RJPLAY1",109)
+  !GlobalsEqual("RJROM1","O#BranRomanceActive")
+  !GlobalsEqual("RJPARK1","RjaliBranwenScout")
+!G("RJPLAY2",109)
+!G("RJPLAY3",109)
+!G("RJPLAY4",109)
+!GLT("RJPLAY1",109)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",109)
+    AddGlobals("RJRosCnt","RJFILL1")
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","O#BranRomanceActive")
+    SetGlobal("RJPARK1","GLOBAL",0)
+    AddGlobals("RJPARK1","RjaliBranwenScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("O#Bran")
+!G("RJPLAY0",109)
+!G("RJPLAY1",109)
+OR(3)
+  !G("RJPLAY2",109)
+  !GlobalsEqual("RJROM2","O#BranRomanceActive")
+  !GlobalsEqual("RJPARK2","RjaliBranwenScout")
+!G("RJPLAY3",109)
+!G("RJPLAY4",109)
+!GLT("RJPLAY2",109)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",109)
+    AddGlobals("RJRosCnt","RJFILL2")
+    SetGlobal("RJFILL2","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","O#BranRomanceActive")
+    SetGlobal("RJPARK2","GLOBAL",0)
+    AddGlobals("RJPARK2","RjaliBranwenScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("O#Bran")
+!G("RJPLAY0",109)
+!G("RJPLAY1",109)
+!G("RJPLAY2",109)
+OR(3)
+  !G("RJPLAY3",109)
+  !GlobalsEqual("RJROM3","O#BranRomanceActive")
+  !GlobalsEqual("RJPARK3","RjaliBranwenScout")
+!G("RJPLAY4",109)
+!GLT("RJPLAY3",109)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY3","GLOBAL",109)
+    AddGlobals("RJRosCnt","RJFILL3")
+    SetGlobal("RJFILL3","GLOBAL",0)
+    SetGlobal("RJROM3","GLOBAL",0)
+    AddGlobals("RJROM3","O#BranRomanceActive")
+    SetGlobal("RJPARK3","GLOBAL",0)
+    AddGlobals("RJPARK3","RjaliBranwenScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("O#Bran")
+!G("RJPLAY0",109)
+!G("RJPLAY1",109)
+!G("RJPLAY2",109)
+!G("RJPLAY3",109)
+OR(3)
+  !G("RJPLAY4",109)
+  !GlobalsEqual("RJROM4","O#BranRomanceActive")
+  !GlobalsEqual("RJPARK4","RjaliBranwenScout")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY4","GLOBAL",109)
+    AddGlobals("RJRosCnt","RJFILL4")
+    SetGlobal("RJFILL4","GLOBAL",0)
+    SetGlobal("RJROM4","GLOBAL",0)
+    AddGlobals("RJROM4","O#BranRomanceActive")
+    SetGlobal("RJPARK4","GLOBAL",0)
+    AddGlobals("RJPARK4","RjaliBranwenScout")
+END

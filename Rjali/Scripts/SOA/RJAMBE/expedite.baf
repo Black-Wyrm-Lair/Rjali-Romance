@@ -1,0 +1,42 @@
+
+// Expedite Amber
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("M#AMBER")
+GLT("M#AmberRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPAMTM","GLOBAL")
+!RealGlobalTimerExpired("M#AmberRomanceTime","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPAMTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("M#AmberRomanceTime","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("M#AMBER")
+G("M#AmberRomanceActive",2)
+G("RjaliAmberSpice",2)
+G("RjaliAmberScout",0)
+!RealGlobalTimerNotExpired("RJXPAMTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliAmberScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliAmberScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPAMTM","GLOBAL",ONE_DAY)
+END
+
+IF
+G("RJSpeedCtl",2)
+G("RJAMQ",0)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("M#AMBER")
+GLT("M#AmberRomanceActive",2)
+!RealGlobalTimerExpired("M#AmberQuestTime","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RJAMQ","GLOBAL",1)
+RealSetGlobalTimer("M#AmberQuestTime","GLOBAL",0)
+END

@@ -1,0 +1,21 @@
+
+IF
+InParty(Myself)
+G("RjaliTyrisStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(5)
+  InPartySlot("G#Tyris",1)
+  InPartySlot("G#Tyris",2)
+  InPartySlot("G#Tyris",3)
+  InPartySlot("G#Tyris",4)
+  InPartySlot("G#Tyris",5)
+!StateCheck("G#Tyris",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("G#Tyris")
+FaceObject("G#Tyris")
+SetGlobal("RjaliTyrisStuff","GLOBAL",1)
+SetToken("RJEQUIP",@25)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END

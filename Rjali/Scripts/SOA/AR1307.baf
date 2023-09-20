@@ -1,0 +1,42 @@
+
+// Setup Talira
+
+IF
+  OnCreation()
+  G("RjaliGenOrphan7",0)
+THEN
+  RESPONSE #100
+    ActionOverride("kpmaid01",DestroySelf())
+    ActionOverride("kpmaid02",DestroySelf())
+    SetGlobal("RjaliGenOrphan7","GLOBAL",1)
+    CreateCreature("KPMAID02",[826.1287],9)
+    CreateCreature("KPMAID01",[1846.1541],12)
+    ActionOverride("kpmaid02",MakeGlobal())
+    Continue()
+END
+
+// Reveal Kesai
+
+IF
+  OnCreation()
+  G("RJRatoutKE",2)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRatoutKE","GLOBAL",3)
+    ApplySpellRES("RJUNHIDE","RJKesai")
+    Continue()
+END
+
+// Ravel/Kesai menage-a-trois
+
+IF
+G("RJRVKEMAT",0)
+GGT("RJRatoutKE",1)
+Range("Container 13",15)
+InMyArea("RJRavel")
+InMyArea("RJKesai")
+GGT("RJRavelTalk",8)
+THEN
+RESPONSE #100
+SetGlobal("RJRVKEMAT","GLOBAL",1)
+END

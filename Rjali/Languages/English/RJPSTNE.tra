@@ -1,0 +1,38 @@
+
+@0    = ~Hello. Is there something I can do for you?~
+@1    = ~Not at the moment. Nice to meet you.~
+@2    = ~Hi. My name is <CHARNAME>. I'm a friend of Jini's.~
+@3    = ~My name is Nenny. You're not from around here are you?~
+@4    = ~Not at the moment. Maybe another time.~
+@5    = ~Do you have a nail file? Mine broke, you see.~
+@6    = ~I think I'm going to change the colors in my room.~
+@7    = ~Do you have the time to advise me?~
+
+@10   = ~Has Morte been bothering you?~
+@11   = ~Oh, no! He's such a sweet man.~
+@12   = ~Why, only yesterday he offered to help me make my bed.~
+@13   = ~Unfortunately, he had to leave suddenly just when I handed him the sheets.~
+@14   = ~Then, he tried to dance with me, but he couldn't match my steps and kept leaning towards the bed, which wouldn't do as I had just made it.~
+@15   = ~I'm sure he will be back to see me soon. Don't you think?~
+@16   = ~You are brilliant, Nenny! And I'm sure he will. See you later.~
+
+@20   = ~How are you getting along with Nordom?~
+@21   = ~He seems nice, but I don't see him much.~
+@22   = ~He and Dolora are always together.~
+@23   = ~They play games that I don't understand, but they enjoy it, so that's OK.~
+@24   = ~He's funny, isn't he?~
+@25   = ~I suppose he is, but he is also a true friend. I have it on the best authority.~
+
+@30   = ~How are you getting along with Dakkon?~
+@31   = ~Dakkon is such a gentleman.~
+@32   = ~He will always listen to me, although he doesn't seem to talk much.~
+@33   = ~That's OK, because I can talk enough for both of us, and he doesn't seem to mind.~
+@34   = ~He also took care of a patron who was making nasty suggestions to me.~
+@35   = ~He even helped clean up the blood.~
+@36   = ~Such a gentleman.~
+@37   = ~I can see that. Take care, Nenny.~
+
+@50   = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@51   = ~I found my nail file!~
+@52   = ~Are you becoming a king with a throne and all?~
+@53   = ~Nenny, you are one of a kind. Stay happy.~

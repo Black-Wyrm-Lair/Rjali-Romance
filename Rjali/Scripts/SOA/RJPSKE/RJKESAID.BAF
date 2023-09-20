@@ -1,0 +1,16 @@
+
+// Kesai: Underdark Outside
+
+IF
+  InParty(Myself)
+  !InParty("RJAnnah")
+  AreaCheck("AR2100")
+  !See("udsvir04")
+  G("RJKEUDSleep1",0)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+  SetGlobal("RJKEUDSleep1","GLOBAL",1)
+  ActionOverride(Player1,StartDialogue("Player1",Player1))
+END

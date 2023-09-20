@@ -1,0 +1,25 @@
+
+// Init RJ13EN
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    Explore()
+    BanterBlockFlag(TRUE)
+    Continue()
+END
+
+IF
+  G("RJiniiJIDND",7)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+  G("RJiniiJIDND",6)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDND","GLOBAL",7)
+END

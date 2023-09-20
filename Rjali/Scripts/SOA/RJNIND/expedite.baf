@@ -1,0 +1,42 @@
+
+// Expedite Ninde
+
+IF
+InParty("Ninde")
+GGT("udDrowPlot",98)
+GLT("LK#NindeRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPNITM","GLOBAL")
+!RealGlobalTimerExpired("LK#NindeLoveTalksTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPNITM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("LK#NindeLoveTalksTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_3%)
+InParty("Ninde")
+GLT("LK#NindeRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPNITM","GLOBAL")
+!RealGlobalTimerExpired("LK#NindeLoveTalksTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPNITM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("LK#NindeLoveTalksTimer","GLOBAL",0)
+END
+
+IF
+InParty("Ninde")
+G("BodhiDead",1)
+AreaCheck("AR1304")
+G("LK#NindeRomanceActive",2)
+G("RjaliNindeSpice",2)
+G("RjaliNindeScout",0)
+!RealGlobalTimerNotExpired("RJXPNITM","GLOBAL")
+!RealGlobalTimerExpired("RjaliNindeScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliNindeScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPNITM","GLOBAL",ONE_DAY)
+END

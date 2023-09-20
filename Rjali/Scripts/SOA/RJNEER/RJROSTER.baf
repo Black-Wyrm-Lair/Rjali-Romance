@@ -1,0 +1,21 @@
+
+//  Roster reset EE NPCs
+
+IF
+G("RJRoster",1)
+!InParty("Neera")
+OR(10)
+  G("RJPLAY0",107)
+  G("RJPLAY1",107)
+  G("RJPLAY2",107)
+  G("RJPLAY3",107)
+  G("RJPLAY4",107)
+  G("RJPLAY0S",107)
+  G("RJPLAY1S",107)
+  G("RJPLAY2S",107)
+  G("RJPLAY3S",107)
+  G("RJPLAY4S",107)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END

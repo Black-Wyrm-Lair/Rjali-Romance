@@ -1,0 +1,218 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkAM",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("M#AMBER")
+!G("RJPLAY0",14)
+OR(3)
+  !G("RJPLAY0",317)
+  !GlobalsEqual("RJROM0","M#AmberRomanceActive")
+  !GlobalsEqual("RJPARK0","RjaliAmberScout")
+!G("RJPLAY1",317)
+!G("RJPLAY2",317)
+!G("RJPLAY3",317)
+!G("RJPLAY4",317)
+!GLT("RJPLAY0",317)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",317)
+    AddGlobals("RJRosCnt","RJFILL0")
+    SetGlobal("RJFILL0","GLOBAL",0)
+    AddGlobals("RJLocSet","RJFILLAM")
+    SetGlobal("RJFILLAM","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","M#AmberRomanceActive")
+    SetGlobal("RJPARK0","GLOBAL",0)
+    AddGlobals("RJPARK0","RjaliAmberScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("M#AMBER")
+!G("RJPLAY1",1)
+!G("RJPLAY0",317)
+OR(3)
+  !G("RJPLAY1",317)
+  !GlobalsEqual("RJROM1","M#AmberRomanceActive")
+  !GlobalsEqual("RJPARK1","RjaliAmberScout")
+!G("RJPLAY2",317)
+!G("RJPLAY3",317)
+!G("RJPLAY4",317)
+!GLT("RJPLAY1",317)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",317)
+    AddGlobals("RJRosCnt","RJFILL1")
+    AddGlobals("RJLocSet","RJFILLAM")
+    SetGlobal("RJFILLAM","GLOBAL",0)
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","M#AmberRomanceActive")
+    SetGlobal("RJPARK1","GLOBAL",0)
+    AddGlobals("RJPARK1","RjaliAmberScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("M#AMBER")
+!G("RJPLAY0",317)
+!G("RJPLAY1",317)
+OR(3)
+  !G("RJPLAY2",317)
+  !GlobalsEqual("RJROM2","M#AmberRomanceActive")
+  !GlobalsEqual("RJPARK2","RjaliAmberScout")
+!G("RJPLAY3",317)
+!G("RJPLAY4",317)
+!GLT("RJPLAY2",317)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",317)
+    AddGlobals("RJRosCnt","RJFILL2")
+    AddGlobals("RJLocSet","RJFILLAM")
+    SetGlobal("RJFILLAM","GLOBAL",0)
+    SetGlobal("RJFILL2","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","M#AmberRomanceActive")
+    SetGlobal("RJPARK2","GLOBAL",0)
+    AddGlobals("RJPARK2","RjaliAmberScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("M#AMBER")
+!G("RJPLAY0",317)
+!G("RJPLAY1",317)
+!G("RJPLAY2",317)
+OR(3)
+  !G("RJPLAY3",317)
+  !GlobalsEqual("RJROM3","M#AmberRomanceActive")
+  !GlobalsEqual("RJPARK3","RjaliAmberScout")
+!G("RJPLAY4",317)
+!GLT("RJPLAY3",317)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY3","GLOBAL",317)
+    AddGlobals("RJRosCnt","RJFILL3")
+    AddGlobals("RJLocSet","RJFILLAM")
+    SetGlobal("RJFILLAM","GLOBAL",0)
+    SetGlobal("RJFILL3","GLOBAL",0)
+    SetGlobal("RJROM3","GLOBAL",0)
+    AddGlobals("RJROM3","M#AmberRomanceActive")
+    SetGlobal("RJPARK3","GLOBAL",0)
+    AddGlobals("RJPARK3","RjaliAmberScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("M#AMBER")
+!G("RJPLAY0",317)
+!G("RJPLAY1",317)
+!G("RJPLAY2",317)
+!G("RJPLAY3",317)
+OR(3)
+  !G("RJPLAY4",317)
+  !GlobalsEqual("RJROM4","M#AmberRomanceActive")
+  !GlobalsEqual("RJPARK4","RjaliAmberScout")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY4","GLOBAL",317)
+    AddGlobals("RJRosCnt","RJFILL4")
+    AddGlobals("RJLocSet","RJFILLAM")
+    SetGlobal("RJFILLAM","GLOBAL",0)
+    SetGlobal("RJFILL4","GLOBAL",0)
+    SetGlobal("RJROM4","GLOBAL",0)
+    AddGlobals("RJROM4","M#AmberRomanceActive")
+    SetGlobal("RJPARK4","GLOBAL",0)
+    AddGlobals("RJPARK4","RjaliAmberScout")
+END
+
+//  LOCAL VARIABLE grab
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT1)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",1)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT2)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",2)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT3)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",4)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT4)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",8)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",16)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT6)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",32)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+BitCheck("M#AmberTalk","LOCALS",BIT7)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAMLoc1","GLOBAL",64)
+    Continue()
+END
+
+IF
+G("RJAMLoc",-1)
+InParty("M#AMBER")
+THEN
+  RESPONSE #100
+    SetGlobal("RJAMLoc","GLOBAL",0)
+    IncrementGlobal("RJLocCnt","GLOBAL",1)
+END

@@ -1,0 +1,145 @@
+
+//  Park EE NPCs in deArnise Keep
+
+// Neera SoA
+
+EXTEND_BOTTOM NEERAP 0
+IF ~G("RjaliNeeraScout",2)
+    G("NeeraRomanceActive",2)
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkNeeraSOA
+END
+
+EXTEND_BOTTOM NEERAP 3
+IF ~G("RjaliNeeraScout",2)
+    G("NeeraRomanceActive",2)
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkNeeraSOA
+END
+
+APPEND NEERAP
+
+IF ~~ THEN BEGIN RJParkNeeraSOA
+  SAY @3
+  IF ~~ THEN DO ~SetGlobal("RJParkNE","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",526,448,12)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkNE",1)~ THEN BEGIN RJVisitNeeraSOA
+  SAY @12
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkNE","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVNESOA1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVNESOA2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVNESOA3
+  IF ~~ THEN REPLY @11 GOTO RJVNESOA4
+  IF ~~ THEN REPLY @330 GOTO RJVNESOA5
+  IF ~~ THEN REPLY @8 GOTO RJVNESOA6
+END
+
+IF ~~ THEN BEGIN RJVNESOA1
+  SAY @331 = @332 = @333
+  IF ~~ THEN REPLY @334 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNESOA2
+  SAY @335 = @336
+  IF ~~ THEN REPLY @337 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNESOA3
+  SAY @338 = @339 = @340
+  IF ~~ THEN REPLY @341 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNESOA4
+  SAY @342 = @343
+  IF ~~ THEN REPLY @344 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNESOA5
+  SAY @345 = @346 = @347
+  IF ~~ THEN REPLY @348 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNESOA6
+  SAY @349 = @350
+  IF ~~ THEN REPLY @351 EXIT
+END
+
+END
+
+// Neera ToB
+
+EXTEND_BOTTOM NEERA25P 0
+IF ~G("NeeraRomanceActive",2)~ THEN REPLY @0 GOTO RJParkNeeraTOB
+END
+
+APPEND NEERA25P
+
+IF ~~ THEN BEGIN RJParkNeeraTOB
+  SAY @3
+  IF ~~ THEN DO ~SetGlobal("RJParkNE","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",526,448,12)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkNE",1)~ THEN BEGIN RJVisitNeeraTOB
+  SAY @12
+  IF ~G("RJFinalVisit",1) G("RJNEFV",0)~ THEN REPLY @14 GOTO RJVNETOB9
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkNE","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVNETOB1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVNETOB2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVNETOB3
+  IF ~~ THEN REPLY @11 GOTO RJVNETOB4
+  IF ~~ THEN REPLY @360 GOTO RJVNETOB5
+  IF ~~ THEN REPLY @8 GOTO RJVNETOB6
+END
+
+IF ~~ THEN BEGIN RJVNETOB1
+  SAY @361 = @362
+  IF ~~ THEN REPLY @363 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNETOB2
+  SAY @364 = @365 = @366
+  IF ~~ THEN REPLY @367 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNETOB3
+  SAY @368 = @369 = @370
+  IF ~~ THEN REPLY @371 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNETOB4
+  SAY @372 = @373
+  IF ~~ THEN REPLY @374 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNETOB5
+  SAY @375 = @376 = @377
+  IF ~~ THEN REPLY @378 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNETOB6
+  SAY @379
+  IF ~~ THEN REPLY @380 EXIT
+END
+
+IF ~~ THEN BEGIN RJVNETOB9
+  SAY @381 = @382 = @383 = @384
+  IF ~~ THEN REPLY @385 GOTO RJVNETOB9.1
+END
+
+IF ~~ THEN BEGIN RJVNETOB9.1
+  SAY @386 = @387 = @388
+  IF ~~ THEN REPLY @389 DO ~SetGlobal("RJNEFV","GLOBAL",1)~ EXIT
+END
+
+END

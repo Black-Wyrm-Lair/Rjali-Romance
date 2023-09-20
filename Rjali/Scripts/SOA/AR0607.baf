@@ -1,0 +1,11 @@
+
+// Destroy Circus Ground Piles
+
+IF
+  OnCreation()
+  !G("RescuedMother",0)
+THEN
+  RESPONSE #100
+    DestroyGroundPiles()
+    Continue()
+END

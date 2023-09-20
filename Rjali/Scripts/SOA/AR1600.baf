@@ -1,0 +1,83 @@
+
+// Flag parkable NPCs as having been in party during chapter 4+
+
+IF
+InParty("RJAnnah")
+G("RJAnnahCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("RJGrace")
+G("RJGraceCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJGraceCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("RJRavel")
+G("RJRavelCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJRavelCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("Aerie")
+G("RJAerieCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJAerieCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("O#Bran")
+G("RJBranwenCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJBranwenCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("Neera")
+G("RJNeeraCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJNeeraCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("Nalia")
+G("RJNaliaCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJNaliaCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("Jaheira")
+G("RJJaheiraCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJJaheiraCH4","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("Viconia")
+G("RJViconiaCH4",0)
+THEN
+RESPONSE #100
+SetGlobal("RJViconiaCH4","GLOBAL",1)
+Continue()
+END

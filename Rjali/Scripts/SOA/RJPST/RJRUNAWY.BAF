@@ -1,0 +1,14 @@
+
+IF
+  Range([PC],15)
+THEN
+  RESPONSE #100
+    RunAwayFrom([PC],100)
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    RandomWalk()
+END

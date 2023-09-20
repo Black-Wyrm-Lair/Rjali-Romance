@@ -1,0 +1,12 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    SetGlobal("RJSobethJID","GLOBAL",5)
+    ActionOverride("RJSOB",MoveBetweenAreasEffect("RJ0610","spplanar",[1727.1818],10))
+    Wait(3)
+    EndCutSceneMode()
+    StartDialogue("Player1",Player1)
+END

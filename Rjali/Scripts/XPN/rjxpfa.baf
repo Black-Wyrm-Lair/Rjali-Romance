@@ -1,0 +1,18 @@
+
+// Block ToB stuff in XPN.
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  G("RJXPFA01",1)
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END
+
+IF
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    NoAction()
+END

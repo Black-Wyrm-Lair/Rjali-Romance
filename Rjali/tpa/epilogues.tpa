@@ -1,0 +1,408 @@
+
+// Epilogues
+
+// Adjust external epilogues
+
+COPY_EXISTING ~AR6200.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~IsValidForPartyDialogue("Imoen")~ ~RJRESERVE~
+    REPLACE_TEXTUALLY ~IsValidForPartyDialogue~ ~BeenInParty~
+    REPLACE_TEXTUALLY ~RJRESERVE~ ~IsValidForPartyDialogue("Imoen")~
+  END
+
+// Sobeth
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJSOB/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJSOB.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJCAMBS~
+  REPLACE ~99999~ @178
+
+// Rjali
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/Rjali01.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJALIM~
+  REPLACE ~99999~ @100
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/Rjali02.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJALIM~
+  REPLACE ~99999~ @101
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/Rjali03.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJALIM~
+  REPLACE ~99999~ @102
+
+// Jini
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJini01.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJINIL~
+  REPLACE ~99999~ @103
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJini02.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJINIL~
+  REPLACE ~99999~ @104
+
+// Talira
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJTali01.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJMAI2L~
+  REPLACE ~99999~ @235
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJTali02.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJMAI2L~
+  REPLACE ~99999~ @236
+
+// Horace
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJHorace.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJGENIES~
+  REPLACE ~99999~ @111
+
+// Doofus
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJDoofus.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJDOOFL~
+  REPLACE ~99999~ @210
+
+// Adahn
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJAdahn.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTCS~
+  REPLACE ~99999~ @211
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJAdahn2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTCS~
+  REPLACE ~99999~ @212
+
+// Morte
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJMorte.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTM2S~
+  REPLACE ~99999~ @215
+
+// Nordom
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJNordom.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTNDS~
+  REPLACE ~99999~ @216
+
+// Dakkon
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJDakkon.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTDKS~
+  REPLACE ~99999~ @217
+
+// Ecco
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEcco01.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTECS~
+  REPLACE ~99999~ @218
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEcco02.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTECS~
+  REPLACE ~99999~ @220
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEcco03.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTECS~
+  REPLACE ~99999~ @237
+
+// Yves
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJYves.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTYVS~
+  REPLACE ~99999~ @219
+
+// Fay
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJFay.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJFAYBM~
+  REPLACE ~99999~ @149
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJFay2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJFAYBM~
+  REPLACE ~99999~ @148
+
+// PST Epilogues
+
+// Annah
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJPSAN/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJAnnah1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTAL~
+  REPLACE ~99999~ @105
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJAnnah2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTAL~
+  REPLACE ~99999~ @106
+
+// Grace
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJPSGR/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJGrace1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTGL~
+  REPLACE ~99999~ @107
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJGrace2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTGL~
+  REPLACE ~99999~ @108
+
+// Ravel
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJPSRV/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJRavel1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTRL~
+  REPLACE ~99999~ @109
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJRavel2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTRL~
+  REPLACE ~99999~ @110
+
+// Kesai
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJPSKE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJKesai1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTKSM~
+  REPLACE ~99999~ @145
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJKesai2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTKSM~
+  REPLACE ~99999~ @146
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJKesai3.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTKSM~
+  REPLACE ~99999~ @176
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJKesai4.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RJPSTKSM~
+  REPLACE ~99999~ @177
+
+// Vanilla Epilogues
+
+// Imoen
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJImoen2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NIMOENL~
+  REPLACE ~99999~ @221
+
+// Neera
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJNeera1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NEERAL~
+  REPLACE ~99999~ @201
+
+// Nalia
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJNalia1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NNALIAL~
+  REPLACE ~99999~ @202
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJNalia2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NNALIAL~
+  REPLACE ~99999~ @203
+
+// Aerie
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJAerie1.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NAERIEL~
+  REPLACE ~99999~ @204
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJAerie2.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NAERIEL~
+  REPLACE ~99999~ @208
+
+// Jaheira
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJJahe01.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NJAHEIRL~
+  REPLACE ~99999~ @205
+
+// Viconia
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJVico01.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NVICONL~
+  REPLACE ~99999~ @206
+
+// Jan
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiJan.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~NJANL~
+  REPLACE ~99999~ @233
+
+// Mod Epilogues
+
+// Branwen
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJBRAN/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiBR.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~BranweL~
+  REPLACE ~99999~ @207
+
+END
+
+// Skie
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/setup-Skie.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJSKIE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiSK.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~1xSkieM~
+  REPLACE ~99999~ @209
+
+END
+
+// Petsy
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJPETS/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiPE.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~L3PetsyL~
+  REPLACE ~99999~ @222
+
+END
+
+// Dace
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJDACE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiDA.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~T#DACEL~
+  REPLACE ~99999~ @223
+
+END
+
+// Amber
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJAMBE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiAM.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~M#AMBERL~
+  REPLACE ~99999~ @224
+
+END
+
+// Isra
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJISRA/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiIS.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~RH#ISRAL~
+  REPLACE ~99999~ @225
+
+END
+
+// Fade
+
+ACTION_IF MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJFADE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiFA.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~E3FADEG~
+  REPLACE ~99999~ @226
+
+END
+
+// Tashia
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJTASH/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiTA.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~TASHIAL~
+  REPLACE ~99999~ @227
+
+END
+
+// Ninde
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJNIND/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiNI.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~LK#NINDL~
+  REPLACE ~99999~ @228
+
+END
+
+// Tyris
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJTYRI/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiTY.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~G#TYRISL~
+  REPLACE ~99999~ @229
+
+END
+
+// Yvette
+
+ACTION_IF MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJYVET/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiYV.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~YVETTEG~
+  REPLACE ~99999~ @230
+
+END
+
+// Saerileth
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJSAER/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiSA.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~SAERILEL~
+  REPLACE ~99999~ @231
+
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJSIRE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiSI.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~SIRENEL~
+  REPLACE ~99999~ @232
+
+END
+
+// Sheena
+
+ACTION_IF MOD_IS_INSTALLED ~setup-Sheena.tp2~ "0" THEN BEGIN
+
+EXTEND_TOP ~AR6200.bcs~ ~Rjali/Scripts/XPN/RJSHEE/AR6200.baf~
+
+COPY ~Rjali/2DA/RJEpilogue.2da~ ~override/RJEpiSH.2da~
+  REPLACE_TEXTUALLY ~PORTRAIT~ ~SHEENAL~
+  REPLACE ~99999~ @234
+
+END

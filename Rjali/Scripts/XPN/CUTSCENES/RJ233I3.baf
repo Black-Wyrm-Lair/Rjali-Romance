@@ -1,0 +1,16 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    FadeToColor([30.0],0)
+    Wait(2)
+    LeaveAreaLUAPanic("AR6200","",[1290.1220],0)
+    LeaveAreaLUA("AR6200","",[1290.1220],0)
+    Wait(1)
+    StartMovie("ENDMVE3")
+    SetGlobal("StartEndBios","AR6200",1)
+    SetCursorState(TRUE)
+    EndCutSceneMode()
+END

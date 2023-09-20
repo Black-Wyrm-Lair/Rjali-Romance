@@ -1,0 +1,100 @@
+
+@0    = ~Tell me about Kesai.~
+@1    = ~<CHARNAME> once again raided Sigil for one of its fairest flowers. While <CHARNAME>'s story is epic, the interesting chant is that there is a movement in Sigil to curtail his predations. Unfortunately for the conspirators, the Lady of Pain seems to be on his side. Care to throw some light on the subject, Mistress Kesai?~
+@2    = ~Nope. Let it be one of the great mysteries of the planes, Volo.~
+
+@3    = ~The moment of truth, Stud.~
+@4    = ~Kesai, I cannot leave you.~
+@7    = ~Then bloody well don't!~
+@8    = ~It's your choice, <CHARNAME>.~
+@9    = ~It isn't as if it were being forced down your throat.~
+@10   = ~You're as bad as Dad. Maybe I'll look him up in his maze.~
+@11   = ~Whew! You had me worried there for a moment.~
+@12   = ~Love, I had ME worried there for a moment.~
+@14   = ~Just don't do it again.~
+@15   = ~I would be forced to hit you!~
+@16   = ~Now, let's sashay and find a bed.~
+
+@20   = ~Whoa! What big eye you have, Grandma.~
+@21   = ~All the better to eat you with, My Dear.~
+@22   = ~(*grins*) I didn't think you would know that one.~
+@23   = ~Well, if it isn't King Shit!~
+
+@100  = ~I know I have connections, but this winding up in Hell gets old in a hurry.~ [RJKEROM]
+@101  = ~Sorry about that, Kesai. It's a lap-of-the-gods sort of thing.~
+@102  = ~Now is not the best time, Kesai.~
+@103  = ~Lap-of-the devils more like.~
+@104  = ~Later, then. I'm not letting you off the hook.~
+@105  = ~(Kesai pats your bottom as she returns to her place.)~
+@106  = ~I had hoped to get away from all that when I left Sigil.~
+@107  = ~I know I'm your husband, but it is NOT my fault!~
+@108  = ~That makes EVERYTHING your fault!~
+@109  = ~It's in the rules.~
+@110  = ~(*sigh*) Not knowing what I did, I did it.~
+@111  = ~Just watch it, or I'll go all succubus on you, and then you'll be sorry!~
+@112  = ~Hmm... I'll have to think about that one.~
+
+@200  = ~I've been wondering. Why is Trias stuck with Fhjull?~ [RJKEROM]
+@201  = ~They're not a very likely pair.~
+@202  = ~I don't know, Kesai. I have my suspicions, though.~
+@203  = ~Funny you ask. Yves told us what she had heard about it, and it was part of Adahn's story.~
+@204  = ~OK, give.~
+@205  = ~I think Trias screwed up, Adahn rescued him, and the thing with Fhjull is some kind of penance.~
+@206  = ~What makes you think that?~
+@207  = ~Trias said he owed Adahn a favor. I can't imagine any other scenario that would explain that little factoid.~
+@208  = ~Sounds reasonable. Devas are so weird!~
+@209  = ~(You kiss Kesai to take her mind off the oddness of Devas.)~
+@210  = ~(You tell Kesai the story of Trias' rebellion, Adahn's victory and mercy.)~
+@211  = ~The rest of us didn't get the full chant on that one.~
+@212  = ~Yves is so clever at winkling out all sorts of tales.~
+@213  = ~I'm sorry now that I didn't pay more attention to her when I was at the brothal.~
+@214  = ~Never too late, Love. We will be visiting back there frequently.~
+
+@230  = ~With all this wrestling we are doing, you've got to know that I will be getting pregnant.~ [RJKEROM]
+@231  = ~Sooner rather than later, and it's likely to be a little girl.~
+@232  = ~Ravel filled me in on the nature of Night Hags, so I am expecting that.~
+@233  = ~I have been expecting that. Are you? Expecting, that is.~
+@234  = ~Nothing is brewing yet, but the yeast is in the vat.~
+@235  = ~We shall just have to get in a lot of practice, as Rjali likes to call it.~
+@236  = ~Practice? I like that! Let's practice!~
+@237  = ~Later, Love. We still have a few miles to travel today.~
+
+@250  = ~<CHARNAME>, do you have any plans for after this is all over?~ [RJKEROM]
+@251  = ~I have a vested interested here.~
+@252  = ~It's a little hard to make plans when I don't know what if anything there will be after.~
+@253  = ~I'm scared. Comfort me with what you would like there to be.~
+@254  = ~Being with my loves. Making babies. Having the occasional adventure. Visiting friends.~
+@255  = ~That would be lovely.~
+@256  = ~I assume that you allow for the inevitable shenanigans?~
+@257  = ~I would be a fool not to. I know my group of hellians.~
+@258  = ~(*laughs*) We are gonna tease you outta your stockings! And everything else, for that matter.~
+@259  = ~I wouldn't have it any other way, Kesai.~
+
+@270  = ~Doofus is a strange duck, isn't he?~ [RJKEROM]
+@271  = ~He never leaves his haven in the brothal basement.~
+@272  = ~Doofus is one of the world's simple souls...if that is an appropriate metaphor for an imp.~
+@273  = ~(*giggles*) Tell me more.~
+@274  = ~Evidently, Horace rescued him and dumped him on Jini. That's where I met him back in the bad old lamp days.~
+@275  = ~Lamp days?~
+@276  = ~Before Horace, I had Jini in a lamp. I released her from that, so don't go all righteous indignation on me!~
+@277  = ~I wouldn't think of it. (*flexes her finger nails*)~
+@278  = ~Anyway, Doofus has been with her ever since, with the odd visit with his cousin Cespenar.~
+@279  = ~Your Cespenar? That Cespenar? Oh my!~
+@280  = ~So, you collect imps as well as tieflings, demons, etc...~
+@281  = ~It would appear so. Do you mind?~
+@282  = ~Nah. Not as long as you take care of business. Practice that is.~
+@283  = ~Never fear, Love. That is second only to staying alive.~
+
+@290  = ~I don't know what to make of this Solar character.~ [RJKEROM]
+@291  = ~She is even more inscrutable than Trias.~
+@292  = ~Is she some sort of emmisary, do you think?.~
+@293  = ~Probably. She doesn't seem to be hostile, just opaque.~
+@294  = ~Still, I am more used to dealing with devils and their functionaries than gods and theirs.~
+@295  = ~She is female (I think maybe). Could be she is after your bod.~
+@296  = ~I don't know if angels go in for that sort of thing, but I wouldn't be surprised.~
+@297  = ~As I already mentioned to Rjali, I think my bod is comprehensively spoken for.~
+@298  = ~There is that. I'm just not sure that mortals factor into their agendas.~
+@299  = ~I am mortal, you know.~
+@300  = ~Oh, stop confusing the issue with logic!~
+@301  = ~You know what I meant.~
+@302  = ~I do, Kesai. Teasing is a two way street, so get used to it.~

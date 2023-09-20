@@ -1,0 +1,32 @@
+
+// Expedite Tashia
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Tashia")
+GLT("TashiaRomanceActive",2)
+OR(2)
+  GLT("TashiaPlot",1)
+  GGT("TashiaPlot",3)
+!RealGlobalTimerNotExpired("RJXPTATM","GLOBAL")
+!RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPTATM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("TashiaRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Tashia")
+G("TashiaRomanceActive",2)
+G("RjaliTashiaSpice",2)
+G("RjaliTashiaScout",0)
+!RealGlobalTimerNotExpired("RJXPTATM","GLOBAL")
+!RealGlobalTimerExpired("RjaliTashiaScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliTashiaScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPTATM","GLOBAL",ONE_DAY)
+END

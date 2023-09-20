@@ -1,0 +1,54 @@
+
+// Init RJ0610
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    Continue()
+END
+
+IF
+  G("RJ0610Gen",0)
+THEN
+  RESPONSE #100
+    CreateCreature("RJPSTLL",[1254.2848],0)
+    CreateCreature("RJPSTLL",[1349.2711],0)
+    CreateCreature("RJPSTLL",[1041.2806],0)
+    CreateCreature("RJPSTLL",[1468.3084],0)
+    CreateCreature("RJPSTLL",[1224.2185],0)
+    CreateCreature("RJPSTLL",[1521.2120],0)
+    SetGlobal("RJ0610Gen","GLOBAL",1)
+    Continue()
+END
+
+IF
+  OR(2)
+    G("RJiniiJIDAD",9)
+    G("RJiniiJIDDK",5)
+THEN
+  RESPONSE #100
+    ActionOverride("Rjali",StartDialogueNoSet(Player1))
+END
+
+IF
+  G("RJiniiJIDAD",8)
+THEN
+  RESPONSE #100
+    CreateCreature("RJPSTRV",[2416.1691],0)
+    ActionOverride("RJRavel",MakeGlobal())
+    SetGlobal("RJiniiJIDAD","GLOBAL",9)
+END
+
+IF
+  G("RJiniiJIDDK",4)
+  PartyHasItem("RJRVHA")
+THEN
+  RESPONSE #100
+    TriggerActivation("Portal 1 Trigger",TRUE)
+    CreateCreature("RJPSTDK",[4737.3396],4)
+    ActionOverride("RJDakkon",MakeGlobal())
+    SetGlobal("RJiniiJIDDK","GLOBAL",5)
+END

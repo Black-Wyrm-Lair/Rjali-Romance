@@ -1,0 +1,9 @@
+
+// Block Pool after one activation
+
+IF
+  Global("RJPool2Done","AR6200",1)
+THEN
+  RESPONSE #100
+    NoAction()
+END

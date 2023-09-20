@@ -1,0 +1,23 @@
+
+// Add flirts
+
+// Rjali
+
+COMPILE ~Rjali/Dialogue/SOA/flirt.d~
+        ~Rjali/Dialogue/TOB/flirt.d~
+
+// Annah
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSAN/flirt.d~
+
+// Grace
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSGR/flirt.d~
+
+// Ravel
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSRV/flirt.d~
+
+// Kesai
+
+COMPILE ~Rjali/Dialogue/SOA/RJPSKE/flirt.d~

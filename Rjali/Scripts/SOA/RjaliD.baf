@@ -1,0 +1,19 @@
+// This is Rjali's dream script for SoA. It means that all events and talks that should happen at rest are scripted here.
+
+// In RjaliS.baf, we might have needed two blocks for each talk. But we don't need it in the dream script - here all talks run automatically.
+
+// Lovetalk 2 & 17
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+OR(2)
+  G("RjaliTalk",3)
+  G("RjaliTalk",33)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100 
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END

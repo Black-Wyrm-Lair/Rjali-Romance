@@ -1,0 +1,32 @@
+
+// Expedite Sheena
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("K#Sheena")
+G("SHEENAPCAREONE",0)
+!RealGlobalTimerNotExpired("RJXPSHTM","GLOBAL")
+OR(2)
+  !RealGlobalTimerExpired("SheenaLoveTalkTime","GLOBAL")
+  !RealGlobalTimerExpired("SheenaTalkTime","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPSHTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("SheenaTalkTime","GLOBAL",0)
+RealSetGlobalTimer("SheenaLoveTalkTime","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("K#Sheena")
+!G("SHEENAPCAREONE",0)
+G("RjaliSheenaSpice",2)
+G("RjaliSheenaScout",0)
+!RealGlobalTimerNotExpired("RJXPSHTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliSheenaScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliSheenaScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPSHTM","GLOBAL",ONE_DAY)
+END

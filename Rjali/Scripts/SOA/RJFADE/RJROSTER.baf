@@ -1,0 +1,21 @@
+
+//  Roster reset mod NPCs
+
+IF
+G("RJRoster",1)
+!InParty("E3Fade")
+OR(10)
+  G("RJPLAY0",312)
+  G("RJPLAY1",312)
+  G("RJPLAY2",312)
+  G("RJPLAY3",312)
+  G("RJPLAY4",312)
+  G("RJPLAY0S",312)
+  G("RJPLAY1S",312)
+  G("RJPLAY2S",312)
+  G("RJPLAY3S",312)
+  G("RJPLAY4S",312)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END

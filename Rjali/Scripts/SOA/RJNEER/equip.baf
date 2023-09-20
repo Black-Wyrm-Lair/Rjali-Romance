@@ -1,0 +1,86 @@
+
+// Equiping the EE troops
+
+IF 
+InParty(Myself)
+G("RjaliNeeraStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(5)
+  InPartySlot("Neera",1)
+  InPartySlot("Neera",2)
+  InPartySlot("Neera",3)
+  InPartySlot("Neera",4)
+  InPartySlot("Neera",5)
+!StateCheck("Neera",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Neera")
+FaceObject("Neera")
+SetGlobal("RjaliNeeraStuff","GLOBAL",1)
+SetToken("RJEQUIP",@3)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliRasaadStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(5)
+  InPartySlot("Rasaad",1)
+  InPartySlot("Rasaad",2)
+  InPartySlot("Rasaad",3)
+  InPartySlot("Rasaad",4)
+  InPartySlot("Rasaad",5)
+!StateCheck("Rasaad",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Rasaad")
+FaceObject("Rasaad")
+SetGlobal("RjaliRasaadStuff","GLOBAL",1)
+SetToken("RJEQUIP",@24)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliDornStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(5)
+  InPartySlot("Dorn",1)
+  InPartySlot("Dorn",2)
+  InPartySlot("Dorn",3)
+  InPartySlot("Dorn",4)
+  InPartySlot("Dorn",5)
+!StateCheck("Dorn",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Dorn")
+FaceObject("Dorn")
+SetGlobal("RjaliDornStuff","GLOBAL",1)
+SetToken("RJEQUIP",@17)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+G("RjaliHexxatStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(5)
+  InPartySlot("Hexxat",1)
+  InPartySlot("Hexxat",2)
+  InPartySlot("Hexxat",3)
+  InPartySlot("Hexxat",4)
+  InPartySlot("Hexxat",5)
+!StateCheck("Hexxat",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("Hexxat")
+FaceObject("Hexxat")
+SetGlobal("RjaliHexxatStuff","GLOBAL",1)
+SetToken("RJEQUIP",@16)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END

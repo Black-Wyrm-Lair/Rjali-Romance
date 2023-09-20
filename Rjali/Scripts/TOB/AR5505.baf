@@ -1,0 +1,10 @@
+
+IF
+Dead("BALTH")
+G("RJHush",0)
+THEN
+RESPONSE #100
+SetGlobal("RJHush","GLOBAL",1)
+SetGlobal("FWDisableFlirts","GLOBAL",1)
+Continue()
+END

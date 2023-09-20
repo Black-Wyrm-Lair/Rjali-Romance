@@ -1,0 +1,22 @@
+
+// Parked Sheena remote interaction
+
+IF
+G("RJParkSH",1)
+G("RJHush",0)
+G("RJXPN",0)
+G("RJPort",0)
+G("RJSheenaInteract",0)
+GlobalTimerExpired("RJSheenaParked","GLOBAL")
+!AreaCheck("AR1304")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RJSheenaInteract","GLOBAL",1)
+SetGlobal("RJPort","GLOBAL",9)
+SetGlobalTimer("RJSheenaParked","GLOBAL",28000)
+CreateCreature("RJINVSH",[-1.-1],0)
+Wait(3)
+END

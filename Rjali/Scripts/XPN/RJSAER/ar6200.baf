@@ -1,0 +1,18 @@
+
+// Saerileth Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("SaerilethBio",0)
+G("SaerilethRomanceActive",2)
+OR(2)
+  InParty("Saerileth")
+  G("RJParkSA",1)
+THEN
+RESPONSE #100
+SetGlobal("SaerilethBio","GLOBAL",1)
+TextScreen("RJEpiSA")
+SmallWait(1)
+Continue()
+END

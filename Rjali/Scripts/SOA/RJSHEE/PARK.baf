@@ -1,0 +1,14 @@
+
+// SoA Group Talk 1 Start.
+
+IF
+  G("RjaliGroupSOA1",1)
+  AreaCheck("AR1306")
+  G("RJParkSH",1)
+THEN
+RESPONSE #100
+  SetGlobal("RJParkSH","GLOBAL",2)
+  MoveGlobal("AR1306","K#Sheena",[1285.1131])
+  ActionOverride("K#Sheena",SetDialog("SHEENAJ"))
+  IncrementGlobal("RJGather","GLOBAL",1)
+END

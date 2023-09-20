@@ -1,0 +1,48 @@
+
+// Expedite Fade
+
+IF
+InParty("E3Fade")
+GGT("udDrowPlot",98)
+GLT("E3LOVETALK",65)
+!RealGlobalTimerNotExpired("RJXPFATM","GLOBAL")
+!RealGlobalTimerExpired("E3FADEROMANCE","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPFATM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("E3FADEROMANCE","GLOBAL",0)
+END
+
+IF
+InParty("E3Fade")
+GGT("E3LOVETALK",64)
+GlobalTimerNotExpired("E3MESSENGERTIMER","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobalTimer("E3MESSENGERTIMER","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("E3Fade")
+GLT("E3FADEROMANCEACTIVE",2)
+!RealGlobalTimerNotExpired("RJXPFATM","GLOBAL")
+!RealGlobalTimerExpired("E3FADEROMANCE","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPFATM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("E3FADEROMANCE","GLOBAL",0)
+END
+
+IF
+InParty("E3Fade")
+G("E3FADEROMANCEACTIVE",2)
+G("RjaliFadeSpice",2)
+G("RjaliFadeScout",0)
+!RealGlobalTimerNotExpired("RJXPFATM","GLOBAL")
+!RealGlobalTimerExpired("RjaliFadeScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliFadeScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPFATM","GLOBAL",ONE_DAY)
+END

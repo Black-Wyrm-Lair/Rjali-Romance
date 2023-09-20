@@ -1,0 +1,47 @@
+
+// These files add NPCs' scripts and dialogue files to the game(except for the banter file, that's below). The first block is for SoA-only installs, the second one is for ToB.
+// Here's the order: death variable, leaving party file, main dialogue file (J for joined), dream script for SoA.
+// Or death variable, leaving party file, main dialogue file (J for joined), dream script for SoA, leaving party file for ToB, main dialogue (J) file for ToB, ToB dream script, ToB main script.
+
+APPEND ~pdialog.2da~
+~RJALI          RJALIP           RJALIJ              RJALID               RJALI25P             RJALI25J        RJALI25D         rjal25~
+UNLESS ~RJALI~
+
+// These files add NPCs' banter files to the game. The first block is for SoA-only installs, the second one is for ToB.
+// Here's the order: death variable, SoA banter file for SoA. Or death variable, SoA banter file, ToB banter file for ToB.
+
+APPEND ~interdia.2da~
+~RJALI          BRJALI           BRJALI25~
+UNLESS ~RJALI~
+
+APPEND ~interdia.2da~
+~RJFAY          BRJFAY           BRJFAY25~
+UNLESS ~RJFAY~
+
+// PST
+
+APPEND ~pdialog.2da~
+~RJANNAH        RJANNAHP         RJANNAHJ            RJANNAHD             RJAN25P             RJAN25J         RJAN25D          rjan25~
+UNLESS ~RJANNAH~
+APPEND ~interdia.2da~
+~RJANNAH        BRJANNAH         BRJAN25~
+UNLESS ~RJANNAH~
+
+APPEND ~pdialog.2da~
+~RJGRACE        RJGRACEP         RJGRACEJ            RJGRACED             RJGR25P             RJGR25J         RJGR25D          rjgr25~
+UNLESS ~RJGRACE~
+APPEND ~interdia.2da~
+~RJGRACE        BRJGRACE         BRJGR25~
+UNLESS ~RJGRACE~
+
+APPEND ~pdialog.2da~
+~RJRAVEL        RJRAVELP         RJRAVELJ            RJRAVELD             RJRV25P             RJRV25J         RJRV25D          rjrv25~
+APPEND ~interdia.2da~
+~RJRAVEL        BRJRAVEL         BRJRV25~
+UNLESS ~RJRAVEL~
+
+APPEND ~pdialog.2da~
+~RJKESAI        RJKESAIP         RJKESAIJ            RJKESAID             RJKE25P             RJKE25J         RJKE25D          rjke25~
+APPEND ~interdia.2da~
+~RJKESAI        BRJKESAI         BRJKE25~
+UNLESS ~RJKESAI~

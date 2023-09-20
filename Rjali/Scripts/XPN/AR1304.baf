@@ -1,0 +1,341 @@
+
+// On entry to Keep grounds in expansion
+
+IF
+  OnCreation()
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    AddAreaFlag(NOTRAVEL)
+    RemoveAreaType(WEATHER)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Imoen2")
+THEN
+  RESPONSE #100
+    ActionOverride("Imoen2",LeaveParty())
+    ActionOverride("Imoen2",SetDialog("IMOEN25P"))
+    SetGlobal("RJXPIM01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Rjali")
+THEN
+  RESPONSE #100
+    ActionOverride("Rjali",LeaveParty())
+    ActionOverride("Rjali",SetDialog("RJALI25P"))
+    SetGlobal("RJXPRJ01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("RJAnnah")
+THEN
+  RESPONSE #100
+    ActionOverride("RJAnnah",LeaveParty())
+    ActionOverride("RJAnnah",SetDialog("RJAN25P"))
+    SetGlobal("RJXPAN01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("RJGrace")
+THEN
+  RESPONSE #100
+    ActionOverride("RJGrace",LeaveParty())
+    ActionOverride("RJGrace",SetDialog("RJGR25P"))
+    SetGlobal("RJXPGR01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("RJRavel")
+THEN
+  RESPONSE #100
+    ActionOverride("RJRavel",LeaveParty())
+    ActionOverride("RJRavel",SetDialog("RJRV25P"))
+    SetGlobal("RJXPRV01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("RJKesai")
+THEN
+  RESPONSE #100
+    ActionOverride("RJKesai",LeaveParty())
+    ActionOverride("RJKesai",SetDialog("RJKE25P"))
+    SetGlobal("RJXPKE01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("L3P3tsy")
+THEN
+  RESPONSE #100
+    ActionOverride("L3Petsy",LeaveParty())
+    ActionOverride("L3Petsy",SetDialog("L3Pet25P"))
+    SetGlobal("RJXPPE01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("SkieDV")
+THEN
+  RESPONSE #100
+    ActionOverride("SkieDV",LeaveParty())
+    ActionOverride("SkieDV",SetDialog("1xSki25P"))
+    SetGlobal("RJXPSK01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Aerie")
+THEN
+  RESPONSE #100
+    ActionOverride("Aerie",LeaveParty())
+    ActionOverride("Aerie",SetDialog("AERIE25P"))
+    SetGlobal("RJXPAE01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Neera")
+THEN
+  RESPONSE #100
+    ActionOverride("Neera",LeaveParty())
+    ActionOverride("Neera",SetDialog("NEERA25P"))
+    SetGlobal("RJXPNE01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Jaheira")
+THEN
+  RESPONSE #100
+    ActionOverride("Jaheira",LeaveParty())
+    ActionOverride("Jaheira",SetDialog("JAHEI25P"))
+    SetGlobal("RJXPJA01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("C0Sirene")
+THEN
+  RESPONSE #100
+    ActionOverride("C0Sirene",LeaveParty())
+    ActionOverride("C0Sirene",SetDialog("C0SIR25P"))
+    SetGlobal("RJXPSI01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Viconia")
+THEN
+  RESPONSE #100
+    ActionOverride("Viconia",LeaveParty())
+    ActionOverride("Viconia",SetDialog("VICON25P"))
+    SetGlobal("RJXPVI01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Saerileth")
+THEN
+  RESPONSE #100
+    ActionOverride("Saerileth",LeaveParty())
+    ActionOverride("Saerileth",SetDialog("SAERI25P"))
+    SetGlobal("RJXPSA01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Tashia")
+THEN
+  RESPONSE #100
+    ActionOverride("Tashia",LeaveParty())
+    ActionOverride("Tashia",SetDialog("TASHI25P"))
+    SetGlobal("RJXPTA01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("O#Bran")
+THEN
+  RESPONSE #100
+    ActionOverride("O#Bran",LeaveParty())
+    ActionOverride("O#Bran",SetDialog("O#BRA25P"))
+    SetGlobal("RJXPBR01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Nalia")
+THEN
+  RESPONSE #100
+    ActionOverride("Nalia",LeaveParty())
+    ActionOverride("Nalia",SetDialog("NALIA25P"))
+    SetGlobal("RJXPNA01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Ninde")
+THEN
+  RESPONSE #100
+    ActionOverride("Ninde",LeaveParty())
+    ActionOverride("Ninde",SetDialog("LK#NI25P"))
+    SetGlobal("RJXPNI01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("G#Tyris")
+THEN
+  RESPONSE #100
+    ActionOverride("G#Tyris",LeaveParty())
+    ActionOverride("G#Tyris",SetDialog("G#TRS25P"))
+    SetGlobal("RJXPTY01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("Yxyve")
+THEN
+  RESPONSE #100
+    ActionOverride("Yxyve",LeaveParty())
+    ActionOverride("Yxyve",SetDialog("YXYV25P"))
+    SetGlobal("RJXPYV01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("E3Fade")
+THEN
+  RESPONSE #100
+    ActionOverride("E3Fade",LeaveParty())
+    ActionOverride("E3Fade",SetDialog("E3FAD25P"))
+    SetGlobal("RJXPFA01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("T#Dace")
+THEN
+  RESPONSE #100
+    ActionOverride("T#Dace",LeaveParty())
+    ActionOverride("T#Dace",SetDialog("t#dac25P"))
+    SetGlobal("RJXPDA01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("rh#Isra2")
+THEN
+  RESPONSE #100
+    ActionOverride("rh#Isra2",LeaveParty())
+    ActionOverride("rh#Isra2",SetDialog("rh#is25P"))
+    SetGlobal("RJXPIS01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("M#AMBER")
+THEN
+  RESPONSE #100
+    ActionOverride("M#AMBER",LeaveParty())
+    ActionOverride("M#AMBER",SetDialog("M#AMB25P"))
+    SetGlobal("RJXPAM01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+  InParty("K#Sheena")
+THEN
+  RESPONSE #100
+    ActionOverride("K#Sheena",LeaveParty())
+    ActionOverride("K#Sheena",SetDialog("SHEEN25P"))
+    SetGlobal("RJXPSH01","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJXPPC01","GLOBAL",1)
+    ActionOverride("RJBOBBY",MoveBetweenAreas("AR1306",[580.521],8))
+    CreateCreature("KPDOG01",[1825.2090],14)
+    CreateCreature("KPDOG02",[1871.2077],14)
+    CreateCreature("KPDOG03",[2021.2035],14)
+    CreateCreature("KPDOG04",[1988.2055],14)
+    CreateCreature("RABBIT01",[4705.2968],0)
+    CreateCreature("RABBIT01",[3621.3062],8)
+    CreateCreature("RABBIT01",[4873.1582],0)
+    CreateCreature("PHEAS01",[3315.3642],0)
+    CreateCreature("PHEAS01",[3419.3616],6)
+    CreateCreature("GRHOG01",[1554.3288],0)
+    CreateCreature("GRHOG01",[179.2674],0)
+    CreateCreature("CHICKE",[2649.1602],0)
+    CreateCreature("CHICKE",[2755.1627],0)
+    CreateCreature("CHICKE",[2583.1641],0)
+    CreateCreature("COW",[1138.3539],14)
+    CreateCreature("COW",[1335.3496],5)
+    CreateCreature("RJPSTLL",[1696.766],12)
+    CreateCreature("RJPSTLL",[1929.1014],4)
+    CreateCreature("RJPSTLL",[861.1803],8)
+    CreateCreature("RJPSTLL",[1624.1338],8)
+END

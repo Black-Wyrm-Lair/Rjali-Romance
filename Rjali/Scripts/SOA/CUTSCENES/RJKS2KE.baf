@@ -1,0 +1,24 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    CloseDoor("ar605d05")
+    SetGlobal("RJKSNOOK","GLOBAL",2)
+    IncrementGlobal("RJCntBedded","GLOBAL",1)
+    ActionOverride("RJPSTKS",DestroySelf())
+    Wait(1)
+    CreateCreatureOffScreen("RJPSTKE",0)
+    ActionOverride("RJKesai",MakeGlobal())
+    ApplySpellRES("RJHIDE","RJKesai")
+    SetGlobalTimer("RJKERAT","GLOBAL",ONE_DAY)
+    Wait(1)
+    MoveGlobal("AR1307","RJKesai",[1458.627])
+    SetGlobal("RJAddKE","GLOBAL",1)
+    SetGlobal("RJParkKE","GLOBAL",1)
+    IncrementGlobal("RJCntParked","GLOBAL",1)
+    SetGlobal("RJKesaiRomanceActive","GLOBAL",1)
+    AddJournalEntry(@9062,INFO)
+    EndCutSceneMode()
+END

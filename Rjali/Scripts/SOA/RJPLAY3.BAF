@@ -1,0 +1,38 @@
+
+//  NPC fill
+
+IF
+G("RJPLAY3",208)
+G("RJPLAY3S",0)
+THEN
+  RESPONSE #100
+    AddGlobals("RJPLAY3S","RJPLAY3")
+    SetToken("RJPLAY3",@5)
+    SetName(@5)
+    ReallyForceSpellRES("RJPLYJA",Myself)
+    IncrementGlobal("RJSetCnt","GLOBAL",1)
+END
+
+IF
+G("RJPLAY3",206)
+G("RJPLAY3S",0)
+THEN
+  RESPONSE #100
+    AddGlobals("RJPLAY3S","RJPLAY3")
+    SetToken("RJPLAY3",@4)
+    SetName(@4)
+    ReallyForceSpellRES("RJPLYNA",Myself)
+    IncrementGlobal("RJSetCnt","GLOBAL",1)
+END
+
+IF
+G("RJPLAY3",313)
+G("RJPLAY3S",0)
+THEN
+  RESPONSE #100
+    AddGlobals("RJPLAY3S","RJPLAY3")
+    SetToken("RJPLAY3",@6)
+    SetName(@6)
+    ReallyForceSpellRES("RJPLYVI",Myself)
+    IncrementGlobal("RJSetCnt","GLOBAL",1)
+END

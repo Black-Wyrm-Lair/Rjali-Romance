@@ -1,0 +1,34 @@
+
+// Annah Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJAnnahRomanceActive",2)
+G("PlayerChoseEssence",1)
+G("RJAnnahBio",0)
+OR(2)
+  InParty("RJAnnah")
+  G("RJParkAN",1)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahBio","GLOBAL",1)
+TextScreen("RJAnnah1")
+SmallWait(1)
+Continue()
+END
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJAnnahRomanceActive",2)
+!G("PlayerChoseEssence",1)
+G("RJAnnahBio",0)
+OR(2)
+  InParty("RJAnnah")
+  G("RJParkAN",1)
+THEN
+RESPONSE #100
+SetGlobal("RJAnnahBio","GLOBAL",1)
+TextScreen("RJAnnah2")
+SmallWait(1)
+Continue()
+END

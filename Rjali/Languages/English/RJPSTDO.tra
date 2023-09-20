@@ -1,0 +1,28 @@
+
+@0    = ~Hello. Is there something I can do for you?~
+@1    = ~Not at the moment. Nice to meet you.~
+@2    = ~Hi. My name is <CHARNAME>. I'm a friend of Jini's.~
+@3    = ~My name is Dolora. Would you like to play a game?~
+@4    = ~Not at the moment, thank you. Maybe another time.~
+
+@10   = ~Jini tells me that you are having some kind of crisis that we might be able to help you with. What seems to be the problem?~
+@11   = ~(wails) I have nobody to play with!~
+@12   = ~Shh, Dolora. Calm down and tell us what we can do for you.~
+@13   = ~I...I thought how nice it would be to have Nordom here to play with.~
+@14   = ~Then I remembered that Jini had given you the portal stone.~
+@15   = ~Since it came originally from the Modron Maze and I know that Nordom is holed up there, I thought that you could go ask him to come back.~
+@16   = ~He went there because eveybody treated him really badly.~
+@17   = ~He told me so, and Nordom never lies.~
+@18   = ~That seems simple enough. We'll be happy to do that for you, Dolora. Let's see if the stone will do this.~
+
+@20   = ~Hi, Dolora. I see that you and Nordom are having fun.~
+@21   = ~Oh, yes! It is so nice to have someone to play with.~
+@22   = ~Adahn is good at games, but he rarely comes here.~
+@23   = ~Nobody else will play with me because I always beat them.~
+@24   = ~Would you like to try your luck. I'm sure Nordom wouldn't mind.~
+@25   = ~Not just now. We have a great deal to do elsewhere.~
+
+@30   = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@31   = ~I'm sorry to see you go.~
+@32   = ~Thank you for bringing Nordom back to me.~
+@33   = ~You're very welcome. Bye, Dolora.~

@@ -1,0 +1,126 @@
+
+//  Equip the troops
+
+COMPILE EVALUATE_BUFFER ~Rjali/Dialogue/SOA/equip.d~
+
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJPSAN/equip.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJPSGR/equip.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJPSRV/equip.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJPSKE/equip.baf~ EVALUATE_BUFFER
+
+ACTION_IF (MOD_IS_INSTALLED ~Dace/dace.tp2~ "0") OR
+          (MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0") THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJDACE/equip.baf~ EVALUATE_BUFFER
+END  
+
+ACTION_IF MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJISRA/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJBRAN/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJFADE/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJTASH/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJNIND/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJTYRI/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJYVET/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~setup-amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~amber.tp2~ "0" OR
+          MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJAMBE/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJSAER/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJSKIE/equip.baf~ EVALUATE_BUFFER
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJPETS/equip.baf~ EVALUATE_BUFFER
+END  
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Sirene_BG2.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJSIRE/equip.baf~ EVALUATE_BUFFER
+END  
+
+ACTION_IF MOD_IS_INSTALLED ~setup-Sheena.tp2~ "0" THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJSHEE/equip.baf~ EVALUATE_BUFFER
+COPY ~Rjali/Spells/RJSHEE~ ~override~
+END  
+
+ACTION_IF GAME_IS ~BG2EE eet~ THEN BEGIN
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/RJNEER/equip.baf~ EVALUATE_BUFFER
+END
+
+EXTEND_TOP ~RjaliS.bcs~ ~Rjali/scripts/SOA/equip.baf~ EVALUATE_BUFFER      // equip the troops
+
+// Max spell slots for every class for every level
+
+COPY ~Rjali\2DA\MAXSPELLS~ ~override~
+
+// Set AGEN as default CLASS script
+
+COPY ~Rjali\2DA\AISCRIPTS\PARTYAI.2da~ ~override~
+COPY ~Rjali/Scripts/SOA/AGEN.bs~ ~Override/bddefai.bcs~
+
+// Set buffed Rjali
+
+COPY ~Rjali/Creatures/RjaliF.cre~ ~override/RJALI.cre~
+SAY NAME1 @1
+SAY NAME2 @1
+SAY SELECT_ACTION1 @502
+SAY SELECT_COMMON4 @503
+SAY TARGET_IMMUNE @504
+SAY INVENTORY_FULL @505
+SAY PICKED_POCKET @506                                        
+SAY EXISTANCE1 @507
+SAY EXISTANCE2 @508
+SAY BATTLE_CRY1 @509
+SAY LEADER @510
+SAY TIRED @511
+SAY BORED @512
+SAY HURT @513
+SAY SELECT_COMMON1 @514
+SAY SELECT_COMMON2 @515
+SAY SELECT_COMMON3 @517
+SAY INITIAL_MEETING @517
+SAY BATTLE_CRY2 @518
+SAY BATTLE_CRY3 @519
+SAY BATTLE_CRY4 @520
+SAY DAMAGE @521
+SAY DYING @522
+SAY AREA_FOREST @523
+SAY AREA_CITY @524
+SAY AREA_DUNGEON @525
+SAY AREA_DAY @526
+SAY AREA_NIGHT @527
+SAY SELECT_ACTION2 @528
+SAY SELECT_ACTION3 @529
+SAY SELECT_ACTION4 @530
+SAY SELECT_ACTION5 @531
+SAY SELECT_RARE1 @532
+SAY SELECT_RARE2 @533
+SAY CRITICAL_HIT @534
+SAY BIO @548
+WRITE_ASCII 0x268 ~RJSHOUT~  #8    // default script
+WRITE_ASCII 0x280 ~Rjali~    #32   // death variable - character reference

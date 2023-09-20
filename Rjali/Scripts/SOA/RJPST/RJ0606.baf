@@ -1,0 +1,18 @@
+
+// Init RJ0606
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+END
+
+IF
+  G("RJBasementGen",0)
+THEN
+  RESPONSE #100
+    ActionOverride("RJDoofus",MakeGlobal())
+    SetGlobal("RJBasementGen","GLOBAL",1)
+END

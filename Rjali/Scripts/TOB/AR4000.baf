@@ -1,0 +1,517 @@
+
+// ToB startup
+                                                             
+IF
+  G("RjaliGenToB",0)
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    ActionOverride(Player1,ChangeAIScript("Player1T",OVERRIDE))
+    SetGlobal("RjaliGenTob","GLOBAL",1) 
+    SetGlobal("RJSpeedCtl","GLOBAL",1)
+    SetGlobal("RJPARKTOB","GLOBAL",0)
+    SetGlobal("RJRoster","GLOBAL",4)
+END
+
+IF
+  G("RJParkAE",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    ActionOverride(Player1,MoveGlobal("AR4000","Aerie",[1118.1761]))
+    Wait(1)
+    ActionOverride("Aerie",FaceObject(Player1))
+    DisplayStringHead(Player1,@920)
+    Wait(2)
+    DisplayStringHead("Aerie",@900)
+    ActionOverride("Aerie",ChangeAIScript("aeri25",OVERRIDE))
+    ActionOverride("Aerie",SetDialog("AERIE25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","Aerie",[1732.542]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkIM",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","Imoen2",[1118.1761]))
+    Wait(1)
+    ActionOverride("Imoen2",FaceObject(Player1))
+    DisplayStringHead(Player1,@921)
+    Wait(2)
+    DisplayStringHead("Imoen2",@901)
+    ActionOverride("Imoen2",ChangeAIScript("imoe25",OVERRIDE))
+    ActionOverride("Imoen2",SetDialog("IMOEN25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","Imoen2",[771.823]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkJA",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","Jaheira",[1118.1761]))
+    Wait(1)
+    ActionOverride("Jaheira",FaceObject(Player1))
+    DisplayStringHead(Player1,@922)
+    Wait(2)
+    DisplayStringHead("Jaheira",@902)
+    ActionOverride("Jaheira",ChangeAIScript("jahe25",OVERRIDE))
+    ActionOverride("Jaheira",SetDialog("JAHEI25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","Jaheira",[694.1775]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkNA",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","Nalia",[1118.1761]))
+    Wait(1)
+    ActionOverride("Nalia",FaceObject(Player1))
+    DisplayStringHead(Player1,@923)
+    Wait(2)
+    DisplayStringHead("Nalia",@903)
+    ActionOverride("Nalia",ChangeAIScript("nali25",OVERRIDE))
+    ActionOverride("Nalia",SetDialog("NALIA25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","Nalia",[1276.798]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkVI",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","Viconia",[1118.1761]))
+    Wait(1)
+    ActionOverride("Viconia",FaceObject(Player1))
+    DisplayStringHead(Player1,@924)
+    Wait(2)
+    DisplayStringHead("Viconia",@904)
+    ActionOverride("Viconia",ChangeAIScript("vico25",OVERRIDE))
+    ActionOverride("Viconia",SetDialog("VICON25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","Viconia",[880.259]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkNE",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","Neera",[1118.1761]))
+    Wait(1)
+    ActionOverride("Neera",FaceObject(Player1))
+    DisplayStringHead(Player1,@925)
+    Wait(2)
+    DisplayStringHead("Neera",@905)
+    ActionOverride("Neera",ChangeAIScript("neer25",OVERRIDE))
+    ActionOverride("Neera",SetDialog("NEERA25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","Neera",[526.448]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkBR",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","O#Bran",[1118.1761]))
+    Wait(1)
+    ActionOverride("O#Bran",FaceObject(Player1))
+    DisplayStringHead(Player1,@926)
+    Wait(2)
+    DisplayStringHead("O#Bran",@906)
+    ActionOverride("O#Bran",ChangeAIScript("O#BRA25S",OVERRIDE))
+    ActionOverride("O#Bran",SetDialog("O#BRA25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","O#Bran",[629.440]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkAN",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","RJAnnah",[1118.1761]))
+    Wait(1)
+    ActionOverride("RJAnnah",FaceObject(Player1))
+    DisplayStringHead(Player1,@927)
+    Wait(2)
+    DisplayStringHead("RJAnnah",@907)
+    ActionOverride("RJAnnah",ChangeAIScript("rjan25",OVERRIDE))
+    ActionOverride("RJAnnah",SetDialog("RJAN25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","RJAnnah",[2003.1172]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkGR",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","RJGrace",[1118.1761]))
+    Wait(1)
+    ActionOverride("RJGrace",FaceObject(Player1))
+    DisplayStringHead(Player1,@928)
+    Wait(2)
+    DisplayStringHead("RJGrace",@908)
+    ActionOverride("RJGrace",ChangeAIScript("rjgr25",OVERRIDE))
+    ActionOverride("RJGrace",SetDialog("RJGR25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","RJGrace",[1458.1584]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkRV",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","RJRavel",[1118.1761]))
+    Wait(1)
+    ActionOverride("RJRavel",FaceObject(Player1))
+    DisplayStringHead(Player1,@929)
+    Wait(2)
+    DisplayStringHead("RJRavel",@909)
+    ActionOverride("RJRavel",ChangeAIScript("rjrv25",OVERRIDE))
+    ActionOverride("RJRavel",SetDialog("RJRV25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","RJRavel",[1227.578]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkKE",1)
+  G("RJKesaiRomanceActive",2)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","RJKesai",[1118.1761]))
+    Wait(1)
+    ActionOverride("RJKesai",FaceObject(Player1))
+    DisplayStringHead(Player1,@940)
+    Wait(2)
+    DisplayStringHead("RJKesai",@941)
+    ActionOverride("RJKesai",ChangeAIScript("rjke25",OVERRIDE))
+    ActionOverride("RJKesai",SetDialog("RJKE25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","RJKesai",[1457.631]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkKE",1)
+  !G("RJKesaiRomanceActive",2)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","RJKesai",[1118.1761]))
+    Wait(1)
+    ActionOverride("RJKesai",FaceObject(Player1))
+    DisplayStringHead(Player1,@940)
+    Wait(2)
+    DisplayStringHead("RJKesai",@942) 
+    SetGlobal("RJParkKE","GLOBAL",0)
+    SetGlobal("RJKesaiRomanceActive","GLOBAL",0)
+    Wait(4)
+    ActionOverride("RJKesai",DestroySelf())
+    CreateCreatureOffScreen("RJPSTKS",0)
+    ActionOverride("RJPSTKS",ChangeAIScript("RJRANWLK",DEFAULT))
+    ActionOverride(Player1,MoveGlobal("RJ0605","RJPSTKS",[2254.549]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkSK",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","SkieDV",[1118.1761]))
+    Wait(1)
+    ActionOverride("SkieDV",FaceObject(Player1))
+    DisplayStringHead(Player1,@930)
+    Wait(2)
+    DisplayStringHead("SkieDV",@910)
+    ActionOverride("SkieDV",ChangeAIScript("1xSki25",OVERRIDE))
+    ActionOverride("SkieDV",SetDialog("1xSKI25P"))
+    SetGlobal("SkieInPartyTB","LOCALS",1)
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","SkieDV",[305.919]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkPE",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","L3Petsy",[1118.1761]))
+    Wait(1)
+    ActionOverride("L3Petsy",FaceObject(Player1))
+    DisplayStringHead(Player1,@932)
+    Wait(2)
+    DisplayStringHead("L3Petsy",@912)
+    ActionOverride("L3Petsy",ChangeAIScript("L3Pet25",OVERRIDE))
+    ActionOverride("L3Petsy",SetDialog("L3PET25P"))
+    SetGlobal("L3TBPetsyJoin","LOCALS",1)
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","L3Petsy",[566.1059]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkAM",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","M#AMBER",[1118.1761]))
+    Wait(1)
+    ActionOverride("M#AMBER",FaceObject(Player1))
+    DisplayStringHead(Player1,@931)
+    Wait(2)
+    DisplayStringHead("M#AMBER",@911)
+    ActionOverride("M#AMBER",ChangeAIScript("m#amb25",OVERRIDE))
+    ActionOverride("M#AMBER",SetDialog("M#AMB25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1305","M#AMBER",[1063.365]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkSH",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","K#Sheena",[1118.1761]))
+    Wait(1)
+    ActionOverride("K#Sheena",FaceObject(Player1))
+    DisplayStringHead(Player1,@933)
+    Wait(2)
+    DisplayStringHead("K#Sheena",@913)
+    ActionOverride("K#Sheena",ChangeAIScript("sheena25",OVERRIDE))
+    ActionOverride("K#Sheena",SetDialog("SHEEN25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1304","K#Sheena",[1160.1622]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkDA",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","T#Dace",[1118.1761]))
+    Wait(1)
+    ActionOverride("T#Dace",FaceObject(Player1))
+    DisplayStringHead(Player1,@934)
+    Wait(2)
+    DisplayStringHead("T#Dace",@914)
+    ActionOverride("T#Dace",ChangeAIScript("t#dac25",OVERRIDE))
+    ActionOverride("T#Dace",SetDialog("T#DAC25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1304","T#Dace",[744.3294]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkFA",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","E3Fade",[1118.1761]))
+    Wait(1)
+    ActionOverride("E3Fade",FaceObject(Player1))
+    DisplayStringHead(Player1,@935)
+    Wait(2)
+    DisplayStringHead("E3Fade",@915)
+    ActionOverride("E3Fade",ChangeAIScript("e3fade25",OVERRIDE))
+    ActionOverride("E3Fade",SetDialog("E3FAD25P"))
+    SetGlobal("E3FadeJoinToB","GLOBAL",1)
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1305","E3Fade",[2543.418]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkIS",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","rh#Isra2",[1118.1761]))
+    Wait(1)
+    ActionOverride("rh#Isra2",FaceObject(Player1))
+    DisplayStringHead(Player1,@936)
+    Wait(2)
+    DisplayStringHead("rh#Isra2",@916)
+    ActionOverride("rh#Isra2",ChangeAIScript("rh#is25",OVERRIDE))
+    ActionOverride("rh#Isra2",SetDialog("RH#IS25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1304","rh#Isra2",[1286.2889]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkTA",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","Tashia",[1118.1761]))
+    Wait(1)
+    ActionOverride("Tashia",FaceObject(Player1))
+    DisplayStringHead(Player1,@937)
+    Wait(2)
+    DisplayStringHead("Tashia",@917)
+    ActionOverride("Tashia",ChangeAIScript("Tash25",OVERRIDE))
+    ActionOverride("Tashia",SetDialog("TASHI25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","Tashia",[1784.814]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkTY",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","G#Tyris",[1118.1761]))
+    Wait(1)
+    ActionOverride("G#Tyris",FaceObject(Player1))
+    DisplayStringHead(Player1,@939)
+    Wait(2)
+    DisplayStringHead("G#Tyris",@919)
+    ActionOverride("G#Tyris",ChangeAIScript("g#tyrs25",OVERRIDE))
+    ActionOverride("G#Tyris",SetDialog("G#TRS25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1306","G#Tyris",[922.1410]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  G("RJParkSI",1)
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    Wait(1)
+    ActionOverride(Player1,MoveGlobal("AR4000","C0Sirene",[1118.1761]))
+    Wait(1)
+    ActionOverride("C0Sirene",FaceObject(Player1))
+    DisplayStringHead(Player1,@938)
+    Wait(2)
+    DisplayStringHead("C0Sirene",@918)
+    ActionOverride("C0Sirene",ChangeAIScript("C0Sire25",OVERRIDE))
+    ActionOverride("C0Sirene",SetDialog("C0SIR25P"))
+    Wait(4)
+    ActionOverride(Player1,MoveGlobal("AR1307","C0Sirene",[1626.1460]))
+    EndCutSceneMode()
+    Continue()
+END
+
+IF
+  InParty("SkieDV")
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    ActionOverride("SkieDV",SetGlobal("SkieInPartyTB","LOCALS",1))
+    Continue()
+END
+
+IF
+  InParty("L3Petsy")
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    ActionOverride("L3Petsy",SetGlobal("L3TBPetsyJoin","LOCALS",1))
+    Continue()
+END
+
+IF
+  InParty("E3Fade")
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    SetGlobal("E3FadeJoinToB","GLOBAL",1)
+    Continue()
+END
+
+IF
+  G("RjaliGenTob",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RjaliGenTob","GLOBAL",2)
+END

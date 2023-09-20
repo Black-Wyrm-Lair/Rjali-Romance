@@ -1,0 +1,23 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    SetGlobal("RJTaliraRomance","GLOBAL",4)
+    OpenDoor("DOOR11")
+    Wait(1)
+    ApplySpellRES("RJUNHIDE","RJFAY") 
+    ApplySpellRES("RJUNHIDE",Player2)
+    ApplySpellRES("RJUNHIDE",Player3)
+    ApplySpellRES("RJUNHIDE",Player4)
+    ApplySpellRES("RJUNHIDE",Player5)
+    ApplySpellRES("RJUNHIDE",Player6)
+    Wait(2)
+    DisplayStringHead("RJFAY",@2000)
+    Wait(2)
+    DisplayStringHead("KPMAID02",@2002)
+    Wait(2)
+    DisplayStringHead(Player1,@2001)
+    EndCutSceneMode()
+END

@@ -1,0 +1,41 @@
+
+// Expedite Skie
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("SkieDV")
+G("SkieRomanceActive",0)
+!RealGlobalTimerNotExpired("RJXPSKTM","GLOBAL")
+!RealGlobalTimerExpired("SkiePCTalk","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPSKTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("SkiePCTalk","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("SkieDV")
+G("SkieRomanceActive",1)
+!RealGlobalTimerNotExpired("RJXPSKTM","GLOBAL")
+!RealGlobalTimerExpired("SkieRomanceTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPSKTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("SkieRomanceTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("SkieDV")
+G("SkieRomanceActive",2)
+G("RjaliSkieSpice",2)
+G("RjaliSkieScout",0)
+!RealGlobalTimerNotExpired("RJXPSKTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliSkieScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliSkieScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPSKTM","GLOBAL",ONE_DAY)
+END

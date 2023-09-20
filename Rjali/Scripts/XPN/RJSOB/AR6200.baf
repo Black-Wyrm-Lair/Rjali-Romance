@@ -1,0 +1,14 @@
+
+// Kesai Epilogues
+
+IF
+Global("StartEndBios","AR6200",1)
+G("RJSobethBio",0)
+GGT("RJSobethJID",4)
+THEN
+RESPONSE #100
+SetGlobal("RJKSobethBio","GLOBAL",1)
+TextScreen("RJSOB")
+SmallWait(1)
+Continue()
+END

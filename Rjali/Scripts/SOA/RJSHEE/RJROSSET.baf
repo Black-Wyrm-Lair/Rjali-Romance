@@ -1,0 +1,255 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkSH",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Start Sheena Romance
+
+IF
+InParty("K#Sheena")
+Global("RJSHROMACT","GLOBAL",0)
+Global("SheenaRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("RJSHROMACT","GLOBAL",1)
+END
+
+//  Count Sheena wedded
+
+IF
+InParty("K#Sheena")
+Global("RJSHROMACT","GLOBAL",1)
+!Global("SHEENAPCAREONE","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJWedded","LOCALS",1)
+    SetGlobal("RJSHROMACT","GLOBAL",2)
+    IncrementGlobal("RJCntWedded","GLOBAL",1)
+END
+
+//  Sheena unromanced
+
+IF
+InParty("K#Sheena")
+Global("SheenaRomanceActive","GLOBAL",3)
+!Global("RJSHROMACT","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJWedded","LOCALS",0)
+    SetGlobal("RJSHROMACT","GLOBAL",3)
+    IncrementGlobal("RJCntWedded","GLOBAL",-1)
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("K#Sheena")
+!G("RJPLAY0",14)
+OR(3)
+  !G("RJPLAY0",224)
+  !GlobalsEqual("RJROM0","RJSHROMACT")
+  !GlobalsEqual("RJPARK0","RjaliSheenaScout")
+!G("RJPLAY1",224)
+!G("RJPLAY2",224)
+!G("RJPLAY3",224)
+!G("RJPLAY4",224)
+!GLT("RJPLAY0",224)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",224)
+    AddGlobals("RJRosCnt","RJFILL0")
+    AddGlobals("RJLocSet","RJFILLSH")
+    SetGlobal("RJFILLSH","GLOBAL",0)
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","RJSHROMACT")
+    SetGlobal("RJPARK0","GLOBAL",0)
+    AddGlobals("RJPARK0","RjaliSheenaScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("K#Sheena")
+!G("RJPLAY1",1)
+!G("RJPLAY0",224)
+OR(3)
+  !G("RJPLAY1",224)
+  !GlobalsEqual("RJROM1","RJSHROMACT")
+  !GlobalsEqual("RJPARK1","RjaliSheenaScout")
+!G("RJPLAY2",224)
+!G("RJPLAY3",224)
+!G("RJPLAY4",224)
+!GLT("RJPLAY1",224)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",224)
+    AddGlobals("RJRosCnt","RJFILL1")
+    AddGlobals("RJLocSet","RJFILLSH")
+    SetGlobal("RJFILLSH","GLOBAL",0)
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","RJSHROMACT")
+    SetGlobal("RJPARK1","GLOBAL",0)
+    AddGlobals("RJPARK1","RjaliSheenaScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("K#Sheena")
+!G("RJPLAY0",224)
+!G("RJPLAY1",224)
+OR(3)
+  !G("RJPLAY2",224)
+  !GlobalsEqual("RJROM2","RJSHROMACT")
+  !GlobalsEqual("RJPARK2","RjaliSheenaScout")
+!G("RJPLAY3",224)
+!G("RJPLAY4",224)
+!GLT("RJPLAY2",224)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",224)
+    AddGlobals("RJRosCnt","RJFILL2")
+    AddGlobals("RJLocSet","RJFILLSH")
+    SetGlobal("RJFILLSH","GLOBAL",0)
+    SetGlobal("RJFILL2","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","RJSHROMACT")
+    SetGlobal("RJPARK2","GLOBAL",0)
+    AddGlobals("RJPARK2","RjaliSheenaScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("K#Sheena")
+!G("RJPLAY0",224)
+!G("RJPLAY1",224)
+!G("RJPLAY2",224)
+OR(3)
+  !G("RJPLAY3",224)
+  !GlobalsEqual("RJROM3","RJSHROMACT")
+  !GlobalsEqual("RJPARK3","RjaliSheenaScout")
+!G("RJPLAY4",224)
+!GLT("RJPLAY3",224)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY3","GLOBAL",224)
+    AddGlobals("RJRosCnt","RJFILL3")
+    AddGlobals("RJLocSet","RJFILLSH")
+    SetGlobal("RJFILLSH","GLOBAL",0)
+    SetGlobal("RJFILL3","GLOBAL",0)
+    SetGlobal("RJROM3","GLOBAL",0)
+    AddGlobals("RJROM3","RJSHROMACT")
+    SetGlobal("RJPARK3","GLOBAL",0)
+    AddGlobals("RJPARK3","RjaliSheenaScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("K#Sheena")
+!G("RJPLAY0",224)
+!G("RJPLAY1",224)
+!G("RJPLAY2",224)
+!G("RJPLAY3",224)
+OR(3)
+  !G("RJPLAY4",224)
+  !GlobalsEqual("RJROM4","RJSHROMACT")
+  !GlobalsEqual("RJPARK4","RjaliSheenaScout")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY4","GLOBAL",224)
+    AddGlobals("RJRosCnt","RJFILL4")
+    AddGlobals("RJLocSet","RJFILLSH")
+    SetGlobal("RJFILLSH","GLOBAL",0)
+    SetGlobal("RJFILL4","GLOBAL",0)
+    SetGlobal("RJROM4","GLOBAL",0)
+    AddGlobals("RJROM4","RJSHROMACT")
+    SetGlobal("RJPARK4","GLOBAL",0)
+    AddGlobals("RJPARK4","RjaliSheenaScout")
+END
+
+//  LOCAL VARIABLE grab
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT1)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",1)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT2)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",2)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT3)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",4)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT4)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",8)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",16)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT6)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",32)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+BitCheck("SheenaLoveTalk","LOCALS",BIT7)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJSHLoc1","GLOBAL",64)
+    Continue()
+END
+
+IF
+G("RJSHLoc",-1)
+InParty("K#Sheena")
+THEN
+  RESPONSE #100
+    SetGlobal("RJSHLoc","GLOBAL",0)
+    IncrementGlobal("RJLocCnt","GLOBAL",1)
+END

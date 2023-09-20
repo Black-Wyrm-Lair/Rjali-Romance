@@ -1,0 +1,230 @@
+
+// This script handles multiple romances for SoA only.
+
+// Start an MR PLAYER1 dialog.
+
+IF
+InParty(Myself)
+!RealGlobalTimerNotExpired("RJXPTIME","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+OR(24)
+  G("RjaliAerieScout",1)
+  G("RjaliViconiaScout",1)
+  G("RjaliJaheiraScout",1)
+  G("RjaliImoenScout",1)
+  G("RjaliNeeraScout",1)
+  G("RjaliNaliaScout",1)
+  G("RjaliBranwenScout",1)
+  G("RjaliSaerilethScout",1)
+  G("RjaliTashiaScout",1)
+  G("RjaliNindeScout",1)
+  G("RjaliTyrisScout",1)
+  G("RjaliYvetteScout",1)
+  G("RjaliFadeScout",1)
+  G("RjaliDaceScout",1)
+  G("RjaliIsraScout",1)
+  G("RjaliAmberScout",1)
+  G("RjaliAnnahScout",1)
+  G("RjaliGraceScout",1)
+  G("RjaliRavelScout",1)
+  G("RjaliSkieScout",1)
+  G("RjaliPetsyScout",1)
+  G("RjaliSireneScout",1)
+  G("RjaliSheenaScout",1)
+  G("RjaliKesaiScout",1)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPTIME","GLOBAL",15)
+ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+// Poke PC.
+
+IF 
+InParty(Myself)
+G("RjaliPokes",1)
+G("RJPort",0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Myself)
+END
+
+// Other vanilla romances cause Rjali to poke.
+
+IF
+InParty(Myself)
+See(Player1)
+See("RJini")
+G("RjaliPokes",0)
+G("RJiniRomanceActive",2)
+G("RjaliJiniSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliJiniSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("PGNaliaRomanceActive",2)
+G("RjaliNaliaSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliNaliaSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliNaliaScoutTimer","GLOBAL",RJ_FAST)
+END
+
+IF 
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("AerieRomanceActive",2)
+G("RjaliAerieSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliAerieSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliAerieScoutTimer","GLOBAL",RJ_FAST)
+END
+
+IF 
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("JaheiraRomanceActive",2)
+G("RjaliJaheiraSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliJaheiraSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliJaheiraScoutTimer","GLOBAL",RJ_FAST)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("ViconiaRomanceActive",2)
+G("RjaliViconiaSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliViconiaSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliViconiaScoutTimer","GLOBAL",RJ_FAST)
+END
+
+IF 
+InParty(Myself)
+See(Player1)
+G("RjaliPokes",0)
+G("ImoenRomanceActive",2)
+G("RjaliImoenSpice",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliImoenSpice","GLOBAL",1)
+SetGlobal("RjaliPokes","GLOBAL",1)
+RealSetGlobalTimer("RjaliImoenScoutTimer","GLOBAL",60)
+END
+
+// Rjali scouts out vanilla NPCs
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliAerieScoutTimer","GLOBAL")
+G("RjaliAerieScout",0)
+G("RjaliAerieSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("Aerie")
+See("Aerie")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliAerieScout","GLOBAL",1)
+SetToken("RJSCOUT",@2)
+END
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliViconiaScoutTimer","GLOBAL")
+G("RjaliViconiaScout",0)
+G("RjaliViconiaSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("Viconia")
+See("Viconia")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliViconiaScout","GLOBAL",1)
+SetToken("RJSCOUT",@6)
+END
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliJaheiraScoutTimer","GLOBAL")
+G("RjaliJaheiraScout",0)
+G("RjaliJaheiraSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("Jaheira")
+See("Jaheira")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliJaheiraScout","GLOBAL",1)
+SetToken("RJSCOUT",@5)
+END
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliImoenScoutTimer","GLOBAL")
+G("RjaliImoenScout",0)
+G("RjaliImoenSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("Imoen2")
+See("Imoen2")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliImoenScout","GLOBAL",1)
+SetToken("RJSCOUT",@0)
+END
+
+IF
+G("RjaliScouts",1)
+RealGlobalTimerExpired("RjaliNaliaScoutTimer","GLOBAL")
+G("RjaliNaliaScout",0)
+G("RjaliNaliaSpice",2)
+InParty(Myself)
+See(Player1)
+InParty("Nalia")
+See("Nalia")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RjaliScouts","GLOBAL",2)
+SetGlobal("RjaliNaliaScout","GLOBAL",1)
+SetToken("RJSCOUT",@4)
+END

@@ -1,0 +1,140 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkFA",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Count Fade wedded
+
+IF
+G("Chapter",%bg2_chapter_8%)
+InParty("E3Fade")
+Global("RJWedded","LOCALS",0)
+Global("E3ENGAGED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJWedded","LOCALS",1)
+    IncrementGlobal("RJCntWedded","GLOBAL",1)
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("E3Fade")
+!G("RJPLAY0",14)
+OR(3)
+  !G("RJPLAY0",312)
+  !GlobalsEqual("RJROM0","E3FADEROMANCEACTIVE")
+  !GlobalsEqual("RJPARK0","RjaliFadeScout")
+!G("RJPLAY1",312)
+!G("RJPLAY2",312)
+!G("RJPLAY3",312)
+!G("RJPLAY4",312)
+!GLT("RJPLAY0",312)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",312)
+    AddGlobals("RJRosCnt","RJFILL0")
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","E3FADEROMANCEACTIVE")
+    SetGlobal("RJPARK0","GLOBAL",0)
+    AddGlobals("RJPARK0","RjaliFadeScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("E3Fade")
+!G("RJPLAY1",1)
+!G("RJPLAY0",312)
+OR(3)
+  !G("RJPLAY1",312)
+  !GlobalsEqual("RJROM1","E3FADEROMANCEACTIVE")
+  !GlobalsEqual("RJPARK1","RjaliFadeScout")
+!G("RJPLAY2",312)
+!G("RJPLAY3",312)
+!G("RJPLAY4",312)
+!GLT("RJPLAY1",312)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",312)
+    AddGlobals("RJRosCnt","RJFILL1")
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","E3FADEROMANCEACTIVE")
+    SetGlobal("RJPARK1","GLOBAL",0)
+    AddGlobals("RJPARK1","RjaliFadeScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("E3Fade")
+!G("RJPLAY0",312)
+!G("RJPLAY1",312)
+OR(3)
+  !G("RJPLAY2",312)
+  !GlobalsEqual("RJROM2","E3FADEROMANCEACTIVE")
+  !GlobalsEqual("RJPARK2","RjaliFadeScout")
+!G("RJPLAY3",312)
+!G("RJPLAY4",312)
+!GLT("RJPLAY2",312)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",312)
+    AddGlobals("RJRosCnt","RJFILL2")
+    SetGlobal("RJFILL2","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","E3FADEROMANCEACTIVE")
+    SetGlobal("RJPARK2","GLOBAL",0)
+    AddGlobals("RJPARK2","RjaliFadeScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("E3Fade")
+!G("RJPLAY0",312)
+!G("RJPLAY1",312)
+!G("RJPLAY2",312)
+OR(3)
+  !G("RJPLAY3",312)
+  !GlobalsEqual("RJROM3","E3FADEROMANCEACTIVE")
+  !GlobalsEqual("RJPARK3","RjaliFadeScout")
+!G("RJPLAY4",312)
+!GLT("RJPLAY3",312)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY3","GLOBAL",312)
+    AddGlobals("RJRosCnt","RJFILL3")
+    SetGlobal("RJFILL3","GLOBAL",0)
+    SetGlobal("RJROM3","GLOBAL",0)
+    AddGlobals("RJROM3","E3FADEROMANCEACTIVE")
+    SetGlobal("RJPARK3","GLOBAL",0)
+    AddGlobals("RJPARK3","RjaliFadeScout")
+END
+
+IF
+G("RJRoster",1)
+InParty("E3Fade")
+!G("RJPLAY0",312)
+!G("RJPLAY1",312)
+!G("RJPLAY2",312)
+!G("RJPLAY3",312)
+OR(3)
+  !G("RJPLAY4",312)
+  !GlobalsEqual("RJROM4","E3FADEROMANCEACTIVE")
+  !GlobalsEqual("RJPARK4","RjaliFadeScout")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY4","GLOBAL",312)
+    AddGlobals("RJRosCnt","RJFILL4")
+    SetGlobal("RJFILL4","GLOBAL",0)
+    SetGlobal("RJROM4","GLOBAL",0)
+    AddGlobals("RJROM4","E3FADEROMANCEACTIVE")
+    SetGlobal("RJPARK4","GLOBAL",0)
+    AddGlobals("RJPARK4","RjaliFadeScout")
+END

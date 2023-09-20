@@ -1,0 +1,11 @@
+
+IF
+	Global("WraithPunish","GLOBAL",3)
+	!Global("G#TF.LovedOne","GLOBAL",1)
+	InParty(Myself)
+	Global("G#TF.TyrisRomanceActive","GLOBAL",2)
+	GlobalLT("G#TF.ExpLoveTalk","LOCALS",5)
+THEN
+	RESPONSE #100
+	  SetGlobal("G#TF.ExpLoveTalk","LOCALS",5)
+END

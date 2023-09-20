@@ -1,0 +1,19 @@
+
+// Init RJ1301
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    Explore()
+    BanterBlockFlag(TRUE)
+    ActionOverride(Player1,CreateCreature("RJVOICE",[-1.-1],0)
+    Wait(1)
+    TriggerActivation("Exit1",TRUE)
+    TriggerActivation("Exit2",TRUE)
+    TriggerActivation("Exit3",TRUE)
+    TriggerActivation("Exit4",TRUE)
+    TriggerActivation("Exit4a",FALSE)
+    IncrementGlobal("RJMaze","GLOBAL",1)
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END

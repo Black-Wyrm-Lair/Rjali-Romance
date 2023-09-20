@@ -1,0 +1,260 @@
+
+// Expedite Control
+
+IF
+G("RJSpeedCtl",0)
+THEN
+RESPONSE #100
+SetGlobal("RJSpeedCtl","GLOBAL",1)
+END
+
+// Expedite Rjali
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Rjali")
+G("RjaliScouts",0)
+!RealGlobalTimerNotExpired("RJXPRJTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPRJTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("RjaliRomance","GLOBAL",0)
+END
+
+// Expedite PST NPCs
+
+// Expedite Annah
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("RJAnnah")
+GLT("RJAnnahRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPANTM","GLOBAL")
+!RealGlobalTimerExpired("RJAnnahRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPANTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("RJAnnahRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("RJAnnah")
+G("RJAnnahRomanceActive",2)
+G("RjaliAnnahSpice",2)
+G("RjaliAnnahScout",0)
+!RealGlobalTimerNotExpired("RJXPANTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliAnnahScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliAnnahScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPANTM","GLOBAL",ONE_DAY)
+END
+
+// Expedite Grace
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("RJGrace")
+GLT("RJGraceRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPGRTM","GLOBAL")
+!RealGlobalTimerExpired("RJGraceRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPGRTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("RJGraceRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("RJGrace")
+G("RJGraceRomanceActive",2)
+G("RjaliGraceSpice",2)
+G("RjaliGraceScout",0)
+!RealGlobalTimerNotExpired("RJXPGRTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliGraceScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliGraceScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPGRTM","GLOBAL",ONE_DAY)
+END
+
+// Expedite Ravel
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("RJRavel")
+GLT("RJRavelRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPRVTM","GLOBAL")
+!RealGlobalTimerExpired("RJRavelRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPRVTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("RJRavelRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("RJRavel")
+G("RJRavelRomanceActive",2)
+G("RjaliRavelSpice",2)
+G("RjaliRavelScout",0)
+!RealGlobalTimerNotExpired("RJXPRVTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliRavelScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliRavelScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPRVTM","GLOBAL",ONE_DAY)
+END
+
+// Expedite Kesai
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("RJKesai")
+GLT("RJKesaiRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPKETM","GLOBAL")
+!RealGlobalTimerExpired("RJKesaiRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPKETM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("RJKesaiRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("RJKesai")
+G("RJKesaiRomanceActive",2)
+G("RjaliKesaiSpice",2)
+G("RjaliKesaiScout",0)
+!RealGlobalTimerNotExpired("RJXPKETM","GLOBAL")
+!RealGlobalTimerExpired("RjaliKesaiScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliKesaiScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPKETM","GLOBAL",ONE_DAY)
+END
+
+// Expedite BG2EE NPCs
+
+// Expedite Jaheira
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Jaheira")
+GLT("JaheiraRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPJATM","GLOBAL")
+!RealGlobalTimerExpired("JaheiraRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPJATM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("JaheiraRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Jaheira")
+G("JaheiraRomanceActive",2)
+G("RjaliJaheiraSpice",2)
+G("RjaliJaheiraScout",0)
+!RealGlobalTimerNotExpired("RJXPJATM","GLOBAL")
+!RealGlobalTimerExpired("RjaliJaheiraScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliJaheiraScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPJATM","GLOBAL",ONE_DAY)
+END
+
+// Expedite Viconia
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Viconia")
+GLT("ViconiaRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPVITM","GLOBAL")
+!RealGlobalTimerExpired("ViconiaRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPVITM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("ViconiaRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Viconia")
+G("ViconiaRomanceActive",2)
+G("RjaliViconiaSpice",2)
+G("RjaliViconiaScout",0)
+!RealGlobalTimerNotExpired("RJXPVITM","GLOBAL")
+!RealGlobalTimerExpired("RjaliViconiaScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliViconiaScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPVITM","GLOBAL",ONE_DAY)
+END
+
+// Expedite Aerie
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Aerie")
+GLT("AerieRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPAETM","GLOBAL")
+!RealGlobalTimerExpired("AerieRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPAETM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("AerieRomance","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Aerie")
+G("AerieRomanceActive",2)
+G("RjaliAerieSpice",2)
+G("RjaliAerieScout",0)
+!RealGlobalTimerNotExpired("RJXPAETM","GLOBAL")
+!RealGlobalTimerExpired("RjaliAerieScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliAerieScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPAETM","GLOBAL",ONE_DAY)
+END
+
+// Expedite Neera
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Neera")
+GLT("NeeraRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPNETM","GLOBAL")
+!RealGlobalTimerExpired("NeeraLovetalksTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPNETM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("NeeraLovetalksTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Neera")
+G("NeeraRomanceActive",2)
+G("RjaliNeeraSpice",2)
+G("RjaliNeeraScout",0)
+!RealGlobalTimerNotExpired("RJXPNETM","GLOBAL")
+!RealGlobalTimerExpired("RjaliNeeraScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliNeeraScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPNETM","GLOBAL",ONE_DAY)
+END

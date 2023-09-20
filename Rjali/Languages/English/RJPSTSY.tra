@@ -1,0 +1,31 @@
+
+@0    = ~Hello. Is there something I can do for you?~
+@1    = ~Why, yes there is. Do you have a woman named Jini staying here?~
+@2    = ~We do. She is in the first room on the left as you enter.~
+@3    = ~Thank you very much.~
+@4    = ~Welcome back, Sir.~
+@5    = ~Hi! I'm <CHARNAME>. What's your name, Lovely Lady?~
+@6    = ~(*blush*) I'm Syrinx. How do you do?~
+@7    = ~How do you like working here?~
+@8    = ~It's an interesting job.~
+@9    = ~Jini chats with me sometimes.~
+@10   = ~Adahn seems so sad. And he is such a handsome man.~
+@11   = ~I meet all sorts of people passing through.~
+@12   = ~Have a nice day. I'm sure we will talk again.~
+@13   = ~How is Adahn doing, Syrinx?~
+@14   = ~Well...~
+@15   = ~The poor man is still depressed. I wish I could help him, but he is so unapproachable.~
+@16   = ~Maybe time will fix that. We can only hope.~
+@17   = ~Just the other day, he came out of his room to talk and he...he...pinched me! On the bottom!~
+@18   = ~Syrinx, it sounds like you should decide what you want when he takes the next step. Our Adahn is coming out of his shell!~
+@19   = ~Has Morte been around lately?~
+@20   = ~He certainly has! He is so much fun and he says the most outrageous things!~
+@21   = ~Why, he even suggested...~
+@22   = ~I get the picture, Syrinx. Be careful; Morte is a rogue. A good guy, but a rogue.~
+@23   = ~Maybe. But if Adahn doesn't make a move, a girl wants to have *some* fun.~
+@24   = ~(*chuckles*)~
+
+@50   = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@51   = ~I wish you the very best, Sir.~
+@52   = ~I'm sure Jini will be anxious for your return.~
+@53   = ~Thank you, Syrinx. Stay happy!~

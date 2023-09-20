@@ -1,0 +1,13 @@
+
+IF
+!G("TalkedToNyalee",0)
+G("RjaliGenParents",0)
+G("RjaliGenOrphan",1)
+THEN
+RESPONSE #100
+CreateCreature("RJMOISH",[2364.1632],0)
+ActionOverride("RJMOISH",MakeGlobal())
+CreateCreature("RJRJALI",[2465.1643],0)
+ActionOverride("RJRJALI",MakeGlobal())
+SetGlobal("RjaliGenParents","GLOBAL",1)
+END

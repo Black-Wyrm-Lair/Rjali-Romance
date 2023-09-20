@@ -1,0 +1,17 @@
+
+// Setup Daleson and Bjorn
+
+IF
+  OnCreation()
+  G("RJ1304SOA",0)
+THEN
+  RESPONSE #100
+    CreateCreature("RJDALE",[843.3398],6)
+    CreateCreature("RJGUARD",[2631.533],0)
+    ActionOverride("Daleson",MakeGlobal())
+    CreateCreature("HORSE",[660.3240],12)
+    CreateCreature("HORSE",[622.3329],4)
+    CreateCreature("HORSE",[751.3367],0)
+    SetGlobal("RJ1304SOA","GLOBAL",1)
+    Continue()
+END

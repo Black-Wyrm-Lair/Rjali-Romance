@@ -1,0 +1,18 @@
+
+// Adahn Reunion
+
+IF
+  G("RJiniiJIDAD",16)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+  G("RJiniiJIDAD",15)
+  Range(Player1,6)
+  See(Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDAD","GLOBAL",16)
+END

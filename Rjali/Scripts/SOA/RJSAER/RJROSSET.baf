@@ -1,0 +1,150 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkSA",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Count Saerileth wedded and bedded
+
+IF
+G("Chapter",%bg2_chapter_8%)
+InParty("Saerileth")
+Global("RJWedded","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJWedded","LOCALS",1)
+    IncrementGlobal("RJCntWedded","GLOBAL",1)
+    IncrementGlobal("RJCntBedded","GLOBAL",1)
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("Saerileth")
+!G("RJPLAY0",14)
+OR(2)
+  !G("RJPLAY0",204)
+  !GlobalsEqual("RJROM0","SaerilethRomanceActive")
+!G("RJPLAY1",204)
+!G("RJPLAY2",204)
+!G("RJPLAY3",204)
+!G("RJPLAY4",204)
+!GLT("RJPLAY0",204)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",204)
+    AddGlobals("RJRosCnt","RJFILL0")
+    AddGlobals("RJLocSet","RJFILLSA")
+    SetGlobal("RJFILLSA","GLOBAL",0)
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","SaerilethRomanceActive")
+    SetGlobal("RJPARK0","GLOBAL",0)
+    AddGlobals("RJPARK0","SaerilethRomanceActive")
+    AddGlobals("RJPARK0","RJPARKTOB")
+END
+
+IF
+G("RJRoster",1)
+InParty("Saerileth")
+!G("RJPLAY1",1)
+!G("RJPLAY0",204)
+OR(2)
+  !G("RJPLAY1",204)
+  !GlobalsEqual("RJROM1","SaerilethRomanceActive")
+!G("RJPLAY2",204)
+!G("RJPLAY3",204)
+!G("RJPLAY4",204)
+!GLT("RJPLAY1",204)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",204)
+    AddGlobals("RJRosCnt","RJFILL1")
+    AddGlobals("RJLocSet","RJFILLSA")
+    SetGlobal("RJFILLSA","GLOBAL",0)
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","SaerilethRomanceActive")
+    SetGlobal("RJPARK1","GLOBAL",0)
+    AddGlobals("RJPARK1","SaerilethRomanceActive")
+    AddGlobals("RJPARK1","RJPARKTOB")
+END
+
+IF
+G("RJRoster",1)
+InParty("Saerileth")
+!G("RJPLAY0",204)
+!G("RJPLAY1",204)
+OR(2)
+  !G("RJPLAY2",204)
+  !GlobalsEqual("RJROM2","SaerilethRomanceActive")
+!G("RJPLAY3",204)
+!G("RJPLAY4",204)
+!GLT("RJPLAY2",204)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",204)
+    AddGlobals("RJRosCnt","RJFILL2")
+    AddGlobals("RJLocSet","RJFILLSA")
+    SetGlobal("RJFILLSA","GLOBAL",0)
+    SetGlobal("RJFILL2","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","SaerilethRomanceActive")
+    SetGlobal("RJPARK2","GLOBAL",0)
+    AddGlobals("RJPARK2","SaerilethRomanceActive")
+    AddGlobals("RJPARK2","RJPARKTOB")
+END
+
+IF
+G("RJRoster",1)
+InParty("Saerileth")
+!G("RJPLAY0",204)
+!G("RJPLAY1",204)
+!G("RJPLAY2",204)
+OR(2)
+  !G("RJPLAY3",204)
+  !GlobalsEqual("RJROM3","SaerilethRomanceActive")
+!G("RJPLAY4",204)
+!GLT("RJPLAY3",204)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY3","GLOBAL",204)
+    AddGlobals("RJRosCnt","RJFILL3")
+    AddGlobals("RJLocSet","RJFILLSA")
+    SetGlobal("RJFILLSA","GLOBAL",0)
+    SetGlobal("RJFILL3","GLOBAL",0)
+    SetGlobal("RJROM3","GLOBAL",0)
+    AddGlobals("RJROM3","SaerilethRomanceActive")
+    SetGlobal("RJPARK3","GLOBAL",0)
+    AddGlobals("RJPARK3","SaerilethRomanceActive")
+    AddGlobals("RJPARK3","RJPARKTOB")
+END
+
+IF
+G("RJRoster",1)
+InParty("Saerileth")
+!G("RJPLAY0",204)
+!G("RJPLAY1",204)
+!G("RJPLAY2",204)
+!G("RJPLAY3",204)
+OR(2)
+  !G("RJPLAY4",204)
+  !GlobalsEqual("RJROM4","SaerilethRomanceActive")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY4","GLOBAL",204)
+    AddGlobals("RJRosCnt","RJFILL4")
+    AddGlobals("RJLocSet","RJFILLSA")
+    SetGlobal("RJFILLSA","GLOBAL",0)
+    SetGlobal("RJFILL4","GLOBAL",0)
+    SetGlobal("RJROM4","GLOBAL",0)
+    AddGlobals("RJROM4","SaerilethRomanceActive")
+    SetGlobal("RJPARK4","GLOBAL",0)
+    AddGlobals("RJPARK4","SaerilethRomanceActive")
+    AddGlobals("RJPARK4","RJPARKTOB")
+END

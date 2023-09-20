@@ -1,0 +1,34 @@
+
+// Expedite Dace
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("T#Dace")
+GLT("T#DaceRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPDATM","GLOBAL")
+OR(3)
+  !RealGlobalTimerExpired("T#DaceSussTalksTimer","GLOBAL")
+  !RealGlobalTimerExpired("T#DaceIntTalksTimer","GLOBAL")
+  !RealGlobalTimerExpired("T#DaceRomanceTalksTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPDATM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("T#DaceSussTalksTimer","GLOBAL",0)
+RealSetGlobalTimer("T#DaceIntTalksTimer","GLOBAL",0)
+RealSetGlobalTimer("T#DaceRomanceTalksTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("T#Dace")
+G("T#DaceRomanceActive",2)
+G("RjaliDaceSpice",2)
+G("RjaliDaceScout",0)
+!RealGlobalTimerNotExpired("RJXPDATM","GLOBAL")
+!RealGlobalTimerExpired("RjaliDaceScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliDaceScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPDATM","GLOBAL",ONE_DAY)
+END

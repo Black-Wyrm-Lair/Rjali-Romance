@@ -1,0 +1,14 @@
+
+// SoA Group Talk 1 Start.
+
+IF
+  G("RjaliGroupSOA1",1)
+  AreaCheck("AR1306")
+  G("RJParkFA",1)
+THEN
+RESPONSE #100
+  SetGlobal("RJParkFA","GLOBAL",2)
+  MoveGlobal("AR1306","E3Fade",[1294.1227])
+  ActionOverride("E3Fade",SetDialog("E3FADEJ"))
+  IncrementGlobal("RJGather","GLOBAL",1)
+END

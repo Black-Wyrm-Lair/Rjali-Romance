@@ -1,0 +1,21 @@
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    FadeToColor([30.0],0)
+    Wait(1)
+    JumpToPoint([2191.1756])
+    ActionOverride(Player2,JumpToPoint([2227.1714]))
+    ActionOverride(Player3,JumpToPoint([2206.1819]))
+    ActionOverride(Player4,JumpToPoint([2289.1780]))
+    ActionOverride(Player5,JumpToPoint([2220.1890]))
+    ActionOverride(Player6,JumpToPoint([2321.1878]))
+    PlaySound("EFF_M28")
+    MoveViewObject(Myself,INSTANT)
+    Wait(3)
+    FadeFromColor([30.0],0)
+    SetGlobal("Portal","RJ0610",2)
+    Wait(1)
+    EndCutSceneMode()
+END

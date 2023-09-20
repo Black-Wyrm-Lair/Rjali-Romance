@@ -1,0 +1,14 @@
+
+//  NPC fill
+
+IF
+G("RJPLAY0",222)
+G("RJPLAY0S",0)
+THEN
+  RESPONSE #100
+    AddGlobals("RJPLAY0S","RJPLAY0")
+    SetToken("RJPLAY0",@38)
+    SetName(@38)
+    ReallyForceSpellRES("RJPLYPE",Myself)
+    IncrementGlobal("RJSetCnt","GLOBAL",1)
+END

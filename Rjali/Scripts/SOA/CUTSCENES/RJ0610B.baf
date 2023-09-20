@@ -1,0 +1,17 @@
+
+IF
+  Clicked([ANYONE])
+  Range(LastTrigger,9)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("RJ0610B",Player1))
+END
+
+IF
+  Clicked([ANYONE])
+  !Range(LastTrigger,9)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,14702)  // ~You are too far away to use that.~
+END
+

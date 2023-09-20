@@ -1,0 +1,134 @@
+
+// Remove spells not persisted
+
+IF
+  OnCreation()
+  !G("RJPort",0)
+THEN
+  RESPONSE #100
+    RemoveSpell(ENTER_POCKET_PLANE)
+    RemoveSpell(SLAYER_START)
+    continue()
+END
+
+// Disallow Find Familiar
+
+IF
+  HaveSpell(WIZARD_FIND_FAMILAR)
+THEN
+  RESPONSE #100
+    RemoveSpell(WIZARD_FIND_FAMILAR)
+END
+
+IF
+  HasItem("SCRL6D",Player1)
+THEN
+  RESPONSE #100
+    DropItem("SCRL6D",[-1.-1])
+END
+
+// Reselecting InParty NPCs
+
+IF
+  G("RJPort",0)
+  G("RJSelect",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJSelect","GLOBAL",0)
+    ActionOverride(Player2,MakeUnselectable(0))
+    ActionOverride(Player3,MakeUnselectable(0))
+    ActionOverride(Player4,MakeUnselectable(0))
+    ActionOverride(Player5,MakeUnselectable(0))
+    ActionOverride(Player6,MakeUnselectable(0))
+END
+
+// Initiate Self Talks
+
+IF
+  G("RJSheenaInteract",1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("player1",Player1))
+END
+
+// Start a ToB group banter.
+
+IF
+  G("RJRoster",3)
+  G("RjaliGroup",0)
+  OR(3)
+    G("RjaliGroupToB1",1)
+    G("RjaliGroupToB2",1)
+    G("RjaliGroupToB3",1)
+  GlobalsEqual("RJSetCnt","RJRosCnt")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Player2,CD_STATE_NOTVALID)
+  !StateCheck(Player3,CD_STATE_NOTVALID)
+  !StateCheck(Player4,CD_STATE_NOTVALID)
+  OR(2)
+    !InParty(Player5)
+    !StateCheck(Player5,CD_STATE_NOTVALID)
+  OR(2)
+    !InParty(Player6)
+    !StateCheck(Player6,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+  SetGlobal("RjaliGroup","GLOBAL",1)
+  IncrementGlobal("RjaliGroupToB","GLOBAL",1)
+  StartDialogue("player1",Player1)
+END
+
+// Jini calls you about Ravel's orphans
+
+IF
+G("RJRavelOrphans",2)
+G("RJPort",0)
+!AreaCheck("AR4000")
+!AreaCheck("AR4500")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RJRavelOrphans","GLOBAL",3)
+CreateCreature("RJINII",[-1.-1],0)
+END
+
+// Jini calls you about Dakkon
+
+IF
+G("RJiniiJIDDK",0)
+G("RJiniiJIDND",99)
+G("RJPort",0)
+OR(2)
+  AreaCheck("AR5501")
+  AreaCheck("AR5503")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RJiniiJIDDK","GLOBAL",1)
+CreateCreature("RJINII",[-1.-1],0)
+END
+
+// Jini calls you about Nordom
+
+IF
+G("RJiniiJIDND",0)
+G("RJiniiJIDMR",99)
+G("RJPort",0)
+GGT("RJRavelOrphans",4)
+!AreaCheck("AR4000")
+!AreaCheck("AR4500")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("RJiniiJIDND","GLOBAL",1)
+CreateCreature("RJINII",[-1.-1],0)
+END

@@ -1,0 +1,168 @@
+
+// Set NPC initial times, if not there.
+
+APPEND ~GTIMES.IDS~ ~299  RJ_QUICK~
+UNLESS ~RJ_QUICK~
+APPEND ~GTIMES.IDS~ ~899  RJ_FAST~
+UNLESS ~RJ_FAST~
+APPEND ~GTIMES.IDS~ ~2399 RJ_TALK~
+UNLESS ~RJ_TALK~
+APPEND ~GTIMES.IDS~ ~2999 RJ_BANTER~
+UNLESS ~RJ_BANTER~
+APPEND ~GTIMES.IDS~ ~3599 RJ_FLIRT~
+UNLESS ~RJ_FLIRT~
+APPEND ~GTIMES.IDS~ ~59 RJ_EXPED~
+UNLESS ~RJ_EXPED~
+
+// Here's where we set experienced players' talk time adjustments
+
+ACTION_IF MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "1" THEN BEGIN
+
+COPY_EXISTING ~GTIMES.IDS~ ~override~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_QUICK~ ~299 RJ_QUICK~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_FAST~ ~899 RJ_FAST~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_TALK~ ~1799 RJ_TALK~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_BANTER~ ~2399 RJ_BANTER~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_FLIRT~ ~2999 RJ_FLIRT~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_EXPED~ ~44 RJ_EXPED~
+
+ACTION_IF NOT FILE_EXISTS ~override/BANTTIMG.2DA~ THEN BEGIN
+
+COPY ~Rjali/2da/banter1.2da~ ~override/BANTTIMG.2DA~
+
+END
+
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Rjali/setup-Rjali.tp2~ "2" THEN BEGIN
+
+COPY_EXISTING ~GTIMES.IDS~ ~override~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_QUICK~ ~299 RJ_QUICK~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_FAST~ ~599 RJ_FAST~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_TALK~ ~1199 RJ_TALK~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_BANTER~ ~1799 RJ_BANTER~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_FLIRT~ ~2399 RJ_FLIRT~
+  REPLACE_TEXTUALLY ~^[0-9]* *RJ_EXPED~ ~29 RJ_EXPED~
+
+ACTION_IF NOT FILE_EXISTS ~override/BANTTIMG.2DA~ THEN BEGIN
+
+COPY ~Rjali/2da/banter2.2da~ ~override/BANTTIMG.2DA~
+
+END
+
+END
+
+// These two lines were created by CamDawg. It's a new state that checks if NPC is able to talk.
+
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+// Here's where we stub dialogues for early use
+
+COMPILE ~Rjali/Dialogue/SOA/RJSTUB.d~
+
+// Here's where we replace ALLOW_MISSING
+
+// Dace
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Dace/dace.tp2~ "0" AND
+          NOT MOD_IS_INSTALLED ~Dace_eet/dace_eet.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJDACE/RJSTUB.d~
+END
+
+// Isra
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Isra_bg2/isra_bg2.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJISRA/RJSTUB.d~
+END
+
+// Branwen
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Branwen/setup-Branwen.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJBRAN/RJSTUB.d~
+END
+
+// Fade
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Fade/setup-Fade.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJFADE/RJSTUB.d~
+END
+
+// Tashia
+
+ACTION_IF NOT MOD_IS_INSTALLED ~tashia/setup-tashia.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJTASH/RJSTUB.d~
+END
+
+// Ninde
+
+ACTION_IF NOT MOD_IS_INSTALLED ~ninde/ninde.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJNIND/RJSTUB.d~
+END
+
+// Tyris
+
+ACTION_IF NOT MOD_IS_INSTALLED ~tyrisflare/setup-tyrisflare.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJTYRI/RJSTUB.d~
+END
+
+// Yvette
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJYVET/RJSTUB.d~
+END
+
+// Amber
+
+ACTION_IF NOT MOD_IS_INSTALLED ~setup-amber.tp2~ "0" AND
+          NOT MOD_IS_INSTALLED ~amber.tp2~ "0" AND
+          NOT MOD_IS_INSTALLED ~setup-amber_eet.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJAMBE/RJSTUB.d~
+END
+
+// Saerileth
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSAER/RJSTUB.d~
+END
+
+// Skie
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Skie/Setup-Skie.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSKIE/RJSTUB.d~
+END
+
+// Sheena
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Setup-Sheena.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSHEE/RJSTUB.d~
+          ~Rjali/Scripts/SOA/RJSHEE/SHEENA25.baf~
+END
+
+// Petsy
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Petsy/Petsy.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJPETS/RJSTUB.d~
+END
+
+// Sirene
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+  COMPILE ~Rjali/Dialogue/SOA/RJSIRE/RJSTUB.d~
+END
+
+// Establish Player1.bcs and Player1T.bcs
+
+ACTION_IF FILE_EXISTS_IN_GAME ~Player1.bcs~ THEN BEGIN
+  EXTEND_TOP ~Player1.bcs~ ~Rjali/Scripts/SOA/Player1.baf~ EVALUATE_BUFFER
+END
+ELSE BEGIN
+  COMPILE EVALUATE_BUFFER ~Rjali/Scripts/SOA/Player1.baf~   // Create Player1.bcs
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~Player1T.bcs~ THEN BEGIN
+  EXTEND_TOP ~Player1T.bcs~ ~Rjali/Scripts/TOB/Player1T.baf~
+END
+ELSE BEGIN
+  COMPILE ~Rjali/Scripts/TOB/Player1T.baf~   // Create Player1T.bcs
+END

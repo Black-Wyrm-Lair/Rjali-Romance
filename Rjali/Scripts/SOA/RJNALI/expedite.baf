@@ -1,0 +1,29 @@
+
+// Expedite Nalia
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("Nalia")
+GLT("PGNaliaRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPNATM","GLOBAL")
+!RealGlobalTimerExpired("PGNaliaRomanceTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPNATM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("PGNaliaRomanceTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("Nalia")
+G("PGNaliaRomanceActive",2)
+G("RjaliNaliaSpice",2)
+G("RjaliNaliaScout",0)
+!RealGlobalTimerNotExpired("RJXPNATM","GLOBAL")
+!RealGlobalTimerExpired("RjaliNaliaScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliNaliaScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPNATM","GLOBAL",ONE_DAY)
+END

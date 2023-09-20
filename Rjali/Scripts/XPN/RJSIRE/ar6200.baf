@@ -1,0 +1,18 @@
+
+// Sirene Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("C0SireneBio",0)
+G("C0SireneRomanceActive",2)
+OR(2)
+  InParty("C0Sirene")
+  G("RJParkSI",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SireneBio","GLOBAL",1)
+TextScreen("RJEpiSI")
+SmallWait(1)
+Continue()
+END

@@ -1,0 +1,253 @@
+
+// Rjali's ToB script. Read this after SoA script, RjaliS.baf
+
+// Rjali refuses to be unloved.
+
+IF
+InParty(Myself)
+OR(2)
+  !G("RjaliMet",0)
+  !G("RjaliSummoned",0)
+G("RjaliReRomance",0)
+!G("RjaliRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("RjaliReRomance","GLOBAL",1)
+END
+
+// Rjali will fix you if your gender changes.
+
+IF
+InParty(Myself)
+G("RjaliGender",0)
+!Gender(Player1,MALE)
+THEN
+RESPONSE #100
+SetGlobal("RjaliGender","GLOBAL",1)
+END
+
+// Rjali will leave you permanently if you turn evil.
+
+IF
+InParty(Myself)
+G("RjaliLeaves",0)
+Alignment(Player1,MASK_EVIL)
+THEN
+RESPONSE #100
+SetGlobal("RjaliLeaves","GLOBAL",1)
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty(Myself)
+OR(2)
+  !G("RJPLAY0",14)
+  !GlobalsEqual("RJROM0","RjaliRomanceActive")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",14)
+    AddGlobals("RJRosCnt","RJFILL0")
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","RjaliRomanceActive")
+    SetGlobal("RJPARK0","GLOBAL",0)
+END
+
+// Starting ToB Talks
+
+IF 
+InParty(Myself)
+G("RjaliTalkToB",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliRomance","GLOBAL",RJ_TALK)
+SetGlobal("RjaliTalkToB","GLOBAL",1)
+END
+
+// Just like with SoA, we have a big block for Rjali's talks: when the timer expires, variable sets to 2,4,6... and Rjali talks.
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(5)
+  G("RjaliTalkToB",1)
+  G("RjaliTalkToB",3)
+  G("RjaliTalkToB",5)
+  G("RjaliTalkToB",7)
+  G("RjaliTalkToB",9)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalkToB","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(12)
+  G("RjaliTalkToB",2)
+  G("RjaliTalkToB",4)
+  G("RjaliTalkToB",6)
+  G("RjaliTalkToB",8)
+  G("RjaliTalkToB",10)
+  G("RjaliReRomance",1)
+  G("RjaliLeaves",1)
+  G("RjaliGender",1)
+  G("RjaliSaradush",1)
+  G("RjaliChallenge3",1)
+  G("RjaliChallenge5",2)
+  G("RjaliChallenge5",6)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Saradush sacked, at waking up
+
+IF
+InParty(Myself)
+G("RjaliSaradush",0)
+Dead("Yaga01")
+PartyRested()
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+See(Player1)
+THEN
+RESPONSE #100
+SetGlobal("RjaliSaradush","GLOBAL",1)
+END
+
+// Third challenge, Innocence or Doubt
+
+IF
+InParty(Myself)
+G("RjaliChallenge3",0)
+GGT("BeginChallenge3",2) // Third challenge happened
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliChallenge3","GLOBAL",1)
+END
+
+// Abazigal and Sendai are dead, back in Amkathra, check on orphans once more
+
+IF
+InParty(Myself)
+G("RjaliChallenge5",0)
+AreaCheck("AR5500")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliChallenge5","GLOBAL",2)
+END
+
+// Fifth challenge, Ravager's dead, final kiss
+
+IF
+InParty(Myself)
+G("RjaliChallenge5",4)
+Dead("CHALRV01")    // Ravager's dead
+AreaCheck("AR4500")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliChallenge5","GLOBAL",2)
+END
+
+// 4th Djinn talk
+
+IF
+G("RjaliDjinnTalk",6)
+G("RJGenie",0)
+PartyHasItem("RJLAMP")
+InParty(Myself)
+!G("RJCntLoved",0)
+OR(2)
+  G("RjaliGroupToB2",3)
+  G("RjaliGroupToB3",3)
+GlobalTimerExpired("RjaliDjinnTimer","GLOBAL")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliDjinnTalk","GLOBAL",1)
+SetGlobal("RJGenie","GLOBAL",9)
+END
+
+IF
+G("RjaliDjinnTalk",7)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+// Flirts for Rjali: Rjali-initiated flirts
+
+// Flirts initiate...
+
+IF
+InParty(Myself)
+G("RjaliFlirtsStartToB",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliFlirtsStartToB","GLOBAL",1)
+RealSetGlobalTimer("RjaliFlirtTimerToB","GLOBAL",RJ_FLIRT)
+END
+
+// Ready for flirting!
+
+IF
+InParty(Myself)
+G("RJHush",0)
+G("RJXPN",0)
+G("RjaliFlirtsStartToB",1)
+RealGlobalTimerExpired("RjaliFlirtTimerTob","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+CombatCounter(0)
+!See([ENEMY])
+!AreaCheck("AR6200")
+G("RjaliFlirtTob",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliFlirtTob","GLOBAL",1)
+StartDialogueNoSet(Player1)         
+END
+
+// Flirting begins!
+
+IF
+G("RjaliFlirtTob",1)
+RealGlobalTimerExpired("RjaliFlirtTimerTob","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RjaliFlirtTob","GLOBAL",0)
+RealSetGlobalTimer("RjaliFlirtTimerTob","GLOBAL",RJ_FLIRT)
+END

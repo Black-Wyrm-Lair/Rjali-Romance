@@ -1,0 +1,210 @@
+@0    = ~I don't understand why you have so little self-confidence? Why, you don't even look people in the eye when you talk to them!~
+@1    = ~I do too!~
+@2    = ~No you don't.~
+@3    = ~Do so too!~
+@4    = ~Don't!~
+@5    = ~Do so! Do so! I see what you look at, so you're nothing to brag about!~
+@6    = ~Good girl! I'll have to spitting people in the eye before I'm through.~
+
+@7    = ~Rjali, why are you so brash when you could so easily behave as a woman should?~
+@8    = ~Because men like you would try to own me, and I am no one's slave.~
+@9    = ~Will you have no children, then? Or will you neglect them for your own pleasures?~
+@10   = ~If and when I have children, they're gonna be little hellions. I'll need all the stamina I can develop.~
+@11   = ~You can't get a man with a sword, you know.~
+@12   = ~Just shows what you know. The man I want will want *me*, not some wishy-washy, coy little thing. Such men do exist.~
+@13   = ~Perhaps. I will meditate on it.~
+
+@14   = ~Eddie! Stop stealing my herbs!~
+@15   = ~I have done no such thing. (Stupid little twist. I can convince her of anything.)~
+@16   = ~I have *seen* you taking herbs from other packs, including mine. I've *seen* you do this! Gonna have to charge you pack rates, so get ready to cough up.~
+@17   = ~I might settle for a pound of flesh...~
+@18   = ~W-WHAT? (She can't mean THAT. That would hurt!)~
+@19   = ~Nah. Just watching you get all flustered is entertainment enough.~
+@20   = ~Grrrrr...(Fireball. Fireball. Fireball!)~
+
+@21   = ~Tell me, lovely starling, where did you get your tiara?~
+@22   = ~Dragon geld. Couldn't you tell?~
+@23   = ~Really? You must have courage to match your beauty!~
+@24   = ~Yes, I do. Don't I? And I'm modest, too!~
+@25   = ~With such wit, you should have become a harper.~
+@26   = ~Nope. Someone once told me it takes a liar to play a lyre.~
+
+@27   = ~Imoen, stop taking my things. Why do you do that?~
+@28   = ~Well, I didn't come away from Spellhold with a lot of kit, you know...~
+@29   = ~I hadn't thought! You can borrow whatever you want until we can get you more stuff.~
+@30   = ~Sorry for teasing you, Rjali. <CHARNAME> already got me some things. I just thought I would try something in gold, for a change.~
+@31   = ~You can have it then, although I do fill them out better than you do.~
+@32   = ~Wait! What?~
+
+@33   = ~You seem to be out of balance, Rjali. Is something troubling you?~
+@34   = ~Well, <CHARNAME> is everything I could want him to be, but he has all these problems what with being Bhaalspawn and all...~
+@35   = ~He certainly has. But we all have problems.~
+@36   = ~I'm here to take care of him, now. I guess I'll just have to keep on worrying.~
+@37   = ~Just aid him without becoming a burden.~
+@38   = ~That's the plan..~
+@39   = ~So many bad things have happened this last year. None of us has escaped.~
+@40   = ~Yes. I have suffered my own losses.~
+@41   = ~Never mind, Jaheira. We're alive and kicking. Mustn't grumble...~
+
+@42   = ~Rjali! Where is your family?~
+@43   = ~They are all dead now. I had to find my own way.~
+@44   = ~My cousin Clodhopper had a similar problem. Not that he had no family, you understand. But he could get lost in his own bed. Couldn't find his way out of the sheets. So he gave up sheets. Of course, he turns an unattractive shade of blue during the winter months...~
+@45   = ~(giggles)~
+@46   = ~It's not funny. Aunt Petunia once mistook him for a smurf. She tied a bow around him and gave him as a birthday present.~
+@47   = ~Jan, you are *the* most horrible liar! Ever. Tell me more...~
+@48   = ~I tell the simple truth. The little girl took him everywhere, and he was never lost again. She was not pleased when he stopped being blue, however.~
+
+@49   = ~Why do you behave the way you do, Rjali. It is not seemly.~
+@50   = ~I don't know what you are talking about.~
+@51   = ~You are shameless with <CHARNAME>. People are not supposed to behave that way in public.~
+@52   = ~Sir Keldorn, you have some very strange ideas. What does being in public have to do with moral behaviour?~
+@53   = ~Morality must be *seen*. It cannot be assumed.~
+@54   = ~That is only true if you make the other assumption that all people are innately immoral.~
+@55   = ~But it is true! People are inherently immoral and must be held to higher standards by authority.~
+@56   = ~Just so long as *you* are the authority. Isn't that what you're saying?~
+@57   = ~(sigh) Torm help me.~
+
+@58   = ~Where do you get the strength to swing your axe like that?~
+@59   = ~Weel now...~
+@60   = ~I mean, it's a really big axe, and look at your size...~
+@61   = ~It's a Dwarf thing, Girly. We have all sorts of strength, if you know what I mean.~
+@62   = ~Why, Korgan! You're a dirty, old dwarf!~
+@63   = ~Took me a long time to get old. The other comes with the clan.~
+
+@64   = ~Mazzy, I have seen you giving <CHARNAME> the eye when you thought no one was looking.~
+@65   = ~Excuse me?~
+@66   = ~If you're that interested, why don't you say something to him?~
+@67   = ~Rjali, I always strive for the good. How can you say such things to me?~
+@68   = ~I have seen what I have seen. Have to admit he *is* good. Maybe you should strive a little harder...~
+@69   = ~(Mazzy gets a pensive look on her face.)~
+
+@70   = ~Minsc! It is good to see you!~
+@71   = ~So Boo keeps telling me.~
+@72   = ~Did Boo come from Rashoman with you? Or did you two get together after you left?~
+@73   = ~That is a long story. Do you want to hear it?~
+@74   = ~Yes, please.~
+@75   = ~When Dynaheir was choosing me, I say her trying to kill this furry, little animal. Being a ranger, I could not let this happen.~
+@76   = ~So what happened?~
+@77   = ~Dynaheir relented, and Boo took me to his bosum. We have been together ever since.~
+@78   = ~Boo says he's tired now, friend Rjali. Shall I tell you of our travels later?~
+@79   = ~Yes please, Minsc. That would be lovely.~
+
+@80   = ~Rjali, you are fixated on tacos and ... affection. Are you not concerned to help the less fortunate?~
+@81   = ~If you haven't noticed, Nalia, I *am* one of the less fortunate.~
+@82   = ~No, I haven't noticed! We want for nothing.~
+@83   = ~Only because <CHARNAME> looks after us. *I* don't own any estates with serfs and an income.~
+@84   = ~Still. There are others who don't have a <CHARNAME>.~
+@85   = ~Yes. And we help them as we can. Meanwhile, I will stick with tacos and the ... other.~
+
+@86   = ~Your diadem glows on your face, Rjali.~
+@87   = ~That's why I wear it. I'm cute.~
+@88   = ~I don't understand you. How can you be so frivolous?~
+@89   = ~Because I have come through tragedy. I do not see the point in gloom.~
+@90   = ~Tragedy? I didn't know. What happened?~
+@91   = ~The list is almost endless, Valygar. I would rather not dwell on it, if you don't mind.~
+@92   = ~If that is what you wish. *I* wish I could get those things out of my mind.~
+@93   = ~Suggestion. Let's see if <CHARNAME> has any more chocolate. Chocolate is always good for chasing the blues away.~
+
+@94   = ~Viconia, I like you.~
+@95   = ~Now, those are words I have never heard from a surfacer.~
+@96   = ~With all that has happened to you, you stand unbowed.~
+@97   = ~Shar is my strength.~
+@98   = ~I think we are gonna get along just fine, anyway.~
+@99   = ~Perhaps. We shall have to see.~
+
+@100  = ~Yoshimo, I heard on the grapevine that you have a little problem with Renal Bloodscalp.~
+@101  = ~Yes. He seems to object to independent operators in *his* territory.~
+@102  = ~That's what I heard. Sort of makes us kindred spirits.~
+@103  = ~Indeed? You have had the same problem?~
+@104  = ~Yep. I have had to harm a few of them to protect my virtue. Such as it is...~
+@105  = ~Well now... Maybe we should *pool* our virtues. This might be interesting.~
+@106  = ~Had to try it on, didn't you, Yoshimo? Sorry about that, but I am otherwise occupied. Fully occupied.~
+@107  = ~Pity...~
+
+@108  = ~Edwin, you're a real smooth talker, aren't you?~
+@109  = ~It may be so. (What does she want? Perhaps...)~
+@110  = ~I heard you can talk birds out of the trees.~
+@111  = ~I have been known to do so. (There is no way she can check that.)~
+@112  = ~I also heard that you can call other beasts to you.~
+@113  = ~Well, once or twice. (She wants me!)~
+@114  = ~Would you call up a couple of rabbits for tonight's stew?~
+@115  = ~(Rats!)~
+
+@116  = ~Imoen! Did you replace my perfume with Eau de Skunk? Again?~
+@117  = ~Moi? Would I do a thing like that to you?~
+@118  = ~Yes, you would.~
+@119  = ~Would not!~
+@120  = ~Would so!~
+@121  = ~You're the only one in this party who has an even more warped sense of humor than me. Gotta be you.~
+@122  = ~You could be right about that. How else do I stay ahead of <CHARNAME>?~
+@123  = ~Point taken. Now, clean up the mess!~
+@124  = ~OK. Maybe we should combine resources and seriously prank <CHARNAME>.~
+
+@125  = ~Jaheira, you believe in balance. Why do dither all the time? Enquiring minds want to know!~
+@126  = ~Dither? Rather say I am weighing the alternatives.~
+@127  = ~Must be pretty heavy, then. Sure you just can't figure out what you want?~
+@128  = ~You may have a point. I do find things confusing right now.~
+@129  = ~Thought so.~
+@130  = ~If I might give you a word of advice. Listen to your need.~
+@131  = ~Your mind only gets confused when it tries to ignore what your body needs.~
+@132  = ~You know: that's exactly what it feels like!~
+@133  = ~So, listen to yourself as much as you listen to the *balance*.~
+@134  = ~I'll try. But do not expect miracles anytime soon.~
+
+@135  = ~Minsc, you were going to tell me about your travels.~
+@136  = ~We were just leaving Rashoman, when...~
+@137  = ~Wait! When did you find out that Boo was a miniture giant space hamster?~
+@138  = ~I was just going to tell you that story. And a fine story it is!~
+@139  = ~We were just starting out. You remember what Dynaheir almost did to Boo?~
+@140  = ~We had been on the road for a few weeks when we were set upon by bandits.~
+@141  = ~Minsc was incensed. How dare they attack me? ME?~
+@142  = ~Then they were swinging their swords at Dynaheir!~
+@143  = ~Before I could turn, Boo leaped on one of them and bit his eye out. After that, the rest ran away before Minsc could kick their collective butts.~
+@144  = ~And then?~
+@145  = ~Dynaheir was so impressed, she kissed Boo and showed me how to translate his alien language. That was when Boo told me about himself.~
+@146  = ~I'm impressed! Extra crackers for Boo tonight!~
+
+@147  = ~Viconia, you have met several people now who don't think you're horrible. Isn't it time you lightened up?~
+@148  = ~I'm drow, Rjali. There will always be a need for caution on the surface.~
+@149  = ~I suppose so. But you must realize that it is a cultural thing, just like the drow mistrust of all non-drow.~
+@150  = ~Yes. And as with the drow, there few indeed who move past their cultural conditioning.~
+@151  = ~Well, *I* call you friend.~
+@152  = ~Maybe. You are a lot like <CHARNAME> in this.~
+@153  = ~Thank you. He is pretty special, isn't he?~
+
+@154  = ~So, priestess, how do reconcile your calling with being a thief? (No doubt she is too stupid to see the contradiction.)~
+@155  = ~My job is to help people. Being a what I am makes it possible to stay alive to help people.~
+@156  = ~Hmm... (She has an answer for everything. I must be careful here.)~
+@157  = ~And, as is well known, the sword is faster than the spell!~
+@158  = ~I am sorry you feel the need to bully me. (Doubly careful.)~
+@159  = ~Wasn't. Just letting you know that there is a line in the sand.~
+@160  = ~I will remember. (...and when her back is turned...)~
+
+@161  = ~Imoen, why do you keep pilfering things?~
+@162  = ~Dunno what you mean?~
+@163  = ~Oh yes you do! And you're a lousy liar, even with all that practice.~
+@164  = ~Nuts! I gotta keep my hand in, don't I?~
+@165  = ~Just not in *my* pack.~
+@166  = ~Oh alright. Not that there is anything there, anyway...~
+
+@167  = ~Rjali, why do you never look down?~
+@168  = ~Nonsense, Jaheira. I'm constantly checking my footing.~
+@169  = ~Must you be so literal? I meant depressed.~
+@170  = ~Because life is good, and I am with people I love. Which, strangely, includes you.~
+@171  = ~Really? I wish I had your perspective.~
+@172  = ~It's easy! Smile a lot and keep your sword loose in its scabbard.~
+@173  = ~Maybe I'll give it a try. Thank you.~
+
+@174  = ~Rjali! Boo asks: will you rub his tummy?~
+@175  = ~Of course I will. (suits action to word)~
+@176  = ~Boo likes that and he says you have an especially nice touch.~
+@177  = ~Any time, Boo. Do you think he understands me, Minsc?~
+@178  = ~Boo is very smart. He understands everything!~
+@179  = ~You two are good together. Stick around.~
+
+@180  = ~You seem to have stopped *seeing* other men, abbil.~
+@181  = ~Yeah. Gotta save my energy for this one.~
+@182  = ~Don't you miss the variety?~
+@183  = ~I never enjoyed the variety, Viconia. I was barely able to tolerate it, even out of necessity.~
+@184  = ~I don't understand that. How can it be so. You are a woman.~
+@185  = ~Dunno. I am a woman and it is so. Probably another cultural thing.~

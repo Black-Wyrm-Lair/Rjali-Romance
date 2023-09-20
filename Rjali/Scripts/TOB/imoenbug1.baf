@@ -1,0 +1,12 @@
+
+// Imoen Romance bug in ascension choice followup
+
+IF
+G("Chapter",%bg2_chapter_10%)
+InParty("Imoen2")
+G("ImoenRomanceActive",2)
+G("IRTImoenWarnedAboutLeaving",0)
+THEN
+RESPONSE #100
+SetGlobal("IRTMad","GLOBAL",1)
+END

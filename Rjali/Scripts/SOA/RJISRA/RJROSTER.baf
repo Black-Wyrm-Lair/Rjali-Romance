@@ -1,0 +1,21 @@
+
+//  Roster reset mod NPCs
+
+IF
+G("RJRoster",1)
+!InParty("rh#Isra2")
+OR(10)
+  G("RJPLAY0",116)
+  G("RJPLAY1",116)
+  G("RJPLAY2",116)
+  G("RJPLAY3",116)
+  G("RJPLAY4",116)
+  G("RJPLAY0S",116)
+  G("RJPLAY1S",116)
+  G("RJPLAY2S",116)
+  G("RJPLAY3S",116)
+  G("RJPLAY4S",116)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRoster","GLOBAL",4)
+END

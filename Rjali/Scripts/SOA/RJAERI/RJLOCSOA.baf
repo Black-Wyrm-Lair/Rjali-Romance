@@ -1,0 +1,81 @@
+
+//  LOCAL VARIABLE grab - SoA
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT1)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",1)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT2)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",2)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT3)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",4)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT4)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",8)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",16)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT6)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",32)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+BitCheck("LoveTalk","LOCALS",BIT7)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJAELoc1","GLOBAL",64)
+    Continue()
+END
+
+IF
+G("RJAELoc",-1)
+InParty("Aerie")
+THEN
+  RESPONSE #100
+    SetGlobal("RJAELoc","GLOBAL",0)
+    IncrementGlobal("RJLocCnt","GLOBAL",1)
+END

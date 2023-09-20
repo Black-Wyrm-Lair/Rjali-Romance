@@ -1,0 +1,26 @@
+
+IF
+  Clicked([ANYONE])
+  !PartyHasItem("RJRVHA")
+  Range(LastTrigger,9)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,14645)  // ~This portal requires a key of some sort. You cannot step through without this item.~
+END
+
+IF
+  Clicked([ANYONE])
+  PartyHasItem("RJRVHA")
+  Range(LastTrigger,9)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("RJ0610A",Player1))
+END
+
+IF
+  Clicked([ANYONE])
+  !Range(LastTrigger,9)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,14702)  // ~You are too far away to use that.~
+END

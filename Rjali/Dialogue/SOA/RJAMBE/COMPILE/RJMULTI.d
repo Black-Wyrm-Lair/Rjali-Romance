@@ -1,0 +1,43 @@
+
+//  Contribution to SOA1 group chat
+
+EXTEND_BOTTOM RJPLAY0 0
+IF ~InParty("M#AMBER") G("RJSOA1AM",0)~ THEN DO ~SetGlobal("RJSOA1AM","GLOBAL",1)~ EXTERN M#AMBERJ RjaliGroupSOA1.AM
+IF ~G("RJParkAM",2)~ THEN DO ~SetGlobal("RJParkAM","GLOBAL",1)~ EXTERN M#AMBERJ RjaliGroupSOA1.AM
+END
+
+CHAIN M#AMBERJ RjaliGroupSOA1.AM
+@1100 = @1101 DO ~IncrementGlobal("RJGather","GLOBAL",-1)~
+== RJPLAY0 @1102 = @1103 = @1104 = @1105
+== M#AMBERJ @1106
+== RJPLAY0 @1107 = @1108
+== M#AMBERJ @1109 = @1110
+END
+IF ~~ THEN EXTERN RJPLAY0 0
+
+I_C_T RJPLAY0 1 RJSoAGAM
+== M#AMBERJ IF ~InParty("M#AMBER")~ THEN @595
+END
+
+//  Scout
+
+CHAIN
+IF WEIGHT #-18 ~G("RjaliAmberScout",1)~ THEN PLAYER1 RjaliAmberScout
+@49
+== RJALIJ @0
+== M#AMBERJ @970
+== RJALIJ @971 = @972 = @973
+== M#AMBERJ @974
+== RJALIJ @975
+== M#AMBERJ @921
+== RJALIJ @977
+== M#AMBERJ @978
+== RJALIJ @979 = @980
+== M#AMBERJ @981
+== RJALIJ @982 = @983 = @984 = @985 = @986
+== M#AMBERJ @987
+== RJALIJ @988 = @989 = @990
+== M#AMBERJ @991 = @992
+== RJALIJ @993 = @994 = @995
+== PLAYER1 @996 DO ~AddJournalEntry(@9028,INFO) SetGlobal("RjaliAmberScout","GLOBAL",2) SetGlobal("RjaliScouts","GLOBAL",1)~
+EXIT

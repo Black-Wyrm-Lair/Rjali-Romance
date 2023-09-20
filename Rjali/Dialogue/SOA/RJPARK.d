@@ -1,0 +1,492 @@
+
+//  Park vanilla NPCs in deArnise Keep
+
+// Aerie SoA
+
+EXTEND_BOTTOM AERIEP 6
+IF ~G("RjaliAerieScout",2)
+    G("AerieRomanceActive",2) 
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkAerieSOA
+END
+
+EXTEND_BOTTOM AERIEP 14
+IF ~G("RjaliAerieScout",2)
+    G("AerieRomanceActive",2)
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkAerieSOA
+END
+
+APPEND AERIEP
+
+IF ~~ THEN BEGIN RJParkAerieSOA
+  SAY @2
+  IF ~~ THEN DO ~SetGlobal("RJParkAE","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",1732,542,4)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkAE",1)~ THEN BEGIN RJVisitAerieSOA
+  SAY @12
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkAE","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVAESOA1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVAESOA2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVAESOA3
+  IF ~~ THEN REPLY @11 GOTO RJVAESOA4
+  IF ~~ THEN REPLY @80 GOTO RJVAESOA5
+  IF ~~ THEN REPLY @8 GOTO RJVAESOA6
+END
+
+IF ~~ THEN BEGIN RJVAESOA1
+  SAY @81 = @82 = @83
+  IF ~~ THEN REPLY @84 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAESOA2
+  SAY @85
+  IF ~~ THEN REPLY @86 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAESOA3
+  SAY @87 = @88
+  IF ~~ THEN REPLY @89 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAESOA4
+  SAY @90 = @91
+  IF ~~ THEN REPLY @92 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAESOA5
+  SAY @93 = @94
+  IF ~~ THEN REPLY @95 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAESOA6
+  SAY @96 = @97
+  IF ~~ THEN REPLY @98 EXIT
+END
+
+END
+
+// Aerie ToB
+
+EXTEND_BOTTOM AERIE25P 0
+IF ~G("AerieRomanceActive",2)~ THEN REPLY @0 GOTO RJParkAerieTOB
+END
+
+EXTEND_BOTTOM AERIE25P 1
+IF ~G("AerieRomanceActive",2)~ THEN REPLY @0 GOTO RJParkAerieTOB
+END
+
+APPEND AERIE25P
+
+IF ~~ THEN BEGIN RJParkAerieTOB
+  SAY @2
+  IF ~~ THEN DO ~SetGlobal("RJParkAE","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",1732,542,4)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkAE",1)~ THEN BEGIN RJVisitAerieTOB
+  SAY @12
+  IF ~G("RJFinalVisit",1) G("RJAEFV",0)~ THEN REPLY @14 GOTO RJVAETOB9
+  IF ~GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @13 EXIT
+  IF ~GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkAE","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~!GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @117 GOTO RJVAETOB0
+  IF ~RandomNum(3,1) GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @9 GOTO RJVAETOB1
+  IF ~RandomNum(3,2) GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @9 GOTO RJVAETOB2
+  IF ~RandomNum(3,3) GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @9 GOTO RJVAETOB3
+  IF ~GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @11 GOTO RJVAETOB4
+  IF ~GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @110 GOTO RJVAETOB5
+  IF ~GlobalGT("ExpLovetalk","LOCALS",4)~ THEN REPLY @8 GOTO RJVAETOB6
+END
+
+IF ~~ THEN BEGIN RJVAETOB0
+  SAY @113 = @114 = @115
+  IF ~~ THEN REPLY @116 DO ~SetGlobal("ExpLovetalk","LOCALS",6)
+                            IncrementGlobal("RJCntBedded","GLOBAL",1)
+                            SetGlobal("RJBedded","LOCALS",1)~ EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB1
+  SAY @118
+  IF ~~ THEN REPLY @119 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB2
+  SAY @120 = @121
+  IF ~~ THEN REPLY @122 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB3
+  SAY @123
+  IF ~~ THEN REPLY @124 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB4
+  SAY @111
+  IF ~~ THEN REPLY @112 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB5
+  SAY @125 = @126
+  IF ~~ THEN REPLY @127 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB6
+  SAY @128 = @129 = @130
+  IF ~~ THEN REPLY @131 EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB9
+  SAY @132 = @133 = @134
+  IF ~!G("RJGraceRomanceActive",2)~ THEN REPLY @135 GOTO RJVAETOB9.1
+  IF ~G("RJGraceRomanceActive",2)~ THEN REPLY @135 GOTO RJVAETOB9.2
+END
+
+IF ~~ THEN BEGIN RJVAETOB9.1
+  SAY @136
+  IF ~~ THEN REPLY @137 DO ~SetGlobal("RJAEFV","GLOBAL",1)~ EXIT
+END
+
+IF ~~ THEN BEGIN RJVAETOB9.2
+  SAY @138 = @139 = @140
+  IF ~~ THEN REPLY @141 GOTO RJVAETOB9.3
+END
+
+IF ~~ THEN BEGIN RJVAETOB9.3
+  SAY @142 = @143 = @144 = @145 = @146
+  IF ~~ THEN REPLY @147 DO ~SetGlobal("RJAEFV","GLOBAL",1)~ EXIT
+END
+
+END
+
+// Aerie ToB announce wing salve if in party
+
+APPEND AERIE25J
+
+IF WEIGHT #-1 ~G("RJAEFV",2)~ THEN BEGIN RJAEWing
+  SAY @134
+  IF ~!G("RJGraceRomanceActive",2)~ THEN REPLY @135 GOTO RJAEWing1
+  IF ~G("RJGraceRomanceActive",2)~ THEN REPLY @135 GOTO RJAEWing2
+END
+
+IF ~~ THEN BEGIN RJAEWing1
+  SAY @136 = @139 = @140
+  IF ~~ THEN REPLY @147 DO ~SetGlobal("RJAEFV","GLOBAL",1)~ EXIT
+END
+
+IF ~~ THEN BEGIN RJAEWing2
+  SAY @138 = @139 = @140
+  IF ~~ THEN REPLY @141 GOTO RJAEWing3
+END
+
+IF ~~ THEN BEGIN RJAEWing3
+  SAY @142 = @143 = @144 = @145 = @146
+  IF ~~ THEN REPLY @147 DO ~SetGlobal("RJAEFV","GLOBAL",1)~ EXIT
+END
+
+END
+
+// Jaheira SoA
+
+EXTEND_BOTTOM JAHEIRAP 28
+IF ~G("RjaliJaheiraScout",2)
+    G("JaheiraRomanceActive",2) 
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkJaheiraSOA
+END
+
+EXTEND_BOTTOM JAHEIRAP 35
+IF ~G("RjaliJaheiraScout",2)
+    G("JaheiraRomanceActive",2) 
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkJaheiraSOA
+END
+
+EXTEND_BOTTOM JAHEIRAP 38
+IF ~G("RjaliJaheiraScout",2)
+    G("JaheiraRomanceActive",2) 
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkJaheiraSOA
+END
+
+APPEND JAHEIRAP
+
+IF ~~ THEN BEGIN RJParkJaheiraSOA
+  SAY @5
+  IF ~~ THEN DO ~SetGlobal("RJParkJA","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",694,1775,6)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkJA",1)~ THEN BEGIN RJVisitJaheiraSOA
+  SAY @12
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkJA","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVJASOA1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVJASOA2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVJASOA3
+  IF ~~ THEN REPLY @11 GOTO RJVJASOA4
+  IF ~~ THEN REPLY @150 GOTO RJVJASOA5
+  IF ~~ THEN REPLY @8 GOTO RJVJASOA6
+END
+
+IF ~~ THEN BEGIN RJVJASOA1
+  SAY @151
+  IF ~~ THEN REPLY @152 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJASOA2
+  SAY @153 = @154 = @155
+  IF ~~ THEN REPLY @156 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJASOA3
+  SAY @157 = @158
+  IF ~~ THEN REPLY @159 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJASOA4
+  SAY @160 = @161
+  IF ~~ THEN REPLY @162 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJASOA5
+  SAY @163 = @164
+  IF ~~ THEN REPLY @165 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJASOA6
+  SAY @166 = @167 = @168
+  IF ~~ THEN REPLY @169 EXIT
+END
+
+END
+
+// Jaheira ToB
+
+EXTEND_BOTTOM JAHEI25P 2
+IF ~G("JaheiraRomanceActive",2)~ THEN REPLY @0 GOTO RJParkJaheiraTOB
+END
+
+APPEND JAHEI25P
+
+IF ~~ THEN BEGIN RJParkJaheiraTOB
+  SAY @5
+  IF ~~ THEN DO ~SetGlobal("RJParkJA","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",694,1775,6)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkJA",1)~ THEN BEGIN RJVisitJaheiraTOB
+  SAY @12
+  IF ~G("RJFinalVisit",1) G("RJJAFV",0)~ THEN REPLY @14 GOTO RJVJATOB9
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 SetGlobal("RJParkJA","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVJATOB1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVJATOB2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVJATOB3
+  IF ~~ THEN REPLY @11 GOTO RJVJATOB4
+  IF ~~ THEN REPLY @180 GOTO RJVJATOB5
+  IF ~~ THEN REPLY @8 GOTO RJVJATOB6
+END
+
+IF ~~ THEN BEGIN RJVJATOB1
+  SAY @181 = @182 = @183 = @184
+  IF ~~ THEN REPLY @185 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJATOB2
+  SAY @186 = @187
+  IF ~~ THEN REPLY @188 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJATOB3
+  SAY @189 = @190
+  IF ~~ THEN REPLY @191 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJATOB4
+  SAY @192 = @193 = @194
+  IF ~~ THEN REPLY @195 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJATOB5
+  SAY @196
+  IF ~~ THEN REPLY @197 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJATOB6
+  SAY @198 = @199
+  IF ~~ THEN REPLY @200 EXIT
+END
+
+IF ~~ THEN BEGIN RJVJATOB9
+  SAY @201 = @202
+  IF ~~ THEN REPLY @203 GOTO RJVJATOB9.1
+END
+
+IF ~~ THEN BEGIN RJVJATOB9.1
+  SAY @204 = @205 = @206
+  IF ~~ THEN DO ~SetGlobal("RJJAFV","GLOBAL",1)~ EXIT
+END
+
+END
+
+// Viconia SoA
+
+EXTEND_BOTTOM VICONIP 2
+IF ~G("RjaliViconiaScout",2)
+    G("ViconiaRomanceActive",2) 
+    !G("KeepPlot",0)~ THEN REPLY @0 GOTO RJParkViconiaSOA
+END
+
+APPEND VICONIP
+
+IF ~~ THEN BEGIN RJParkViconiaSOA
+  SAY @2
+  IF ~~ THEN DO ~SetGlobal("RJParkVI","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",880,259,2)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkVI",1)~ THEN BEGIN RJVisitViconiaSOA
+  SAY @12
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 ReputationInc(2)
+                 SetGlobal("RJParkVI","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVVISOA1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVVISOA2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVVISOA3
+  IF ~~ THEN REPLY @11 GOTO RJVVISOA4
+  IF ~~ THEN REPLY @210 GOTO RJVVISOA5
+  IF ~~ THEN REPLY @8 GOTO RJVVISOA6
+END
+
+IF ~~ THEN BEGIN RJVVISOA1
+  SAY @211 = @212
+  IF ~~ THEN REPLY @213 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVISOA2
+  SAY @214 = @215 = @216
+  IF ~~ THEN REPLY @217 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVISOA3
+  SAY @218 = @219
+  IF ~~ THEN REPLY @220 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVISOA4
+  SAY @221 = @222
+  IF ~~ THEN REPLY @223 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVISOA5
+  SAY @224 = @225
+  IF ~~ THEN REPLY @226 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVISOA6
+  SAY @227 = @228
+  IF ~~ THEN REPLY @229 EXIT
+END
+
+END
+
+// Viconia ToB
+
+EXTEND_BOTTOM VICON25P 0
+IF ~G("ViconiaRomanceActive",2)~ THEN REPLY @0 GOTO RJParkViconiaTOB
+END
+
+EXTEND_BOTTOM VICON25P 2
+IF ~G("ViconiaRomanceActive",2)~ THEN REPLY @0 GOTO RJParkViconiaTOB
+END
+
+APPEND VICON25P
+
+IF ~~ THEN BEGIN RJParkViconiaTOB
+  SAY @2
+  IF ~~ THEN DO ~SetGlobal("RJParkVI","GLOBAL",1)
+                 IncrementGlobal("RJCntParked","GLOBAL",1)
+                 EscapeAreaMove("AR1306",880,259,2)~ EXIT
+END
+
+IF WEIGHT #-1 ~G("RJParkVI",1)~ THEN BEGIN RJVisitViconiaTOB
+  SAY @12
+  IF ~G("RJFinalVisit",1) G("RJVIFV",0)~ THEN REPLY @14 GOTO RJVVITOB9
+  IF ~~ THEN REPLY @13 EXIT
+  IF ~~ THEN REPLY @7 DO ~
+                 ReputationInc(2)
+                 SetGlobal("RJParkVI","GLOBAL",0)
+                 IncrementGlobal("RJCntParked","GLOBAL",-1)
+                 JoinParty()~ EXIT
+  IF ~RandomNum(3,1)~ THEN REPLY @9 GOTO RJVVITOB1
+  IF ~RandomNum(3,2)~ THEN REPLY @9 GOTO RJVVITOB2
+  IF ~RandomNum(3,3)~ THEN REPLY @9 GOTO RJVVITOB3
+  IF ~~ THEN REPLY @11 GOTO RJVVITOB4
+  IF ~~ THEN REPLY @240 GOTO RJVVITOB5
+  IF ~~ THEN REPLY @8 GOTO RJVVITOB6
+END
+
+IF ~~ THEN BEGIN RJVVITOB1
+  SAY @241 = @242
+  IF ~~ THEN REPLY @243 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVITOB2
+  SAY @244
+  IF ~~ THEN REPLY @245 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVITOB3
+  SAY @246 = @247
+  IF ~~ THEN REPLY @248 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVITOB4
+  SAY @249 = @250
+  IF ~~ THEN REPLY @251 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVITOB5
+  SAY @252
+  IF ~~ THEN REPLY @253 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVITOB6
+  SAY @254 = @255 = @256 = @257
+  IF ~~ THEN REPLY @258 EXIT
+END
+
+IF ~~ THEN BEGIN RJVVITOB9
+  SAY @259 = @260 = @261 = @262 = @263
+  IF ~~ THEN REPLY @264 GOTO RJVVITOB9.1
+END
+
+IF ~~ THEN BEGIN RJVVITOB9.1
+  SAY @265
+  IF ~~ THEN REPLY @266 GOTO RJVVITOB9.2
+END
+
+IF ~~ THEN BEGIN RJVVITOB9.2
+  SAY @267 = @268
+  IF ~~ THEN REPLY @269 DO ~SetGlobal("RJVIFV","GLOBAL",1)~ EXIT
+END
+
+END

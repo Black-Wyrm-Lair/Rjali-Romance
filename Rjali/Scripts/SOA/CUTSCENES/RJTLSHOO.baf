@@ -1,0 +1,19 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID("KPMAID02")
+    OpenDoor("DOOR11")
+    SetGlobal("RJTaliraRomance","GLOBAL",5) 
+    ApplySpellRES("RJHIDE","RJFAY") 
+    ApplySpellRES("RJHIDE",Player2)
+    ApplySpellRES("RJHIDE",Player3)
+    ApplySpellRES("RJHIDE",Player4)
+    ApplySpellRES("RJHIDE",Player5)
+    ApplySpellRES("RJHIDE",Player6)
+    Wait(1)
+    CloseDoor("DOOR11")
+    EndCutSceneMode()
+    StartDialogueNoSet(Player1)
+END

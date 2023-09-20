@@ -1,0 +1,16 @@
+
+// Setup Ari and Hamad
+
+IF
+G("RjaliGenOrphan",0)
+G("RjaliOrphanDaleson",2)
+GGT("Chapter",%bg2_chapter_4%)
+THEN
+RESPONSE #100
+CreateCreature("RJARI",[944.878],14)
+ActionOverride("RJARI",MakeGlobal())
+CreateCreature("RJHAMAD",[1031.821],14)
+ActionOverride("RJHAMAD",MakeGlobal())
+SetGlobal("RjaliGenOrphan","GLOBAL",1)
+Continue()
+END

@@ -1,0 +1,29 @@
+
+// Expedite Branwen
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("O#Bran")
+GLT("O#BranRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPBRTM","GLOBAL")
+!RealGlobalTimerExpired("O#BranTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPBRTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("O#BranTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("O#Bran")
+G("O#BranRomanceActive",2)
+G("RjaliBranwenSpice",2)
+G("RjaliBranwenScout",0)
+!RealGlobalTimerNotExpired("RJXPBRTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliBranwenScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliBranwenScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPBRTM","GLOBAL",ONE_DAY)
+END

@@ -1,0 +1,27 @@
+
+// Expedite Tyris
+
+IF
+G("RJSpeedCtl",2)
+InParty("G#Tyris")
+GLT("G#TF.TyrisRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPTYTM","GLOBAL")
+!RealGlobalTimerExpired("G#TF.TyrisRomance","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPTYTM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("G#TF.TyrisRomance","GLOBAL",0)
+END
+
+IF
+InParty("G#Tyris")
+G("G#TF.TyrisRomanceActive",2)
+G("RjaliTyrisSpice",2)
+G("RjaliTyrisScout",0)
+!RealGlobalTimerNotExpired("RJXPTYTM","GLOBAL")
+!RealGlobalTimerExpired("RjaliTyrisScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliTyrisScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPTYTM","GLOBAL",ONE_DAY)
+END

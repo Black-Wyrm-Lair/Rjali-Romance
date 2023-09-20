@@ -1,0 +1,42 @@
+
+@0    = ~Well met, traveller. How may I help you?~ [RJG004]
+@1    = ~Thank you. May I visit? Jini permitting, that is.~
+@2    = ~It would be my pleasure.~ [RJG249]
+@3    = ~Maybe later.~
+@4    = ~How may I help you?~ [RJG002]
+@5    = ~Why, hello, Jini. It is always good to see you.~
+@6    = ~And who is your handsome companion?~
+@7    = ~Hi, Grace. This is <CHARNAME>, an old and special friend of mine.~
+@8    = ~I wanted to show him the brothal and have him meet the girls.~
+@9    = ~That was you?~ [RJG323A]
+@10   = ~Actually, Jini, I was back here checking to see if anyone had any news.~
+@11   = ~<CHARNAME>, why don't you go introduce yourself to the girls while Grace and I have a chat?~
+@12   = ~OK. I will look around. Back in a bit.~
+@13   = ~Whoa, Nelly! He's mine, Grace.~
+@14   = ~I lost track of him after he stopped that war along the Sword Coast.~
+@15   = ~I'm not about to give him up now that we have found each other again.~
+@16   = ~It was a 1-day wonder here in Sigil at the time.~
+@17   = ~With the Blood War practically on our doorstep, it is understandable that interest faded rapidly.~
+@18   = ~The Lady of Pain mostly keeps it away from us, but the awareness is always there.~
+@19   = ~I will just extend a welcome to Sigil.~
+@20   = ~Hi, Fay. It is nice to see you getting out of your room.~
+@21   = ~And you seem to know <CHARNAME>, too.~
+@22   = ~Yeah, we're old buddies from the Sword Coast days.~
+@23   = ~I'm going adventuring again! But I'm sure we will be back to see you.~
+@24   = ~(<CHARNAME> stick your eyes back in your head!)~
+@25   = ~I will look forward to hearing all about your travels.~
+
+@30   = ~Welcome back, <CHARNAME>.~
+@31   = ~It is good to see you doing so well, Grace.~
+@32   = ~Just checking on how things are going for you.~
+@33   = ~Are you ready to join me now?~
+@34   = ~Why, everything is going very well, thank you.~
+@35   = ~Glad to hear it, Grace.~
+@36   = ~Then let's go. We'll meet you back in Toril.~
+@37   = ~No. I am going to be with Adahn. He has recovered and wants me.~
+@38   = ~I'm happy for you, Grace. I wish...never mind. Have a good life.~
+
+@50   = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@51   = ~That must be worrying for Jini.~
+@52   = ~Adahn and I will comfort her until your return.~
+@53   = ~Thank you, Grace. We must be off.~

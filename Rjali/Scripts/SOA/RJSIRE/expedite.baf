@@ -1,0 +1,32 @@
+
+// Expedite Sirene
+
+IF
+G("RJSpeedCtl",2)
+GGT("Chapter",%bg2_chapter_1%)
+InParty("C0Sirene")
+GLT("C0SireneRomanceActive",2)
+!RealGlobalTimerNotExpired("RJXPSITM","GLOBAL")
+OR(2)
+  !RealGlobalTimerExpired("C0SireneFriendshipTimer","GLOBAL")
+  !RealGlobalTimerExpired("C0SireneLovetalkTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJXPSITM","GLOBAL",RJ_EXPED)
+RealSetGlobalTimer("C0SireneFriendshipTimer","GLOBAL",0)
+RealSetGlobalTimer("C0SireneLovetalkTimer","GLOBAL",0)
+END
+
+IF
+G("RJSpeedCtl",2)
+InParty("C0Sirene")
+G("C0SireneRomanceActive",2)
+G("RjaliSireneSpice",2)
+G("RjaliSireneScout",0)
+!RealGlobalTimerNotExpired("RJXPSITM","GLOBAL")
+!RealGlobalTimerExpired("RjaliSireneScoutTimer","GLOBAL")
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliSireneScoutTimer","GLOBAL",0)
+RealSetGlobalTimer("RJXPSITM","GLOBAL",ONE_DAY)
+END

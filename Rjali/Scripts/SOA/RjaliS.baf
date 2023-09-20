@@ -1,0 +1,700 @@
+// This is Rjali's main script. Each block does one unique action.
+
+// Fix Rjali's name and soundsets
+
+IF
+HotKey(K)
+THEN
+RESPONSE #100
+ClearActions("Rjali")
+StartCutSceneMode()
+StartCutScene("RJFIXRJ")
+END                                               
+
+// On entering the Promenade.
+
+IF
+InParty(Myself)
+G("RjaliCircus",0)
+AreaCheck("AR0700")
+Range("Door0702",40)
+THEN
+RESPONSE #100
+SetGlobal("RjaliCircus","GLOBAL",1)
+END
+
+// Rjali snarks about not being taken to the circus
+
+IF
+InParty(Myself)
+G("RjaliCircus",2)
+GGT("RjaliTalk",12)
+THEN
+RESPONSE #100
+SetGlobal("RjaliCircus","GLOBAL",3)
+END
+
+// Rjali reacts to the arrival of Fay
+
+IF
+InParty(Myself)
+G("RjaliFay1st",0)
+G("RJPort",0)
+!G("RJFayMet",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliFay1st","GLOBAL",1)
+END
+
+// This is where Rjali's romance talks start.
+
+IF
+GGT("Chapter",%bg2_chapter_1%)
+InParty(Myself)
+G("RjaliTalk",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliRomance","GLOBAL",RJ_TALK)
+SetGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali refuses to be unloved.
+
+IF
+InParty(Myself)
+!G("RjaliMet",0)
+G("RjaliReRomance",0)
+!G("RjaliRomanceActive",2)
+THEN
+RESPONSE #100
+SetGlobal("RjaliReRomance","GLOBAL",1)
+END
+
+// Rjali will fix you if your gender changes.
+
+IF
+InParty(Myself)
+G("RjaliGender",0)
+!Gender(Player1,MALE)
+THEN
+RESPONSE #100
+SetGlobal("RjaliGender","GLOBAL",1)
+END
+
+// Rjali will leave you permanently if you turn evil.
+
+IF
+InParty(Myself)
+G("RjaliLeaves",0)
+Alignment(Player1,MASK_EVIL)
+THEN
+RESPONSE #100
+SetGlobal("RjaliLeaves","GLOBAL",1)
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty(Myself)
+OR(2)
+  !G("RJPLAY0",14)
+  !GlobalsEqual("RJROM0","RjaliRomanceActive")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",14)
+    AddGlobals("RJRosCnt","RJFILL0")
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","RjaliRomanceActive")
+    SetGlobal("RJPARK0","GLOBAL",0)
+END
+
+// This block sets up romance talks
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)    // CamDawg's condition, means that everyone can talk and is not charmed, confused, silenced and so on
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          // These two lines mean "no battle"
+!See([ENEMY])
+OR(11)
+G("RjaliTalk",1)
+G("RjaliTalk",7)
+G("RjaliTalk",9)
+G("RjaliTalk",11)
+G("RjaliTalk",17)
+G("RjaliTalk",23)
+G("RjaliTalk",25)
+G("RjaliTalk",27)
+G("RjaliTalk",29)
+G("RjaliTalk",31)
+G("RjaliTalk",37)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 2: 1st love in RJALID.baf
+
+// Rjali 3: Picnic
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+G("RjaliTalk",5)
+AreaType(OUTDOOR)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 7: Losing my touch
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+G("RjaliCircus",5)
+G("RjaliTalk",13)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 8: Busted
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+GGT("RjaliDjinnTalk",5)
+G("RjaliTalk",15)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 10: Practice makes perfect.
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+GGT("RJiniiJIDAD",2)
+G("RjaliTalk",19)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 11: Orphanage & marriage
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+G("RjaliTalk",21)
+!G("KeepPlot",0)
+!AreaCheck("AR1306")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 16: Getting crude in RJALID.baf
+
+// Rjali 18: Post crude
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+G("RjaliTalk",35)
+PartyRested()
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// Rjali 20: final SoA talk before descending to get Irenicus
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RjaliRomance","GLOBAL")
+G("RjaliTalk",39)
+AreaCheck("AR2804")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliTalk","GLOBAL",1)
+END
+
+// So, if timer expired, everybody's able to talk and there's no battle, we increase the variable by one. Now our RjaliTalk variable is an even number.
+// Now all that's left is making Rjali talk to you. We could just add StartDialogueNoSet(Player1) into the last block, but the engine is tricky: if you give a command when Rjali's about to talk, she may miss her dialogue!
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(38)
+  G("RjaliTalk",2)
+  G("RjaliTalk",6)
+  G("RjaliTalk",8)
+  G("RjaliTalk",10)
+  G("RjaliTalk",12)
+  G("RjaliTalk",14)
+  G("RjaliTalk",16)
+  G("RjaliTalk",18)
+  G("RjaliTalk",20)
+  G("RjaliTalk",22)
+  G("RjaliTalk",24)
+  G("RjaliTalk",26)
+  G("RjaliTalk",28)
+  G("RjaliTalk",30)
+  G("RjaliTalk",32)
+  G("RjaliTalk",36)
+  G("RjaliTalk",38)
+  G("RjaliTalk",40)
+  G("RjaliChapter4",1)
+  G("RjaliChapter5",1)
+  G("RjaliChapter7",1)
+  G("RjaliTalkSoul",1)
+  G("RjaliTalkSahuagin",1)
+  G("RjaliRemindDaleson",1)
+  G("RjaliSleptPhaere",1)
+  G("RjaliReRomance",1)
+  G("RjaliLeaves",1)
+  G("RjaliGender",1)
+  G("RjaliGivesKey",1)
+  G("RJiniiJIDAD",2)
+  G("RJBodhiDead",1)
+  G("RJBodhiDead",3)
+  G("RjaliRVOrphans",1)
+  G("RJaliCircus",1)
+  G("RjaliCircus",3)
+  G("RJiniiJIDMR",4)
+  G("RJiniiJIDMR",7)
+  G("RjaliLamp",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Now let's check shorter and simple blocks, for one talk only. 
+// Rjali has talks for Chapter 4,5 and 7.
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+GGT("Chapter",%bg2_chapter_3%)
+GLT("Chapter",%bg2_chapter_8%)
+!G("RjaliMarried",0)
+G("RJiniiJIDAD",99)
+G("RJRavelOrphans",0)
+G("RjaliRVOrphans",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliRVOrphans","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+!InParty("O#Bran")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+G("Chapter",%bg2_chapter_4%)            // that's the actual condition: Chapter=4. No dungeon check, since we're in Brynnlaw
+G("RjaliChapter4",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliChapter4","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+!InParty("O#Bran")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+G("Chapter",%bg2_chapter_5%)        // No dungeon check, since we're in the Underdark. Which is a big dungeon.
+G("RjaliChapter5",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliChapter5","GLOBAL",1)
+RealSetGlobalTimer("RjaliChapter5Timer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+InParty(Myself)
+!InParty("O#Bran")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+G("Chapter",%bg2_chapter_7%)           // No dungeon check, since we're in Suldanessellar.
+G("RjaliChapter7",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliChapter7","GLOBAL",1)
+END
+
+// Extra talk: Sahuagin city
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+AreaCheck("AR2300")           // Sahuagin City
+G("RjaliTalkSahuagin",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliTalkSahuagin","GLOBAL",1)
+END
+
+// Extra talk: An hour after Chapter 5
+
+IF
+InParty(Myself)
+!InParty("O#Bran")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+RealGlobalTimerExpired("RjaliChapter5Timer","GLOBAL") // Timer from Chapter 5 block expired
+G("RjaliTalkSoul",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliTalkSoul","GLOBAL",1)
+END
+
+// Extra talk: Chapter 6: Insist on talking to Daleson ASAP
+
+IF
+InParty(Myself)
+G("Chapter",%bg2_chapter_6%)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+G("RjaliRemindDaleson",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliRemindDaleson","GLOBAL",1)
+END
+
+//Phaere Rjali talk
+
+IF
+  InParty(Myself)
+  !Range("Phaere",6)
+  G("RjaliSleptPhaere",0)
+  AreaCheck("AR2204")
+  See(Player1)
+  OR(2)
+    G("PhaereInnuendo",2)
+    G("PhaereInnuendo",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RjaliSleptPhaere","GLOBAL",1)
+END
+
+// Why do we run each talk in two blocks? Why do we first set a variable and then run a block with StartDialogueNoSet? Well, there's a tutorial I wrote for that, How to make your banters run when you want them to. But short answer is: you will miss lovetalks if you give a command to your follower. You will miss lovetalks if your computer is too fast and you party's on the move as your follower wants to talk. It doesn't happen often, but when it does, it's frustrating. Hence, this "division" of blocks.
+
+// Rjali comments on the lamp
+
+IF
+  G("RJFayMet",0)
+  G("RjaliLamp",0)
+  AreaCheck("AR0607")
+  Dead("Kalah")
+  PartyHasItem("RJLAMPJI")
+THEN
+  RESPONSE #100
+    SetGlobal("RjaliLamp","GLOBAL",1)
+END
+
+// Hands you Edwin's key if Saerileth is around to be offended
+
+IF
+InParty(Myself)
+InParty("Saerileth")
+G("RjaliGivesKey",0)
+AreaCheck("AR0303")
+THEN
+RESPONSE #100
+SetGlobal("RjaliGivesKey","GLOBAL",1)
+END
+
+// Djinn and tonic
+
+// 2nd Djinn talk
+
+IF
+G("RjaliDjinnTalk",2)
+G("RJGenie",0)
+PartyHasItem("RJLAMP")
+InParty(Myself)
+AreaCheck("AR0406")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("RjaliDjinnTalk","GLOBAL",1)
+SetGlobal("RJGenie","GLOBAL",2)
+CreateCreature("RJGenii",[-1.-1],0)
+Wait(1)
+END
+
+IF
+G("RjaliDjinnTalk",3)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Myself)
+END
+
+// This is where we do the orphanage project
+
+IF
+!G("KeepPlot",0)
+G("RjaliMarried",1)
+G("RjaliOrphan",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliOrphan","GLOBAL",1)
+END
+
+IF
+G("RjaliOrphanDaleson",1)
+G("RjaliOrphanMegan",0)
+AreaCheck("AR0400")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("RjaliOrphanMegan","GLOBAL",1)
+SetGlobal("RjaliOrphanSean","GLOBAL",1)
+CreateCreature("RJMegan",[-1.-1],0)
+ActionOverride("RJMEGAN",MakeGlobal())
+CreateCreature("RJSean",[-1.-1],0)
+ActionOverride("RJSEAN",MakeGlobal())
+Wait(1)
+END
+
+IF
+G("RjaliOrphanMegan",1)
+G("RjaliOrphanSean",1)
+AreaCheck("AR0400")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("RJMegan",StartDialogueNoSet("Rjali"))
+END
+
+IF
+G("RjaliOrphanDaleson",1)
+G("RjaliOrphanAnnie",0)
+AreaCheck("AR0300")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("RjaliOrphanAnnie","GLOBAL",1)
+SetGlobal("RjaliOrphanSuzy","GLOBAL",1)
+CreateCreature("RJAnnie",[-1.-1],0)
+ActionOverride("RJANNIE",MakeGlobal())
+CreateCreature("RJSuzy",[-1.-1],0)
+ActionOverride("RJSUZY",MakeGlobal())
+Wait(1)
+END
+
+IF
+G("RjaliOrphanAnnie",1)
+G("RjaliOrphanSuzy",1)
+AreaCheck("AR0300")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("RJAnnie",StartDialogueNoSet("Rjali"))
+END
+
+IF
+G("RjaliOrphanDaleson",1)
+G("RjaliOrphanBobby",0)
+AreaCheck("AR0903")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("RjaliOrphanBobby","GLOBAL",1)
+CreateCreature("RJBobby",[-1.-1],0)
+ActionOverride("RJBOBBY",MakeGlobal())
+Wait(1)
+END
+
+IF
+G("RjaliOrphanBobby",1)
+AreaCheck("AR0903")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("RJBobby",StartDialogueNoSet("Rjali"))
+END
+
+IF
+G("RjaliOrphanDaleson",1)
+G("RjaliOrphanBilly",0)
+AreaCheck("AR0700")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("RjaliOrphanBilly","GLOBAL",1)
+CreateCreature("RJBilly",[-1.-1],0)
+ActionOverride("RJBILLY",MakeGlobal())
+Wait(1)
+END
+
+IF
+G("RjaliOrphanBilly",1)
+AreaCheck("AR0700")
+!StateCheck("Rjali",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("RJBilly",StartDialogueNoSet("Rjali"))
+END
+
+// Rjali prompts you about the books after Bodhi dies
+
+IF
+G("BodhiDead",1)
+G("RJBodhiDead",0)
+THEN
+RESPONSE #100
+SetGlobal("RJBodhiDead","GLOBAL",1)
+END
+
+IF
+G("RJBodhiDead",2)
+PartyHasItem("RJBOOKMR")
+THEN
+RESPONSE #100
+SetGlobal("RJBodhiDead","GLOBAL",3)
+END
+
+// Morte quest - Piller of Skulls
+
+IF
+  G("RJiniiJIDMR",3)
+  AreaCheck("RJ1001")
+  CombatCounter(0)
+  !See([ENEMY])
+  Dead("rjglab")
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDMR","GLOBAL",4)
+    SetGlobal("RJPortStop","GLOBAL",1)
+END
+
+IF
+  G("RJiniiJIDMR",6)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDMR","GLOBAL",7)
+END
+
+// Morte Reborn
+
+IF
+  G("RJMorteReborn",2)
+  InParty(Myself)
+  See(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100  
+    SetGlobal("RJMorteReborn","GLOBAL",3)
+END
+
+// Rjali is romanceable, and she is going to initiate flirts!
+// The blocks seem a bit heavy, but if you read them line by line, you'll be all right.
+
+// Flirts initiate...
+
+IF
+InParty(Myself)
+GGT("RjaliTalk",4)
+G("RjaliCircus",5)
+G("RjaliFlirtsStart",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliFlirtsStart","GLOBAL",1)
+RealSetGlobalTimer("RjaliFlirtTimer","GLOBAL",RJ_FAST)
+END
+
+// Ready for flirting!
+
+IF
+InParty(Myself)
+G("RjaliFlirtsStart",1)
+G("RJHush",0)
+RealGlobalTimerExpired("RjaliFlirtTimer","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+CombatCounter(0)
+!See([ENEMY])
+G("RjaliFlirt",0)
+THEN
+RESPONSE #100
+SetGlobal("RjaliFlirt","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+// Flirting begins!
+
+IF
+InParty(Myself)
+G("RjaliFlirt",1)
+RealGlobalTimerExpired("RjaliFlirtTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RjaliFlirt","GLOBAL",0)
+RealSetGlobalTimer("RjaliFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+G("RjaliFlirtsStart",1)
+G("RJHush",0)
+RealGlobalTimerExpired("RjaliFlirtTimer","GLOBAL")
+!CombatCounter(0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RjaliFlirtTimer","GLOBAL",150)
+END

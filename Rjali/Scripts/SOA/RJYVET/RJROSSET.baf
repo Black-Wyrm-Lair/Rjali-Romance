@@ -1,0 +1,108 @@
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("YxYve")
+!G("RJPLAY0",14)
+OR(2)
+  !G("RJPLAY0",203)
+  !GlobalsEqual("RJROM0","YvetteRomanceActive")
+!G("RJPLAY1",203)
+!G("RJPLAY2",203)
+!G("RJPLAY3",203)
+!G("RJPLAY4",203)
+!GLT("RJPLAY0",203)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY0","GLOBAL",203)
+    AddGlobals("RJRosCnt","RJFILL0")
+    SetGlobal("RJFILL0","GLOBAL",0)
+    SetGlobal("RJROM0","GLOBAL",0)
+    AddGlobals("RJROM0","YvetteRomanceActive")
+    SetGlobal("RJPARK0","GLOBAL",0)
+END
+
+IF
+G("RJRoster",1)
+InParty("YxYve")
+!G("RJPLAY1",1)
+!G("RJPLAY0",203)
+OR(2)
+  !G("RJPLAY1",203)
+  !GlobalsEqual("RJROM1","YvetteRomanceActive")
+!G("RJPLAY2",203)
+!G("RJPLAY3",203)
+!G("RJPLAY4",203)
+!GLT("RJPLAY1",203)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",203)
+    AddGlobals("RJRosCnt","RJFILL1")
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","YvetteRomanceActive")
+    SetGlobal("RJPARK1","GLOBAL",0)
+END
+
+IF
+G("RJRoster",1)
+InParty("YxYve")
+!G("RJPLAY0",203)
+!G("RJPLAY1",203)
+OR(2)
+  !G("RJPLAY2",203)
+  !GlobalsEqual("RJROM2","YvetteRomanceActive")
+!G("RJPLAY3",203)
+!G("RJPLAY4",203)
+!GLT("RJPLAY2",203)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",203)
+    AddGlobals("RJRosCnt","RJFILL2")
+    SetGlobal("RJFILL2","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","YvetteRomanceActive")
+    SetGlobal("RJPARK2","GLOBAL",0)
+END
+
+IF
+G("RJRoster",1)
+InParty("YxYve")
+!G("RJPLAY0",203)
+!G("RJPLAY1",203)
+!G("RJPLAY2",203)
+OR(2)
+  !G("RJPLAY3",203)
+  !GlobalsEqual("RJROM3","YvetteRomanceActive")
+!G("RJPLAY4",203)
+!GLT("RJPLAY3",203)
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY3","GLOBAL",203)
+    AddGlobals("RJRosCnt","RJFILL3")
+    SetGlobal("RJFILL3","GLOBAL",0)
+    SetGlobal("RJROM3","GLOBAL",0)
+    AddGlobals("RJROM3","YvetteRomanceActive")
+    SetGlobal("RJPARK3","GLOBAL",0)
+END
+
+IF
+G("RJRoster",1)
+InParty("YxYve")
+!G("RJPLAY0",203)
+!G("RJPLAY1",203)
+!G("RJPLAY2",203)
+!G("RJPLAY3",203)
+OR(2)
+  !G("RJPLAY4",203)
+  !GlobalsEqual("RJROM4","YvetteRomanceActive")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY4","GLOBAL",203)
+    AddGlobals("RJRosCnt","RJFILL4")
+    SetGlobal("RJFILL4","GLOBAL",0)
+    SetGlobal("RJROM4","GLOBAL",0)
+    AddGlobals("RJROM4","YvetteRomanceActive")
+    SetGlobal("RJPARK4","GLOBAL",0)
+END

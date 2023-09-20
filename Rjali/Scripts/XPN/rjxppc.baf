@@ -1,0 +1,431 @@
+
+// XPN Stuff
+
+// Remove spells not persisted
+
+IF
+  OnCreation()
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    RemoveSpell(ENTER_POCKET_PLANE)
+    RemoveSpell(SLAYER_START)
+    continue()
+END
+
+// Remove unwanted party members
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  InParty(Player6)
+THEN                                                                   
+  RESPONSE #100
+    ActionOverride(Player6,ChangeAIScript("",DEFAULT))
+    ActionOverride(Player6,SetLeavePartyDialogFile())
+    ActionOverride(Player6,LeaveParty())
+    ActionOverride(Player6,EscapeArea())
+    continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  InParty(Player5)
+THEN
+  RESPONSE #100
+    ActionOverride(Player5,ChangeAIScript("",DEFAULT))
+    ActionOverride(Player5,SetLeavePartyDialogFile())
+    ActionOverride(Player5,LeaveParty())
+    ActionOverride(Player5,EscapeArea())
+    continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  InParty(Player4)
+THEN
+  RESPONSE #100
+    ActionOverride(Player4,ChangeAIScript("",DEFAULT))
+    ActionOverride(Player4,SetLeavePartyDialogFile())
+    ActionOverride(Player4,LeaveParty())
+    ActionOverride(Player4,EscapeArea())
+    continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  InParty(Player3)
+THEN
+  RESPONSE #100
+    ActionOverride(Player3,ChangeAIScript("",DEFAULT))
+    ActionOverride(Player3,SetLeavePartyDialogFile())
+    ActionOverride(Player3,LeaveParty())
+    ActionOverride(Player3,EscapeArea())
+    continue()
+END
+
+IF
+  G("RJXPN",1)
+  G("RJXPPC01",99)
+  InParty(Player2)
+THEN
+  RESPONSE #100
+    ActionOverride(Player2,ChangeAIScript("",DEFAULT))
+    ActionOverride(Player2,SetLeavePartyDialogFile())
+    ActionOverride(Player2,LeaveParty())
+    ActionOverride(Player2,EscapeArea())
+END
+
+// Start expansion talk.
+
+IF
+  G("RJXPN",1)
+  OR(5)
+    G("RJXPPC01",1)
+    G("RJXPPCJN",1)
+    G("RJXPPCCK",1)
+    G("RJXPPCGD",1)
+    G("RJXPPCWD",2)
+THEN
+  RESPONSE #100
+    StartDialogue("PLAYER1",Player1)
+END
+
+// Setup wedding
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkFY",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","RJFAY",[4197.2932])
+    ActionOverride("RJFAY",FaceObject(Player1))
+    ActionOverride("RJFAY",ReallyForceSpellRES("RJITWTW",Myself))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkAN",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","RJAnnah",[4264.2948])
+    ActionOverride("RJAnnah",DestroyAllEquipment())
+    ActionOverride("RJAnnah",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkGR",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","RJGrace",[4327.2945])
+    ActionOverride("RJGrace",DestroyAllEquipment())
+    ActionOverride("RJGrace",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkRV",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","RJRavel",[4387.2937])
+    ActionOverride("RJRavel",DestroyAllEquipment())
+    ActionOverride("RJRavel",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkKE",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","RJKesai",[4387.2967])
+    ActionOverride("RJKesai",DestroyAllEquipment())
+    ActionOverride("RJKesai",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkNA",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Nalia",[4128.2829])
+    ActionOverride("Nalia",DestroyAllEquipment())
+    ActionOverride("Nalia",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkAE",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Aerie",[4071.2805])
+    ActionOverride("Aerie",DestroyAllEquipment())
+    ActionOverride("Aerie",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkIM",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Imoen2",[4431.2912])
+    ActionOverride("Imoen2",DestroyAllEquipment())
+    ActionOverride("Imoen2",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkJA",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Jaheira",[4264.2868])
+    ActionOverride("Jaheira",DestroyAllEquipment())
+    ActionOverride("Jaheira",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkVI",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Viconia",[4327.2865])
+    ActionOverride("Viconia",DestroyAllEquipment())
+    ActionOverride("Viconia",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkNE",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Neera",[4197.2852])
+    ActionOverride("Neera",DestroyAllEquipment())
+    ActionOverride("Neera",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkPE",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","L3Petsy",[4484.2808])
+    ActionOverride("L3Petsy",DestroyAllEquipment())
+    ActionOverride("L3Petsy",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkSK",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","SkieDV",[4071.2845])
+    ActionOverride("SkieDV",DestroyAllEquipment())
+    ActionOverride("SkieDV",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkSI",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","C0Sirene",[4128.2869])
+    ActionOverride("C0Sirene",DestroyAllEquipment())
+    ActionOverride("C0Sirene",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkSA",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Saerileth",[4431.2832])
+    ActionOverride("Saerileth",DestroyAllEquipment())
+    ActionOverride("Saerileth",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkTA",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Tashia",[4197.2892])
+    ActionOverride("Tashia",DestroyAllEquipment())
+    ActionOverride("Tashia",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkBR",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","O#Bran",[4264.2908])
+    ActionOverride("O#Bran",DestroyAllEquipment())
+    ActionOverride("O#Bran",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkNI",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Ninde",[4327.2905])
+    ActionOverride("Ninde",DestroyAllEquipment())
+    ActionOverride("Ninde",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkTY",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","G#Tyris",[4387.2897])
+    ActionOverride("G#Tyris",DestroyAllEquipment())
+    ActionOverride("G#Tyris",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkYV",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","Yxyve",[4431.2872])
+    ActionOverride("Yxyve",DestroyAllEquipment())
+    ActionOverride("Yxyve",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkFA",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","E3Fade",[4387.2857])
+    ActionOverride("E3Fade",DestroyAllEquipment())
+    ActionOverride("E3Fade",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkDA",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","T#Dace",[4512.2770])
+    ActionOverride("T#Dace",DestroyAllEquipment())
+    ActionOverride("T#Dace",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkIS",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","rh#Isra2",[4484.2848])
+    ActionOverride("rh#Isra2",DestroyAllEquipment())
+    ActionOverride("rh#Isra2",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkAM",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","M#AMBER",[4512.2810])
+    ActionOverride("M#AMBER",DestroyAllEquipment())
+    ActionOverride("M#AMBER",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+  G("RJParkSH",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","K#Sheena",[4113.2923])
+    ActionOverride("K#Sheena",DestroyAllEquipment())
+    ActionOverride("K#Sheena",FaceObject(Player1))
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    MoveGlobal("AR1304","kpmaid02",[3933.2834])
+    Wait(2)
+    ActionOverride("kpmaid02",MoveToObjectNoInterrupt(Player1))
+    ActionOverride("kpmaid02",FaceObject(Player1))
+    Wait(3)
+    Continue()
+END
+
+IF
+  G("RJXPPCWD",1)
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    ActionOverride("Rjali",DestroyAllEquipment())
+    DestroyAllEquipment()
+    CreateCreature("RJGENIL",[4154.2693],0) 
+    CreateCreature("RJDRYAD",[4215.2656],0)
+    Wait(2)
+    SetGlobal("RJXPPCWD","GLOBAL",2)
+END
+
+IF
+  See("RJPSTLL")
+  G("RJXPN",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJXPLL","GLOBAL",1)
+END

@@ -1,0 +1,10 @@
+
+// Init Area
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+END

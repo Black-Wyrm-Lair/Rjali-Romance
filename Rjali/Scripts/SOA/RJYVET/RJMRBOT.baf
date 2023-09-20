@@ -1,0 +1,29 @@
+
+// Record a mod romance breakup.
+
+IF
+G("RjaliDump",0)
+!G("YvetteRomanceActive",2)
+GGT("RjaliYvetteSpice",1)
+GLT("RjaliYvetteSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliDump","GLOBAL",1)
+SetGlobal("RjaliYvetteSpice","GLOBAL",9)
+SetGlobal("RjaliYvetteScout","GLOBAL",9)
+SetToken("RJDUMP",@26)
+END
+
+// Record a mod romance patchup.
+
+IF
+G("RjaliUnDump",0)
+G("YvetteRomanceActive",2)
+G("RjaliYvetteSpice",9)
+THEN
+RESPONSE #100
+SetGlobal("RjaliUnDump","GLOBAL",1)
+SetGlobal("RjaliYvetteSpice","GLOBAL",8)
+SetGlobal("RjaliYvetteScout","GLOBAL",8)
+SetToken("RJDUMP",@26)
+END

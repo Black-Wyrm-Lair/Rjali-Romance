@@ -1,0 +1,27 @@
+
+// Init RJ1101
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    Continue()
+END
+
+IF
+  G("RJFhjullGen",0)
+THEN
+  RESPONSE #100
+    ActionOverride("RJFhjll",MakeGlobal())
+    ActionOverride("RJTrias",MakeGlobal())
+    SetGlobal("RJFhjullGen","GLOBAL",1)
+END
+
+IF
+  G("RJSobethJID",4)
+THEN
+  RESPONSE #100
+    TriggerActivation("to1100",TRUE)
+END

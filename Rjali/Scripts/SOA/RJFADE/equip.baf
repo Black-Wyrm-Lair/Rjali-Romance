@@ -1,0 +1,21 @@
+
+IF
+InParty(Myself)
+G("RjaliFadeStuff",0)
+G("RjaliEquips",0)
+G("RjaliMet",3)
+OR(5)
+  InPartySlot("E3Fade",1)
+  InPartySlot("E3Fade",2)
+  InPartySlot("E3Fade",3)
+  InPartySlot("E3Fade",4)
+  InPartySlot("E3Fade",5)
+!StateCheck("E3Fade",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObjectNoInterrupt("E3Fade")
+FaceObject("E3Fade")
+SetGlobal("RjaliFadeStuff","GLOBAL",1)
+SetToken("RJEQUIP",@27)
+SetGlobal("RjaliEquips","GLOBAL",1)
+END

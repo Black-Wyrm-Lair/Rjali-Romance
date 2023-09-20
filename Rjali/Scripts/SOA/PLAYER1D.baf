@@ -1,0 +1,111 @@
+
+// ToB Group Banter #1 - Orgy
+
+IF
+  G("RjaliMR",1)
+  G("RJXPN",0)
+  GGT("Chapter",%bg2_chapter_7%)
+  G("RjaliGroupToB",1)
+  G("RjaliGroupToB1",0)
+  GGT("RJRosCnt",2)
+  NumInPartyAliveGT(3)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Player2,CD_STATE_NOTVALID)
+  !StateCheck(Player3,CD_STATE_NOTVALID)
+  !StateCheck(Player4,CD_STATE_NOTVALID)
+  !StateCheck(Player5,CD_STATE_NOTVALID)
+  !StateCheck(Player6,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+  SetGlobal("RjaliGroupToB1","GLOBAL",1)
+  RealSetGlobalTimer("RjaliGroupToBTimer","GLOBAL",RJ_TALK)
+  SetGlobal("RJSetCnt","GLOBAL",0)
+  SetGlobal("RJPLAY0S","GLOBAL",0)
+  SetGlobal("RJPLAY1S","GLOBAL",0)
+  SetGlobal("RJPLAY2S","GLOBAL",0)
+  SetGlobal("RJPLAY3S","GLOBAL",0)
+  SetGlobal("RJPLAY4S","GLOBAL",0)
+  SetGlobal("RJRoster","GLOBAL",3)
+  ActionOverride(Player1,CreateCreature("RJPLAY0",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY1",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY2",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY3",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY4",[-1.-1],0))
+  Wait(1)
+END
+
+// ToB Group Banter #2 - Aerie Pregnant - Rjali twigs
+
+IF
+  G("RjaliMR",1)
+  G("RJXPN",0)
+  RealGlobalTimerExpired("RjaliGroupToBTimer","GLOBAL")
+  G("RjaliGroupToB",2)
+  G("RjaliGroupToB2",0)
+  !G("babytalk",0)
+  G("AerieRomanceActive",2)
+  InParty("Aerie")
+  GGT("RJRosCnt",2)
+  NumInPartyAliveGT(3)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Player2,CD_STATE_NOTVALID)
+  !StateCheck(Player3,CD_STATE_NOTVALID)
+  !StateCheck(Player4,CD_STATE_NOTVALID)
+  !StateCheck(Player5,CD_STATE_NOTVALID)
+  !StateCheck(Player6,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+  SetToken("RJGROUP",@2)
+  SetGlobal("RjaliGroupToB2","GLOBAL",1)
+  SetGlobal("RJSetCnt","GLOBAL",0)
+  SetGlobal("RJPLAY0S","GLOBAL",0)
+  SetGlobal("RJPLAY1S","GLOBAL",0)
+  SetGlobal("RJPLAY2S","GLOBAL",0)
+  SetGlobal("RJPLAY3S","GLOBAL",0)
+  SetGlobal("RJPLAY4S","GLOBAL",0)
+  SetGlobal("RJRoster","GLOBAL",3)
+  ActionOverride(Player1,CreateCreature("RJPLAY0",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY1",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY2",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY3",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY4",[-1.-1],0))
+  Wait(1)
+END
+
+// ToB Group Banter #3 - Rjali twigs
+
+IF
+  G("RjaliMR",1)
+  G("RJXPN",0)
+  RealGlobalTimerExpired("RjaliGroupToBTimer","GLOBAL")
+  G("RjaliGroupToB",2)
+  G("RjaliGroupToB3",0)
+  InParty("Rjali")
+  OR(2)
+    !InParty("Aerie")
+    !G("AerieRomanceActive",2)
+  GGT("RJRosCnt",2)
+  NumInPartyAliveGT(3)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Player2,CD_STATE_NOTVALID)
+  !StateCheck(Player3,CD_STATE_NOTVALID)
+  !StateCheck(Player4,CD_STATE_NOTVALID)
+  !StateCheck(Player5,CD_STATE_NOTVALID)
+  !StateCheck(Player6,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+  SetGlobal("RjaliGroupToB3","GLOBAL",1)
+  SetGlobal("RJSetCnt","GLOBAL",0)
+  SetGlobal("RJPLAY0S","GLOBAL",0)
+  SetGlobal("RJPLAY1S","GLOBAL",0)
+  SetGlobal("RJPLAY2S","GLOBAL",0)
+  SetGlobal("RJPLAY3S","GLOBAL",0)
+  SetGlobal("RJPLAY4S","GLOBAL",0)
+  SetGlobal("RJRoster","GLOBAL",3)
+  ActionOverride(Player1,CreateCreature("RJPLAY0",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY1",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY2",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY3",[-1.-1],0))
+  ActionOverride(Player1,CreateCreature("RJPLAY4",[-1.-1],0))
+  Wait(1)
+END

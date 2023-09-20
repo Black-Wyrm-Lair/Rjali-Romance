@@ -1,0 +1,108 @@
+
+// This is where Ravel's romance talks start.
+
+IF
+InParty(Myself)
+G("RJRavelTalkToB",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJRavelRomance","GLOBAL",2200)
+SetGlobal("RJRavelTalkToB","GLOBAL",1)
+END
+
+// This block sets up romance talks
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RJRavelRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+OR(6)
+G("RJRavelTalkToB",1)
+G("RJRavelTalkToB",3)
+G("RJRavelTalkToB",5)
+G("RJRavelTalkToB",7)
+G("RJRavelTalkToB",9)
+G("RJRavelTalkToB",11)
+THEN
+RESPONSE #100
+IncrementGlobal("RJRavelTalkToB","GLOBAL",1)
+END
+
+// This block initiates a dialog with Player1
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(6)
+  G("RJRavelTalkToB",2)
+  G("RJRavelTalkToB",4)
+  G("RJRavelTalkToB",6)
+  G("RJRavelTalkToB",8)
+  G("RJRavelTalkToB",10)
+  G("RJRavelTalkToB",12)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Ravel initiated flirts
+
+// Flirts initiate
+
+IF
+InParty(Myself)
+G("RJRavelFlirtsStart",1)
+THEN
+RESPONSE #100
+SetGlobal("RJRavelFlirtsStart","GLOBAL",2)
+SetGlobal("RJRavelFlirt","GLOBAL",0)
+RealSetGlobalTimer("RJRavelFlirtTimer","GLOBAL",RJ_FAST)
+END
+
+// Ready for flirting
+
+IF
+InParty(Myself)
+G("RJHush",0)
+G("RJRavelFlirtsStart",2)
+RealGlobalTimerExpired("RJRavelFlirtTimer","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+CombatCounter(0)
+!See([ENEMY])
+G("RJRavelFlirt",0)
+THEN
+RESPONSE #100
+SetGlobal("RJRavelFlirt","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+// Flirting begins
+
+IF
+InParty(Myself)
+G("RJRavelFlirt",1)
+RealGlobalTimerExpired("RJRavelFlirtTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RJRavelFlirt","GLOBAL",0)
+RealSetGlobalTimer("RJRavelFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+G("RJRavelFlirtsStart",2)
+G("RJHush",0)
+RealGlobalTimerExpired("RJRavelFlirtTimer","GLOBAL")
+!CombatCounter(0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJRavelFlirtTimer","GLOBAL",150)
+END

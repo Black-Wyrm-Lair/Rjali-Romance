@@ -1,0 +1,27 @@
+
+BEGIN RJPSTVI
+
+// Intro
+
+IF ~IsGabber(Player1)~ THEN BEGIN MVV
+SAY @0
+++ @1 EXIT
+IF ~G("RJFinalVisit",1) G("RJVVFV",0)~ THEN REPLY @10 GOTO MVV9
++ ~G("RJVITalk",0)~ + @2 DO ~SetGlobal("RJVITalk","GLOBAL",1)~ + MVV1
++ ~G("RJMorteReborn",8)~ + @5 + MVV2
+END
+
+IF ~~ THEN BEGIN MVV1
+SAY @3
+++ @4 EXIT
+END
+
+IF ~~ THEN BEGIN MVV2
+SAY @6
+++ @7 EXIT
+END
+
+IF ~~ THEN BEGIN MVV9
+SAY @11 = @12
+++ @13 DO ~SetGlobal("RJVVFV","GLOBAL",1)~ EXIT
+END

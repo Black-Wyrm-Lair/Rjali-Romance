@@ -1,0 +1,137 @@
+
+BEGIN RJPSTMR
+
+// Intro
+
+IF ~IsGabber(Player1) G("RJMorteReborn",1)~ THEN BEGIN MR0
+SAY @0
+++ @1 DO ~SetGlobal("RJMorteReborn","GLOBAL",2)~ + MR0.1
+END
+
+IF ~~ THEN BEGIN MR0.1
+SAY @2 = @3
+++ @4 + MR0.2
+END
+
+IF ~~ THEN BEGIN MR0.2
+SAY @5
+++ @6 + MR0.3
+END
+
+IF ~~ THEN BEGIN MR0.3
+SAY @7 = @8
+++ @9 + MR0.4
+END
+
+IF ~~ THEN BEGIN MR0.4
+SAY @10
+IF ~~ THEN REPLY @11 DO ~ActionOverride("RJMorte",MoveBetweenAreas("RJ0602",[775.1074],4))~ EXIT
+END
+
+// Afters
+
+IF ~IsGabber(Player1) AreaCheck("RJ0605")~ THEN BEGIN MR1
+SAY @20
+++ @21 EXIT
+IF ~G("RJFinalVisit",1) G("RJMRFV",0)~ THEN REPLY @100 GOTO MR9
+IF ~G("RJMRTalk",0)~ THEN REPLY @80 DO ~SetGlobal("RJMRTalk","GLOBAL",1)~ GOTO MR5
+IF ~G("RJMorteReborn",5)~ THEN REPLY @22 DO ~SetGlobal("RJMorteReborn","GLOBAL",6)~ GOTO MR1.1
+IF ~G("RJMorteReborn",6)~ THEN REPLY @40 DO ~SetGlobal("RJMorteReborn","GLOBAL",7)~ EXTERN RJPSTMR MR2
+IF ~G("RJMorteReborn",7)~ THEN REPLY @50 DO ~SetGlobal("RJMorteReborn","GLOBAL",8)~ EXTERN RJPSTMR MR3
+END
+
+IF ~~ THEN BEGIN MR1.1
+SAY @23 = @24 = @25
+++ @26 + MR1.2
+END
+
+IF ~~ THEN BEGIN MR1.2
+SAY @27 = @28 = @29
+++ @30 + MR1.3
+END
+
+IF ~~ THEN BEGIN MR1.3
+SAY @31
+IF ~GLT("RJSYTalk",2)~ THEN REPLY @12 EXIT
+IF ~GGT("RJSYTalk",1)~ THEN REPLY @70 GOTO MR4
+END
+
+IF ~~ THEN BEGIN MR4
+SAY @71
+IF ~GLT("RJMorteReborn",7)~ THEN DO ~SetGlobal("RJMRSY","GLOBAL",1)~ GOTO MR4.1
+IF ~GGT("RJMorteReborn",6)~ THEN DO ~SetGlobal("RJMRSY","GLOBAL",2)~ GOTO MR4.2
+END
+
+IF ~~ THEN BEGIN MR4.1
+SAY @72
+++ @73 EXIT
+END
+
+IF ~~ THEN BEGIN MR4.2
+SAY @74 = @75
+++ @76 EXIT
+END
+
+IF ~~ THEN BEGIN MR5
+SAY @81
+++ @82 + MR5.1
+END
+
+IF ~~ THEN BEGIN MR5.1
+SAY @83 = @84
+++ @85 + MR5.2
+END
+
+IF ~~ THEN BEGIN MR5.2
+SAY @86 = @87 = @88
+++ @89 + MR5.3
+END
+
+IF ~~ THEN BEGIN MR5.3
+SAY @90
+++ @91 + MR5.4
+END
+
+IF ~~ THEN BEGIN MR5.4
+SAY @92
+++ @93 EXIT
+IF ~G("RJMorteReborn",5)~ THEN REPLY @22 DO ~SetGlobal("RJMorteReborn","GLOBAL",6)~ GOTO MR1.1
+IF ~G("RJMorteReborn",6)~ THEN REPLY @40 DO ~SetGlobal("RJMorteReborn","GLOBAL",7)~ EXTERN RJPSTMR MR2
+IF ~G("RJMorteReborn",7)~ THEN REPLY @50 DO ~SetGlobal("RJMorteReborn","GLOBAL",8)~ EXTERN RJPSTMR MR3
+END
+
+IF ~~ THEN BEGIN MR9
+SAY @101 = @102
+++ @103 DO ~SetGlobal("RJMRFV","GLOBAL",1)~ EXIT
+END
+
+CHAIN IF ~True()~ THEN RJPSTMR MR2
+@41
+== RJPSTVI @42 = @43
+== RJPSTMR @44
+== RJPSTVI @45
+== RJPSTMR @46 = @47
+== RJALIJ IF ~GLT("Chapter",%bg2_chapter_8%)~ THEN @48
+== RJALI25J IF ~GGT("Chapter",%bg2_chapter_7%)~ THEN @48
+== RJFAY IF ~G("RJParkFY",0)~ THEN @39
+END
+IF ~GLT("RJSYTalk",2)~ THEN REPLY @49 EXIT
+IF ~GGT("RJSYTalk",1)~ THEN REPLY @70 EXTERN RJPSTMR MR4
+
+CHAIN IF ~True()~ THEN RJPSTMR MR3
+@51 = @52
+END
+++ @53 EXTERN RJPSTVI MR3.1
+
+CHAIN IF ~True()~ THEN RJPSTVI MR3.1
+@54
+== RJPSTMR @55
+== RJPSTVI @56
+== RJPSTMR @57 = @58
+== RJPSTVI @59
+== RJPSTMR @60
+== RJFAY IF ~G("RJParkFY",0)~ THEN @63
+== RJPSTVI @61
+END
+IF ~OR(2) GLT("RJSYTalk",2) G("RJMRSY",2)~ THEN REPLY @62 EXIT
+IF ~GGT("RJSYTalk",1) GLT("RJMRSY",2)~ THEN REPLY @70 EXTERN RJPSTMR MR4

@@ -1,0 +1,7 @@
+
+COPY ~Rjali/bam~ ~override~
+
+COPY_EXISTING ~2000.ini~ ~override~
+  REPLACE_TEXTUALLY ~selection=sirin03~ ~selection=~
+
+INCLUDE ~Rjali/tph/RJAnimation.tph~

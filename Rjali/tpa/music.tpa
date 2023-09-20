@@ -1,0 +1,34 @@
+
+// Add music to Jini areas
+
+MKDIR ~music/rj0602~
+MKDIR ~music/rj0605~
+MKDIR ~music/rj0610~
+MKDIR ~music/rj1001~
+MKDIR ~music/rj1101~
+
+COPY ~Rjali/mus~ 		        ~music~
+COPY ~Rjali/acm/rj0602a.acm~	        ~music/rj0602~
+COPY ~Rjali/acm/rj0605a.acm~	        ~music/rj0605~
+COPY ~Rjali/acm/rj0610a.acm~	        ~music/rj0610~
+COPY ~Rjali/acm/rj1001a.acm~	        ~music/rj1001~
+COPY ~Rjali/acm/rj1101a.acm~	        ~music/rj1101~
+
+COPY_EXISTING ~songlist.2da~ 		~override~
+SET_2DA_ENTRY 0 2 3 ~blank.mus~
+COPY_EXISTING ~songlist.ids~ 		~override~
+
+ADD_MUSIC  ~RJ0602~    ~music/RJ0602.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJ0602% RJ0602~
+
+ADD_MUSIC  ~RJ0605~    ~music/RJ0605.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJ0605% RJ0605~
+
+ADD_MUSIC  ~RJ0610~    ~music/RJ0610.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJ0610% RJ0610~
+
+ADD_MUSIC  ~RJ1001~    ~music/RJ1001.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJ1001% RJ1001~
+
+ADD_MUSIC  ~RJ1101~    ~music/RJ1101.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJ1101% RJ1101~

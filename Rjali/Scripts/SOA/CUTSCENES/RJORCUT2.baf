@@ -1,0 +1,21 @@
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    LeaveAreaLUAPanic("AR5500","",[699.2570],0)
+    LeaveAreaLUA("AR5500","",[699.2570],0)
+    ActionOverride(Player2,LeaveAreaLUA("AR5500","",[704.2629],0))
+    ActionOverride(Player3,LeaveAreaLUA("AR5500","",[632.2567],0))
+    ActionOverride(Player4,LeaveAreaLUA("AR5500","",[645.2639],0))
+    ActionOverride(Player5,LeaveAreaLUA("AR5500","",[579.2541],0))
+    ActionOverride(Player6,LeaveAreaLUA("AR5500","",[579.2626],0))
+    Wait(3)
+    FadeFromColor([30.0],0)
+    Wait(1)
+    SetGlobal("RJGenie","GLOBAL",0)
+    EndCutSceneMode()
+END

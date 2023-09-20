@@ -1,0 +1,75 @@
+
+@0    = ~Hail, Traveller.~ [RJD001B]
+@1    = ~What may I do for you?~
+@2    = ~Nothing at the moment. Just making sure you were all right.~
+
+@10   = ~Hi, Dakkon. We're here to ask you to come back with us.~
+@11   = ~That is not possible. To do so would mean my death.~
+@12   = ~I sometimes yearn for that, but I *will* not give in to that weakness.~
+@13   = ~Dakkon, can you tell us why this is so?~
+@14   = ~Adahn is extremely worried about you, and we only want to help.~
+@15   = ~Adahn? Ah! The Nameless One now has a name at last. But...but how did he escape from the Blood War?~
+@16   = ~That is a long story that you can hear from him directly once we get you back to Sigil.~
+@17   = ~Hasn't Ravel told you about this?~
+@18   = ~No, I have not, Manny. You asked me not to tell a soul, and I have kept my promise.~
+@19   = ~It is good to have such friends as you, Ravel.~
+
+@20   = ~(sigh) I suppose I must tell you.~
+@21   = ~There was a great battle between the Githzerai and a coalition of Githyanki and certain daemonic elements.~
+@22   = ~I am sorry to say that these demons were Tanar'ri, Grace.~
+@23   = ~No need to be sorry, Dakkon. I am well aware that most Tanar'ri are not to be trusted.~
+@24   = ~In that battle, I was struck down and left for dead. But life remained in me.~
+@25   = ~As I was preparing to die, Ravel happened upon me.~
+@26   = ~The Githyanki had taken my sword, without which I would die, regardless of wounds.~
+
+@30   = ~Aye. I found him, healed his wounds, and took him back to my maze where its magic, or rather lack of it, would prevent the absence of his sword from killing him.~
+@31   = ~Ashamed at being defeated like that, he swore me to secrecy.~
+@32   = ~So I did. But that seems to be no more.~
+@33   = ~Now you see why I cannot go to Sigil with you.~
+@34   = ~Hmmm...~
+@35   = ~Well now, I think we can do something about that.~
+
+@40   = ~She healed my wounds and took me to her maze where the lack of magic would prevent my lack of sword from killing me.~
+@41   = ~I swore her to secrecy because I was ashamed.~
+@42   = ~And now here you are, witnesses to my shame.~
+
+@50   = ~Hold it, <CHARNAME>! Remember Deidre and Vecna's robe?~
+@51   = ~Well, Deidre also had Dakkon's blade!~
+@52   = ~We can go get it and bring it back and give it to Dakkon and he can be free again!~
+@53   = ~I'm a genius!~
+@54   = ~Is this true? I would like to have my life back again. Although what I will do with it...~
+@55   = ~We can figure that out afterward. Let's get this show on the road. See you soon, Dakkon.~
+@56   = ~Well, you aren't stupid, Rjali, and that's a fact.~
+
+@60   = ~What do you mean?~
+@61   = ~Is this what you need, Dakkon?~
+
+@70   = ~Yes. That is my blade. How may I thank you?~
+@71   = ~You can thank us by coming back to Sigil and meeting some old friends.~
+@72   = ~We'ld love yeh to come back, Dakkon.~
+@73   = ~A new friend might even have something for you to do until you get your bearings.~
+@74   = ~Time to come back to life, Manny.~
+@75   = ~I will accompany you. It would be good to see Adahn(???) again.~
+@76   = ~Let's not keep the anxious public waiting.~
+@77   = ~Please do, Dakkon. Loneliness is a terrible thing. I know.~
+
+@80   = ~Here we are back in Sigil. Shall we go see Adahn?~
+@81   = ~I will go with you.~
+@82   = ~It's the first room on the right. Lead the way.~
+
+@90   = ~You could start by not being so formal. How the hell are you, Dakkon?~
+@91   = ~This is a reasonably responsible position. Eventually, I will decide a more fitting pattern for my life.~
+@92   = ~This will do for now. Thank you for all you have done for me.~
+@93   = ~You're welcome. See you later. Gotta go.~
+
+@95   = ~Have you decided yet on a pattern for your life?~
+@96   = ~I have. As I am an outcast from my people and I have friends here, I have decided to stay.~
+@97   = ~I will live what life I have left in this congenial environment.~
+@98   = ~Adahn has intimated that he may do some more adventuring, which would be interesting.~
+@99   = ~We shall see.~
+@100  = ~That's great, Dakkon! Enjoy your life.~
+
+@200  = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@201  = ~This is your Fortress of Regrets, isn't it?~
+@202  = ~Good luck. At least, it will be end of one kind or another.~
+@203  = ~So it will. Be happy, Dakkon.~

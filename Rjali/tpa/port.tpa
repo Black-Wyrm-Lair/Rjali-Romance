@@ -1,0 +1,196 @@
+
+// Here's where we gate the StorePartyLocations resource and hide Fay in inappropriate cutscenes
+
+// Irenicus
+
+  COPY_EXISTING ~Cut41g.bcs~ ~override~
+                ~Cut49c.bcs~ ~override~
+                ~Cut68a.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[30.0\],0)~
+                        ~FadeToColor([30.0],0) ApplySpellRES("RJHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~Cut28b.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[40.0\],0)~
+                        ~FadeToColor([40.0],0) ApplySpellRES("RJHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~Cut41h.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[20.0\],0)~
+                        ~FadeToColor([20.0],0) AddGlobals("RJFollowFYP","RJFollowFY") SetGlobal("RJFollowFY","GLOBAL",2) SetGlobal("RJPort","GLOBAL",9) ApplySpellRES("RJUNHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~Cut41i.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[20.0\],0)~
+                        ~FadeToColor([20.0],0) AddGlobals("RJFollowFY","RJFollowFYP") SetGlobal("RJFollowFYP","GLOBAL",-2) SetGlobal("RJPort","GLOBAL",0) ApplySpellRES("RJHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~Cut41j.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[20.0\],0)~
+                        ~FadeToColor([20.0],0) ApplySpellRES("RJUNHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~Cut28g.bcs~ ~override~
+                ~Cut49e.bcs~ ~override~
+                ~Cut68e.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~RestorePartyLocations()~
+                        ~RestorePartyLocations() ApplySpellRES("RJUNHIDE","RJFAY")~
+    END
+
+// Hexxat
+
+  COPY_EXISTING ~HEXXA25J.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("OHH_cabrina25","GLOBAL",1)~
+                        ~Global("OHH_cabrina25","GLOBAL",1) G("RJPort",0)~
+    END
+
+  COPY_EXISTING ~HEXXA25D.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("OHH_korkorran","GLOBAL",1)~
+                        ~Global("OHH_korkorran","GLOBAL",1) G("RJPort",0)~
+    END
+
+  COPY_EXISTING ~OHHCUT25.bcs~ ~override~
+                ~OHHFIN1.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~StorePartyLocations()~
+                        ~StorePartyLocations() SetGlobal("RJPort","GLOBAL",9)~
+    END
+
+  COPY_EXISTING ~OHHRETRN.bcs~ ~override~
+                ~OHHFIN2.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~RestorePartyLocations()~
+                        ~RestorePartyLocations() SetGlobal("RJPort","GLOBAL",0)~
+    END
+
+// Imoen
+
+ACTION_IF MOD_IS_INSTALLED ~imoenRomance/Setup-ImoenRomance.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~player1d.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("HadImoenDreamRomance1","GLOBAL",0)~
+                        ~Global("HadImoenDreamRomance1","GLOBAL",0) G("RJPort",0)~
+      REPLACE_TEXTUALLY ~Global("HadImoenDreamRomance2","GLOBAL",0)~
+                        ~Global("HadImoenDreamRomance2","GLOBAL",0) G("RJPort",0)~
+      REPLACE_TEXTUALLY ~Global("HadImoenDreamRomance3","GLOBAL",0)~
+                        ~Global("HadImoenDreamRomance3","GLOBAL",0) G("RJPort",0)~
+    END
+
+  COPY_EXISTING ~BracCut4.bcs~ ~override~
+                ~3QTCut.bcs~ ~override~
+                ~IQTCut.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~StorePartyLocations()~
+                        ~StorePartyLocations() SetGlobal("RJPort","GLOBAL",9)~
+    END
+
+  COPY_EXISTING ~BracCut6.bcs~ ~override~
+                ~BraCut10.bcs~ ~override~
+                ~3QTCuta.bcs~ ~override~
+                ~3QTCutb.bcs~ ~override~
+                ~IQT1Cut.bcs~ ~override~
+                ~IQT2Cut.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~RestorePartyLocations()~
+                        ~RestorePartyLocations() SetGlobal("RJPort","GLOBAL",0)~
+    END
+
+  COPY_EXISTING ~Cutim00.bcs~ ~override~
+                ~Cutim05.bcs~ ~override~
+                ~Cutim11.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[30.0\],0)~
+                        ~FadeToColor([30.0],0) SetGlobal("RJPort","GLOBAL",9) ApplySpellRES("RJHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~Cutim04.bcs~ ~override~
+                ~Cutim10.bcs~ ~override~
+                ~Cutim16.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~FadeToColor(\[30.0\],0)~
+                        ~FadeToColor([30.0],0) SetGlobal("RJPort","GLOBAL",0) ApplySpellRES("RJUNHIDE","RJFAY")~
+    END
+
+END
+
+// Saerileth
+
+ACTION_IF MOD_IS_INSTALLED ~Saerileth/setup-Saerileth.tp2~ "0" THEN BEGIN
+
+  COMPILE ~Rjali/Scripts/SOA/RJSAER/NSEDHOME.baf~
+
+  COPY_EXISTING ~SAERILET.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~Global("NSAllDemonsDead","GLOBAL",0)~
+                        ~Global("NSAllDemonsDead","GLOBAL",0) G("RJPort",0)~
+      REPLACE_TEXTUALLY ~SetGlobal("NSKidnap","LOCALS",1)~
+                        ~SetGlobal("NSKidnap","LOCALS",1) SetGlobal("RJPort","LOCALS",9)~
+    END
+
+  COPY_EXISTING ~NSEDHIVE.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~CutSceneID(Player1)~
+                        ~CutSceneID(Player1) StorePartyLocations()~
+    END
+
+  COPY_EXISTING ~NSEDOREM.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~AreaCheck("AR0900")~
+                        ~!AreaCheck("NS0162")~
+    END
+
+  COPY_EXISTING ~NSED1.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~NSEDCH4~ ~NSEDHOME~
+      REPLACE_TEXTUALLY ~NSEDCH5~ ~NSEDHOME~
+    END
+
+END
+
+// Yvette
+
+ACTION_IF MOD_IS_INSTALLED ~Yvette/setup-Yvette.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~YXYVEJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~ActionOverride(Player1,LeaveAreaLUA("AR0021","",\[542.335\],S))~
+        ~ActionOverride(Player1,LeaveAreaLUA("AR0021","",[542.335],0)) ApplySpellRES("RJUNHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~YxYve.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~ActionOverride(Player1,LeaveAreaLUA("ARY001","",\[387.477\],S))~
+        ~ApplySpellRES("RJHIDE","RJFAY") ActionOverride(Player1,LeaveAreaLUA("ARY001","",[387.477],0))~
+    END
+
+END
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene_BG2/Setup-Sirene_BG2.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~c0ilm01.bcs~ ~override~
+                ~c0ilm02.bcs~ ~override~
+                ~c0slake1.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~StorePartyLocations()~
+                        ~StorePartyLocations() SetGlobal("RJPort","GLOBAL",9) ApplySpellRES("RJHIDE","RJFAY")~
+    END
+
+  COPY_EXISTING ~c0ilm05.bcs~ ~override~
+                ~c0slake2.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~RestorePartyLocations()~
+                        ~RestorePartyLocations() SetGlobal("RJPort","GLOBAL",0) ApplySpellRES("RJUNHIDE","RJFAY")~
+    END
+
+END

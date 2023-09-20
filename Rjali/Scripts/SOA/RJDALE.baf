@@ -1,0 +1,10 @@
+
+// Ratout Kesai
+
+IF
+  G("RJRatoutKE",1)
+  See(Player1)
+THEN
+  RESPONSE #100
+    Dialog(Player1)
+END

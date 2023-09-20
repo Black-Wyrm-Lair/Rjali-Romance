@@ -1,0 +1,31 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkAE",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+InParty("Aerie")
+OR(3)
+  !G("RJPLAY2",2)
+  !GlobalsEqual("RJROM2","AerieRomanceActive")
+  !GlobalsEqual("RJPARK2","RjaliAerieScout")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY2","GLOBAL",2)
+    AddGlobals("RJRosCnt","RJFILL2")
+    SetGlobal("RJFILL2","GLOBAL",0)
+    AddGlobals("RJLocSet","RJFILLAE")
+    SetGlobal("RJFILLAE","GLOBAL",0)
+    SetGlobal("RJROM2","GLOBAL",0)
+    AddGlobals("RJROM2","AerieRomanceActive")
+    SetGlobal("RJPARK2","GLOBAL",0)
+    AddGlobals("RJPARK2","RjaliAerieScout")
+END

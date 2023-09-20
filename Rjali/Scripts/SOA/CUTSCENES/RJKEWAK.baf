@@ -1,0 +1,26 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    FadeToColor([30.0],0)
+    Wait(1)
+    SetGlobal("RJKESleep","GLOBAL",3)
+    CreateCreature("RJSOB",[-1.-1],0)
+    ActionOverride("RJSOB",MakeGlobal())
+    ApplySpellRES("RJUNHIDE","RJFAY")
+    Wait(1)
+    ActionOverride("RJSOB",MoveBetweenAreas("RJ1100",[2431.1736],3))
+    RestorePartyLocations()
+    ActionOverride(Player2,MakeUnselectable(0))
+    ActionOverride(Player3,MakeUnselectable(0))
+    ActionOverride(Player4,MakeUnselectable(0))
+    ActionOverride(Player5,MakeUnselectable(0))
+    ActionOverride(Player6,MakeUnselectable(0))
+    Wait(1)
+    FadeFromColor([30.0],0)
+    Wait(1)
+    EndCutSceneMode()
+    ActionOverride("RJKesai",StartDialogueNoSet(Player1))
+END

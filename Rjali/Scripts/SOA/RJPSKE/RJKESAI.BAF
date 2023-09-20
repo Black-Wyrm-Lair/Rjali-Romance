@@ -1,0 +1,272 @@
+
+// Bump XP on initial join
+
+IF
+InParty("RJKesai")
+Global("RJKesaiSetXP","GLOBAL",0)
+XPLT(Player1,280001)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiSetXP","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("RJKesai")
+Global("RJKesaiSetXP","GLOBAL",0)
+XPGT(Player1,280000)
+XPLT(Player1,600001)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiSetXP","GLOBAL",1)
+AddXPObject("RJKesai",411000)
+Continue()
+END
+
+IF
+InParty("RJKesai")
+Global("RJKesaiSetXP","GLOBAL",0)
+XPGT(Player1,600000)
+XPLT(Player1,1000001)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiSetXP","GLOBAL",1)
+AddXPObject("RJKesai",711000)
+Continue()
+END
+
+IF
+InParty("RJKesai")
+Global("RJKesaiSetXP","GLOBAL",0)
+XPGT(Player1,1000000)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiSetXP","GLOBAL",1)
+AddXPObject("RJKesai",1111000)
+Continue()
+END
+
+// This is where Kesai's romance talks start.
+
+IF
+InParty(Myself)
+G("RJKesaiTalk",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJKesaiRomance","GLOBAL",800)
+SetGlobal("RJKesaiTalk","GLOBAL",1)
+END
+
+// This block sets up romance talks
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("RJKesaiRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+OR(12)
+G("RJKesaiTalk",1)
+G("RJKesaiTalk",3)
+G("RJKesaiTalk",5)
+G("RJKesaiTalk",11)
+G("RJKesaiTalk",13)
+G("RJKesaiTalk",15)
+G("RJKesaiTalk",17)
+G("RJKesaiTalk",19)
+G("RJKesaiTalk",21)
+G("RJKesaiTalk",23)
+G("RJKesaiTalk",25)
+G("RJKesaiTalk",27)
+THEN
+RESPONSE #100
+IncrementGlobal("RJKesaiTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 4
+
+IF
+InParty(Myself)
+PartyRested()
+RealGlobalTimerExpired("RJKesaiRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+G("RJKesaiTalk",7)
+THEN
+RESPONSE #100
+IncrementGlobal("RJKesaiTalk","GLOBAL",1)
+END
+
+// This block sets up romance talk 5
+
+IF
+InParty(Myself)
+G("RJPort",0)
+GGT("RJSobethJID",4)
+RealGlobalTimerExpired("RJKesaiRomance","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!See([ENEMY])
+G("RJKesaiTalk",9)
+THEN
+RESPONSE #100
+IncrementGlobal("RJKesaiTalk","GLOBAL",1)
+END
+
+// This block initiates a dialog with Player1
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(15)
+  G("RJKesaiTalk",2)
+  G("RJKesaiTalk",4)
+  G("RJKesaiTalk",6)
+  G("RJKesaiTalk",8)
+  G("RJKesaiTalk",10)
+  G("RJKesaiTalk",12)
+  G("RJKesaiTalk",14)
+  G("RJKesaiTalk",16)
+  G("RJKesaiTalk",18)
+  G("RJKesaiTalk",20)
+  G("RJKesaiTalk",22)
+  G("RJKesaiTalk",24)
+  G("RJKesaiTalk",26)
+  G("RJKesaiTalk",28)
+  G("RJKesaiSleptPhaere",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Phaere Innuendo
+
+IF
+  InParty(Myself)
+  !Range("Phaere",6)
+  G("RJKesaiSleptPhaere",0)
+  AreaCheck("AR2204")
+  See(Player1)
+  OR(2)
+    G("PhaereInnuendo",2)
+    G("PhaereInnuendo",3)
+THEN
+  RESPONSE #100
+    SetGlobal("RJKesaiSleptPhaere","GLOBAL",1)
+END
+
+// Kesai's post Underdark outdoor sleep
+
+IF
+  InParty(Myself)
+  G("RJKEUDSleep1",2)
+  PartyRested()
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJKEUDSleep1","GLOBAL",3)
+END
+
+IF
+  InParty(Myself)
+  G("RJKEUDSleep1",2)
+  !PartyRested()
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJKEUDSleep1","GLOBAL",4)
+END
+
+IF
+  InParty(Myself)
+  OR(2)
+    G("RJKEUDSleep1",3)
+    G("RJKEUDSleep1",4)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+// Kesai initiated flirts
+
+// Flirts initiate
+
+IF
+InParty(Myself)
+G("RJKesaiFlirtsStart",0)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiFlirtsStart","GLOBAL",1)
+RealSetGlobalTimer("RJKesaiFlirtTimer","GLOBAL",RJ_FAST)
+END
+
+// Ready for flirting
+
+IF
+InParty(Myself)
+G("RJHush",0)
+G("RJKesaiFlirtsStart",1)
+RealGlobalTimerExpired("RJKesaiFlirtTimer","GLOBAL")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+CombatCounter(0)
+!See([ENEMY])
+G("RJKesaiFlirt",0)
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiFlirt","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+// Flirting begins
+
+IF
+InParty(Myself)
+G("RJKesaiFlirt",1)
+G("RJKesaiRomanceActive",1)
+RealGlobalTimerExpired("RJKesaiFlirtTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiFlirt","GLOBAL",0)
+RealSetGlobalTimer("RJKesaiFlirtTimer","GLOBAL",RJ_FAST)
+END
+
+IF
+InParty(Myself)
+G("RJKesaiFlirt",1)
+G("RJKesaiRomanceActive",2)
+RealGlobalTimerExpired("RJKesaiFlirtTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("RJKesaiFlirt","GLOBAL",0)
+RealSetGlobalTimer("RJKesaiFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+G("RJKesaiFlirtsStart",1)
+G("RJHush",0)
+RealGlobalTimerExpired("RJKesaiFlirtTimer","GLOBAL")
+!CombatCounter(0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("RJKesaiFlirtTimer","GLOBAL",150)
+END

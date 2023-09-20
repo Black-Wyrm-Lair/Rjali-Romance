@@ -1,0 +1,44 @@
+
+// Block script of parked NPC
+
+IF
+  !G("RJParkIM",0)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+//  Count Imoen wedded
+
+IF
+G("Chapter",%bg2_chapter_8%)
+InParty("Imoen2")
+Global("RJWedded","LOCALS",0)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJWedded","LOCALS",1)
+    IncrementGlobal("RJCntWedded","GLOBAL",1)
+END
+
+//  Roster set
+
+IF
+G("RJRoster",1)
+OR(2)
+  InParty("Imoen")
+  InParty("Imoen2")
+OR(3)
+  !G("RJPLAY1",1)
+  !GlobalsEqual("RJROM1","ImoenRomanceActive")
+  !GlobalsEqual("RJPARK1","RjaliImoenScout")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPLAY1","GLOBAL",1)
+    AddGlobals("RJRosCnt","RJFILL1")
+    SetGlobal("RJFILL1","GLOBAL",0)
+    SetGlobal("RJROM1","GLOBAL",0)
+    AddGlobals("RJROM1","ImoenRomanceActive")
+    SetGlobal("RJPARK1","GLOBAL",0)
+    AddGlobals("RJPARK1","RjaliImoenScout")
+END

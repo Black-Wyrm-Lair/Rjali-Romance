@@ -1,0 +1,34 @@
+
+@0    = ~Hello, <CHARNAME>. Is there something I can do for you?~
+@1    = ~Not at the moment. Nice to see you again.~
+@2    = ~Hi, Juliette. My name is <CHARNAME>. I'm a friend of Jini's. What seems to be the problem?~
+@3    = ~My name is Juliette. Have you come to mock me, too?~
+@4    = ~Hmm. Have you tried putting on a smile and disappointing them? That would certainly lead to a different type of customer for you.~
+@5    = ~I was jilted by my beau after I behaved stupidly, and now the customers I get only want to see me cry.~
+@6    = ~I am so unhappy.~
+@7    = ~I hadn't thought of that.~
+@8    = ~I shall give it a try.~
+@9    = ~I'm sure things will improve for you, Juliette. Bye for now.~
+
+@10   = ~I see you are smiling. How have you been doing with your customer base?~
+@11   = ~Your suggestion worked! People are chatting and laughing with me now.~
+@12   = ~And one gentleman...~
+@13   = ~I'm glad to see you finally enjoying life. You have my best wishes.~
+@14   = ~AHA! And who would that be?~
+@15   = ~I'm not at liberty to say, but he has his head screwed on right.~
+@16   = ~Most of the time.~
+@17   = ~I'm happy for you, Juliette.~
+
+@20   = ~I'm curious. Do we get to meet this gentleman caller of yours?~
+@21   = ~I don't think so. He...he's...different.~
+@22   = ~I...Can I trust you?~
+@23   = ~Of course you can. I swear!~
+@24   = ~Well, He can take his head off and put it in a cage.~
+@25   = ~Sometimes, he leaves his head here with me when I am feeling lonely.~
+@26   = ~He is very considerate.~
+@27   = ~(struggles sucessfully not to laugh) I am pleased for you. But we must be going.~
+
+@50   = ~We're off to the Throne of Bhaal for the final showdown. I wanted to see you before we left. Just in case...~
+@51   = ~Oh! Please be careful.~
+@52   = ~I have been so happy after taking your advice.~
+@53   = ~De nada. Hope to see you soon.~

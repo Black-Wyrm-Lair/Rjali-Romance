@@ -1,0 +1,89 @@
+
+// Location...location...location...
+
+IF
+  AreaCheck("RJ0602")
+  !G("RJiniLoc",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniLoc","GLOBAL",1)
+    Continue()
+END
+
+IF
+  AreaCheck("RJ0605")
+  !G("RJiniLoc",2)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniLoc","GLOBAL",2)
+    Continue()
+END
+
+// Jini/PC Dialogues
+
+IF
+  Range(Player1,6)
+  See(Player1)
+  OR(9)
+    G("RJPST01",2)
+    G("RJiniiJIDAD",3)
+    G("RJiniiJIDAD",7)
+    G("RJiniiJIDAD",14)
+    G("RJiniiJIDMR",2)
+    G("RJiniiJIDMR",8)
+    G("RJiniiJIDMR",10)
+    G("RJiniiJID1",2)
+    G("RJRavelOrphans",4)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+  Range(Player1,6)
+  See(Player1)
+  G("RJiniiJIDMR",9)
+  G("RJMorteReborn",4)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniiJIDMR","GLOBAL",10)
+END
+
+IF
+  Range(Player1,6)
+  See(Player1)
+  OR(2)
+    G("RJiniiJIDAD",6)
+    G("RJiniiJIDAD",13)
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJiniiJIDAD","GLOBAL",1)
+END
+
+// 1st time at brothal
+
+IF
+  G("RJiniBrothal1",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+IF
+  AreaCheck("RJ0605")
+  G("RJiniBrothal1",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniBrothal1","GLOBAL",1)
+END
+
+// Annah has info
+
+IF
+  G("RJPST01",1)
+  Range("RJAnnah",8)
+  See("RJAnnah")
+THEN
+  RESPONSE #100
+    SetGlobal("RJPST01","GLOBAL",2)
+END

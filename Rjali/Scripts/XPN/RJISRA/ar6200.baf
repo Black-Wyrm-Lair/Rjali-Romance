@@ -1,0 +1,18 @@
+
+// Isra Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("rh#IsraBio",0)
+G("rh#IsraRomanceActive",2)
+OR(2)
+  InParty("rh#Isra2")
+  G("RJParkIS",1)
+THEN
+RESPONSE #100
+SetGlobal("rh#IsraBio","GLOBAL",1)
+TextScreen("RJEpiIS")
+SmallWait(1)
+Continue()
+END

@@ -1,0 +1,18 @@
+
+// Ninde Epilogue
+
+IF
+Global("StartEndBios","AR6200",1)
+!G("PlayerChoseEssence",1)
+G("LK#NindeBio",0)
+G("LK#NindeRomanceActive",2)
+OR(2)
+  InParty("Ninde")
+  G("RJParkNI",1)
+THEN
+RESPONSE #100
+SetGlobal("LK#NindeBio","GLOBAL",1)
+TextScreen("RJEpiNI")
+SmallWait(1)
+Continue()
+END
